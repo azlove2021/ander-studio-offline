@@ -8,6 +8,8 @@ _tools/.session_csrf
 # ---------- 可再生产物 ----------
 # 导出包由 _tools/export_model.py 从 model-releases/ 生成，重复入库会翻倍体积
 导出/
+# Pages 站点目录由 _tools/build_pages.py 生成，发布到 ander-studio-models 仓库
+pages/
 __pycache__/
 *.pyc
 

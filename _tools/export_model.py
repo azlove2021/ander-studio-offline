@@ -49,12 +49,20 @@ NOTE = """{title}
 
 
 def clean_html(path):
-    """去掉站点适配层的绝对路径引用（收藏、会话），这些独立运行时不需要。"""
+    """去掉站点适配层的绝对路径引用，并把剩下的绝对路径改写成相对路径。
+
+    - 收藏 / 会话两个脚本独立运行时不需要，直接删掉；
+    - `/assets/...` 改为 `../assets/...`：导出包结构是 <模型id>/index.html，
+      深度为 1，所以上一级就是站点根，assets 与模型平级 —— 这样同一份内容
+      既能被本地服务提供，也能直接丢进 GitHub Pages。
+    """
     with open(path, encoding="utf-8") as f:
         s = f.read()
     before = len(s)
     s = re.sub(r'\s*<script[^>]*src="/assets/accounts/model-favorite[^"]*"[^>]*></script>', "", s)
     s = re.sub(r'\s*<script[^>]*src="/session\.js[^"]*"[^>]*></script>', "", s)
+    s = re.sub(r'(src|href)="/assets/', r'\1="../assets/', s)
+    s = s.replace('href="/"', 'href="../"')
     with open(path, "w", encoding="utf-8") as f:
         f.write(s)
     return before, len(s)

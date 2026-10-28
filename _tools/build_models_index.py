@@ -7,10 +7,13 @@
 import json
 import os
 import html
+import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CATALOG = os.path.join(ROOT, "model-releases", "catalog.json")
-OUT = os.path.join(ROOT, "models.html")
+# --pages 模式：生成可直接托管在 GitHub Pages 子路径下的相对路径版本
+PAGES_MODE = "--pages" in sys.argv
+OUT = os.path.join(ROOT, "pages", "index.html") if PAGES_MODE else os.path.join(ROOT, "models.html")
 
 MODULE_ZH = {
     "molecules-and-cells": "分子与细胞",
@@ -41,22 +44,28 @@ def main():
     with open(CATALOG, encoding="utf-8") as f:
         catalog = json.load(f)
     models = [m for m in catalog["models"] if m.get("publish")]
+    # pages 模式：所有路径改为相对，可直接托管在 GitHub Pages 的子路径下
+    pages = PAGES_MODE
 
     cards = []
     for m in models:
         mid, ver = m["id"], m["version"]
-        entry = "/model-releases/models/%s/%s/%s" % (mid, ver, m.get("entry") or "index.html")
+        if pages:
+            entry = "%s/%s" % (mid, m.get("entry") or "index.html")
+        else:
+            entry = "/model-releases/models/%s/%s/%s" % (mid, ver, m.get("entry") or "index.html")
         mod_id = (m.get("module") or {}).get("id", "")
         mod_zh = (m.get("module") or {}).get("zh") or MODULE_ZH.get(mod_id, "其他")
         title = (m.get("title") or {}).get("zh") or mid
         title_en = (m.get("title") or {}).get("en") or ""
         summary = (m.get("summary") or {}).get("zh") or ""
         # 优先用优化后的卡片封面，缺失则回退到模型包内的原图
-        card_cover = "/assets/model-covers/cards/%s.webp" % mid
+        card_cover = "assets/model-covers/cards/%s.webp" % mid if pages else "/assets/model-covers/cards/%s.webp" % mid
         if os.path.exists(os.path.join(ROOT, "assets", "model-covers", "cards", mid + ".webp")):
             cover = card_cover
         else:
-            cover = "/model-releases/models/%s/%s/%s" % (mid, ver, m.get("cover") or "assets/cover.png")
+            cover = ("%s/%s" % (mid, m.get("cover") or "assets/cover.png")) if pages \
+                else ("/model-releases/models/%s/%s/%s" % (mid, ver, m.get("cover") or "assets/cover.png"))
         tech_text, tech_cls = TECH_LABEL.get(m.get("technology"), (m.get("technology") or "交互", "tech"))
         stages = m.get("stages") or []
         cards.append(dict(id=mid, href=entry, cover=cover, modId=mod_id, mod=mod_zh, ver=ver,
