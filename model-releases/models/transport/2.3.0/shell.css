@@ -1,0 +1,49 @@
+/* Content layout only; public chrome is the unchanged package copy of Shell 2.5.1. */
+:root { --text:#18384a; --muted:#647c83; --primary:#31816e; --primary-dark:#245f52; font-family:"Microsoft YaHei",system-ui,sans-serif; }
+* { box-sizing:border-box; } html,body { margin:0; } button,input { font:inherit; }
+body .model-stage { position:relative; overflow:hidden; background:#fbfefd; }
+body .model-stage .foundation-layout { position:relative; display:grid; grid-template-columns:minmax(0,1fr) 260px; grid-template-rows:minmax(0,1fr); width:100%; height:100%; min-height:0; min-width:0; gap:12px; padding:10px; }
+body .foundation-info { display:block; min-width:0; min-height:0; height:100%; padding:14px; border:1px solid #dce8e4; border-radius:12px; background:white; overflow:auto; }
+.foundation-info h2 { margin:0 0 10px; color:#245f52; font-size:16px; }.foundation-info h3 { font-size:13px; margin:16px 0 6px; }
+.foundation-info p { font-size:12px; line-height:1.85; color:#637b7f; margin:0 0 12px; }
+.foundation-legend { list-style:none; padding:0; margin:14px 0 0; font-size:11px; color:#5e777d; }.foundation-legend li { display:flex; align-items:center; gap:6px; margin:8px 0; }.foundation-legend i { flex:0 0 9px; height:9px; border-radius:50%; }
+body .foundation-layout .membrane-webgl-stack,body .foundation-layout [data-transport-2d-shell] { position:relative; display:block; width:100%; height:100%; min-width:0; min-height:0; padding:0; margin:0; border:0; overflow:hidden; background:#f5faf9; border-radius:12px; }
+body .foundation-layout .membrane-webgl-shell { position:absolute; inset:0; width:100%; height:100%; min-height:0; max-height:none; padding:0; border:0; overflow:hidden; background:transparent; }
+body .foundation-layout [data-membrane-webgl-viewport],body .foundation-layout [data-membrane-webgl-host],body .foundation-layout [data-membrane-webgl-labels] { position:absolute; inset:0; width:100%; height:100%; min-height:0; }
+body .foundation-layout [data-membrane-webgl-viewport] { touch-action:none; }
+body .foundation-layout .dna-webgl-canvas { width:100%; height:100%; display:block; }
+body .foundation-layout .dna-webgl-label { max-width:none; min-width:0; font-size:11px; line-height:1.2; padding:4px 5px; box-shadow:0 1px 5px #173b4015; }
+body .foundation-layout [data-membrane-webgl-labels][hidden] { display:none; }
+.foundation-layout > .foundation-context { display:none; position:absolute; top:8px; right:10px; z-index:6; min-height:34px; padding:5px 9px; font-size:12px; background:#fffffff0; }
+body .foundation-feedback { position:absolute; z-index:3; bottom:8px; left:88px; right:12px; margin:0; font-size:11px; text-align:center; color:#356e61; text-shadow:0 1px 3px white; pointer-events:none; }
+.foundation-feedback:empty { display:none; }
+body .membrane-view-tools,body .foundation-view-tools { position:static; display:flex; gap:4px; margin:0; padding:0; }
+body .shell-dialog .foundation-info { height:auto; padding:0; border:0; border-radius:0; overflow:visible; }
+body[data-model-shell] .foundation-ranges.timeline-wrap { display:grid !important; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; height:auto !important; min-height:42px; min-width:0; padding:0; margin:0; border:0; box-shadow:none; background:transparent; }
+body .foundation-ranges label { display:grid; grid-template-columns:auto minmax(0,1fr); grid-template-rows:16px 26px; gap:0 6px; min-width:0; font-size:11px; color:#54736c; line-height:16px; }
+body .foundation-ranges label > span { grid-column:1; grid-row:1; white-space:nowrap; }
+body .foundation-ranges label > strong { grid-column:2; grid-row:1; text-align:right; font:inherit; font-variant-numeric:tabular-nums; }
+body .foundation-ranges input[type=range] { grid-column:1/-1; grid-row:2; width:100%; min-width:0; height:26px; margin:0; accent-color:#31816e; }
+body .foundation-layout .transport-viewport { position:absolute; inset:0; touch-action:none; overflow:hidden; isolation:isolate; }
+body .foundation-layout .transport-plane { position:absolute; top:0; left:0; width:1280px; height:660px; transform-origin:0 0; will-change:transform; }
+body .foundation-layout .transport-plane svg { display:block; width:1280px; height:660px; min-width:0; max-width:none; min-height:0; max-height:none; margin:0; border:0; }
+body .foundation-layout .transport-background-plane { z-index:-1; pointer-events:none; }
+body .foundation-layout [data-transport-foreground] { z-index:1; }
+body .model-area[data-immersive=true] .foundation-layout { grid-template-columns:minmax(0,1fr); padding:0; gap:0; }
+body .model-area[data-immersive=true] .foundation-layout > .foundation-info,body .model-area[data-immersive=true] .foundation-context { display:none; }
+@media(max-width:1100px) { body .model-stage .foundation-layout { grid-template-columns:minmax(0,1fr); padding:0; gap:0; } body .foundation-layout > .foundation-info { display:none; } .foundation-layout > .foundation-context { display:inline-flex; } }
+body[data-shell-compact=true] .model-stage .foundation-layout { grid-template-columns:minmax(0,1fr); padding:0; gap:0; }
+body[data-shell-compact=true] .foundation-layout > .foundation-info { display:none; }
+body[data-shell-compact=true] .foundation-context { display:inline-flex; }
+body[data-shell-compact=true] .model-area[data-immersive=true] .foundation-context { display:none; }
+body[data-shell-compact=true] .foundation-ranges.timeline-wrap { gap:10px; }
+body[data-shell-compact=true] .foundation-ranges label { grid-template-columns:auto minmax(0,1fr); }
+body[data-shell-compact=true] .foundation-ranges label > strong { display:none; }
+body[data-shell-compact=true] .foundation-ranges label > input { grid-row:2; }
+/* Override legacy content grids and the single-slider flex sizing for two real controls. */
+body .independent-model-workspace { display:block; }
+body[data-model-id="membrane"] .foundation-layout .membrane-webgl-stack .membrane-webgl-shell { display:block; position:absolute; inset:0; overflow:hidden; }
+body[data-model-id="membrane"] .foundation-layout .membrane-webgl-shell .dna-webgl-viewport-frame { position:absolute; inset:0; width:100%; height:100% !important; }
+body[data-model-shell] .model-area .foundation-ranges.timeline-wrap { height:42px !important; min-height:42px !important; }
+body[data-model-shell] .model-area .foundation-ranges input[type=range] { width:100% !important; min-width:0 !important; }
+body[data-model-shell][data-shell-compact="false"] .control-dock .foundation-ranges { grid-column:1/-1; grid-row:3; }

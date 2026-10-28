@@ -1,0 +1,100 @@
+/* Content geometry only. Public header, stage and dock skins come from shell 2.5.1. */
+body[data-model-shell] .model-area .model-stage{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(285px,32%);grid-template-rows:auto minmax(0,1fr);overflow:hidden!important;min-height:0;gap:0}
+.neural-toolbar{grid-column:1/-1;display:flex;align-items:center;gap:6px;min-width:0;padding:5px 10px;border-bottom:1px solid #d5e5e1;background:#f6fbf9}
+.neural-toolbar .stimulus-controls,.neural-toolbar .condition-grid{display:flex;gap:5px;margin:0;min-width:0;flex:1}
+.neural-toolbar .apply-stim{margin-left:0}
+.neural-toolbar button,.neural-view-choice{white-space:nowrap;flex:none}
+.neural-view-choice{font:inherit;font-size:12px;min-width:64px;max-width:105px;padding:4px;border:1px solid #cbded8;border-radius:8px;color:#315e55;background:white;min-height:32px}
+body[data-model-shell] .model-stage>.scene-panel{grid-column:1;grid-row:2;height:auto!important;min-height:0;padding:7px;gap:3px;overflow:hidden;position:relative;display:flex;flex-direction:column;border-right:1px solid #d7e5e3}
+body[data-model-shell] .model-stage>.record-panel{grid-column:2;grid-row:2;min-height:0;min-width:0;display:flex;flex-direction:column;overflow:hidden;padding:8px;gap:8px}
+.model-stage .scene-title{flex:none;min-height:24px;padding:0 3px;gap:6px}
+.model-stage .scene-title strong{font-size:12px}.model-stage .scene-title span{font-size:11px}
+.model-stage .phase-step{width:26px;height:26px;font-size:12px}.model-stage .phase-focus strong{font-size:12px}.model-stage .phase-focus>span{font-size:10px;margin-top:0}
+body[data-model-shell] .model-stage .drawing-scroll{display:block;position:relative;isolation:isolate;flex:1 1 0;min-height:0;height:auto!important;min-width:0;overflow:hidden!important;touch-action:none;outline-offset:-3px}
+body[data-model-shell] .model-stage .neural-plane,body[data-model-shell] .model-stage .neural-background-plane{position:absolute;left:0;top:0;margin:0;transform-origin:0 0;flex:none;max-width:none;isolation:isolate}
+.neural-background-plane{z-index:0;pointer-events:none}.neural-plane{z-index:2}
+body[data-model-shell] .neural-plane>.scene-svg,body[data-model-shell] .neural-plane>.nerve-scene,.neural-background-plane>svg{display:block;width:100%;height:100%;min-width:0;max-width:none;max-height:none}
+.model-stage .scene-legend{flex:none;padding:1px 3px;gap:4px 12px;min-height:16px;font-size:10px;line-height:1.3}
+.model-stage .scene-legend [data-focus-legend]{display:none}
+.model-stage .voltage-card{margin:0;flex:none;padding:7px;min-width:0;min-height:0;display:flex;flex-direction:column;gap:3px;max-width:none}
+.model-stage .record-head{flex:none;gap:4px}.model-stage .record-head h2{font-size:13px}.model-stage .record-head small{font-size:10px}.model-stage .reading strong{font-size:24px}
+.model-stage .record-plot{min-height:0;width:100%;height:235px;flex:none;margin:0;max-height:none}
+.model-stage .probe-choices{flex:none;margin:1px 0;gap:4px}.model-stage .probe-choices button{min-height:27px;padding:3px;font-size:11px}
+.model-stage .plot-legend{flex:none;font-size:10px;gap:8px;line-height:1.3}
+.model-stage .record-values{display:flex;justify-content:space-between;gap:8px;flex:none;padding:0;font-size:10px}.model-stage .record-values span{display:flex;gap:6px;align-items:center}.model-stage .record-values b{font-size:12px}
+.neural-details{flex:1;min-height:0;overflow:auto;scrollbar-width:thin;font-size:12px}
+.neural-details .stage-status{margin:0 0 6px;padding:10px}.neural-details .stage-status h2{font-size:18px}
+.neural-details .scene-note::before{display:none}.neural-details .stimulate-row{margin:5px 0}
+.neural-details .sample-note,.neural-details .scene-note,.neural-details .threshold-note{font-size:11px;line-height:1.65}
+.shell-dialog .neural-details{display:block!important;overflow:visible}
+.shell-dialog .neural-toolbar{display:flex!important;flex-wrap:wrap;gap:8px;border:0;padding:0}
+.shell-dialog .neural-toolbar .condition-grid,.shell-dialog .neural-toolbar .stimulus-controls{flex:1 0 100%;flex-wrap:wrap}
+body[data-model-shell] .control-dock [data-neural-camera]{display:none!important}
+.neural-brief{display:none;font-size:11px;color:#315e66;text-align:right;line-height:1.5;flex:none}
+.model-area[data-neural-view=scene] .neural-brief{display:block}
+@media(orientation:portrait) and (max-height:560px){
+ body[data-model-shell] .model-stage>.model-brand-footer-host{padding-bottom:26px!important}
+ .model-stage .scene-title{display:none}
+}
+.model-area[data-immersive=true] .voltage-card{position:relative}
+.model-area[data-immersive=true] .probe-choices{position:absolute;right:75px;top:4px;max-width:60%;z-index:3;background:#fff}
+.model-area[data-immersive=true][data-chrome=hidden] .probe-choices{visibility:hidden;pointer-events:none}
+body[data-model-shell] .timeline-wrap>span:first-child{flex:0 0 auto!important;min-width:0!important;white-space:nowrap}
+body[data-model-shell] .timeline-wrap output{min-width:3.2em;flex:none;font-variant-numeric:tabular-nums;text-align:right}
+.timeline-wrap .load-status{display:none}
+body[data-model-shell] .model-area[data-neural-view=scene] .model-stage>.scene-panel{grid-column:1/-1;border:0}
+body[data-model-shell] .model-area[data-neural-view=scene] .model-stage>.record-panel{display:none}
+body[data-model-shell] .model-area[data-neural-view=plot] .model-stage>.record-panel{grid-column:1/-1}
+body[data-model-shell] .model-area[data-neural-view=plot] .model-stage>.scene-panel{display:none}
+.model-area[data-neural-view=plot] .neural-details{display:none}
+.model-area[data-neural-view=plot] .voltage-card{flex:1;max-width:950px;width:100%;margin:0 auto}.model-area[data-neural-view=plot] .record-plot{height:0;flex:1}
+@media(max-width:1000px),(max-height:620px){
+ body[data-model-shell] .model-area .model-stage{grid-template-columns:minmax(0,1fr) minmax(240px,36%)}
+ .model-stage .neural-details{display:none}
+ .model-stage .voltage-card{flex:1}
+ .model-stage .record-plot{height:0;flex:1}
+ .model-stage .record-head h2{font-size:12px}.model-stage .reading strong{font-size:20px}
+ .model-stage .scene-title strong{font-size:11px}.model-stage .scene-title span{font-size:10px}
+ .neural-toolbar{padding:3px 6px;gap:4px}.neural-toolbar .shell-action{padding:4px 7px;min-height:30px;font-size:12px}
+}
+@media(max-width:700px) and (orientation:portrait){
+ body[data-model-shell] .model-area .model-stage{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1.12fr) minmax(0,1fr)}
+ body[data-model-shell] .model-stage>.scene-panel{grid-column:1;grid-row:2;border-right:0;border-bottom:1px solid #d7e5e3;padding:4px 6px}
+ body[data-model-shell] .model-stage>.record-panel{grid-column:1;grid-row:3;padding:4px 6px}
+ .neural-toolbar .stimulus-controls,.neural-toolbar .condition-grid{gap:3px}.neural-toolbar .shell-action{font-size:11px;padding:3px 5px;min-height:29px}
+ .neural-view-choice{font-size:11px;padding:3px 1px;min-width:53px;max-width:70px;min-height:29px}
+ .neural-context{font-size:0!important}.neural-context::after{content:'说明';font-size:11px}
+ .model-stage .scene-legend{font-size:9px;gap:4px 9px}
+ .model-stage .phase-focus>span{display:none}
+ .model-stage .voltage-card{padding:4px 6px;gap:1px}
+ .model-stage .record-head small{display:none}.model-stage .record-head h2{font-size:11px}.model-stage .reading strong{font-size:18px}
+ .model-stage .probe-choices{position:absolute;right:78px;top:5px;gap:3px}.model-stage .probe-choices button{min-height:24px;font-size:10px;padding:2px}
+ body[data-model-id=action-potential-conduction] .model-stage .voltage-card{position:relative;padding-top:28px}
+ body[data-model-id=action-potential-conduction] .record-head{position:absolute;top:6px;left:6px;right:6px}
+ body[data-model-id=action-potential-conduction] .record-head h2{max-width:76px;white-space:nowrap;font-size:10px;overflow:hidden}
+ body[data-model-shell] .model-area[data-neural-view=scene] .model-stage,body[data-model-shell] .model-area[data-neural-view=plot] .model-stage{grid-template-rows:auto minmax(0,1fr)}
+ body[data-model-shell] .model-area[data-neural-view=plot] .model-stage>.record-panel{grid-row:2}
+}
+/* In immersion the linked science expands; all auxiliary controls join the shared hidden chrome. */
+body[data-model-shell] .model-area[data-immersive=true] .model-stage{grid-template-rows:minmax(0,1fr)}
+.model-area[data-immersive=true] .neural-toolbar{display:none}
+body[data-model-shell] .model-area[data-immersive=true] .model-stage>.scene-panel,body[data-model-shell] .model-area[data-immersive=true] .model-stage>.record-panel{grid-row:1}
+.model-area[data-immersive=true] .model-stage .neural-details{display:none}
+.model-area[data-immersive=true] .model-stage .voltage-card{flex:1}.model-area[data-immersive=true] .model-stage .record-plot{height:0;flex:1}
+@media(max-width:700px) and (orientation:portrait){
+ body[data-model-shell] .model-area[data-immersive=true][data-neural-view=linked] .model-stage{grid-template-rows:minmax(0,1.2fr) minmax(0,1fr)}
+ body[data-model-shell] .model-area[data-immersive=true][data-neural-view=linked] .model-stage>.record-panel{grid-row:2}
+}
+@media(orientation:landscape) and (max-height:480px){
+ .model-stage .scene-title{display:none}.model-stage .plot-legend{font-size:9px;gap:6px}.model-stage .record-head small{display:none}
+ .model-stage .record-head h2{font-size:10px}.model-stage .reading strong{font-size:17px}.model-stage .record-values{font-size:9px}
+ body[data-model-shell] .model-stage>.record-panel{padding:3px}.model-stage .voltage-card{padding:4px}
+ .model-stage .probe-choices button{min-height:23px;font-size:10px;padding:1px}
+}
+
+/* The centered legend leaves the lower-left corner free without a logo footer. */
+.neural-scene-view{position:relative;display:flex;flex-direction:column;flex:1 1 0;min-height:0;min-width:0;gap:2px}
+.model-stage .neural-scene-view>.scene-legend{display:flex;justify-content:center;align-items:center;padding:1px 50px;min-height:16px;text-align:center;position:relative;z-index:3}
+.model-stage .neural-scene-view>.scene-legend>span{white-space:nowrap}
+@media(orientation:landscape) and (max-height:480px){.model-stage .neural-scene-view>.scene-legend{padding-inline:30px;font-size:9px;gap:2px 9px}}
+@media(max-width:360px) and (orientation:portrait){.model-stage .neural-scene-view>.scene-legend{padding-inline:43px;gap:2px 7px}}

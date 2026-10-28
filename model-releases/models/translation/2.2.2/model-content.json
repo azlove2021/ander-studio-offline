@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "2.0",
+  "id": "translation",
+  "title": "mRNA翻译模型（2D）",
+  "titleEn": "mRNA Translation Model (2D)",
+  "chapter": "遗传信息的翻译 / Translation of Genetic Information",
+  "scientificScope": "以带5′帽和多聚A尾的成熟mRNA为例，展示核糖体沿mRNA 5′→3′方向读取密码子并合成多肽的连续过程。",
+  "stages": [
+    {
+      "id": "mrna-binding",
+      "title": "mRNA识别",
+      "titleEn": "mRNA Binding",
+      "summary": "核糖体大亚基从左上方、小亚基从左下方进入，共同夹合成熟mRNA并定位起始密码子AUG。",
+      "keyPoint": "mRNA的阅读方向是5′→3′，三个相邻碱基组成一个密码子。"
+    },
+    {
+      "id": "initiation",
+      "title": "翻译起始",
+      "titleEn": "Initiation",
+      "summary": "携带甲硫氨酸的起始tRNA以反密码子UAC识别AUG并进入P位，翻译起始复合体形成。",
+      "keyPoint": "起始tRNA直接进入P位，A位保留给下一条氨酰-tRNA。"
+    },
+    {
+      "id": "codon-recognition",
+      "title": "密码子识别",
+      "titleEn": "Codon Recognition",
+      "summary": "与下一个密码子互补的氨酰-tRNA进入A位，反密码子与密码子逐碱基配对。",
+      "keyPoint": "密码子位于mRNA，反密码子位于tRNA的反密码子环。"
+    },
+    {
+      "id": "peptide-bond",
+      "title": "形成肽键",
+      "titleEn": "Peptide Bond Formation",
+      "summary": "P位tRNA携带的肽链转移到A位氨基酸，两个氨基酸之间形成肽键。",
+      "keyPoint": "新氨基酸添加在多肽的C端，多肽按N端到C端方向延长。"
+    },
+    {
+      "id": "elongation",
+      "title": "延伸与易位",
+      "titleEn": "Elongation and Translocation",
+      "summary": "核糖体每次沿mRNA前进一个密码子；A位tRNA转到P位，P位tRNA转到E位并离开。",
+      "keyPoint": "密码子识别、肽键形成和易位循环进行，使肽链连续延长。"
+    },
+    {
+      "id": "termination",
+      "title": "终止与释放",
+      "titleEn": "Termination and Release",
+      "summary": "终止密码子进入A位后释放因子结合，多肽释放，核糖体大小亚基与mRNA分离。",
+      "keyPoint": "终止密码子没有对应tRNA，由释放因子识别。"
+    }
+  ],
+  "structures": [
+    {
+      "id": "mrna",
+      "name": "成熟mRNA",
+      "nameEn": "Mature mRNA",
+      "role": "提供按5′→3′排列的密码子模板"
+    },
+    {
+      "id": "ribosome",
+      "name": "核糖体",
+      "nameEn": "Ribosome",
+      "role": "组织A、P、E位并催化多肽合成"
+    },
+    {
+      "id": "trna",
+      "name": "tRNA",
+      "nameEn": "Transfer RNA",
+      "role": "以反密码子识别密码子并运送氨基酸"
+    },
+    {
+      "id": "pairing",
+      "name": "密码子—反密码子",
+      "nameEn": "Codon–Anticodon",
+      "role": "保证氨基酸按mRNA顺序进入肽链"
+    },
+    {
+      "id": "polypeptide",
+      "name": "多肽链",
+      "nameEn": "Polypeptide",
+      "role": "由氨基酸通过肽键连续连接形成"
+    },
+    {
+      "id": "release-factor",
+      "name": "释放因子",
+      "nameEn": "Release Factor",
+      "role": "识别终止密码子并促使多肽释放"
+    }
+  ],
+  "version": "2.1.4"
+}

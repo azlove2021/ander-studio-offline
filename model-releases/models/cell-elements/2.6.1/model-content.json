@@ -1,0 +1,105 @@
+{
+  "id": "cell-elements",
+  "accent": "#2F9E73",
+  "title": "组成细胞的元素",
+  "titleEn": "Elements in Cells",
+  "chapter": "组成细胞的分子 / Molecules in Cells",
+  "type": "2D 互动模型",
+  "state": "元素分类、组成物质与功能说明",
+  "visual": "periodic-table",
+  "structures": [
+    [
+      "大量元素 Major Elements",
+      "#8FD9AA"
+    ],
+    [
+      "微量元素 Trace Elements",
+      "#AEB8F6"
+    ],
+    [
+      "基本元素 Basic Elements",
+      "#5FAF98"
+    ],
+    [
+      "最基本元素 Core Element",
+      "#287A66"
+    ],
+    [
+      "组成物质 Biological Composition",
+      "#FFB703"
+    ]
+  ],
+  "stages": [
+    {
+      "id": "all",
+      "title": "所有元素",
+      "titleEn": "All Elements",
+      "goal": "认识完整元素周期表，并通过点击元素查看简要生物学功能。",
+      "keywords": [
+        "元素周期表 Periodic Table",
+        "原子序数 Atomic Number",
+        "元素符号 Symbol"
+      ],
+      "explanation": "细胞由化学元素构成。不同生物、不同组织和不同生活状态下，元素含量会有差异，但构成细胞的常见元素具有明显的集中分布特征。",
+      "mistake": "元素在周期表中的位置反映原子结构规律，不直接等同于它在生物体中的含量或重要性。",
+      "question": "构成细胞的常见元素主要集中在周期表的哪些区域？"
+    },
+    {
+      "id": "major",
+      "title": "大量元素",
+      "titleEn": "Major Elements",
+      "goal": "认识细胞中含量较多的C、H、O、N、P、S、K、Ca、Mg等元素，并辨析Na、Cl的分类口径。",
+      "keywords": [
+        "大量元素 Major Elements",
+        "含量 Abundance",
+        "细胞组成 Cell Composition"
+      ],
+      "explanation": "教材将细胞中含量较多的元素称为大量元素；Na和Cl主要分布于细胞外液，是否归入细胞内大量元素存在分类口径差异，本模型用浅绿色加以区分。",
+      "mistake": "含量较多不等于每种元素在所有生物中的含量都相同。",
+      "question": "为什么同一种元素在不同细胞中的含量会有差异？"
+    },
+    {
+      "id": "trace",
+      "title": "微量元素",
+      "titleEn": "Trace Elements",
+      "goal": "认识Fe、Mn、Zn、Cu、B、Mo等含量较少但作用重要的元素。",
+      "keywords": [
+        "微量元素 Trace Elements",
+        "酶 Enzyme",
+        "生命活动 Life Processes"
+      ],
+      "explanation": "微量元素在细胞中含量很少，却常参与酶、色素或调节物质的组成与作用。",
+      "mistake": "微量元素含量少并不等于作用小，也不代表越多越好。",
+      "question": "为什么微量元素的缺乏或过量都可能影响生命活动？"
+    },
+    {
+      "id": "basic",
+      "title": "基本元素",
+      "titleEn": "Basic Elements",
+      "goal": "认识C、H、O、N四种构成生命物质的基本元素。",
+      "keywords": [
+        "CHON",
+        "基本元素 Basic Elements",
+        "有机物 Organic Matter"
+      ],
+      "explanation": "C、H、O、N在细胞中含量较高，并广泛参与水、糖类、脂质、蛋白质和核酸的组成。",
+      "mistake": "基本元素表示组成上的基础地位，不代表其他元素不重要。",
+      "question": "C、H、O、N为什么能在多种细胞化合物中反复出现？"
+    },
+    {
+      "id": "core",
+      "title": "最基本元素",
+      "titleEn": "Core Element",
+      "goal": "理解碳为什么是生命的核心元素。",
+      "keywords": [
+        "碳 Carbon",
+        "碳链 Carbon Chain",
+        "生命核心 Core of Life"
+      ],
+      "explanation": "生物大分子以碳链为基本骨架，碳原子能够形成多样而稳定的分子结构。",
+      "mistake": "碳是最基本元素，不等于生命只需要碳。",
+      "question": "碳原子的成键特点怎样支持生物大分子的多样性？"
+    }
+  ],
+  "version": "2.5.2"
+}

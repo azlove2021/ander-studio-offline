@@ -1,0 +1,109 @@
+{
+  "id": "bacteriophage-reproduction",
+  "accent": "#167C80",
+  "title": "噬菌体的繁殖",
+  "titleEn": "Bacteriophage Reproduction",
+  "chapter": "病毒与原核细胞 / Viruses and Prokaryotic Cells",
+  "type": "2D 分步动画",
+  "state": "裂解周期",
+  "visual": "bacteriophage-lytic-cycle",
+  "structures": [
+    [
+      "噬菌体头部 Capsid",
+      "#2D9C91"
+    ],
+    [
+      "噬菌体 DNA Phage DNA",
+      "#E84957"
+    ],
+    [
+      "颈部 Neck",
+      "#1D6F73"
+    ],
+    [
+      "尾部与尾纤维 Tail and Fibers",
+      "#245B63"
+    ],
+    [
+      "细菌拟核 Bacterial Nucleoid",
+      "#3478D4"
+    ],
+    [
+      "核糖体 Ribosomes",
+      "#E09B3D"
+    ]
+  ],
+  "stages": [
+    {
+      "id": "attachment",
+      "title": "吸附",
+      "titleEn": "Attachment",
+      "goal": "观察噬菌体尾纤维识别细菌表面受体，并使尾部稳定结合细菌。",
+      "keywords": [
+        "尾纤维 Tail Fiber",
+        "受体 Receptor",
+        "吸附 Adsorption"
+      ],
+      "explanation": "噬菌体通常通过尾纤维或尾部蛋白识别特定细菌表面受体。识别具有专一性，因此某种噬菌体通常只能感染一定范围的宿主。",
+      "mistake": "吸附不是噬菌体整体进入细菌；此时噬菌体仍位于细菌外部。",
+      "question": "为什么一种噬菌体不能感染所有种类的细菌？"
+    },
+    {
+      "id": "injection",
+      "title": "注入",
+      "titleEn": "Genome Injection",
+      "goal": "观察颈尾连接处下移、尾管穿过细菌包膜，以及头部 DNA 展开并进入细菌。",
+      "keywords": [
+        "基因组注入 Genome Injection",
+        "尾管 Tail Tube",
+        "蛋白质外壳留在细胞外"
+      ],
+      "explanation": "噬菌体的遗传物质经尾管进入细菌细胞质，头部蛋白质外壳留在细菌外。动画把盘绕 DNA 逐渐拉直，用来表示基因组转位过程。",
+      "mistake": "进入细菌的是噬菌体核酸，而不是完整噬菌体颗粒。",
+      "question": "噬菌体头壳留在细菌外，为什么仍能控制细菌内部的生命活动？"
+    },
+    {
+      "id": "biosynthesis",
+      "title": "复制与合成",
+      "titleEn": "Replication and Biosynthesis",
+      "goal": "观察噬菌体 DNA 复制，并利用细菌的核糖体和物质合成头部、颈部与尾部蛋白质。",
+      "keywords": [
+        "DNA复制 DNA Replication",
+        "蛋白质合成 Protein Synthesis",
+        "宿主核糖体 Host Ribosome"
+      ],
+      "explanation": "进入细菌的噬菌体 DNA 指导自身复制和噬菌体蛋白质合成。细菌的核糖体等合成装置被利用来制造子代噬菌体所需的结构蛋白。",
+      "mistake": "噬菌体没有独立的细胞结构和完整代谢系统，不能脱离宿主细胞自行增殖。",
+      "question": "为什么噬菌体的蛋白质必须借助细菌核糖体合成？"
+    },
+    {
+      "id": "assembly",
+      "title": "装配",
+      "titleEn": "Assembly",
+      "goal": "观察 DNA 装入头部，随后头部、颈部和尾部组合成完整子代噬菌体。",
+      "keywords": [
+        "装配 Assembly",
+        "DNA包装 Genome Packaging",
+        "成熟噬菌体 Mature Virion"
+      ],
+      "explanation": "复制产生的噬菌体 DNA 与分别合成的结构蛋白按照一定顺序装配，形成多个具有感染能力的完整噬菌体颗粒。",
+      "mistake": "子代噬菌体不是由亲代噬菌体直接分裂形成，而是先合成部件，再完成装配。",
+      "question": "为什么先合成大量相同部件，再统一装配，有利于快速产生子代噬菌体？"
+    },
+    {
+      "id": "lysis",
+      "title": "裂解释放",
+      "titleEn": "Lysis and Release",
+      "goal": "观察细菌包膜破裂以及成熟噬菌体从细胞中释放。",
+      "keywords": [
+        "细胞裂解 Cell Lysis",
+        "释放 Release",
+        "子代噬菌体 Progeny Phages"
+      ],
+      "explanation": "裂解相关蛋白破坏细菌细胞膜和细胞壁，细胞完整性丧失，积累的成熟噬菌体被释放到环境中并可继续感染其他细菌。",
+      "mistake": "本模型展示的是裂解周期；温和噬菌体还可能进入溶原周期，并不立即裂解宿主。",
+      "question": "细菌裂解后释放多个子代噬菌体，对噬菌体种群扩增有什么意义？"
+    }
+  ],
+  "version": "2.3.2"
+}

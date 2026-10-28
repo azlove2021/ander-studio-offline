@@ -1,0 +1,120 @@
+{
+  "id": "genetic-inheritance-laws",
+  "accent": "#286e61",
+  "title": "遗传学三大定律",
+  "titleEn": "Principles of Genetic Inheritance",
+  "chapter": "遗传的基本规律",
+  "type": "2D 三栏同步动画",
+  "state": "同阶段对照",
+  "visual": "three-column-meiosis-comparison",
+  "stages": [
+    {
+      "id": "replication",
+      "title": "复制",
+      "titleEn": "DNA replication"
+    },
+    {
+      "id": "meiosis-1",
+      "title": "减数Ⅰ",
+      "titleEn": "Meiosis I"
+    },
+    {
+      "id": "meiosis-2",
+      "title": "减数Ⅱ",
+      "titleEn": "Meiosis II"
+    },
+    {
+      "id": "gamete-formation",
+      "title": "配子形成",
+      "titleEn": "Haploid products"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NHGRI: Meiosis",
+      "url": "https://www.genome.gov/genetics-glossary/Meiosis"
+    },
+    {
+      "title": "NHGRI: Crossing Over",
+      "url": "https://www.genome.gov/genetics-glossary/Crossing-Over"
+    },
+    {
+      "title": "NHGRI: Linkage",
+      "url": "https://www.genome.gov/genetics-glossary/Linkage"
+    },
+    {
+      "title": "OpenStax Biology 2e: The Process of Meiosis",
+      "url": "https://openstax.org/books/biology-2e/pages/11-1-the-process-of-meiosis"
+    },
+    {
+      "title": "OpenStax Biology 2e: Chromosomal Theory and Genetic Linkage",
+      "url": "https://openstax.org/books/biology-2e/pages/13-1-chromosomal-theory-and-genetic-linkage"
+    }
+  ],
+  "scientificScope": {
+    "organism": "简化二倍体、对称分裂；非人类实数，不表示四枚成熟卵",
+    "clock": "32秒教学时间，三栏共用，不等于真实生理时长",
+    "columns": [
+      {
+        "law": "segregation",
+        "genotype": "Aa",
+        "diploidChromosomes": 2,
+        "markedCrossover": false
+      },
+      {
+        "law": "independent-assortment",
+        "genotype": "AaBb",
+        "diploidChromosomes": 4,
+        "loci": "A/a与B/b在不同同源染色体对",
+        "markedCrossover": false
+      },
+      {
+        "law": "linkage-crossover",
+        "genotype": "AB/ab",
+        "diploidChromosomes": 2,
+        "locusOrder": [
+          "centromere",
+          "A",
+          "crossover",
+          "B",
+          "end"
+        ],
+        "exchange": "一次指定非姐妹互换或区间不互换"
+      }
+    ],
+    "conditionsAreNewScenarios": true,
+    "populationExample": {
+      "recombinationFraction": 0.2,
+      "AB": 0.4,
+      "ab": 0.4,
+      "Ab": 0.1,
+      "aB": 0.1,
+      "assumption": "无偏倚的群体说明参数，不由当前四产物或绘图距离计算"
+    },
+    "sisterIdentity": "以复制亲缘定义，互换后不同基因型仍可能是姐妹",
+    "separation": "减Ⅰ分同源，减Ⅱ分姐妹；发生着丝粒与B位点之间互换后B/b可在减Ⅱ分离",
+    "replicationDepiction": "全长轮廓成对展开的状态示意；非真实S期凝缩结构劈裂。复制后两姐妹均显示相同基因。",
+    "diagramStyle": "清晰图谱；淡带纹为造型；大小、空间排列与紧凑产物取景为教学比例。"
+  },
+  "controls": {
+    "viewPresets": [
+      "focus",
+      "overview"
+    ],
+    "speed": [
+      0.5,
+      1,
+      2
+    ],
+    "conditions": {
+      "arrangement": [
+        "coupling",
+        "repulsion"
+      ],
+      "exchange": [
+        "cross",
+        "none"
+      ]
+    }
+  }
+}

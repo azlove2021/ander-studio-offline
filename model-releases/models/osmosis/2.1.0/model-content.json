@@ -1,0 +1,136 @@
+{
+  "id": "osmosis",
+  "version": "2.1.0",
+  "title": {
+    "zh": "渗透作用",
+    "en": "Osmosis"
+  },
+  "stages": [
+    {
+      "id": "initial",
+      "title": {
+        "zh": "初始条件",
+        "en": "Initial conditions"
+      }
+    },
+    {
+      "id": "osmosis",
+      "title": {
+        "zh": "净渗透与液面变化",
+        "en": "Net osmosis"
+      }
+    },
+    {
+      "id": "approaching",
+      "title": {
+        "zh": "趋近平衡",
+        "en": "Approaching equilibrium"
+      }
+    },
+    {
+      "id": "equilibrium",
+      "title": {
+        "zh": "动态平衡",
+        "en": "Dynamic equilibrium"
+      }
+    }
+  ],
+  "defaultOptions": {
+    "inside": "high",
+    "outside": "water",
+    "labels": true,
+    "view": "overview",
+    "speed": 1,
+    "playing": false,
+    "mobilePortraitView": "apparatus"
+  },
+  "liquids": [
+    {
+      "value": "water",
+      "label": "清水",
+      "relativeConcentration": 0
+    },
+    {
+      "value": "low",
+      "label": "低浓度蔗糖",
+      "relativeConcentration": 1
+    },
+    {
+      "value": "high",
+      "label": "高浓度蔗糖",
+      "relativeConcentration": 2
+    }
+  ],
+  "scientificModel": {
+    "membrane": "人工半透膜；仅水可通过，蔗糖不透过。宏观膜包住漏斗底部口沿，由双道绳固定；局部图放大膜中央透水区域，非细胞膜。",
+    "orientation": "局部图上侧=漏斗内；下侧=烧杯内的漏斗外液体。",
+    "equations": [
+      "Vi=Vi0+q; Vo=Vo0-q",
+      "ci=ci0*Vi0/Vi; co=co0*Vo0/Vo",
+      "DeltaP=65*(ci-co)-(h_inside-h_outside)",
+      "dq/dtau=L*DeltaP, L>0 within each run"
+    ],
+    "geometry": "q 是净进入漏斗的体积；SVG y 向下，h_inside-h_outside=outerY-innerY。体积由已验收漏斗内壁旋转体积分查表和烧杯外液余量推算，弯月面宽度从同一路径计算。",
+    "assumptions": [
+      "恒温、内外开放于同一大气压、液体各侧均匀混合",
+      "以理想稀溶液渗透趋势和等密度液柱静压作定性示意；忽略毛细作用、蒸发和膜形变",
+      "相对浓度 0/1/2 不代表实际 mol/L、质量分数或试验配方；尺寸和液体颜色为示意"
+    ],
+    "equilibrium": "液柱静压差抵消渗透趋势，水继续双向交换；不同初始浓度的两侧在平衡时不必等浓度。相同浓度从开始即无净水转移。",
+    "localParticleSampling": "放大图是开放的局部观察窗；蔗糖图符只在原侧移动。固定面积内图符可见数量随该侧相对浓度连续改变，边缘透明度表示取样密度，并非蔗糖分子消失或穿膜。示意水分子进入局部观察窗、经过膜孔、离开观察窗，同一轨迹不在穿膜处更换对象。",
+    "flux": "两方向始终有水通过。代表事件率为 2 ± 1.2*normalizedDrive，驱动力与宏观状态同源。读数统计最近 3 演示秒实际过膜事件；少量事件的瞬时差可能波动，平均趋势反映净移动。动态平衡段用等频双向事件。",
+    "conservation": "宏观体积总和、各侧蔗糖总量始终守恒；局部图为采样视窗，图符个数不直接换算为宏观转移体积。"
+  },
+  "time": {
+    "duration": 38,
+    "equilibriumAt": 30,
+    "stageTimes": [
+      0,
+      1.5,
+      18,
+      30
+    ],
+    "unit": "演示秒",
+    "mapping": "各组恒定正渗透系数的连续过程分别压缩到课堂时长，达到剩余驱动力近零后按数值容差稳定；演示时长不能比较真实渗透速度。最后 8 秒保持液面稳定而水分子继续双向运动。",
+    "finish": "到演示末尾自动暂停；继续或重播可再次观察。"
+  },
+  "controls": {
+    "play": "连续播放/暂停；结束后重播",
+    "reset": "保留液体、倍速、标签和视角；重置至初始等液面",
+    "liquids": "任一条件改变即暂停并从初始液面重新开始",
+    "timeline": "原生可拖动进度条，可前后定位；按下暂停，松手保持所选位置，点击播放继续；正常、横屏专注和沉浸共用原输入节点。",
+    "viewPresets": [
+      "overview",
+      "apparatus",
+      "membrane"
+    ],
+    "speed": [
+      0.5,
+      1,
+      1.5,
+      2
+    ],
+    "camera": "总览、装置、膜局部均可单指平移、双指或滚轮缩放，最小比例显示完整视图；双指操作后全部松手再恢复新的单指会话。"
+  },
+  "accessibility": {
+    "keyboard": "原生下拉框、按钮与进度条；非控件聚焦时空格播放/暂停；Escape 退出全屏。",
+    "responsive": "手机竖屏首次进入默认装置大图，液体并列选项、三种视图切换、底部外露进度；旋转或切换显示模式不重置实验。沉浸轻触唤出控件，最后松手约两秒收起。 极短竖屏将液体选择移入原节点说明面板，保留模型和底部进度可见。"
+  },
+  "sources": [
+    {
+      "title": "OpenStax Chemistry 2e, 11.4 Colligative Properties: Osmosis and Osmotic Pressure",
+      "url": "https://openstax.org/books/chemistry-2e/pages/11-4-colligative-properties",
+      "supports": "水双向透膜；液柱压力可抵消渗透趋势；平衡时平均双向交换量相等。"
+    },
+    {
+      "title": "OpenStax Biology 2e, 5.2 Passive Transport",
+      "url": "https://openstax.org/books/biology-2e/pages/5-2-passive-transport",
+      "supports": "分子的随机运动与被动运输。"
+    }
+  ],
+  "package": {
+    "protocol": "1.0",
+    "dependencies": [],
+    "deployment": "本包独立交付；网站同步与发布另行进行。"
+  }
+}

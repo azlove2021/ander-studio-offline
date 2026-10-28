@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>注册 · 安德生物工作室</title><link rel="icon" href="/assets/ande-biology-logo.png"><link rel="stylesheet" href="/assets/accounts/account.css?v=experience-r1"><link rel="stylesheet" href="/assets/accounts/captcha.css?v=phone-integrated-r2"><script src="/assets/accounts/captcha.js?v=experience-r1" defer></script><script src="/assets/accounts/phone.js?v=community-shell-r3" defer></script><script src="/assets/accounts/registration.js?v=experience-r1" defer></script><script src="/assets/learning-community/return-target.js?v=community-access-r1" defer></script><script src="/assets/accounts/model-favorites.js?v=model-favorites-r1" defer></script><script src="/assets/accounts/account.js?v=membership-20261027-r1" defer></script><link rel="stylesheet" href="/assets/site-frame.css?v=studio-unified-r1"><script src="/assets/site-frame.js?v=community-shell-r3" defer></script><link rel="stylesheet" href="/assets/studio-themes.css?v=three-themes-r5"><script src="/assets/studio-theme.js?v=community-shell-r3"></script><script src="/assets/accounts/activity.js?v=experience-r1" defer></script></head>
+<body data-account-page="register">
+  <header class="account-header"><a class="brand" href="/"><img src="/assets/ande-biology-logo.png" alt=""><span>安德生物工作室<small>ANDER BIOLOGY STUDIO</small></span></a><a class="quiet-link" href="/">返回首页</a></header>
+  <main class="auth-layout register-layout">
+    <section class="intro"><p class="eyebrow">A SMALL STEP, A NEW DISCOVERY</p><h1>给你的好奇心，<br>一个小小的归处。</h1><p class="intro-text">验证一种联系方式，<br>积累属于自己的生物学习足迹。</p><ol class="signup-steps"><li><span>01</span><div><strong>填写账户信息</strong><p>昵称用于展示，联系方式用于登录。</p></div></li><li><span>02</span><div><strong>验证联系方式</strong><p>使用本次注册验证码，请勿分享。</p></div></li><li><span>03</span><div><strong>开始探索与收藏</strong><p>已开放的模型仍可免登录浏览。</p></div></li></ol></section>
+    <section class="form-card" aria-labelledby="register-heading"><p class="eyebrow">CREATE YOUR ACCOUNT</p><h2 id="register-heading">开启学习之旅</h2><p class="muted" data-registration-guidance>已有账户请直接登录，避免重复注册。</p>
+      <p class="preview-notice" data-phone-preview hidden>本地模拟验收 · 不发送真实短信<br><a href="/__local_sms_preview__" target="_blank" rel="noopener">打开模拟收件箱</a></p>
+      <div class="notice" data-notice hidden role="status"></div>
+      <section data-registration-age hidden aria-label="注册年龄及监护安排">
+        <label>年龄范围<select data-age-band aria-label="年龄范围" required><option value="">请选择，不需要填写生日</option><option value="under14">未满 14 周岁</option><option value="14to17">14–17 周岁</option><option value="adult">已满 18 周岁</option></select></label>
+        <p class="field-hint">所有年龄均可申请注册。请如实选择；14–17 周岁用户请在监护人指导下使用。</p>
+        <div data-child-registration hidden>
+          <p class="preview-notice">请先交由监护人操作。监护人阅读儿童规则后，通过<a href="/contact.html" target="_blank" rel="noopener">联系页面</a>与工作室负责人独立核实身份、监护关系和明确同意。审核后会获得绑定拟注册联系方式的许可，无需新增邮箱或上传证件照片。</p>
+          <p class="field-hint">没有许可时，先不要填写孩子的昵称、手机号、邮箱或密码。普通短信验证码不能代替监护审核；未完成审核仍可浏览原有公开模型。</p>
+          <label>一次性注册许可<input data-guardian-permit aria-label="一次性注册许可" type="password" autocomplete="off" maxlength="64" spellcheck="false" placeholder="由审核负责人私下提供，72 小时内有效"></label>
+          <label class="agreement"><input data-child-rules type="checkbox"><span>我作为监护人已阅读<a href="/children-privacy.html" target="_blank" rel="noopener">儿童个人信息保护规则</a>，并已与负责人完成明确同意及审核。</span></label>
+        </div>
+      </section>
+      <div data-registration-entry>
+      <div class="auth-methods" data-auth-methods role="group" aria-label="注册方式" hidden><button type="button" data-auth-method="phone" aria-pressed="false">手机号注册</button><button type="button" data-auth-method="email" aria-pressed="true">邮箱注册</button></div>
+      <form data-phone-form hidden><fieldset disabled>
+        <label>昵称<input name="displayName" autocomplete="nickname" maxlength="24" placeholder="你希望我们怎么称呼你" required></label>
+        <div class="contact-field"><label for="register-phone">手机号</label><div class="phone-contact"><span class="phone-country">+86</span><div class="contact-entry"><input id="register-phone" name="phone" aria-label="手机号" type="tel" inputmode="tel" autocomplete="tel-national" pattern="1[3-9][0-9]{9}" maxlength="11" placeholder="11 位手机号" required><button class="secondary" data-phone-send type="button">获取验证码</button></div></div></div>
+        <label>注册验证码<input name="code" aria-label="注册验证码" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" placeholder="6 位验证码" required></label>
+        <div class="form-two"><label>设置密码<span class="password-row"><input name="password" aria-label="设置密码" type="password" autocomplete="new-password" minlength="12" maxlength="128" placeholder="至少 12 个字符" required><button type="button" class="secondary" data-show-password aria-label="显示密码">显示</button></span></label><label>确认密码<span class="password-row"><input name="confirmPassword" aria-label="确认密码" type="password" autocomplete="new-password" minlength="12" maxlength="128" placeholder="再输入一次" required><button type="button" class="secondary" data-show-password aria-label="显示确认密码">显示</button></span></label></div>
+        <p class="field-hint">也可使用手机号和密码登录。不要与其他网站共用密码。</p>
+        <p class="field-hint" data-phone-registration-policy hidden>手机号注册不要求邮箱。未绑定验证邮箱时，安全变更只记录在学习空间，不会发送站外安全提醒。</p>
+        <label class="agreement"><input name="agree" type="checkbox" required><span>我已阅读并同意<a href="/terms.html" target="_blank" rel="noopener">用户协议</a>与<a href="/privacy.html" target="_blank" rel="noopener">隐私政策</a>。</span></label>
+        <button class="primary" type="submit">完成注册，开始学习</button><p class="small-note">手机验证码 5 分钟有效；邮箱验证码仍为 15 分钟，不能混用。</p>
+      </fieldset></form>
+      <form data-register-form><fieldset disabled data-fields>
+        <label>昵称<input name="displayName" autocomplete="nickname" maxlength="24" placeholder="你希望我们怎么称呼你" required></label>
+        <label>邮箱<input name="email" type="email" autocomplete="username" maxlength="120" placeholder="请输入常用邮箱" required></label>
+        <button class="secondary" data-send-code type="button">获取验证码</button>
+        <label>邮箱验证码<input name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" placeholder="6 位验证码" required></label>
+        <div class="form-two"><label>设置密码<span class="password-row"><input name="password" aria-label="设置密码" type="password" autocomplete="new-password" minlength="12" maxlength="128" placeholder="至少 12 个字符" required><button type="button" class="secondary" data-show-password aria-label="显示密码">显示</button></span></label><label>确认密码<span class="password-row"><input name="confirmPassword" aria-label="确认密码" type="password" autocomplete="new-password" minlength="12" maxlength="128" placeholder="再输入一次" required><button type="button" class="secondary" data-show-password aria-label="显示确认密码">显示</button></span></label></div>
+        <p class="field-hint">可使用容易记住的长短语，不要与其他网站共用密码。</p>
+        <label class="agreement"><input name="agree" type="checkbox" required><span>我已阅读并同意<a href="/terms.html" target="_blank" rel="noopener">用户协议</a>与<a href="/privacy.html" target="_blank" rel="noopener">隐私政策</a>。</span></label>
+        <button class="primary" type="submit">完成注册，开始学习</button>
+      </fieldset></form><p class="form-switch">已经有账户？<a href="/account/login">前往登录</a></p>
+      </div>
+    </section>
+  </main><footer class="account-footer"><span>验证码仅用于本次注册，工作室不会向你索要密码。</span></footer>
+</body></html>

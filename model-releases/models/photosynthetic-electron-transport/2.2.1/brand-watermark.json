@@ -1,0 +1,8 @@
+{
+  "standard": "model-brand-watermark-1.0",
+  "runtimeVersion": "1.0.2",
+  "model": "photosynthetic-electron-transport",
+  "viewport": ".diagram-window",
+  "host": ".diagram-window",
+  "foreground": "#science"
+}

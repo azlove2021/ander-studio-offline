@@ -1,0 +1,131 @@
+{
+  "id": "plant-cell-webgl",
+  "accent": "#16A34A",
+  "title": "植物细胞结构模型",
+  "titleEn": "Plant Cell Structure",
+  "chapter": "细胞的基本结构 / Cell Structure",
+  "type": "3D WebGL 动态模型",
+  "state": "复杂细胞器综合观察",
+  "visual": "plantCellWebgl",
+  "structures": [
+    [
+      "细胞壁 Cell Wall",
+      "#A3E635"
+    ],
+    [
+      "细胞膜 Plasma Membrane",
+      "#38BDF8"
+    ],
+    [
+      "细胞核 Nucleus",
+      "#A855F7"
+    ],
+    [
+      "内质网 Endoplasmic Reticulum",
+      "#B45309"
+    ],
+    [
+      "高尔基体 Golgi Apparatus",
+      "#06B6D4"
+    ],
+    [
+      "线粒体 Mitochondrion",
+      "#F97316"
+    ],
+    [
+      "叶绿体 Chloroplast",
+      "#22C55E"
+    ],
+    [
+      "液泡 Vacuole",
+      "#7DD3FC"
+    ]
+  ],
+  "stages": [
+    {
+      "title": "整体结构",
+      "titleEn": "Overall Structure",
+      "goal": "从剖开的三维植物细胞中认识细胞壁、细胞膜、细胞核和多种细胞器的位置关系。",
+      "keywords": [
+        "植物细胞 Plant Cell",
+        "细胞器 Organelles",
+        "空间分布 3D Arrangement"
+      ],
+      "explanation": "植物细胞具有细胞壁、细胞膜、细胞质和多种细胞器。模型采用剖开视角，便于同时观察细胞边界和内部结构。",
+      "mistake": "不要把细胞器理解为平面图标；它们在细胞内具有具体空间位置和相互联系。",
+      "question": "植物细胞与动物细胞相比，哪些结构更具有植物细胞特点？",
+      "id": "overview"
+    },
+    {
+      "title": "细胞膜",
+      "titleEn": "Cell Membrane",
+      "goal": "观察细胞膜在细胞壁内侧的位置，理解细胞膜是细胞的边界。",
+      "keywords": [
+        "细胞膜 Plasma Membrane",
+        "选择透过性 Selective Permeability",
+        "细胞边界 Cell Boundary"
+      ],
+      "explanation": "植物细胞的细胞膜紧贴细胞壁内侧，控制物质进出细胞，并参与细胞间的信息交流。",
+      "mistake": "细胞膜不是细胞壁；细胞壁主要提供支持和保护，细胞膜具有选择透过性。",
+      "question": "为什么细胞壁外侧还需要一层具有选择透过性的细胞膜？",
+      "id": "cell-membrane"
+    },
+    {
+      "title": "细胞核",
+      "titleEn": "Nucleus",
+      "goal": "观察核膜、核孔和核仁，并理解细胞核是遗传信息库和细胞代谢控制中心。",
+      "keywords": [
+        "核膜 Nuclear Envelope",
+        "核孔 Nuclear Pore",
+        "核仁 Nucleolus"
+      ],
+      "explanation": "细胞核外有核膜包被，核膜上分布核孔，核内可见核仁。核孔参与细胞核与细胞质之间的物质和信息交流。",
+      "mistake": "核仁不是另一个小细胞，而是细胞核内部的重要结构。",
+      "question": "核孔为什么对细胞核和细胞质之间的联系很重要？",
+      "id": "nucleus"
+    },
+    {
+      "title": "生物膜系统",
+      "titleEn": "Biomembrane System",
+      "goal": "比较细胞膜、核膜和多种具膜细胞器，理解生物膜在结构和功能上的联系。",
+      "keywords": [
+        "生物膜系统 Biomembrane System",
+        "内质网 ER",
+        "高尔基体 Golgi"
+      ],
+      "explanation": "细胞膜、核膜以及内质网、高尔基体、线粒体、叶绿体和液泡等具膜结构，共同构成相互分工又协调配合的生物膜系统。",
+      "mistake": "生物膜系统不是一张连续的大膜，而是由结构相似、功能联系的多种膜结构共同组成。",
+      "question": "具膜细胞器之间如何通过分工协作提高细胞生命活动的效率？",
+      "id": "biomembrane"
+    },
+    {
+      "title": "能量转化",
+      "titleEn": "Energy Conversion",
+      "goal": "比较叶绿体和线粒体的结构特点，理解它们在能量转化中的分工。",
+      "keywords": [
+        "叶绿体 Chloroplast",
+        "线粒体 Mitochondrion",
+        "能量转化 Energy Conversion"
+      ],
+      "explanation": "叶绿体内部有类囊体堆叠形成基粒，参与光合作用；线粒体内膜向内折叠形成嵴，参与细胞呼吸。",
+      "mistake": "叶绿体和线粒体都不是简单的椭圆，它们内部都有与能量转化相适应的复杂膜结构。",
+      "question": "叶绿体和线粒体内部为什么都有大量膜结构？",
+      "id": "energy"
+    },
+    {
+      "title": "蛋白质合成与加工",
+      "titleEn": "Protein Synthesis and Processing",
+      "goal": "追踪从遗传信息到蛋白质合成、初步加工、分类和运输的细胞结构分工。",
+      "keywords": [
+        "核糖体 Ribosome",
+        "内质网 ER",
+        "高尔基体 Golgi"
+      ],
+      "explanation": "核糖体合成蛋白质，粗面内质网参与蛋白质的初步加工与运输，高尔基体进一步修饰、分类和包装，囊泡承担结构之间的定向运输。",
+      "mistake": "核糖体虽然没有膜结构，但它是蛋白质合成的场所，并与内质网和高尔基体的加工运输过程密切配合。",
+      "question": "分泌蛋白从合成到排出细胞，通常依次经过哪些结构？",
+      "id": "protein-synthesis"
+    }
+  ],
+  "version": "2.4.3"
+}

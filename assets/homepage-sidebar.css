@@ -1,0 +1,145 @@
+/* The account card participates in the sidebar height budget; only the artwork shrinks. */
+.studio-shell .studio-sidebar {
+  --sidebar-inset: clamp(12px, 2vh, 24px);
+  box-sizing: border-box;
+  top: var(--sidebar-inset);
+  height: calc(100vh - 2 * var(--sidebar-inset));
+  height: calc(100dvh - 2 * var(--sidebar-inset));
+  min-height: 0;
+  margin-top: var(--sidebar-inset);
+  margin-bottom: var(--sidebar-inset);
+  padding: clamp(14px, 2.4vh, 24px) 20px;
+  gap: clamp(8px, 1.5vh, 16px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #acd4c5 transparent;
+}
+
+.studio-sidebar .studio-brand {
+  flex: 0 0 auto;
+  padding-bottom: 0;
+}
+
+.studio-sidebar .studio-nav {
+  flex: 0 0 auto;
+  margin-top: clamp(0px, 1vh, 12px);
+  gap: clamp(6px, 1.2vh, 12px);
+}
+
+.studio-sidebar .studio-nav-button {
+  min-height: clamp(44px, 6.8vh, 60px);
+}
+
+/* Keep bilingual labels inside compact laptop buttons without adding a third line. */
+@media (min-width: 821px) and (max-width: 1180px) {
+  .studio-sidebar .studio-nav-button { min-width: 0; gap: 8px; padding: 0 10px; }
+  .studio-sidebar .studio-nav-button > span:last-child { min-width: 0; white-space: nowrap; }
+  .studio-sidebar .studio-nav-button > span:last-child::after { font-size: 9px; white-space: nowrap; }
+}
+
+.studio-sidebar .account-entry {
+  flex: 0 0 auto;
+  width: 100%;
+  margin: 0;
+  padding: clamp(8px, 1.4vh, 14px) 4px 0;
+}
+
+.studio-sidebar .account-entry strong {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.studio-sidebar .account-entry p { margin-bottom: 8px; }
+.studio-sidebar .account-entry a { min-height: 40px; }
+
+.studio-sidebar .studio-sidebar-ornament {
+  position: relative;
+  display: block;
+  flex: 1 1 160px;
+  min-height: 64px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.studio-sidebar .studio-sidebar-ornament img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: min(162px, 100%);
+  height: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  object-position: center top;
+}
+
+/* Phones, including landscape: natural page flow, compact art below the account. */
+@media (max-width: 820px), (max-width: 960px) and (max-height: 600px) {
+  .studio-shell { display: block; }
+  .studio-shell .studio-sidebar {
+    position: relative;
+    top: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    width: auto;
+    height: auto;
+    max-height: none;
+    margin: 0;
+    padding: 12px 12px 14px;
+    gap: 10px;
+    border-radius: 0 0 24px 24px;
+    overflow: visible;
+  }
+  .studio-sidebar .studio-brand {
+    grid-template-columns: 40px auto;
+    justify-content: center;
+    max-width: 100%;
+    font-size: 15px;
+  }
+  .studio-sidebar .studio-brand::after { display: none; }
+  .studio-sidebar .studio-brand img { width: 40px; height: 40px; }
+  .studio-sidebar .studio-nav {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+    padding: 4px 4px 8px;
+    gap: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+  .studio-sidebar .studio-nav-button {
+    flex: 0 0 clamp(168px, 48vw, 214px);
+    width: auto;
+    min-width: 0;
+    min-height: 56px;
+    padding: 0 10px;
+    white-space: nowrap;
+    scroll-snap-align: start;
+  }
+  .studio-sidebar .account-entry {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    padding: 10px 6px 0;
+  }
+  .studio-sidebar .account-entry strong { flex: 1 1 100px; min-width: 0; }
+  .studio-sidebar .account-entry p { display: none; }
+  .studio-sidebar .account-entry a { flex: 0 0 auto; min-height: 44px; margin-left: auto; }
+  .studio-sidebar .studio-sidebar-ornament { height: 96px; min-height: 0; }
+  .studio-shell .resource-view { width: 100%; max-width: 100%; }
+}
+
+@media (max-width: 960px) and (max-height: 500px) {
+  .studio-sidebar .studio-sidebar-ornament { height: 72px; }
+}

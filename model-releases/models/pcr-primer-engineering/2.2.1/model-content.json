@@ -1,0 +1,232 @@
+{
+  "id": "pcr-primer-engineering",
+  "version": "2.1.2",
+  "title": {
+    "zh": "利用引物改造DNA",
+    "en": "Engineering DNA with Primers"
+  },
+  "stages": [
+    {
+      "id": "template",
+      "title": {
+        "zh": "引物设计",
+        "en": "Primer design"
+      }
+    },
+    {
+      "id": "cycle-1",
+      "title": {
+        "zh": "第一轮",
+        "en": "First cycle"
+      }
+    },
+    {
+      "id": "cycle-2",
+      "title": {
+        "zh": "第二轮",
+        "en": "Second cycle"
+      }
+    },
+    {
+      "id": "cycle-3",
+      "title": {
+        "zh": "第三轮",
+        "en": "Third cycle"
+      }
+    },
+    {
+      "id": "products",
+      "title": {
+        "zh": "目标产物",
+        "en": "Target products"
+      }
+    }
+  ],
+  "geometry": {
+    "bases": 84,
+    "left": 15,
+    "right": 69,
+    "primer": 18,
+    "step": 14,
+    "width": 1440,
+    "height": 640,
+    "dnaX": 142,
+    "scale": 0.86,
+    "thirdScale": 0.62,
+    "gap": 44,
+    "rowTop": 62,
+    "rowBottom": 608,
+    "initialPrimerOffset": 60,
+    "tailBend": 17,
+    "mutationIndex": 24,
+    "mismatchPeak": 12
+  },
+  "colors": {
+    "original": "#a41734",
+    "new": "#075b35",
+    "primer": "#9d4a07"
+  },
+  "sugarFills": {
+    "original": "#c8526a",
+    "new": "#388a61",
+    "primer": "#bf7d3e"
+  },
+  "modes": [
+    "restriction",
+    "mutation"
+  ],
+  "parameters": {
+    "initialDuplexes": 1,
+    "cycles": 3,
+    "presentationSeconds": 48.1,
+    "explicitStrandsPerMode": 16,
+    "temperaturesC": {
+      "denature": 95,
+      "anneal": 55,
+      "extend": 72
+    }
+  },
+  "science": {
+    "restriction": {
+      "fivePrimeTail": true,
+      "threePrimeAnnealing": true,
+      "protectiveBases": 4,
+      "siteExamples": [
+        "EcoRI GAATTC",
+        "BamHI GGATCC"
+      ],
+      "doubleStrandedSiteFirstCycle": 2,
+      "bothDoubleStrandedSitesFirstCycle": 3,
+      "thirdCycleExactTargets": 2,
+      "separateHomologyDomains": true
+    },
+    "mutation": {
+      "region": "forward primer annealing region only",
+      "zeroBasedPosition": 24,
+      "originalPair": "T-A",
+      "primerMismatch": "C-A",
+      "mutatedPair": "C-G",
+      "complementaryMutationFirstCycle": 2,
+      "exactMutantDuplexFirstCycle": 3,
+      "firstThreeCycleClasses": {
+        "wildtype": [
+          1,
+          1,
+          1
+        ],
+        "mismatch": [
+          1,
+          2,
+          3
+        ],
+        "mutant": [
+          0,
+          1,
+          4
+        ]
+      }
+    },
+    "assumptions": [
+      "Finite 84-position illustrative template; internal gene target [15,69).",
+      "Ideal full extension, one specific pair of primers per mode, 100 percent amplification.",
+      "No late random reannealing, nonspecific amplification, plateau effect or non-templated A addition.",
+      "Not whole-plasmid QuikChange or arbitrary gene-internal mutagenesis.",
+      "Sequence and temperature values are teaching examples, not an experimental protocol."
+    ],
+    "preserveOriginalStrands": true,
+    "primerIntegratedInDaughter": true,
+    "extensionDirection": "5 to 3",
+    "synthesisEnd": "current template end",
+    "unpairedTailsAndMismatchesHaveNoBonds": true
+  },
+  "presentation": {
+    "fixedNodes": true,
+    "timeUnit": "seconds",
+    "phaseState": "single deterministic timeline",
+    "inactiveOpacity": 0.28,
+    "firstPrimerMotion": "Initial primers remain straight during placement and first denaturation; nonpaired tails bend upon annealing.",
+    "groupedExtension": "Identical product classes extend in parallel, classes observed in sequence; real classes can also be concurrent.",
+    "localZoom": "Shares exactly the same strand positions, per-residue offsets, visible synthesis intervals and orientation as the main scene.",
+    "stopsAfterCycle": 3,
+    "laterPrimerMotion": "Cycles 2 and 3 contain no new primers during denaturation; fresh primers enter from the left during annealing.",
+    "thirdCycleScale": 0.7209302325581396,
+    "rightSideMoleculeNames": false,
+    "siteHighlight": "Blue outline and pale-blue ribbon over the six recognition bases, with a cyan halo.",
+    "mismatchShape": "A small local peak at the substituted C, retained as a teaching marker until its correct complement is formed; no inserted base."
+  },
+  "reuse": {
+    "modelId": "pcr-product-types",
+    "version": "2.3.0",
+    "sourceFiles": [
+      {
+        "file": "models/pcr-product-types/engine.js",
+        "sourceVersion": "2.3.0",
+        "sha256": "53e525e8479c280c70ccb8da0a41bc1f2af871bae27532f388be1c6f531f3ec2"
+      },
+      {
+        "file": "models/pcr-product-types/model.js",
+        "sourceVersion": "2.3.0",
+        "sha256": "bb2e68cba1d1574349e2f79775f8e97cad5ab4cc236b8daa565e0413586b5eba"
+      },
+      {
+        "file": "assets-src/pcr-product-types/make-strand-assets.mjs",
+        "sourceVersion": "2.3.0",
+        "sha256": "93f441d3b21e9144310cfab43f5a09998f6b005c7e595b598f61f676d1439bfd"
+      }
+    ],
+    "objects": [
+      "84-position motif and complements",
+      "14-unit nucleotide grid and 9-unit sugar phosphate backbone",
+      "phosphate circle, sugar pentagon, base tile and lettering",
+      "initial strand positions, internal primer intervals, original/new/primer palette",
+      "first three cycle row layout, grouped timeline and continuous collection layout",
+      "public shell local copies"
+    ],
+    "adaptations": [
+      "Added immutable residue sequence and distinct tail homology domains.",
+      "One substitution in the forward primer; original residues are never overwritten.",
+      "Bending tails relax as correct complementary residues are formed.",
+      "Separate library, same-data magnifier and three-cycle stop."
+    ],
+    "crossModelRuntimeImports": false
+  },
+  "sources": [
+    {
+      "title": "Addgene PCR cloning",
+      "url": "https://www.addgene.org/protocols/pcr-cloning/"
+    },
+    {
+      "title": "NEB restriction digestion",
+      "url": "https://www.neb.com/en-gb/applications/cloning-and-synthetic-biology/dna-preparation/restriction-enzyme-digestion"
+    },
+    {
+      "title": "Agilent primer design principle only; not the same workflow",
+      "url": "https://www.agilent.com/cs/library/usermanuals/public/200523.pdf"
+    }
+  ],
+  "planning": {
+    "mergedFrom": [
+      "primer-restriction-site",
+      "site-directed-mutagenesis"
+    ],
+    "sourceDocumentNumbers": [
+      100,
+      101
+    ]
+  },
+  "delivery": {
+    "protocolVersion": "1.0",
+    "websiteSync": false,
+    "shellStandard": "adaptive-model-shell-2.4"
+  },
+  "revision": {
+    "previousVersion": "2.0.0",
+    "scienceLineageUnchanged": true,
+    "changes": [
+      "Stronger recognition-site highlighting",
+      "Straight initial primers and annealing-only later entry",
+      "Smaller third-cycle molecules and no right-side names",
+      "Live mismatch peak and complementary-pair flattening"
+    ]
+  }
+}

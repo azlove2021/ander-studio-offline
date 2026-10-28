@@ -1,0 +1,43 @@
+/* Whole-site presentation layer. Does not style standalone model or game canvases. */
+:root{--s-ink:#163e4b;--s-muted:#607e83;--s-green:#2b8270;--s-green-dark:#206b5d;--s-mint:#e8f5ef;--s-line:#d4e6e1;--s-paper:#fff;--s-radius:22px;--s-shadow:0 12px 32px #234f4910;--s-serif:"Noto Serif SC","Source Han Serif SC","Songti SC","SimSun",serif;--s-sans:system-ui,"Microsoft YaHei",sans-serif}
+.site-footer.site-footer{box-sizing:border-box;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px 22px;width:100%;max-width:none;margin:0;padding:22px 28px;border:0;border-top:1px solid var(--s-line);color:var(--s-muted);background:transparent;font:12px/1.8 var(--s-sans);text-align:center}
+.site-footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px}.site-footer a{color:inherit;font:inherit;text-decoration:none;white-space:nowrap}.site-footer a:hover{color:var(--s-green);text-decoration:underline;text-underline-offset:4px}.site-footer-brand{font-weight:650}
+.site-footer-note{flex-basis:100%;margin:0;font-size:11px;color:var(--s-muted)}
+body[data-account-page],body.center-body{min-height:100svh;display:flex;flex-direction:column;color:var(--s-ink);font-family:var(--s-sans)}
+body[data-account-page]>.site-footer,body.center-body>.site-footer{margin-top:auto}
+body.center-body{background:radial-gradient(ellipse at 6% 0%,#dff2e9 0,transparent 45%),#f5f9f8}
+.account-header,.center-header{box-sizing:border-box;width:100%;max-width:1440px;min-height:100px;margin:0 auto;padding:24px 4%;border-bottom:1px solid var(--s-line)}
+.account-header .brand,.center-header .center-brand{font-size:20px;color:var(--s-ink)}
+.account-header .brand img,.center-header .center-brand img{width:48px;height:48px}
+.account-header .brand small,.center-header .center-brand small{font-size:10px;letter-spacing:.14em}
+.center-profile.profile-layout{width:calc(100% - 64px);max-width:1280px;margin:36px auto 52px}
+.center-profile .panel,.center-profile .center-card,.center-card{border-color:var(--s-line);border-radius:var(--s-radius);box-shadow:var(--s-shadow)}
+.center-profile .profile-hero h1,.center-main h1{font-family:var(--s-serif);font-size:clamp(28px,2.5vw,38px);line-height:1.4;letter-spacing:0}
+.center-profile .profile-hero{align-items:center;padding-bottom:24px;border-bottom:1px solid var(--s-line)}
+.center-profile .eyebrow,.center-eyebrow,.center-body .eyebrow{font:700 11px/1.6 var(--s-sans);letter-spacing:.18em;color:var(--s-green)}
+.center-profile .panel h2,.center-profile .service-card h3,.center-main h2{font-family:var(--s-sans);letter-spacing:0}
+.center-profile .center-tabs{gap:6px;padding:6px;border:1px solid var(--s-line);border-radius:14px;background:#edf5f1;margin-bottom:26px;width:fit-content;max-width:100%}
+.center-profile .center-tabs button{border-radius:10px;font-size:15px;padding:11px 24px}
+.center-profile .center-tabs button[aria-selected=true]{color:var(--s-green-dark);background:#fff;box-shadow:0 2px 8px #22483f0d}
+.center-profile .rights-services{gap:22px}.center-profile .rights-services .service-card{padding:26px;min-height:230px}
+.center-profile .service-card h3{font-size:23px}.center-profile .service-card .center-note{font-size:14px;line-height:1.7}
+.center-profile .service-buttons{gap:12px;padding-top:22px}
+.center-profile .access-button{min-height:48px;border:1px solid #b8d8cd;border-bottom:2px solid #a1c4b7;border-radius:11px;background:linear-gradient(180deg,#fcfffd,#edf7f2);box-shadow:0 2px 5px #235b4910;font-size:14px;color:var(--s-green-dark)}
+.center-profile a.access-button:hover{transform:translateY(-1px);box-shadow:0 4px 9px #235b491a;background:#e6f3ec}
+.center-profile .access-button:disabled{color:#758881;background:#eef2ef;border:1px solid #dce5df;box-shadow:none;transform:none}
+.center-profile .access-button:disabled small{font-size:11px}.center-profile .ark-card .access-button{border-bottom-width:2px}
+.center-profile .panel.rights-code{position:relative;border:1px solid #9ec9b8;border-top:4px solid var(--s-green);background:linear-gradient(115deg,#e2f2e9,#f9fdfb 70%);padding:28px;box-shadow:0 8px 26px #2e786b12}
+.center-profile .rights-code h2{font-size:26px}.center-profile .rights-code .small-note{max-width:74ch}
+.center-profile [data-unified-code]{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:end;margin-top:24px}
+.center-profile [data-unified-code] label{margin:0}.center-profile [data-unified-code] input{background:#fff}
+.center-profile [data-unified-code]>.primary{margin:0;min-height:54px;width:auto;padding-inline:26px;white-space:nowrap;box-shadow:0 3px 8px #1f665f14}
+.center-profile .redemption-history>summary{font-size:14px}.center-profile .security-history{border-top:1px solid var(--s-line);margin-top:24px;padding-top:20px}
+.center-body .center-shell{width:100%;box-sizing:border-box;max-width:1440px;gap:28px;grid-template-columns:190px minmax(0,1fr)}
+.center-body .center-sidebar{border-right:1px solid var(--s-line);padding-right:14px}.center-body .center-sidebar button[aria-current=true]{background:#e0f0e7;border:1px solid #c5ded2}
+.center-body .center-card h2{font-size:21px}.center-body .center-stat{border-color:var(--s-line);border-radius:16px}
+.center-body .primary,body[data-account-page] .primary{background:var(--s-green);border-color:var(--s-green);border-radius:12px}
+.center-body .primary:hover,body[data-account-page] .primary:hover{background:var(--s-green-dark)}
+:is(body[data-account-page],.center-body) :focus-visible{outline:3px solid #56a78f;outline-offset:3px}
+@media(max-width:800px){.center-profile.profile-layout{width:calc(100% - 32px);margin-top:24px}.account-header,.center-header{min-height:80px;padding:18px 16px}.account-header .brand,.center-header .center-brand{font-size:16px}.center-body .center-shell{grid-template-columns:1fr}.center-body .center-sidebar{border:0;padding:0 0 8px}.site-footer.site-footer{padding:24px 16px;gap:10px;font-size:11px}.site-footer nav{gap:7px 14px}}
+@media(max-width:540px){.center-profile [data-unified-code]{grid-template-columns:1fr}.center-profile .panel.rights-code{padding:22px}.center-profile .center-tabs{width:100%;box-sizing:border-box}.center-profile .center-tabs button{flex:1;padding:10px 12px;white-space:nowrap}.center-profile .rights-services .service-card{padding:23px}.center-profile .access-button{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.center-profile .access-button{transition:none}}

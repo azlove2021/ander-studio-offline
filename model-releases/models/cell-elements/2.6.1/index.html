@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light" />
+    <title>组成细胞的元素（2D）</title>
+    <link rel="stylesheet" href="model.css?v=2.6.1" />
+    <link rel="stylesheet" href="shell.css?v=2.6.1" />
+    <link rel="stylesheet" href="brand-watermark.css?v=2.6.1"><link rel="stylesheet" href="shell-standard.css?v=2.6.1" />
+    <link rel="stylesheet" href="window-standard.css?v=2.6.1" />
+  <script src="/assets/accounts/model-favorites.js?v=e9af20c54e036dd9573d4611bbb8bee47cccdad160e10e9d5ba98730656177d4"></script>
+<script src="/assets/accounts/model-favorite-host.js?v=c616cfcae1d08ce04b9e0af0f0163800016def1b0a8a6c16f9bab30ff6e7b481" data-ander-model-host="website-v1" data-model-id="cell-elements"></script>
+</head>
+  <body data-model-id="cell-elements" data-model-version="2.6.1">
+    <main class="model-shell" data-independent-model-root>
+      <header class="model-header">
+        <div class="shell-topbar">
+          <a class="shell-back-link" id="backLink" href="/">← 返回模型库</a>
+          <div class="shell-controls" aria-label="模型通用控制">
+            <button class="shell-control" id="resetButton" type="button">
+              <span aria-hidden="true">↻</span><strong>重置</strong>
+            </button>
+            <button class="shell-control" id="labelsButton" type="button" aria-pressed="true">
+              <span aria-hidden="true">Aa</span><strong>标签</strong>
+            </button>
+            <button class="shell-control" id="fullscreenButton" type="button" aria-pressed="false">
+              <span aria-hidden="true">⛶</span><strong>全屏</strong>
+            </button>
+          </div>
+        </div>
+        <div class="model-heading">
+          <p class="eyebrow">MOLECULES &amp; CELLS · 2D INTERACTIVE MODEL</p>
+          <h1>组成细胞的元素</h1>
+          <p class="lead">比较五类生物学元素，查看单个元素功能以及水、糖类、脂质、蛋白质、核酸和叶绿素的代表性组成。</p>
+        </div>
+      </header>
+
+      <section class="workspace" aria-label="组成细胞的元素互动模型">
+        <div class="table-card">
+          <div class="section-heading">
+            <div>
+              <span class="section-index">01</span>
+              <h2>元素周期表</h2>
+            </div>
+            <p>点击元素可查看功能；点击上方分类按钮可成组高亮。</p>
+          </div>
+
+          <div class="periodic-scroll" tabindex="0" aria-label="可横向滚动的元素周期表">
+            <div class="periodic-grid" id="periodicTable" role="group" aria-label="118个元素的元素周期表"></div>
+          </div>
+
+        </div>
+
+        <aside class="composition-card" aria-labelledby="compositionTitle">
+          <div class="section-heading composition-heading">
+            <div>
+              <span class="section-index">02</span>
+              <h2 id="compositionTitle">组成物质</h2>
+            </div>
+            <p>选择一种物质或结构，周期表将高亮其代表性元素。</p>
+          </div>
+          <div class="composition-buttons" id="compositionButtons"></div>
+          <p class="scope-note"><strong>模型边界：</strong>叶绿素 a 与叶绿素 b 的原子数不同，但都含 C、H、O、N、Mg；磷脂与蛋白质的具体元素会随分子种类变化。</p>
+        </aside>
+      </section>
+
+      <section class="selection-panel" aria-live="polite" aria-atomic="true">
+        <div class="selection-copy">
+          <p class="selection-kicker" id="selectionKicker">观察提示</p>
+          <h2 id="selectionTitle">选择分类、组成物质或任一元素</h2>
+          <p id="selectionDescription">上方按钮用于比较元素类别；点击单个元素可查看其简要生物学功能。</p>
+        </div>
+        <div class="element-chips" id="elementChips" aria-label="当前高亮元素"></div>
+      </section>
+
+      <footer class="model-footer">
+        <p>分类与功能说明优先依据人教版教材第16—36页；教材未涉及部分采用简化通识说明，元素作用会随物种、化学形态和剂量而变化。</p>
+        <p class="element-count"><strong id="elementCount">118</strong> 个元素 · 完整现代符号</p>
+      </footer>
+    </main>
+    <script src="shell-standard.js?v=2.6.1"></script>
+    <script src="scene-navigation.js?v=2.6.1"></script>
+    <script src="model.js?v=2.6.1"></script>
+  <script type="module" src="brand-watermark.js"></script>    <script src="/session.js?v=experience-r1"></script>
+  </body>
+</html>

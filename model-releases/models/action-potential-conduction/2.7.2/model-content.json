@@ -1,0 +1,330 @@
+{
+  "id": "action-potential-conduction",
+  "title": {
+    "zh": "动作电位的传导",
+    "en": "Action Potential Conduction"
+  },
+  "stages": [
+    {
+      "id": "rest",
+      "title": {
+        "zh": "全膜静息",
+        "en": "Resting Membrane"
+      }
+    },
+    {
+      "id": "central",
+      "title": {
+        "zh": "中央刺激与兴奋",
+        "en": "Central Excitation"
+      }
+    },
+    {
+      "id": "local-current",
+      "title": {
+        "zh": "局部电流",
+        "en": "Local Currents"
+      }
+    },
+    {
+      "id": "regeneration",
+      "title": {
+        "zh": "邻区兴奋与复极",
+        "en": "Propagation and Repolarization"
+      }
+    },
+    {
+      "id": "bidirectional",
+      "title": {
+        "zh": "双向传导与恢复",
+        "en": "Bidirectional Conduction"
+      }
+    }
+  ],
+  "scope": "孤立、均匀、无髓轴突的中部一次刺激与双向连续传导；不模拟突触、髓鞘或长期离子浓度耗竭。",
+  "scientificModel": {
+    "name": "HH 1952 finite-volume cable baseline, with an explicit post-trough recovery-time compression for the teaching presentation",
+    "temperatureC": 6.3,
+    "Cm": 1,
+    "gNa": 120,
+    "gK": 36,
+    "gL": 0.3,
+    "ENa": 50,
+    "EK": -77,
+    "EL": -54.387,
+    "dtMs": 0.005,
+    "sampleDtMs": 0.04,
+    "durationMs": 40,
+    "dxCm": 0.005,
+    "radiusCm": 0.0001,
+    "axialResistivityOhmCm": 100,
+    "halfLengthCm": 0.5,
+    "visibleSitesCm": [
+      -0.35988699129955914,
+      -0.30112572170524454,
+      -0.24231761892658416,
+      -0.18354062661336806,
+      -0.1248179631918894,
+      -0.06606327704950113,
+      0,
+      0.06606327704950113,
+      0.1248179631918894,
+      0.18354062661336806,
+      0.24231761892658416,
+      0.30112572170524454,
+      0.35988699129955914
+    ],
+    "stimulus": {
+      "startMs": 3,
+      "durationMs": 0.7,
+      "halfWidthCm": 0.0125,
+      "standard": 90,
+      "weak": 6,
+      "unit": "µA/cm²"
+    },
+    "caveats": [
+      "离子电导采用经典鱿鱼轴突参数；电缆几何为教学设定，不是对某个人体神经元的实测拟合。",
+      "上下两条膜属于同一根轴突纵剖面的两侧边界；两侧电位和门控共享同一段膜状态，运输方向按膜内外法向翻转。",
+      "细胞内、外体相近似电中性，符号表示膜附近极薄区域的净电荷分离；不表示全部离子改变电荷。",
+      "钠钾泵不显示，背景漏电流与既有离子梯度保留；一次动作电位中不需要泵逐段直接引发复极化。",
+      "膜和蛋白相对传导模型 2.0.0 再缩小一半；这仅改变显示尺寸，电位参数和电缆方程不变。",
+      "峰值和传播阶段采用原连续 HH 波形。各处超极化最低点之后，V/m/h/n 一起按压缩时程取样；蛋白、两图、数字电压和通量共用这个教学状态。该恢复段不是原始电缆方程的逐时刻解。",
+      "轴向电流由相邻段电压差驱动；外液作为共同参比，图示外回路是电流闭合的教学表达，没有独立求解三维胞外电场。",
+      "一对对称波起于人为中部刺激；这不意味着正常神经系统从树突到末梢的生理信息通常双向传递。",
+      "阈电位 −55 mV 为教学参考线，不是强制触发开关；阈值随膜状态及刺激历史改变。",
+      "均匀分布的可见通道群是示意，数值计算含 201 个膜段；画面长度和膜厚不表示同一实测比例。",
+      "每个示意膜段的两对符号、通道和记录点共享一个教学取样；超极化最低点之前保留原始电缆状态，之后共同压缩恢复时程。代表位置按原计算波形选择，使前段下降穿过 0 mV 与后段上升穿过 0 mV 对齐；膜段宽度不是实测距离。该分组不表示真实轴突由两对电荷组成。",
+      "恢复内负外正仅表示已下降穿过 0 mV，不等于已完全恢复静息；后续复极化、超极化和门控恢复仍持续显示，其中最低点后的恢复时程作教学压缩。前沿符号在各处原位改变，并非电荷沿轴突搬运。",
+      "首次局部电流仍在中央动作电位形成后开始强调；实际电流并非此时才产生。固定四条前沿箭头沿 + 到 − 逐段展开、持续流动、同方向擦除，再由下一组接替；其余分量及下膜回路省略。符号与箭头的渐变本身仅为图形效果。",
+      "每层膜有 28 对均匀符号：13 个完整示意膜段各两对，加两端各半个膜段的一对。两端代表继续传出视野的兴奋，图中横向距离不作为真实长度标尺。",
+      "下方曲线为同一示意时刻各位置的教学膜电位 V(x,t)，基线为静息电位，横向与膜段对齐；右侧是所选位置的 V(t)。两图使用同一个经恢复时程压缩的数据场。",
+      "恢复时程的压缩仅在局部超极化最低点之后启动，平滑加速至 8 倍源时间；0.35 ms 为显示过渡参数。动作电位峰值、最低点、正负反转和向外到达顺序保持，阈下响应不压缩。图示 ms 为教学模型时间，不能用来测量真实恢复速率或不应期时长。"
+    ],
+    "presentationApproximation": {
+      "factor": 8,
+      "rampMs": 0.35,
+      "stage": "after each local hyperpolarization minimum only",
+      "resampledTogether": [
+        "V",
+        "m",
+        "h",
+        "n"
+      ],
+      "method": "smooth local source-time acceleration; preserve all original states up to the trough; do not mutate the raw cable solution",
+      "limits": "The displayed post-trough field is a teaching approximation, not the unmodified HH cable-equation solution or measured neuron recovery kinetics. Compression factor is a display choice, not a fitted biological rate."
+    }
+  },
+  "sources": [
+    {
+      "title": "Hodgkin and Huxley (1952)",
+      "doi": "10.1113/jphysiol.1952.sp004764",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1392413/"
+    },
+    {
+      "title": "Gerstner et al., Neuronal Dynamics, compartmental models",
+      "url": "https://neuronaldynamics.epfl.ch/online/Ch3.S4.html"
+    },
+    {
+      "title": "Crago and Makowski (2014), bidirectional propagation following stimulation",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4238903/"
+    },
+    {
+      "title": "OpenStax Anatomy and Physiology 2e — The Action Potential",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/12-4-the-action-potential"
+    }
+  ],
+  "presentation": {
+    "lessonDurationSeconds": 32,
+    "stageBoundsSeconds": [
+      0,
+      1,
+      4,
+      7,
+      13,
+      32
+    ],
+    "playback": "Continuous; stage controls seek without inserting automatic pauses.",
+    "timeMapping": "Continuous piecewise-linear clock; exact display and physiological time anchors are stored below. Stage selection only seeks and never auto-pauses.",
+    "membrane": {
+      "upperY": 285,
+      "lowerY": 445,
+      "lipidScale": 0.19,
+      "previousLipidScale": 0.38,
+      "headSeparation": 23.94,
+      "previousHeadSeparation": 47.88
+    },
+    "proteins": {
+      "source": "resting-action-potential@2.4.0",
+      "worldScale": 10,
+      "previousWorldScale": 20,
+      "visibleChannelGroups": 26,
+      "mechanism": "Real Blender mesh geometry, continuous activation-gate positions, Na inactivation lid and tether morph.",
+      "renderedMeshParts": 10,
+      "renderedMembranes": [
+        "upper"
+      ],
+      "simplification": "Omit peripheral voltage-sensor lobes; retain original pore walls, activation gates, Na lid and attached tether. Correctly classify inactivation lid independently of activation gates.",
+      "functionUnderline": false
+    },
+    "record": "Select any of 13 positions; both voltage graphs, numeric probe and channel gates use the same teaching trace. Post-trough recovery is compressed; the time-axis is labeled schematic time.",
+    "chargeBands": {
+      "blur": 4,
+      "visualPulseHz": 1,
+      "pause": "Freeze shade when paused",
+      "meaning": "Visual emphasis, independent of physiological time and playback speed."
+    },
+    "flow": "Upper membrane only; fixed straight central axes, four Na or two K tokens, terminal arrows; lower membrane proteins and transport omitted.",
+    "currents": {
+      "visibleMaximum": 4,
+      "membrane": "upper",
+      "sequence": [
+        "S → L1 / R1",
+        "L1 / R1 → L2 / R2",
+        "L2 / R2 → L3 / R3",
+        "L3 / R3 → L4 / R4",
+        "L4 / R4 → L5 / R5",
+        "L5 / R5 → L6 / R6",
+        "L6 / R6 → edge continuation"
+      ],
+      "displayStarts": "After S peak + one numerical sample, at approximately 4.1316 playback seconds.",
+      "displayEnds": "Excitation leaves the last full displayed segment; final four paths erase toward their negative endpoints before disappearing.",
+      "line": "SVG semicircles; radius is half the endpoint span, height capped at 26 diagram units; 6/5 dashed pattern, 52 diagram units per playback second.",
+      "underlay": "Orange soft glow, 3.8-unit Gaussian blur; no bottom-membrane arcs",
+      "meaning": "Four leading-current highlights retained. Original positive-voltage propagation and handoffs are unchanged; all displayed states use the common teaching trace.",
+      "visibleThroughoutPropagation": 4,
+      "handoff": "Exactly four slots. Head reveals from + to - over 0.32 playback seconds; dashes flow continuously; tail erases from + to - over the final 0.24 seconds. Four tips switch to the next group in one frame; no eight-arrow overlap.",
+      "intervalMs": [
+        4.08,
+        12.41713648761459
+      ],
+      "animation": {
+        "currentEnterSeconds": 0.32,
+        "currentExitSeconds": 0.24,
+        "chargeFadeSeconds": 0.22,
+        "dashUnitsPerSecond": 52
+      }
+    },
+    "stimulusTerminology": {
+      "weak": "阈下刺激",
+      "standard": "阈上刺激"
+    },
+    "dipoles": {
+      "perSegment": 2,
+      "segments": 13,
+      "edgeHalfSegments": 2,
+      "perMembrane": 28,
+      "simultaneousReversedPairs": "2 at S, then 2 on each side; terminal halves continue out of the view",
+      "displayCentres": [
+        110,
+        183.33333333333337,
+        256.6666666666667,
+        330,
+        403.33333333333337,
+        476.6666666666667,
+        550,
+        623.3333333333334,
+        696.6666666666666,
+        770,
+        843.3333333333333,
+        916.6666666666666,
+        990
+      ],
+      "offsets": [
+        -18.333333333333332,
+        18.333333333333332
+      ],
+      "edgeCentres": {
+        "left": 55,
+        "right": 1045
+      },
+      "physicalSamplesCm": [
+        -0.35988699129955914,
+        -0.30112572170524454,
+        -0.24231761892658416,
+        -0.18354062661336806,
+        -0.1248179631918894,
+        -0.06606327704950113,
+        0,
+        0.06606327704950113,
+        0.1248179631918894,
+        0.18354062661336806,
+        0.24231761892658416,
+        0.30112572170524454,
+        0.35988699129955914
+      ],
+      "edgeSampleCm": 0.41860853632832473,
+      "handoffsMs": [
+        4.951856089369743,
+        6.196365468893677,
+        7.440188430641115,
+        8.683704519979479,
+        9.928194038385621,
+        11.173201325119159
+      ],
+      "fadeSeconds": 0.22,
+      "fade": "Positive/negative glyphs cross-fade in place, midpoint at the local zero crossing. Edge fade is capped at half its positive-voltage duration to avoid overlap.",
+      "meaning": "Both dipoles share one representative membrane voltage. Handoffs restore polarity, not complete recovery to resting voltage."
+    },
+    "clock": {
+      "seconds": [
+        0,
+        1,
+        4,
+        7,
+        10,
+        13,
+        16,
+        19,
+        22,
+        25,
+        29,
+        31,
+        32
+      ],
+      "ms": [
+        0,
+        3,
+        4.04,
+        4.951856089369743,
+        6.196365468893677,
+        7.440188430641115,
+        8.683704519979479,
+        9.928194038385621,
+        11.173201325119159,
+        12.41713648761459,
+        22,
+        30,
+        40
+      ]
+    },
+    "spatialRecord": {
+      "left": 55,
+      "right": 1045,
+      "baseline": 628,
+      "gain": 0.7,
+      "top": 548,
+      "bottom": 654,
+      "samples": 199,
+      "meaning": "Spatial interpolation of the shared teaching trace at the common schematic time; diagram x mapped through representative sites.",
+      "labels": false,
+      "selectedProbeDot": true,
+      "recovery": "After each local AHP minimum, resample V/m/h/n together on a smoothly accelerated source clock. This reveals a central near-resting segment between two hyperpolarized troughs while the outer AP peaks propagate. Linear voltage scale unchanged.",
+      "recoveryCompression": {
+        "factor": 8,
+        "rampMs": 0.35
+      }
+    },
+    "pacing": {
+      "stimulusAtSeconds": 1,
+      "previousStimulusAtSeconds": 5,
+      "durationSeconds": 32,
+      "previousDurationSeconds": 48,
+      "outwardHandoffSeconds": 3,
+      "previousOutwardHandoffSeconds": 4.5,
+      "recoveryObservationSeconds": 7,
+      "recoveryStartsAtSeconds": 25,
+      "meaning": "32-second teaching clock retained; central recovery is now visible during outward propagation through the separate post-trough compression. This is not a calibrated biological time course."
+    }
+  },
+  "version": "2.6.2"
+}

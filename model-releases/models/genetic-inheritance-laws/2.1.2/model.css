@@ -1,0 +1,56 @@
+:root{font-family:"Microsoft YaHei",system-ui,sans-serif;color:#18384a;background:#f4f9f8;--gene-i:#397ece;--gene-ii:#dd9148;--gene-i-edge:#1b5091;--gene-ii-edge:#9e591f}
+*{box-sizing:border-box}html,body{margin:0;min-width:320px}button,input,select{font:inherit}button{color:inherit}button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #d6a342;outline-offset:2px}
+.independent-model-workspace{display:flex;min-height:0}.model-stage{position:relative;display:flex;flex-direction:column;min-height:0;background:#f9fcfd;overflow:hidden!important}
+.genetics-toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 14px;flex:none;font-size:13px;border-bottom:1px solid #e2ecee;background:#fff;z-index:2}
+.genetics-views{display:flex;gap:6px;align-items:center}.genetics-toolbar .shell-action{white-space:nowrap}
+.comparison-headings,.comparison-readouts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));flex:none;text-align:center}
+.comparison-headings{background:#fff;z-index:2}.comparison-headings>div{min-width:0;padding:9px 6px 7px}.comparison-headings>div+div,.comparison-readouts>div+div{border-left:1px solid #dce7eb}
+.comparison-headings h2{font-size:17px;line-height:1.4;margin:0 0 5px;font-weight:650}.comparison-headings span{font-size:12px;color:#56717e}
+.genetics-condition{background:transparent;border:0;color:#276958;padding:3px 4px;min-height:28px;border-bottom:1px dashed #a7c9bd;font-size:12px;cursor:pointer;max-width:100%}
+.science-viewport{position:relative;min-height:0;flex:1;overflow:hidden;background:linear-gradient(#f9fcfd,#f2f8fa)}
+.science-world{position:absolute;inset:0 0 30px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));z-index:2;isolation:isolate;touch-action:none}
+.gene-column{min-width:0;min-height:0;position:relative;overflow:hidden;border-right:1px solid #dbe6ec;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.gene-column:last-child{border-right:0}.gene-column:focus-visible{outline:2px solid #31816e;outline-offset:-2px}.gene-scene{display:block;width:100%;height:100%;overflow:hidden}
+.gene-scene .cell-boundary{fill:#e3eddf;fill-opacity:.82;stroke:#8fa98b;stroke-width:1.35;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.gene-scene .material{stroke-linecap:round;stroke-linejoin:round;stroke-width:1.1;vector-effect:non-scaling-stroke}
+.gene-scene .material[data-origin="1"]{fill:var(--gene-i);stroke:var(--gene-i-edge)}.gene-scene .material[data-origin="2"]{fill:var(--gene-ii);stroke:var(--gene-ii-edge)}
+.gene-scene .material.is-selected{stroke-width:2.5;filter:drop-shadow(0 0 2px #17384a55)}
+.gene-scene .chromosome-bands{fill:none;stroke:#203d59;stroke-width:1.5;opacity:.2;vector-effect:non-scaling-stroke;pointer-events:none}
+.gene-scene .centromere{fill:#365a63}.gene-scene .gene-text{font-family:Arial,"Microsoft YaHei",sans-serif;font-weight:700;fill:#14384c;text-anchor:middle;pointer-events:none}
+.gene-scene .gene-plate{fill:#f8fcff;stroke:#b2c7d4;stroke-width:.65;vector-effect:non-scaling-stroke}
+.gene-scene .gene-leader{fill:none;stroke:#466571;stroke-width:.8;vector-effect:non-scaling-stroke;pointer-events:none}
+.gene-scene .gene-badge{cursor:pointer}
+.gene-scene .stage-text,.gene-scene .product-text{fill:#345c6e;text-anchor:middle;paint-order:stroke;stroke:#f9fcfd;stroke-width:3.5;stroke-linejoin:round;pointer-events:none}
+.gene-scene .product-text{font-weight:700;fill:#163c50}.gene-scene .history-title{fill:#68808c;font-weight:500}.gene-scene .lineage{fill:none;stroke:#a9bdc9;stroke-width:1;vector-effect:non-scaling-stroke}
+.gene-scene .gene-hit{stroke:transparent;fill:transparent;stroke-width:10;vector-effect:non-scaling-stroke;cursor:pointer;pointer-events:all}
+.gene-scene .selection-outline{fill:none;stroke:#315e65;stroke-width:1.5;stroke-dasharray:4 3;vector-effect:non-scaling-stroke;pointer-events:none}
+.science-legend{position:absolute;bottom:4px;left:75px;right:20px;display:flex;justify-content:center;gap:7px;font-size:11px;line-height:1.4;color:#587481;pointer-events:none;z-index:3;flex-wrap:wrap}
+.source-i,.source-ii{font-weight:700}.source-i:before,.source-ii:before{content:"";display:inline-block;width:16px;height:5px;border-radius:3px;margin:0 4px 2px 0;background:var(--gene-i)}.source-ii:before{background:var(--gene-ii)}
+.comparison-readouts{font-size:12px;line-height:1.5;background:#fff;border-top:1px solid #dfebee;z-index:2}.comparison-readouts>div{padding:6px 5px;min-width:0}.comparison-readouts strong{display:block;font-weight:600}.comparison-readouts span{display:block;color:#5a7380}
+.genetics-selection{flex:none;min-height:24px;padding:3px 10px;background:#f3f8f7;color:#436c68;font-size:12px;text-align:center;line-height:1.5;z-index:2}
+.model-stage>.genetics-context{display:none}.genetics-context{font-size:14px;line-height:1.7;max-width:800px}.genetics-context h3{font-size:15px;margin:18px 0 6px}.genetics-context p{margin:10px 0}.condition-fields{display:grid;gap:12px}.condition-fields label{display:grid;gap:5px}.condition-fields select{min-height:40px;padding:5px;background:#fff;color:#17384a;border:1px solid #bad0cb;border-radius:6px}.condition-fields button{justify-self:start}.population-row{border-top:1px solid #dce8e4;padding:10px 0}.science-sources{font-size:12px}.science-sources a{color:#286d60}
+#time-readout{font-variant-numeric:tabular-nums;min-width:8.4em!important;width:8.4em;flex:0 0 8.4em!important}#speed-readout{width:2.5em;text-align:right;font-variant-numeric:tabular-nums}
+.model-area[data-immersive="true"] .genetics-toolbar{display:none;margin-top:0}
+.model-area[data-immersive="true"] .model-stage::after{content:none;flex-basis:0}
+.model-area[data-immersive="true"] .science-viewport{position:absolute;inset:0}
+.model-area[data-immersive="true"] .science-world{inset:48px 0 60px}
+.model-area[data-immersive="true"] .comparison-headings{position:absolute;inset:calc(var(--genetics-safe-top,45px) + 2px) 0 auto;background:transparent;z-index:4}
+.model-area[data-immersive="true"] .comparison-headings>div{background:#f9fcfdef;border-radius:5px;padding:2px}
+.model-area[data-immersive="true"] .comparison-readouts{position:absolute;inset:auto 0 calc(var(--genetics-safe-bottom,115px) + 22px);background:transparent;border:0;z-index:4}
+.model-area[data-immersive="true"] .comparison-readouts>div{background:#f9fcfdef}
+.model-area[data-immersive="true"] .comparison-readouts>div:first-child{padding-left:var(--genetics-corner-clearance,64px);background:linear-gradient(to right,transparent var(--genetics-corner-clearance,64px),#f9fcfdef var(--genetics-corner-clearance,64px))}
+.model-area[data-immersive="true"] .genetics-selection{position:absolute;left:var(--genetics-corner-clearance,64px);right:0;bottom:calc(var(--genetics-safe-bottom,115px) + 48px);background:#f9fcfdef}
+.model-area[data-immersive="true"] .science-legend{bottom:calc(var(--genetics-safe-bottom,115px) + 2px);z-index:4}
+.model-area[data-immersive="true"][data-chrome="hidden"] .comparison-headings{top:4px}
+.model-area[data-immersive="true"][data-chrome="hidden"] .comparison-readouts{bottom:24px}
+.model-area[data-immersive="true"][data-chrome="hidden"] .genetics-selection{bottom:66px}
+.model-area[data-immersive="true"][data-chrome="hidden"] .science-legend{bottom:4px}
+.model-area[data-immersive="true"] .model-brand-corner{transform:translateY(calc(-1 * var(--genetics-safe-bottom,115px)))}
+.model-area[data-immersive="true"][data-chrome="hidden"] .model-brand-corner{transform:none}
+.model-area[data-focus="true"] .genetics-toolbar{min-height:44px;padding-left:200px}
+@media(max-width:860px){.genetics-toolbar{padding:4px 6px;gap:4px}.genetics-toolbar>strong{font-size:11px;max-width:36%;line-height:1.3}.genetics-views{gap:3px}.genetics-views .shell-action{font-size:11px;padding:5px 6px;min-height:32px}.comparison-headings h2{font-size:13px}.comparison-headings>div{padding:5px 2px}.comparison-headings span,.genetics-condition{font-size:11px}.comparison-readouts{font-size:11px}.comparison-readouts>div{padding:4px 2px}.genetics-selection{font-size:11px;min-height:20px}.science-legend{left:47px;right:4px;font-size:10px;gap:4px}.science-world{bottom:28px}}
+@media(max-height:540px){.genetics-toolbar{padding:2px 7px}.comparison-headings>div{padding:3px 2px}.comparison-headings h2{margin:0;font-size:12px}.genetics-condition{min-height:22px;padding:1px 2px}.comparison-readouts>div{padding:2px}.comparison-readouts span{display:none}.genetics-selection{display:none}.science-world{bottom:22px}.science-legend{bottom:3px;font-size:10px}.genetics-toolbar>strong{font-size:11px}.genetics-views .shell-action{min-height:26px;padding:3px 6px;font-size:11px}}
+@media(max-width:380px){.genetics-views #conditions-button{display:none}.comparison-headings h2{font-size:12px}.comparison-headings span{font-size:10px}.genetics-condition{line-height:1.2}.comparison-readouts span{display:none}.genetics-selection{display:none}}
+.genetics-tiny .genetics-toolbar{display:none}.genetics-tiny .comparison-headings>div{padding:2px}.genetics-tiny .comparison-headings h2{margin:0;font-size:12px;line-height:1.3}.genetics-tiny .comparison-headings span{display:none}.genetics-tiny .genetics-condition{min-height:20px}.genetics-tiny .science-world{bottom:16px}.genetics-tiny .science-legend{font-size:10px;gap:3px}
+@media(max-height:540px) and (min-width:540px){.model-area[data-immersive="true"] .comparison-headings>div{display:flex;align-items:center;justify-content:center;gap:5px}.model-area[data-immersive="true"] .gene-scene :is(.cell-name,.product-text){display:none}}
+@media(max-height:540px) and (max-width:380px){.model-area[data-immersive="true"] .science-world{bottom:90px}}

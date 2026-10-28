@@ -1,0 +1,5 @@
+.local-captcha-dialog {max-width: 420px; width: calc(100% - 48px); padding: 28px; border: 1px solid #b7d9d3; border-radius: 18px; color: #183b43; background: #f7fcfa; box-shadow: 0 24px 80px #102e4055;}
+.local-captcha-dialog::backdrop {background: #112d3b99;}
+.local-captcha-dialog h2 {margin-top: 0;}
+.local-captcha-dialog p {line-height: 1.7;}
+.local-captcha-dialog button {display: block; width: 100%; margin-top: 12px;}

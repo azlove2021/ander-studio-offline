@@ -1,0 +1,121 @@
+{
+  "id": "membrane",
+  "accent": "#10B981",
+  "title": "细胞膜流动镶嵌模型",
+  "titleEn": "Fluid Mosaic Model",
+  "chapter": "细胞的基本结构 / Cell Structure",
+  "type": "3D WebGL 动态模型",
+  "state": "结构与流动性观察",
+  "visual": "membraneFluidWebgl",
+  "structures": [
+    [
+      "磷脂双分子层 Phospholipid Bilayer",
+      "#38BDF8"
+    ],
+    [
+      "疏水尾部 Hydrophobic Tails",
+      "#93C5FD"
+    ],
+    [
+      "贯穿膜蛋白 Integral Protein",
+      "#14B8A6"
+    ],
+    [
+      "表面蛋白 Peripheral Protein",
+      "#8B5CF6"
+    ],
+    [
+      "多糖链 Carbohydrate Chain",
+      "#EC4899"
+    ],
+    [
+      "胆固醇 Cholesterol",
+      "#F8D67A"
+    ]
+  ],
+  "stages": [
+    {
+      "title": "整体观察",
+      "titleEn": "Overview",
+      "goal": "认识细胞膜由磷脂双分子层、膜蛋白、多糖链和胆固醇等结构共同组成。",
+      "keywords": [
+        "流动镶嵌 Fluid Mosaic",
+        "磷脂双层 Bilayer",
+        "膜蛋白 Membrane Protein"
+      ],
+      "explanation": "细胞膜以磷脂双分子层为基本支架，蛋白质像马赛克一样以不同方式镶嵌在膜中或附着在膜表面，外侧还可连接多糖链。",
+      "mistake": "细胞膜不是一层静止的硬壳，也不是只有磷脂；它是多种分子组成的动态结构。",
+      "question": "为什么细胞膜既能保持边界，又能进行物质交换？",
+      "id": "overview"
+    },
+    {
+      "title": "磷脂双层",
+      "titleEn": "Bilayer",
+      "goal": "观察亲水头部和疏水尾部的排列方向。",
+      "keywords": [
+        "亲水 Hydrophilic",
+        "疏水 Hydrophobic",
+        "双分子层 Bilayer"
+      ],
+      "explanation": "磷脂分子的亲水头部朝向水环境，疏水尾部相对排列在膜的内部。",
+      "mistake": "不要把头部和尾部的亲水、疏水性质弄反。",
+      "question": "为什么磷脂会自发形成双分子层？",
+      "id": "bilayer"
+    },
+    {
+      "title": "膜蛋白",
+      "titleEn": "Membrane Proteins",
+      "goal": "区分表面蛋白、嵌入蛋白和贯穿膜蛋白，并观察复杂蛋白质外形。",
+      "keywords": [
+        "表面蛋白 Peripheral",
+        "嵌入蛋白 Embedded",
+        "贯穿蛋白 Integral"
+      ],
+      "explanation": "膜蛋白不是简单几何形状，而是具有复杂空间结构。不同蛋白可以附着在膜表面、部分插入膜内，或贯穿整个磷脂双层。",
+      "mistake": "蛋白质不是均匀铺在膜表面，也不是都完全贯穿细胞膜。",
+      "question": "哪些物质可能需要借助膜蛋白通过细胞膜？",
+      "id": "proteins"
+    },
+    {
+      "title": "多糖链",
+      "titleEn": "Carbohydrate Chains",
+      "goal": "观察细胞膜外侧糖蛋白和糖脂上的多糖链。",
+      "keywords": [
+        "糖蛋白 Glycoprotein",
+        "糖脂 Glycolipid",
+        "细胞识别 Cell Recognition"
+      ],
+      "explanation": "多糖链通常位于细胞膜外侧，可以连接在蛋白质或脂质上，参与细胞识别、保护和信号交流。",
+      "mistake": "多糖链一般不朝向细胞内侧；它们主要分布在细胞外侧。",
+      "question": "为什么细胞表面的多糖链有助于细胞识别？",
+      "id": "carbohydrates"
+    },
+    {
+      "title": "胆固醇",
+      "titleEn": "Cholesterol",
+      "goal": "观察胆固醇位于磷脂尾部之间，并调节膜的流动性。",
+      "keywords": [
+        "胆固醇 Cholesterol",
+        "流动性调节 Fluidity Control"
+      ],
+      "explanation": "胆固醇分子插在磷脂尾部之间，可以影响磷脂分子的运动，使膜在不同温度下保持合适的稳定性和流动性。",
+      "mistake": "胆固醇不是漂在膜外表面，而是主要位于磷脂尾部之间。",
+      "question": "胆固醇为什么能影响细胞膜的流动性？",
+      "id": "cholesterol"
+    },
+    {
+      "title": "流动性",
+      "titleEn": "Fluidity",
+      "goal": "观察磷脂、膜蛋白和多糖链在同一膜平面内的协调运动。",
+      "keywords": [
+        "流动性 Fluidity",
+        "侧向运动 Lateral Movement"
+      ],
+      "explanation": "细胞膜中的磷脂和部分膜蛋白可以进行侧向运动，多糖链会随连接点摆动。流动性使细胞膜既稳定又灵活。",
+      "mistake": "流动性不等于结构完全松散；细胞膜仍然维持基本边界和双层排列。",
+      "question": "膜的流动性对细胞生命活动有什么意义？",
+      "id": "fluidity"
+    }
+  ],
+  "version": "2.3.3"
+}

@@ -1,0 +1,121 @@
+{
+  "id": "dna-replication",
+  "accent": "#31816E",
+  "title": "DNA复制模型（2D）",
+  "titleEn": "DNA Replication Model (2D)",
+  "chapter": "遗传信息的复制 / Replication of Genetic Information",
+  "type": "2D SVG 连续动画",
+  "state": "原核生物DNA双向、半不连续复制",
+  "visual": "prokaryotic-dna-replication-fork",
+  "structures": [
+    [
+      "亲代DNA模板链 Parental DNA",
+      "#263D56"
+    ],
+    [
+      "新合成DNA Daughter DNA",
+      "#22A8B6"
+    ],
+    [
+      "RNA引物 RNA Primer",
+      "#E85D75"
+    ],
+    [
+      "拓扑异构酶 Topoisomerase",
+      "#8B5CF6"
+    ],
+    [
+      "解旋酶 Helicase",
+      "#2F9E73"
+    ],
+    [
+      "引物酶 Primase",
+      "#F59E0B"
+    ],
+    [
+      "DNA聚合酶Ⅲ DNA Polymerase III",
+      "#2677D9"
+    ],
+    [
+      "DNA聚合酶Ⅰ DNA Polymerase I",
+      "#A855F7"
+    ],
+    [
+      "DNA连接酶 DNA Ligase",
+      "#E0A11B"
+    ]
+  ],
+  "stages": [
+    {
+      "id": "relaxation",
+      "title": "超螺旋松弛",
+      "titleEn": "Supercoil Relaxation",
+      "goal": "理解原核生物环状DNA复制开始后，拓扑异构酶如何缓解复制叉前方的扭转张力。",
+      "keywords": [
+        "环状DNA Circular DNA",
+        "复制起点 oriC",
+        "拓扑异构酶 Topoisomerase"
+      ],
+      "explanation": "细菌染色体通常为环状双链DNA。复制从复制起点开始并向两个方向推进；拓扑异构酶始终附着在DNA作用位置，通过暂时切断并重新连接DNA释放拓扑张力。动画中酶经过的局部由横向双螺旋连续变形为平行双链，而不是切换成另一幅图。",
+      "mistake": "平行双链仍由氢键维持配对；拓扑异构酶不是把DNA永久切断，也不负责破坏两条链之间的氢键。",
+      "question": "如果复制叉前方的超螺旋不能及时松弛，解旋酶的推进会受到什么影响？"
+    },
+    {
+      "id": "unwinding",
+      "title": "复制叉建立",
+      "titleEn": "Replication Fork Formation",
+      "goal": "观察解旋酶沿DNA推进并破坏互补碱基之间的氢键，形成复制叉。",
+      "keywords": [
+        "解旋酶 Helicase",
+        "氢键 Hydrogen Bond",
+        "复制叉 Replication Fork"
+      ],
+      "explanation": "解旋酶利用能量打开双链，使两条亲代链分离并暴露模板。复制叉处的碱基和氢键随解旋酶推进连续移动：先拉开、再断开，不是静止碱基上叠加移动图标。",
+      "mistake": "解旋酶破坏的是互补碱基之间的氢键，不切断DNA主链上的磷酸二酯键。",
+      "question": "为什么解旋后两条亲代链都能作为合成子链的模板？"
+    },
+    {
+      "id": "priming",
+      "title": "引物形成",
+      "titleEn": "Primer Formation",
+      "goal": "理解DNA聚合酶不能从零开始合成，必须由引物酶先提供具有3′-OH末端的RNA引物。",
+      "keywords": [
+        "引物酶 Primase",
+        "RNA引物 RNA Primer",
+        "3′-OH末端"
+      ],
+      "explanation": "前导链在复制起点附近只需一个起始引物；后随链随着复制叉不断打开，需要反复合成新的RNA引物。引物酶跟随当前作用位置，引物贴合模板并显示互补配对，为DNA聚合酶Ⅲ提供可延伸的3′端。",
+      "mistake": "引物不是最终DNA的一部分；复制后期需要由DNA聚合酶Ⅰ将其切除并以DNA替换。",
+      "question": "为什么后随链需要多个引物，而前导链通常只需一个起始引物？"
+    },
+    {
+      "id": "elongation",
+      "title": "同步复制",
+      "titleEn": "Synchronized Replication",
+      "goal": "比较DNA聚合酶Ⅲ在前导链上的连续合成和后随链上的分段合成。",
+      "keywords": [
+        "5′→3′合成",
+        "前导链 Leading Strand",
+        "冈崎片段 Okazaki Fragment"
+      ],
+      "explanation": "解旋酶继续前移的同时，DNA聚合酶Ⅲ把脱氧核苷酸加到新链3′端。前导链与复制叉同向连续合成；后随链背离复制叉分段合成。新链沿刚打开的复制叉弯曲并逐渐过渡到平行区域，形成多个冈崎片段。",
+      "mistake": "后随链并不是沿3′→5′方向合成；每一个冈崎片段同样都是5′→3′合成。",
+      "question": "两条模板链反向平行，为什么会导致一条连续合成、另一条分段合成？"
+    },
+    {
+      "id": "maturation",
+      "title": "替换与连接",
+      "titleEn": "Primer Replacement and Ligation",
+      "goal": "观察DNA聚合酶Ⅰ切除RNA引物并补入DNA，随后DNA连接酶封闭相邻片段之间的缺口。",
+      "keywords": [
+        "DNA聚合酶Ⅰ",
+        "DNA连接酶 Ligase",
+        "磷酸二酯键"
+      ],
+      "explanation": "DNA聚合酶Ⅰ利用5′→3′外切酶活性去除RNA引物，同时以DNA补齐空缺；补齐后仍保留可见切口。DNA连接酶移动到切口处催化形成磷酸二酯键，切口闭合并出现连续的新DNA骨架。",
+      "mistake": "DNA连接酶不能替代缺失的核苷酸，它只负责封闭相邻DNA片段之间的切口。",
+      "question": "为什么DNA聚合酶Ⅰ补齐引物位置后，仍然需要DNA连接酶？"
+    }
+  ],
+  "version": "2.3.3"
+}

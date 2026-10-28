@@ -1,0 +1,74 @@
+{
+  "id": "photosynthesis",
+  "version": "2.0.3",
+  "title": {
+    "zh": "光合作用的过程",
+    "en": "Photosynthesis"
+  },
+  "stages": [
+    {
+      "id": "light",
+      "title": {
+        "zh": "光反应",
+        "en": "Light reactions"
+      }
+    },
+    {
+      "id": "calvin",
+      "title": {
+        "zh": "暗反应",
+        "en": "Calvin cycle"
+      }
+    },
+    {
+      "id": "coupled",
+      "title": {
+        "zh": "两阶段协同",
+        "en": "Coupled reactions"
+      }
+    }
+  ],
+  "science": {
+    "locations": {
+      "light": "类囊体薄膜",
+      "calvin": "叶绿体基质"
+    },
+    "light": "水的光解释放氧，光能转为ATP和NADPH携带的化学能。氧来源于水。",
+    "calvin": "CO2与C5形成C3；C3利用ATP和NADPH还原为三碳糖；大部分三碳糖参与C5再生，部分用于形成糖类；再生也需要ATP。",
+    "recycling": "NADPH供给还原力后形成NADP+；ATP利用后形成ADP和Pi。返回类囊体薄膜侧再利用。",
+    "carbonAccounting": "内部碳收支采用两组3CO2的记账量，3C5再生，每组净形成1个三碳糖；不将屏幕卡片数量解释为分子计量。"
+  },
+  "presentation": {
+    "durationSeconds": 54,
+    "stageStarts": [
+      0,
+      9,
+      30
+    ],
+    "cohortOffsets": [
+      0,
+      24
+    ],
+    "timeMeaning": "演示时间，不是生理反应速率。第三段是协同观察，不是第三类光合作用反应。",
+    "continuity": "暗反应开始后光反应继续；所有物质、虚线路径和进度共享同一全局时间。移动结束后补回固定供应标识；不同反应物和产物可以同时显示，以表现持续产生与利用。",
+    "reactionChange": "所有移动物质沿用原框、字号与尺寸。C3在还原时转为G3P。上方ATP、NADPH名称保持不变；ADP+Pi与NADP+在C3还原时于下方产生，并沿各自曲线向左移动。",
+    "arrows": "去程从左向右，回程从右向左；虚线仅在对应传递/转化时间窗口推进，暂停时同步停止。",
+    "simplifications": [
+      "不展开光系统I/II、电子传递复合体和质子梯度",
+      "ATP/NADPH的记账满足卡尔文循环需求，不声称线性电子流具有固定9:6的产生比例",
+      "(CH2O)为糖类概括式，不是甲醛，也不是一步直接生成葡萄糖",
+      "不借用动物细胞或线粒体3D数据；全部反应使用已批准的分子式示意"
+    ],
+    "moleculeHandoff": "同种物质的移动与固定标识依次交接。ATP、NADPH向右传递后，在路径中间补回固定标识；ADP+Pi、NADP+向左返回后同样补回，下一轮移动前消隐。C3在移动节点转为G3P后补回，二者属于不同物质，不互斥；三碳糖固定记录只避让正在移动的G3P，不避让C3。"
+  },
+  "sources": [
+    {
+      "title": "OpenStax Biology 2e: Light-dependent reactions",
+      "url": "https://openstax.org/books/biology-2e/pages/8-2-the-light-dependent-reactions-of-photosynthesis"
+    },
+    {
+      "title": "OpenStax Biology 2e: Calvin cycle",
+      "url": "https://openstax.org/books/biology-2e/pages/8-3-using-light-energy-to-make-organic-molecules"
+    }
+  ]
+}

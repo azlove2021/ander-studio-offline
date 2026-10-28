@@ -1,0 +1,52 @@
+/* Content layout only. Header, stages and controls use the unchanged 2.5.1 shell. */
+body[data-model-shell] .model-area .model-stage{min-height:0;overflow:hidden}
+body[data-model-shell] .model-area .condition-bar{gap:8px;min-height:38px;padding:4px 10px}
+.osmosis-views{display:flex;gap:5px;flex:none}
+.condition-bar .shell-action{min-height:30px;padding:4px 9px;font-size:12px;white-space:nowrap}
+body[data-model-shell] .model-area .membrane-rule{flex:1;font-size:11px;text-align:center}
+body[data-model-shell] .model-area .playback-badge{font-size:10px;padding:3px 6px}
+body[data-model-shell] .model-area .science-layout{display:grid;grid-template-columns:154px minmax(0,1fr);flex:1;min-width:0;min-height:0}
+body[data-model-shell] .model-area .liquid-options{align-self:center;display:flex;flex-direction:column;gap:18px;padding:12px;margin:0;border:0;max-height:100%;overflow:auto}
+body[data-model-shell] .model-area .liquid-field{gap:7px}
+body[data-model-shell] .model-area .liquid-field label{font-size:12px;gap:8px;white-space:nowrap}
+body[data-model-shell] .model-area .liquid-field select{font-size:12px;min-height:36px;padding:6px}
+body[data-model-shell] .model-area .science-viewport{flex:1;min-width:0;min-height:0}
+body[data-model-shell] .model-area .art-scroll{position:relative;flex:1;min-width:0;min-height:0;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;isolation:isolate}
+body[data-model-shell] .model-area .science-world{display:block;width:100%;height:100%;min-width:0!important;min-height:0!important;padding:0;transform-origin:0 0}
+body[data-model-shell] .model-area .science-world>svg{display:block;width:100%;height:100%;max-width:none;max-height:none;overflow:visible}
+body[data-model-shell] .model-area .scene-note{min-height:28px;padding:4px 10px;gap:5px;flex-direction:row;justify-content:center;align-items:center;font-size:11px;text-align:center;line-height:1.5}
+.osmosis-context{display:none}.shell-dialog-body>.osmosis-context{display:block;font-size:14px;line-height:1.8}
+body[data-model-shell] .model-area .shell-dialog .liquid-options{display:grid!important;grid-template-columns:1fr 1fr;padding:0;gap:15px;max-height:none}
+body[data-model-shell] .model-area .shell-dialog .liquid-field label{font-size:14px}
+body[data-model-shell] .model-area .shell-dialog .liquid-field select{min-height:40px;font-size:14px}
+body[data-model-shell] .model-area .shell-dialog .selection-hint{display:block;grid-column:1/-1}
+body[data-model-shell][data-shell-compact=true] .model-area .science-layout{grid-template-columns:118px minmax(0,1fr)}
+body[data-model-shell][data-shell-compact=true] .model-area .liquid-options{padding:8px;gap:12px}
+body[data-model-shell][data-shell-compact=true] .model-area .liquid-field{gap:4px}
+body[data-model-shell][data-shell-compact=true] .model-area .field-hint,
+body[data-model-shell][data-shell-compact=true] .model-area .selection-hint{display:none}
+body[data-model-shell][data-shell-compact=true] .model-area .condition-bar{min-height:32px;padding:2px 8px}
+body[data-model-shell][data-shell-compact=true] .model-area .scene-note{min-height:22px;font-size:10px;padding:2px 8px}
+body[data-model-shell][data-shell-compact=true] .model-area .scene-note>span:first-child{display:none}
+body[data-model-shell][data-shell-compact=true] .model-area[data-focus=true] .condition-bar{display:none}
+@media(max-width:599px){
+ body[data-model-shell] .model-area .science-layout{display:flex;flex-direction:column}
+ body[data-model-shell] .model-area .condition-bar{justify-content:space-between;padding:4px 7px;gap:5px}
+ body[data-model-shell] .model-area .condition-bar .membrane-rule,body[data-model-shell] .model-area .playback-badge{display:none}
+ body[data-model-shell] .model-area .condition-bar .shell-action{font-size:11px;padding:4px 7px}
+ body[data-model-shell] .model-area .liquid-options{align-self:stretch;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:5px 10px;flex:none;border-bottom:1px solid #e3ece6;overflow:visible}
+ body[data-model-shell] .model-area .liquid-field{gap:3px}
+ body[data-model-shell] .model-area .liquid-field label{font-size:11px;gap:7px}
+ body[data-model-shell] .model-area .liquid-field select{min-height:30px;padding:4px 5px}
+ body[data-model-shell] .model-area .field-hint,body[data-model-shell] .model-area .selection-hint{display:none}
+ body[data-model-shell] .model-area .scene-note{min-height:24px;padding:3px 8px;font-size:10px}
+ body[data-model-shell] .model-area .scene-note>span:first-child{display:none}
+}
+body[data-model-shell] .model-area[data-immersive=true] .condition-bar,
+body[data-model-shell] .model-area[data-immersive=true] .science-layout>.liquid-options,
+body[data-model-shell] .model-area[data-immersive=true] .scene-note{display:none}
+body[data-model-shell] .model-area[data-immersive=true] .science-layout{display:flex;min-height:0;flex:1}
+@media(max-width:599px) and (max-height:560px){
+ /* Very short portrait: the unchanged selectors remain available in context. */
+ body[data-model-shell] .model-area .science-layout>.liquid-options{display:none}
+}

@@ -1,0 +1,19 @@
+/* model-brand-watermark-1.0 — accepted style 13, independent of the model clock. */
+.model-brand-host { isolation: isolate; }
+.model-brand-positioned { position: relative; }
+.model-brand-footer-host { padding-bottom: 52px !important; }
+@media (min-width: 600px) and (max-height: 500px) { .model-brand-footer-host { padding-bottom: 24px !important; } }
+.model-brand-foreground { z-index: 1; }
+.model-brand-layer { position: absolute; z-index: 2; overflow: hidden; pointer-events: none; user-select: none; contain: layout style; visibility: hidden; }
+.model-brand-layer.is-ready { visibility: visible; }
+.model-brand-corner { position: absolute; display: block; }
+.model-brand-corner img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; }
+.model-brand-center { position: absolute; display: block; visibility: hidden; pointer-events: none; }
+.model-brand-background { position: absolute; z-index: 0; overflow: hidden; pointer-events: none; }
+/* The selector also survives model-specific focus-mode rules that hide SVG siblings. */
+svg > .model-brand-svg-background, .model-brand-svg-background { overflow: visible; visibility: visible !important; pointer-events: none; }
+.model-brand-svg-background > .model-brand-center { position: static; width: 100%; height: 100%; }
+.model-brand-layer *, .model-brand-background *, .model-brand-svg-background * { pointer-events: none !important; }
+.model-brand-layer.is-hidden, .model-brand-background.is-hidden, .model-brand-svg-background.is-hidden { visibility: hidden !important; }
+.model-brand-layer.is-hidden *, .model-brand-background.is-hidden *, .model-brand-svg-background.is-hidden * { visibility: hidden !important; }
+@media (prefers-reduced-motion: reduce) { .model-brand-center { display: none; } }

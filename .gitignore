@@ -1,0 +1,30 @@
+# ---------- 本地凭证与账号，绝不入库 ----------
+_data/accounts.json
+_tools/.session_cookie
+_tools/.session_csrf
+*.pem
+*.key
+
+# ---------- 可再生产物 ----------
+# 导出包由 _tools/export_model.py 从 model-releases/ 生成，重复入库会翻倍体积
+导出/
+__pycache__/
+*.pyc
+
+# ---------- 采集过程的中间数据（脚本可重新生成）----------
+_tools/_live_l*.json
+_tools/_deep_d*.json
+_tools/_deep_js.json
+_tools/_deep_resp.json
+_tools/_insp3.json
+_tools/_probe_urls.json
+_tools/_missing_all.txt
+_tools/_live_gap.txt
+_tools/_deep_gap.txt
+
+# ---------- 编辑器与系统 ----------
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+desktop.ini

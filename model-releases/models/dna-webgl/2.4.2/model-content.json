@@ -1,0 +1,116 @@
+{
+  "id": "dna-webgl",
+  "accent": "#0EA5E9",
+  "title": "DNA 双螺旋结构（WebGL 重建版）",
+  "titleEn": "DNA Double Helix / WebGL Rebuild",
+  "chapter": "遗传信息的分子基础 / Molecular Basis of Inheritance",
+  "type": "3D WebGL 动态模型",
+  "state": "真实三维深度",
+  "visual": "dnaWebgl",
+  "structures": [
+    [
+      "磷酸球形 Phosphate",
+      "#06B6D4"
+    ],
+    [
+      "脱氧核糖五边形 Deoxyribose",
+      "#F59E0B"
+    ],
+    [
+      "糖中碳原子 Sugar C",
+      "#475569"
+    ],
+    [
+      "糖中氧原子 Sugar O",
+      "#EF4444"
+    ],
+    [
+      "A/G 嘌呤双环 Purines",
+      "#22C55E"
+    ],
+    [
+      "C/T 嘧啶单环 Pyrimidines",
+      "#A855F7"
+    ],
+    [
+      "3',5'-磷酸二酯键 Phosphodiester",
+      "#2563EB"
+    ],
+    [
+      "氢键 Hydrogen Bonds",
+      "#94A3B8"
+    ]
+  ],
+  "stages": [
+    {
+      "title": "整体观察",
+      "titleEn": "Overview",
+      "goal": "从整体上认识 DNA 的双螺旋结构。",
+      "keywords": [
+        "DNA",
+        "双螺旋 Double Helix",
+        "两条链 Two Strands"
+      ],
+      "explanation": "DNA 分子通常由两条长链组成，两条链围绕同一中心轴盘旋，形成双螺旋结构。",
+      "mistake": "模型为了便于观察放大了各组成部分，不代表真实比例。",
+      "question": "为什么 DNA 的结构既要稳定，又要能够在复制时解开？",
+      "id": "overview"
+    },
+    {
+      "title": "组成单位",
+      "titleEn": "Building Blocks",
+      "goal": "识别一个脱氧核苷酸中的磷酸、脱氧核糖和碱基。",
+      "keywords": [
+        "脱氧核苷酸 Nucleotide",
+        "磷酸 Phosphate",
+        "碱基 Base"
+      ],
+      "explanation": "每个脱氧核苷酸由一分子磷酸、一分子脱氧核糖和一个含氮碱基组成。",
+      "mistake": "不要把一个碱基对误认为一个完整的脱氧核苷酸。",
+      "question": "一个脱氧核苷酸中，哪一部分会体现 A、T、C、G 的差异？",
+      "id": "building-blocks"
+    },
+    {
+      "title": "外侧骨架",
+      "titleEn": "Backbone",
+      "goal": "观察磷酸-糖骨架在 DNA 外侧的位置。",
+      "keywords": [
+        "骨架 Backbone",
+        "磷酸 Phosphate",
+        "脱氧核糖 Deoxyribose"
+      ],
+      "explanation": "DNA 的外侧由磷酸和脱氧核糖交替连接，形成稳定的磷酸-糖骨架。",
+      "mistake": "碱基位于内侧，磷酸-糖骨架位于外侧。",
+      "question": "为什么稳定的外侧骨架有利于遗传信息保存？",
+      "id": "backbone"
+    },
+    {
+      "title": "碱基配对",
+      "titleEn": "Base Pairing",
+      "goal": "理解 A-T、C-G 的互补配对关系。",
+      "keywords": [
+        "A-T",
+        "C-G",
+        "互补配对 Complementary Pairing"
+      ],
+      "explanation": "DNA 中的 A 通常与 T 配对，C 通常与 G 配对，这种固定关系有助于 DNA 准确复制。",
+      "mistake": "A 不与 C 配对，T 不与 G 配对。",
+      "question": "如果一条链上是 A-T-C-G，另一条链对应序列是什么？",
+      "id": "base-pairing"
+    },
+    {
+      "title": "信息储存",
+      "titleEn": "Genetic Information",
+      "goal": "理解碱基排列顺序与遗传信息之间的关系。",
+      "keywords": [
+        "碱基序列 Sequence",
+        "遗传信息 Genetic Information"
+      ],
+      "explanation": "DNA 中遗传信息主要储存在碱基的排列顺序中，不同序列可以对应不同遗传信息。",
+      "mistake": "遗传信息不是由磷酸或脱氧核糖的种类决定的。",
+      "question": "同样长度的 DNA 片段，为什么能携带不同信息？",
+      "id": "genetic-information"
+    }
+  ],
+  "version": "2.3.2"
+}

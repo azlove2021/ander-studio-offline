@@ -1,0 +1,27 @@
+/* Website response overlay only; immutable optical-microscope 2.7.5 is unchanged.
+   Its intermediate-width grid let view controls cover the Next button. Keep
+   original controls/listeners and put view tools on their own row. Compact,
+   immersive and other model/version layouts keep the package's own rules. */
+@media (min-width: 861px) and (max-width: 1200px) {
+  body[data-model-id="optical-microscope"][data-model-version="2.7.5"][data-shell-compact="false"] .model-area:not([data-immersive="true"]) > .control-dock {
+    grid-template-columns: minmax(0, 1fr) auto !important;
+  }
+  body[data-model-id="optical-microscope"][data-model-version="2.7.5"][data-shell-compact="false"] .model-area:not([data-immersive="true"]) > .control-dock > .control-group-primary {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  body[data-model-id="optical-microscope"][data-model-version="2.7.5"][data-shell-compact="false"] .model-area:not([data-immersive="true"]) > .control-dock > .control-group-personal {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  body[data-model-id="optical-microscope"][data-model-version="2.7.5"][data-shell-compact="false"] .model-area:not([data-immersive="true"]) > .control-dock > .control-group-view {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+  }
+  body[data-model-id="optical-microscope"][data-model-version="2.7.5"][data-shell-compact="false"] .model-area:not([data-immersive="true"]) > .control-dock > .timeline-wrap {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "id": "animal-cell",
+  "accent": "#8B5CF6",
+  "title": "动物细胞结构模型",
+  "titleEn": "Animal Cell Structure",
+  "chapter": "细胞的基本结构 / Cell Structure",
+  "type": "3D WebGL 动态模型",
+  "state": "动物细胞主要结构综合观察",
+  "visual": "animalCellWebgl",
+  "structures": [
+    [
+      "细胞膜 Plasma Membrane",
+      "#38BDF8"
+    ],
+    [
+      "细胞核 Nucleus",
+      "#A855F7"
+    ],
+    [
+      "内质网 Endoplasmic Reticulum",
+      "#B45309"
+    ],
+    [
+      "高尔基体 Golgi Apparatus",
+      "#06B6D4"
+    ],
+    [
+      "核糖体 Ribosome",
+      "#7C3AED"
+    ],
+    [
+      "线粒体 Mitochondrion",
+      "#F97316"
+    ],
+    [
+      "中心体 Centrosome",
+      "#EC4899"
+    ],
+    [
+      "溶酶体 Lysosome",
+      "#F59E0B"
+    ]
+  ],
+  "stages": [
+    {
+      "title": "整体结构",
+      "titleEn": "Overall Structure",
+      "goal": "从三维模型中认识动物细胞膜、细胞核和主要细胞器的空间关系。",
+      "keywords": [
+        "动物细胞 Animal Cell",
+        "细胞器 Organelles",
+        "空间分布 3D Arrangement"
+      ],
+      "explanation": "动物细胞没有细胞壁，细胞膜直接构成细胞边界。细胞核、内质网、高尔基体、线粒体、核糖体、中心体和溶酶体分布在细胞质中。",
+      "mistake": "动物细胞没有固定的长方形外形；本模型用近似球形表示常见的游离动物细胞。",
+      "question": "与植物细胞相比，动物细胞缺少哪些结构，又具有哪些典型结构？",
+      "id": "overview"
+    },
+    {
+      "title": "细胞膜",
+      "titleEn": "Cell Membrane",
+      "goal": "观察球形细胞膜与细胞质之间的边界关系。",
+      "keywords": [
+        "细胞膜 Plasma Membrane",
+        "选择透过性 Selective Permeability",
+        "细胞边界 Cell Boundary"
+      ],
+      "explanation": "动物细胞没有细胞壁，细胞膜直接包围细胞质，控制物质进出并参与细胞间的信息交流。",
+      "mistake": "细胞膜不是坚硬外壳，它具有一定流动性，形状可随细胞状态发生变化。",
+      "question": "动物细胞为什么比有细胞壁的植物细胞更容易发生形状变化？",
+      "id": "cell-membrane"
+    },
+    {
+      "title": "细胞核",
+      "titleEn": "Nucleus",
+      "goal": "观察核膜、核孔、染色质和核仁的空间结构。",
+      "keywords": [
+        "核膜 Nuclear Envelope",
+        "核孔 Nuclear Pore",
+        "核仁 Nucleolus"
+      ],
+      "explanation": "细胞核储存遗传信息，并通过核孔与细胞质交换物质和信息，调控细胞的代谢和遗传活动。",
+      "mistake": "核仁不是独立的小细胞，而是细胞核内部与核糖体形成有关的结构。",
+      "question": "核孔在遗传信息表达过程中承担什么作用？",
+      "id": "nucleus"
+    },
+    {
+      "title": "生物膜系统",
+      "titleEn": "Biomembrane System",
+      "goal": "比较细胞膜、核膜、内质网、高尔基体、线粒体和溶酶体的膜结构。",
+      "keywords": [
+        "生物膜系统 Biomembrane System",
+        "内质网 ER",
+        "高尔基体 Golgi"
+      ],
+      "explanation": "细胞膜、核膜以及多种具膜细胞器在结构和功能上相互联系，使细胞内不同反应能够分区、有序地进行。",
+      "mistake": "生物膜系统不是一张连续的大膜，而是多种膜结构之间的分工与协作。",
+      "question": "具膜细胞器为什么能提高细胞内化学反应的效率？",
+      "id": "biomembrane"
+    },
+    {
+      "title": "能量转化",
+      "titleEn": "Energy Conversion",
+      "goal": "观察线粒体外膜、内膜和嵴，理解其能量转化功能。",
+      "keywords": [
+        "线粒体 Mitochondrion",
+        "线粒体嵴 Cristae",
+        "细胞呼吸 Cellular Respiration"
+      ],
+      "explanation": "线粒体内膜向内折叠形成嵴，为有氧呼吸有关反应提供较大的膜面积，是动物细胞进行能量转化的重要场所。",
+      "mistake": "动物细胞不含叶绿体，生命活动所需能量主要由线粒体等结构参与转化。",
+      "question": "线粒体内膜形成大量嵴有什么意义？",
+      "id": "energy"
+    },
+    {
+      "title": "蛋白质合成与加工",
+      "titleEn": "Protein Synthesis and Processing",
+      "goal": "追踪核糖体、内质网、高尔基体和囊泡在蛋白质合成加工中的分工。",
+      "keywords": [
+        "核糖体 Ribosome",
+        "粗面内质网 Rough ER",
+        "高尔基体 Golgi"
+      ],
+      "explanation": "核糖体合成蛋白质，粗面内质网参与初步加工与运输，高尔基体进一步修饰、分类和包装，囊泡承担定向运输。",
+      "mistake": "核糖体没有膜结构，但它是蛋白质合成的场所，并与内质网和高尔基体密切配合。",
+      "question": "分泌蛋白从合成到排出细胞通常依次经过哪些结构？",
+      "id": "protein-synthesis"
+    },
+    {
+      "title": "中心体与溶酶体",
+      "titleEn": "Centrosome and Lysosome",
+      "goal": "认识动物细胞中中心体和溶酶体的结构与功能。",
+      "keywords": [
+        "中心体 Centrosome",
+        "中心粒 Centriole",
+        "溶酶体 Lysosome"
+      ],
+      "explanation": "中心体由两个互相垂直的中心粒及周围物质组成，参与细胞分裂；溶酶体内含多种水解酶，参与分解衰老、损伤的细胞器以及吞入细胞的物质。",
+      "mistake": "中心体和溶酶体功能不同：中心体主要参与微管组织与细胞分裂，溶酶体主要承担细胞内消化。",
+      "question": "中心体和溶酶体分别如何维持动物细胞的正常生命活动？",
+      "id": "animal-organelles"
+    }
+  ],
+  "version": "2.1.3"
+}

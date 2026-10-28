@@ -1,0 +1,2959 @@
+{
+  "schemaVersion": "2.0",
+  "generatedAt": "2026-10-22T03:57:27.568Z",
+  "models": [
+    {
+      "schemaVersion": "2.0",
+      "id": "cell-elements",
+      "version": "2.6.1",
+      "publish": true,
+      "title": {
+        "zh": "组成细胞的元素（2D）",
+        "en": "Elements in Cells (2D)"
+      },
+      "summary": {
+        "zh": "比较所有元素、大量元素、微量元素、基本元素和最基本元素，并查看元素功能与常见物质组成。",
+        "en": "Compare biological element groups and explore concise element functions and the composition of common substances."
+      },
+      "module": {
+        "id": "molecules-and-cells",
+        "zh": "分子与细胞",
+        "en": "Molecules and Cells"
+      },
+      "technology": "dom-2d",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": false,
+        "reset": true,
+        "stages": true,
+        "speed": false,
+        "labels": true,
+        "highlight": true,
+        "viewPresets": false,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "all",
+          "title": {
+            "zh": "所有元素",
+            "en": "All Elements"
+          }
+        },
+        {
+          "id": "major",
+          "title": {
+            "zh": "大量元素",
+            "en": "Major Elements"
+          }
+        },
+        {
+          "id": "trace",
+          "title": {
+            "zh": "微量元素",
+            "en": "Trace Elements"
+          }
+        },
+        {
+          "id": "basic",
+          "title": {
+            "zh": "基本元素",
+            "en": "Basic Elements"
+          }
+        },
+        {
+          "id": "core",
+          "title": {
+            "zh": "最基本元素",
+            "en": "Core Element"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "scene-navigation.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "shell.css",
+        "brand-watermark.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/cell-elements/2.6.1/index.html",
+      "currentVersion": "2.6.1"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "bacteriophage-reproduction",
+      "version": "2.5.0",
+      "publish": true,
+      "title": {
+        "zh": "噬菌体的繁殖（2D动画）",
+        "en": "Bacteriophage Reproduction (2D Animation)"
+      },
+      "summary": {
+        "zh": "分阶段观察噬菌体吸附、注入、合成、装配与裂解释放的裂解周期。",
+        "en": "Follow phage attachment, genome injection, biosynthesis, assembly and lytic release."
+      },
+      "module": {
+        "id": "molecules-and-cells",
+        "zh": "分子与细胞",
+        "en": "Molecules and Cells"
+      },
+      "technology": "svg-2d-animation",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": false,
+        "highlight": false,
+        "viewPresets": false,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "attachment",
+          "title": {
+            "zh": "吸附",
+            "en": "Attachment"
+          }
+        },
+        {
+          "id": "injection",
+          "title": {
+            "zh": "注入",
+            "en": "Genome Injection"
+          }
+        },
+        {
+          "id": "biosynthesis",
+          "title": {
+            "zh": "复制与合成",
+            "en": "Replication and Biosynthesis"
+          }
+        },
+        {
+          "id": "assembly",
+          "title": {
+            "zh": "装配",
+            "en": "Assembly"
+          }
+        },
+        {
+          "id": "lysis",
+          "title": {
+            "zh": "裂解释放",
+            "en": "Lysis and Release"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "model.js",
+        "brand-watermark.js",
+        "process-shell.js",
+        "lab-gesture.js"
+      ],
+      "styles": [
+        "model.css",
+        "shell.css",
+        "brand-watermark.css",
+        "process-layout.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/bacteriophage-reproduction/2.5.0/index.html",
+      "currentVersion": "2.5.0"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "dna-webgl",
+      "version": "2.4.2",
+      "publish": true,
+      "title": {
+        "zh": "DNA 双螺旋结构模型",
+        "en": "DNA Double Helix Model"
+      },
+      "summary": {
+        "zh": "观察 DNA 双螺旋、核苷酸组成、碱基配对和信息储存。",
+        "en": "Explore the DNA double helix, nucleotides, base pairing and genetic information."
+      },
+      "module": {
+        "id": "molecules-and-cells",
+        "zh": "分子与细胞",
+        "en": "Molecules and Cells"
+      },
+      "technology": "threejs",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": true,
+        "viewPresets": true,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "overview",
+          "title": {
+            "zh": "整体观察",
+            "en": "Overview"
+          }
+        },
+        {
+          "id": "building-blocks",
+          "title": {
+            "zh": "组成单位",
+            "en": "Building Blocks"
+          }
+        },
+        {
+          "id": "backbone",
+          "title": {
+            "zh": "外侧骨架",
+            "en": "Backbone"
+          }
+        },
+        {
+          "id": "base-pairing",
+          "title": {
+            "zh": "碱基配对",
+            "en": "Base Pairing"
+          }
+        },
+        {
+          "id": "genetic-information",
+          "title": {
+            "zh": "信息储存",
+            "en": "Genetic Information"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "shell.css",
+        "brand-watermark.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/dna-webgl/2.4.2/index.html",
+      "currentVersion": "2.4.2"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "dna-replication",
+      "version": "2.4.2",
+      "publish": true,
+      "title": {
+        "zh": "DNA复制模型（2D）",
+        "en": "DNA Replication Model (2D)"
+      },
+      "summary": {
+        "zh": "以原核生物DNA复制为基础，连续展示超螺旋松弛、同步解旋与复制、引物形成、冈崎片段成熟及连接。",
+        "en": "Explore prokaryotic DNA replication through relaxation, synchronized unwinding and synthesis, primer formation, Okazaki-fragment maturation and ligation."
+      },
+      "module": {
+        "id": "molecular-genetics",
+        "zh": "遗传信息的复制",
+        "en": "Replication of Genetic Information"
+      },
+      "technology": "svg-2d-animation",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": true,
+        "viewPresets": false,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "relaxation",
+          "title": {
+            "zh": "超螺旋松弛",
+            "en": "Supercoil Relaxation"
+          }
+        },
+        {
+          "id": "unwinding",
+          "title": {
+            "zh": "复制叉建立",
+            "en": "Replication Fork Formation"
+          }
+        },
+        {
+          "id": "priming",
+          "title": {
+            "zh": "引物形成",
+            "en": "Primer Formation"
+          }
+        },
+        {
+          "id": "elongation",
+          "title": {
+            "zh": "同步复制",
+            "en": "Synchronized Replication"
+          }
+        },
+        {
+          "id": "maturation",
+          "title": {
+            "zh": "替换与连接",
+            "en": "Primer Replacement and Ligation"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "scene-view.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "shell.css",
+        "brand-watermark.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/dna-replication/2.4.2/index.html",
+      "currentVersion": "2.4.2"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "dna-transcription",
+      "version": "2.2.4",
+      "publish": true,
+      "title": {
+        "zh": "DNA转录与RNA加工模型（2D）",
+        "en": "DNA Transcription and RNA Processing Model (2D)"
+      },
+      "summary": {
+        "zh": "连续展示RNA聚合酶识别启动子、形成转录泡、沿模板链合成前体mRNA，并经剪接、加帽和加尾形成成熟mRNA。",
+        "en": "Explore promoter recognition, transcription-bubble formation, pre-mRNA synthesis, splicing, capping and polyadenylation as one continuous process."
+      },
+      "module": {
+        "id": "molecular-genetics",
+        "zh": "遗传信息的转录与加工",
+        "en": "Transcription and Processing of Genetic Information"
+      },
+      "technology": "svg-2d-animation",
+      "entry": "index.html",
+      "cover": "assets/cover.webp",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": true,
+        "viewPresets": false,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "promoter-recognition",
+          "title": {
+            "zh": "识别启动子",
+            "en": "Promoter Recognition"
+          }
+        },
+        {
+          "id": "bubble-formation",
+          "title": {
+            "zh": "形成转录泡",
+            "en": "Transcription Bubble Formation"
+          }
+        },
+        {
+          "id": "elongation",
+          "title": {
+            "zh": "延伸前体mRNA",
+            "en": "Pre-mRNA Elongation"
+          }
+        },
+        {
+          "id": "termination",
+          "title": {
+            "zh": "终止与释放",
+            "en": "Termination and Release"
+          }
+        },
+        {
+          "id": "rna-processing",
+          "title": {
+            "zh": "RNA加工成熟",
+            "en": "RNA Processing"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "scene-view.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "shell.css",
+        "brand-watermark.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/dna-transcription/2.2.4/index.html",
+      "currentVersion": "2.2.4"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "translation",
+      "version": "2.2.2",
+      "publish": true,
+      "title": {
+        "zh": "mRNA翻译模型（2D）",
+        "en": "mRNA Translation Model (2D)"
+      },
+      "summary": {
+        "zh": "连续展示核糖体装配、tRNA识别密码子、肽键形成、逐密码子易位和终止释放。",
+        "en": "Explore ribosome assembly, codon recognition, peptide-bond formation, translocation and translation termination as one continuous process."
+      },
+      "module": {
+        "id": "molecular-genetics",
+        "zh": "遗传信息的翻译",
+        "en": "Translation of Genetic Information"
+      },
+      "technology": "svg-2d-animation",
+      "entry": "index.html",
+      "cover": "assets/cover.webp",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": true,
+        "viewPresets": false,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "mrna-binding",
+          "title": {
+            "zh": "mRNA识别",
+            "en": "mRNA Binding"
+          }
+        },
+        {
+          "id": "initiation",
+          "title": {
+            "zh": "翻译起始",
+            "en": "Initiation"
+          }
+        },
+        {
+          "id": "codon-recognition",
+          "title": {
+            "zh": "密码子识别",
+            "en": "Codon Recognition"
+          }
+        },
+        {
+          "id": "peptide-bond",
+          "title": {
+            "zh": "形成肽键",
+            "en": "Peptide Bond Formation"
+          }
+        },
+        {
+          "id": "elongation",
+          "title": {
+            "zh": "延伸与易位",
+            "en": "Elongation and Translocation"
+          }
+        },
+        {
+          "id": "termination",
+          "title": {
+            "zh": "终止与释放",
+            "en": "Termination and Release"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "scene-view.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "shell.css",
+        "brand-watermark.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/translation/2.2.2/index.html",
+      "currentVersion": "2.2.2"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "rna-webgl",
+      "version": "2.4.2",
+      "publish": true,
+      "title": {
+        "zh": "RNA 结构模型",
+        "en": "RNA Structure Model"
+      },
+      "summary": {
+        "zh": "观察 RNA 单链、核糖、四种碱基及单链折叠。",
+        "en": "Explore RNA single strands, ribose, bases and folding."
+      },
+      "module": {
+        "id": "molecules-and-cells",
+        "zh": "分子与细胞",
+        "en": "Molecules and Cells"
+      },
+      "technology": "threejs",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": true,
+        "viewPresets": true,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "overview",
+          "title": {
+            "zh": "整体观察",
+            "en": "Overview"
+          }
+        },
+        {
+          "id": "ribose",
+          "title": {
+            "zh": "核糖特点",
+            "en": "Ribose Feature"
+          }
+        },
+        {
+          "id": "bases",
+          "title": {
+            "zh": "四种碱基",
+            "en": "Four Bases"
+          }
+        },
+        {
+          "id": "direction",
+          "title": {
+            "zh": "骨架方向",
+            "en": "Backbone Direction"
+          }
+        },
+        {
+          "id": "folding",
+          "title": {
+            "zh": "单链折叠",
+            "en": "Single-Strand Folding"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "shell.css",
+        "brand-watermark.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/rna-webgl/2.4.2/index.html",
+      "currentVersion": "2.4.2"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "protein-webgl",
+      "version": "2.4.2",
+      "publish": true,
+      "title": {
+        "zh": "蛋白质的结构模型",
+        "en": "Protein Structure Model"
+      },
+      "summary": {
+        "zh": "规范氨基和羧基的直角几何，并以双色包裹光晕突出反应基团。",
+        "en": "Refine amino and carboxyl geometry and highlight reacting groups with close-fitting two-color halos."
+      },
+      "module": {
+        "id": "molecules-and-cells",
+        "zh": "分子与细胞",
+        "en": "Molecules and Cells"
+      },
+      "technology": "threejs",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": true,
+        "viewPresets": true,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "condensation",
+          "title": {
+            "zh": "脱水缩合",
+            "en": "Dehydration Condensation"
+          }
+        },
+        {
+          "id": "primary",
+          "title": {
+            "zh": "一级结构",
+            "en": "Primary Structure"
+          }
+        },
+        {
+          "id": "secondary",
+          "title": {
+            "zh": "二级结构",
+            "en": "Secondary Structure"
+          }
+        },
+        {
+          "id": "tertiary",
+          "title": {
+            "zh": "三级结构",
+            "en": "Tertiary Structure"
+          }
+        },
+        {
+          "id": "quaternary",
+          "title": {
+            "zh": "四级结构",
+            "en": "Quaternary Structure"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "shell.css",
+        "brand-watermark.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/protein-webgl/2.4.2/index.html",
+      "currentVersion": "2.4.2"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "transport",
+      "version": "2.3.0",
+      "publish": true,
+      "title": {
+        "zh": "物质跨膜运输模型",
+        "en": "Membrane Transport Model"
+      },
+      "summary": {
+        "zh": "恢复 2.1.4 的载体凹坑绘制与构象切换，保留后续非凹坑改进。",
+        "en": "Restore the carrier pocket drawing and conformation switching from 2.1.4 while retaining later non-pocket improvements."
+      },
+      "module": {
+        "id": "molecules-and-cells",
+        "zh": "分子与细胞",
+        "en": "Molecules and Cells"
+      },
+      "technology": "2.5d-canvas",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": true,
+        "viewPresets": false,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "overview",
+          "title": {
+            "zh": "物质运输",
+            "en": "Transport Overview"
+          }
+        },
+        {
+          "id": "simple-diffusion",
+          "title": {
+            "zh": "自由扩散",
+            "en": "Simple Diffusion"
+          }
+        },
+        {
+          "id": "channel",
+          "title": {
+            "zh": "通道蛋白协助扩散",
+            "en": "Channel-Mediated Diffusion"
+          }
+        },
+        {
+          "id": "carrier",
+          "title": {
+            "zh": "载体蛋白协助扩散",
+            "en": "Carrier-Mediated Diffusion"
+          }
+        },
+        {
+          "id": "active",
+          "title": {
+            "zh": "载体主动运输",
+            "en": "ATP-Driven Active Transport"
+          }
+        },
+        {
+          "id": "cotransport",
+          "title": {
+            "zh": "协同转运",
+            "en": "Cotransport"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "scene-navigation.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "shell.css",
+        "brand-watermark.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/transport/2.3.0/index.html",
+      "currentVersion": "2.3.0"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "membrane",
+      "version": "2.4.0",
+      "publish": true,
+      "title": {
+        "zh": "细胞膜流动镶嵌模型",
+        "en": "Fluid Mosaic Model"
+      },
+      "summary": {
+        "zh": "观察磷脂双层、膜蛋白、糖链、胆固醇及细胞膜流动性。",
+        "en": "Explore the bilayer, proteins, carbohydrates, cholesterol and membrane fluidity."
+      },
+      "module": {
+        "id": "molecules-and-cells",
+        "zh": "分子与细胞",
+        "en": "Molecules and Cells"
+      },
+      "technology": "threejs",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": true,
+        "viewPresets": true,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "overview",
+          "title": {
+            "zh": "整体观察",
+            "en": "Overview"
+          }
+        },
+        {
+          "id": "bilayer",
+          "title": {
+            "zh": "磷脂双层",
+            "en": "Bilayer"
+          }
+        },
+        {
+          "id": "proteins",
+          "title": {
+            "zh": "膜蛋白",
+            "en": "Membrane Proteins"
+          }
+        },
+        {
+          "id": "carbohydrates",
+          "title": {
+            "zh": "多糖链",
+            "en": "Carbohydrate Chains"
+          }
+        },
+        {
+          "id": "cholesterol",
+          "title": {
+            "zh": "胆固醇",
+            "en": "Cholesterol"
+          }
+        },
+        {
+          "id": "fluidity",
+          "title": {
+            "zh": "流动性",
+            "en": "Fluidity"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "shell.css",
+        "brand-watermark.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/membrane/2.4.0/index.html",
+      "currentVersion": "2.4.0"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "plant-cell-webgl",
+      "version": "2.5.1",
+      "publish": true,
+      "title": {
+        "zh": "植物细胞结构模型",
+        "en": "Plant Cell Structure Model"
+      },
+      "summary": {
+        "zh": "综合观察植物细胞边界、细胞核、膜系统、能量转化和蛋白质合成加工。",
+        "en": "Explore plant-cell boundaries, nucleus, membrane systems, energy conversion and protein processing."
+      },
+      "module": {
+        "id": "molecules-and-cells",
+        "zh": "分子与细胞",
+        "en": "Molecules and Cells"
+      },
+      "technology": "threejs",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": true,
+        "viewPresets": true,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "overview",
+          "title": {
+            "zh": "整体结构",
+            "en": "Overall Structure"
+          }
+        },
+        {
+          "id": "cell-membrane",
+          "title": {
+            "zh": "细胞膜",
+            "en": "Cell Membrane"
+          }
+        },
+        {
+          "id": "nucleus",
+          "title": {
+            "zh": "细胞核",
+            "en": "Nucleus"
+          }
+        },
+        {
+          "id": "biomembrane",
+          "title": {
+            "zh": "生物膜系统",
+            "en": "Biomembrane System"
+          }
+        },
+        {
+          "id": "energy",
+          "title": {
+            "zh": "能量转化",
+            "en": "Energy Conversion"
+          }
+        },
+        {
+          "id": "protein-synthesis",
+          "title": {
+            "zh": "蛋白质合成与加工",
+            "en": "Protein Synthesis and Processing"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "shell.css",
+        "brand-watermark.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.0",
+      "releasePath": "models/plant-cell-webgl/2.5.1/index.html",
+      "currentVersion": "2.5.1"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "animal-cell",
+      "version": "2.2.3",
+      "publish": true,
+      "title": {
+        "zh": "动物细胞结构模型",
+        "en": "Animal Cell Structure Model"
+      },
+      "summary": {
+        "zh": "观察球形动物细胞膜、细胞核、主要细胞器，以及中心体和溶酶体。",
+        "en": "Explore the spherical animal-cell membrane, nucleus, major organelles, centrosome and lysosomes."
+      },
+      "module": {
+        "id": "molecules-and-cells",
+        "zh": "分子与细胞",
+        "en": "Molecules and Cells"
+      },
+      "technology": "threejs",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": true,
+        "viewPresets": true,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "overview",
+          "title": {
+            "zh": "整体结构",
+            "en": "Overall Structure"
+          }
+        },
+        {
+          "id": "cell-membrane",
+          "title": {
+            "zh": "细胞膜",
+            "en": "Cell Membrane"
+          }
+        },
+        {
+          "id": "nucleus",
+          "title": {
+            "zh": "细胞核",
+            "en": "Nucleus"
+          }
+        },
+        {
+          "id": "biomembrane",
+          "title": {
+            "zh": "生物膜系统",
+            "en": "Biomembrane System"
+          }
+        },
+        {
+          "id": "energy",
+          "title": {
+            "zh": "能量转化",
+            "en": "Energy Conversion"
+          }
+        },
+        {
+          "id": "protein-synthesis",
+          "title": {
+            "zh": "蛋白质合成与加工",
+            "en": "Protein Synthesis and Processing"
+          }
+        },
+        {
+          "id": "animal-organelles",
+          "title": {
+            "zh": "中心体与溶酶体",
+            "en": "Centrosome and Lysosome"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "shell.css",
+        "brand-watermark.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.0",
+      "releasePath": "models/animal-cell/2.2.3/index.html",
+      "currentVersion": "2.2.3"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "optical-microscope",
+      "version": "2.7.5",
+      "publish": true,
+      "title": {
+        "zh": "光学显微镜模型",
+        "en": "Optical Microscope Model"
+      },
+      "summary": {
+        "zh": "认识光学显微镜的机械结构、成像系统、照明光路和规范调焦过程。",
+        "en": "Explore the mechanical structure, imaging system, illumination path and focusing procedure of a compound light microscope."
+      },
+      "module": {
+        "id": "molecules-and-cells",
+        "zh": "分子与细胞",
+        "en": "Molecules and Cells"
+      },
+      "technology": "threejs",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": true,
+        "viewPresets": true,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "overview",
+          "title": {
+            "zh": "整体结构",
+            "en": "Overall Structure"
+          }
+        },
+        {
+          "id": "optical-system",
+          "title": {
+            "zh": "成像系统",
+            "en": "Imaging System"
+          }
+        },
+        {
+          "id": "stage-focus",
+          "title": {
+            "zh": "载物与调焦",
+            "en": "Stage and Focus"
+          }
+        },
+        {
+          "id": "illumination",
+          "title": {
+            "zh": "照明光路",
+            "en": "Illumination Path"
+          }
+        },
+        {
+          "id": "low-power",
+          "title": {
+            "zh": "低倍对焦",
+            "en": "Low-power Focusing"
+          }
+        },
+        {
+          "id": "high-power",
+          "title": {
+            "zh": "高倍观察",
+            "en": "High-power Observation"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "shell.css",
+        "brand-watermark.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/optical-microscope/2.7.5/index.html",
+      "currentVersion": "2.7.5"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "resting-action-potential",
+      "version": "2.7.1",
+      "publish": true,
+      "title": {
+        "zh": "静息电位与动作电位",
+        "en": "Resting and Action Potentials"
+      },
+      "summary": {
+        "zh": "将钠钾泵、离子通道、离子流动与局部膜电位记录联动，比较阈下刺激与阈上刺激。",
+        "en": "Link ion pumps and channels to membrane voltage, comparing subthreshold and suprathreshold stimulation."
+      },
+      "module": {
+        "id": "homeostasis",
+        "zh": "选择性必修一 · 神经调节",
+        "en": "Homeostasis and Neural Regulation"
+      },
+      "technology": "svg-2d-animation",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": true,
+        "viewPresets": false,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "gradient",
+          "title": {
+            "zh": "离子梯度",
+            "en": "Ion Gradients"
+          }
+        },
+        {
+          "id": "rest",
+          "title": {
+            "zh": "静息电位",
+            "en": "Resting Potential"
+          }
+        },
+        {
+          "id": "depolarization",
+          "title": {
+            "zh": "刺激与去极化",
+            "en": "Depolarization"
+          }
+        },
+        {
+          "id": "repolarization",
+          "title": {
+            "zh": "复极化",
+            "en": "Repolarization"
+          }
+        },
+        {
+          "id": "recovery",
+          "title": {
+            "zh": "恢复与维持",
+            "en": "Recovery"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "physiology.js",
+        "transport-primitives.js",
+        "protein-anchors.js",
+        "scene-navigation.js",
+        "neural-layout.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "brand-watermark.css",
+        "neural-layout.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/resting-action-potential/2.7.1/index.html",
+      "currentVersion": "2.7.1"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "action-potential-conduction",
+      "version": "2.7.2",
+      "publish": true,
+      "title": {
+        "zh": "动作电位的传导",
+        "en": "Action Potential Conduction"
+      },
+      "summary": {
+        "zh": "观察无髓轴突中部刺激后，局部电流推动动作电位向两侧逐段再生。",
+        "en": "Explore local currents and bidirectional action potential regeneration in an unmyelinated axon."
+      },
+      "module": {
+        "id": "homeostasis",
+        "zh": "选择性必修一 · 神经调节",
+        "en": "Homeostasis and Neural Regulation"
+      },
+      "technology": "svg-webgl-2d-animation",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": true,
+        "viewPresets": false,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "rest",
+          "title": {
+            "zh": "全膜静息",
+            "en": "Resting Membrane"
+          }
+        },
+        {
+          "id": "central",
+          "title": {
+            "zh": "中央刺激与兴奋",
+            "en": "Central Excitation"
+          }
+        },
+        {
+          "id": "local-current",
+          "title": {
+            "zh": "局部电流",
+            "en": "Local Currents"
+          }
+        },
+        {
+          "id": "regeneration",
+          "title": {
+            "zh": "邻区兴奋与复极",
+            "en": "Propagation and Repolarization"
+          }
+        },
+        {
+          "id": "bidirectional",
+          "title": {
+            "zh": "双向传导与恢复",
+            "en": "Bidirectional Conduction"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "transport-primitives.js",
+        "physiology.js",
+        "presentation.js",
+        "circuit-assets.js",
+        "proteins.js",
+        "scene-navigation.js",
+        "neural-layout.js",
+        "simulation-cache.js",
+        "simulation-worker.js",
+        "membrane-layer.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "shell.css",
+        "model.css",
+        "brand-watermark.css",
+        "neural-layout.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/action-potential-conduction/2.7.2/index.html",
+      "currentVersion": "2.7.2"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "biphasic-nerve-potential",
+      "version": "2.3.1",
+      "publish": true,
+      "title": {
+        "zh": "双相神经干电位",
+        "en": "Biphasic Nerve Potential"
+      },
+      "summary": {
+        "zh": "观察成束神经纤维的兴奋传导，比较双极膜外记录与四种电极条件下的复合电位。",
+        "en": "Explore compound action potentials in a nerve bundle with bipolar extracellular recording and four electrode configurations."
+      },
+      "module": {
+        "id": "homeostasis",
+        "zh": "选择性必修一 · 神经调节",
+        "en": "Homeostasis and Neural Regulation"
+      },
+      "technology": "svg-2d-animation",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": true,
+        "viewPresets": false,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "rest",
+          "title": {
+            "zh": "静息与接线",
+            "en": "Rest & Electrodes"
+          }
+        },
+        {
+          "id": "stimulation",
+          "title": {
+            "zh": "刺激与传导",
+            "en": "Stimulation & Conduction"
+          }
+        },
+        {
+          "id": "first-phase",
+          "title": {
+            "zh": "第一相",
+            "en": "First Phase"
+          }
+        },
+        {
+          "id": "second-phase",
+          "title": {
+            "zh": "第二相",
+            "en": "Second Phase"
+          }
+        },
+        {
+          "id": "recovery",
+          "title": {
+            "zh": "回零与比较",
+            "en": "Recovery & Comparison"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "signal.js",
+        "circuit-assets.js",
+        "anatomy.js",
+        "scene-navigation.js",
+        "neural-layout.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "shell.css",
+        "model.css",
+        "brand-watermark.css",
+        "neural-layout.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/biphasic-nerve-potential/2.3.1/index.html",
+      "currentVersion": "2.3.1"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "pcr",
+      "version": "2.5.1",
+      "publish": true,
+      "title": {
+        "zh": "PCR的基本过程",
+        "en": "The Basic Process of PCR"
+      },
+      "summary": {
+        "zh": "跟随模板、引物、dNTP与Taq观察PCR三步循环、等长子代形成及理想指数扩增。",
+        "en": "Follow template DNA, primers, dNTPs and Taq through thermal cycling and ideal exponential amplification."
+      },
+      "module": {
+        "id": "biotechnology",
+        "zh": "选择性必修三 · 生物技术与工程",
+        "en": "Biotechnology & Engineering"
+      },
+      "technology": "svg-2d-animation",
+      "entry": "index.html",
+      "cover": "assets/cover.webp",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": true,
+        "viewPresets": true,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "initial",
+          "title": {
+            "zh": "预变性",
+            "en": "Initial denaturation"
+          }
+        },
+        {
+          "id": "denature",
+          "title": {
+            "zh": "变性",
+            "en": "Denaturation"
+          }
+        },
+        {
+          "id": "anneal",
+          "title": {
+            "zh": "复性（退火）",
+            "en": "Annealing"
+          }
+        },
+        {
+          "id": "extend",
+          "title": {
+            "zh": "延伸",
+            "en": "Extension"
+          }
+        },
+        {
+          "id": "final",
+          "title": {
+            "zh": "最后延伸",
+            "en": "Final extension"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "pcr-engine.js",
+        "lab-gesture.js",
+        "lab-shell.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "brand-watermark.css",
+        "lab-layout.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/pcr/2.5.1/index.html",
+      "currentVersion": "2.5.1"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "pcr-product-types",
+      "version": "2.3.5",
+      "publish": true,
+      "title": {
+        "zh": "PCR的产物类型",
+        "en": "Types of PCR Products"
+      },
+      "summary": {
+        "zh": "前六轮按产物类型分组同步延伸，第七轮起保留第六轮末DNA画面，统计区继续记录产物数量。",
+        "en": "Compare grouped parallel extensions through six cycles, then track product accumulation."
+      },
+      "module": {
+        "id": "biotechnology",
+        "zh": "选择性必修三 · 生物技术与工程",
+        "en": "Biotechnology & Engineering"
+      },
+      "technology": "svg-2d-animation",
+      "entry": "index.html",
+      "cover": "assets/cover.webp",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": true,
+        "viewPresets": false,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "template",
+          "title": {
+            "zh": "内侧引物",
+            "en": "Internal primers"
+          }
+        },
+        {
+          "id": "cycle-1",
+          "title": {
+            "zh": "第一轮",
+            "en": "First cycle"
+          }
+        },
+        {
+          "id": "cycle-2",
+          "title": {
+            "zh": "第二轮",
+            "en": "Second cycle"
+          }
+        },
+        {
+          "id": "cycle-3",
+          "title": {
+            "zh": "第三轮",
+            "en": "Third cycle"
+          }
+        },
+        {
+          "id": "cycle-4",
+          "title": {
+            "zh": "第四轮",
+            "en": "Fourth cycle"
+          }
+        },
+        {
+          "id": "cycle-5",
+          "title": {
+            "zh": "第五轮",
+            "en": "Fifth cycle"
+          }
+        },
+        {
+          "id": "cycle-6",
+          "title": {
+            "zh": "第六轮",
+            "en": "Sixth cycle"
+          }
+        },
+        {
+          "id": "amplification",
+          "title": {
+            "zh": "产物积累",
+            "en": "Product accumulation"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "engine.js",
+        "scene-view.js",
+        "shell-adapter.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "shell-layout.css",
+        "brand-watermark.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/pcr-product-types/2.3.5/index.html",
+      "currentVersion": "2.3.5"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "pcr-primer-engineering",
+      "version": "2.2.1",
+      "publish": true,
+      "title": {
+        "zh": "利用引物改造DNA",
+        "en": "Engineering DNA with Primers"
+      },
+      "summary": {
+        "zh": "通过三轮PCR，对比5′端添加酶切位点与引物内部定点替换的形成过程。",
+        "en": "Follow three PCR cycles to compare added restriction sites and a primer-encoded point mutation."
+      },
+      "module": {
+        "id": "biotechnology",
+        "zh": "选择性必修三 · 生物技术与工程",
+        "en": "Biotechnology & Engineering"
+      },
+      "technology": "svg-2d-animation",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": true,
+        "viewPresets": false,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "template",
+          "title": {
+            "zh": "引物设计",
+            "en": "Primer design"
+          }
+        },
+        {
+          "id": "cycle-1",
+          "title": {
+            "zh": "第一轮",
+            "en": "First cycle"
+          }
+        },
+        {
+          "id": "cycle-2",
+          "title": {
+            "zh": "第二轮",
+            "en": "Second cycle"
+          }
+        },
+        {
+          "id": "cycle-3",
+          "title": {
+            "zh": "第三轮",
+            "en": "Third cycle"
+          }
+        },
+        {
+          "id": "products",
+          "title": {
+            "zh": "目标产物",
+            "en": "Target products"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "engine.js",
+        "renderer.js",
+        "lab-gesture.js",
+        "lab-shell.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "brand-watermark.css",
+        "lab-layout.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/pcr-primer-engineering/2.2.1/index.html",
+      "currentVersion": "2.2.1"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "sanger-sequencing",
+      "version": "2.5.1",
+      "publish": true,
+      "title": {
+        "zh": "Sanger测序",
+        "en": "Sanger Sequencing"
+      },
+      "summary": {
+        "zh": "荧光单管测序：核苷酸逐个接入、链终止与向上电泳读序。",
+        "en": "Single-tube fluorescent chain termination with nucleotide-by-nucleotide synthesis and upward electrophoresis."
+      },
+      "module": {
+        "id": "biotechnology",
+        "zh": "选择性必修三 · 生物技术与工程",
+        "en": "Biotechnology & Engineering"
+      },
+      "technology": "svg-2d-animation",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": true,
+        "viewPresets": false,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "prepare",
+          "title": {
+            "zh": "测序体系",
+            "en": "Sequencing mixture"
+          }
+        },
+        {
+          "id": "extend",
+          "title": {
+            "zh": "延伸与终止",
+            "en": "Extension & termination"
+          }
+        },
+        {
+          "id": "load",
+          "title": {
+            "zh": "清理与上样",
+            "en": "Cleanup & loading"
+          }
+        },
+        {
+          "id": "separate",
+          "title": {
+            "zh": "向上电泳",
+            "en": "Upward electrophoresis"
+          }
+        },
+        {
+          "id": "read",
+          "title": {
+            "zh": "读取序列",
+            "en": "Read the sequence"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "engine.js",
+        "renderer.js",
+        "lab-gesture.js",
+        "lab-shell.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "brand-watermark.css",
+        "lab-layout.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/sanger-sequencing/2.5.1/index.html",
+      "currentVersion": "2.5.1"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "population-growth",
+      "version": "2.3.0",
+      "publish": true,
+      "title": {
+        "zh": "种群的增长曲线",
+        "en": "Population Growth Curves"
+      },
+      "summary": {
+        "zh": "同步比较 J 型与 S 型增长，自设初始数量和内禀增长率，观察自适应纵轴、K 与 K/2。",
+        "en": "Compare exponential and logistic growth with editable initial size and intrinsic rate, an adaptive J-axis, and K and K/2 guides."
+      },
+      "module": {
+        "id": "ecology",
+        "zh": "选择性必修二 · 生物与环境",
+        "en": "Biology & Environment"
+      },
+      "technology": "svg-2d-interactive",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": false,
+        "highlight": false,
+        "viewPresets": false,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "initial",
+          "title": {
+            "zh": "初始条件",
+            "en": "Initial conditions"
+          }
+        },
+        {
+          "id": "growth",
+          "title": {
+            "zh": "同步增长",
+            "en": "Compare growth"
+          }
+        },
+        {
+          "id": "near-capacity",
+          "title": {
+            "zh": "接近环境容纳量",
+            "en": "Approaching K"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "engine.js",
+        "renderer.js",
+        "ecology-shell.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "ecology-layout.css",
+        "brand-watermark.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/population-growth/2.3.0/index.html",
+      "currentVersion": "2.3.0"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "species-interactions",
+      "version": "2.0.4",
+      "publish": true,
+      "title": {
+        "zh": "种间关系曲线变化",
+        "en": "Interspecific Population Dynamics"
+      },
+      "summary": {
+        "zh": "同步观察捕食、寄生、竞争和互利关系；比较周期波动、竞争排斥及解除互利作用后的变化。",
+        "en": "Compare predation, parasitism, competition and mutualism with shared time, explicit periodic environments and partner-removal comparisons."
+      },
+      "module": {
+        "id": "ecology",
+        "zh": "选择性必修二 · 生物与环境",
+        "en": "Biology & Environment"
+      },
+      "technology": "svg-2d-interactive",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": false,
+        "highlight": false,
+        "viewPresets": false,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "initial",
+          "title": {
+            "zh": "开始观察",
+            "en": "Start"
+          }
+        },
+        {
+          "id": "first-period",
+          "title": {
+            "zh": "第 1 段结束",
+            "en": "First interval"
+          }
+        },
+        {
+          "id": "second-period",
+          "title": {
+            "zh": "第 2 段结束",
+            "en": "Second interval"
+          }
+        },
+        {
+          "id": "complete",
+          "title": {
+            "zh": "完整曲线",
+            "en": "Complete curves"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "engine.js",
+        "renderer.js",
+        "shell-adapter.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "shell-layout.css",
+        "brand-watermark.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/species-interactions/2.0.4/index.html",
+      "currentVersion": "2.0.4"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "community-succession",
+      "version": "2.2.0",
+      "publish": true,
+      "title": {
+        "zh": "群落的演替",
+        "en": "Ecological Succession"
+      },
+      "summary": {
+        "zh": "独立选择初生或次生演替进度，比较裸岩定居与火后恢复；写实土壤剖面可按需开启。",
+        "en": "Choose separate primary and secondary succession timelines, with optional realistic soil cutaways."
+      },
+      "module": {
+        "id": "ecology",
+        "zh": "选择性必修二 · 生物与环境",
+        "en": "Biology & Environment"
+      },
+      "technology": "canvas-2d-interactive",
+      "entry": "index.html",
+      "cover": "assets/cover.webp",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": false,
+        "viewPresets": false,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "initial",
+          "title": {
+            "zh": "初始条件",
+            "en": "Initial sites"
+          }
+        },
+        {
+          "id": "pioneers",
+          "title": {
+            "zh": "先锋定居",
+            "en": "Pioneer establishment"
+          }
+        },
+        {
+          "id": "expansion",
+          "title": {
+            "zh": "植被扩展",
+            "en": "Vegetation expansion"
+          }
+        },
+        {
+          "id": "turnover",
+          "title": {
+            "zh": "群落更替",
+            "en": "Community turnover"
+          }
+        },
+        {
+          "id": "woodland",
+          "title": {
+            "zh": "木本发展",
+            "en": "Woody establishment"
+          }
+        },
+        {
+          "id": "forest",
+          "title": {
+            "zh": "森林形成",
+            "en": "Forest development"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "engine.js",
+        "renderer.js",
+        "ecology-shell.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "ecology-layout.css",
+        "brand-watermark.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/community-succession/2.2.0/index.html",
+      "currentVersion": "2.2.0"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "cellular-respiration",
+      "version": "2.2.0",
+      "publish": true,
+      "title": {
+        "zh": "细胞呼吸的过程",
+        "en": "Cellular Respiration"
+      },
+      "summary": {
+        "zh": "在统一细胞图中追踪有氧呼吸、乳酸发酵和酒精发酵的物质转化、反应场所与 ATP 产生。",
+        "en": "Follow aerobic respiration, lactate fermentation and alcoholic fermentation in one eukaryotic cell diagram."
+      },
+      "module": {
+        "id": "cell-metabolism",
+        "zh": "必修一 · 分子与细胞",
+        "en": "Molecules & Cells"
+      },
+      "technology": "svg-2d-interactive",
+      "entry": "index.html",
+      "cover": "assets/cover.webp",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": false,
+        "viewPresets": true,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "glycolysis",
+          "title": {
+            "zh": "糖酵解",
+            "en": "Glycolysis"
+          }
+        },
+        {
+          "id": "second",
+          "title": {
+            "zh": "丙酮酸彻底氧化",
+            "en": "Pyruvate oxidation & TCA"
+          }
+        },
+        {
+          "id": "oxidative",
+          "title": {
+            "zh": "氧化磷酸化",
+            "en": "Oxidative phosphorylation"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "engine.js",
+        "scene.js",
+        "renderer.js",
+        "model.js",
+        "brand-watermark.js",
+        "process-shell.js",
+        "lab-gesture.js"
+      ],
+      "styles": [
+        "model.css",
+        "brand-watermark.css",
+        "process-layout.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/cellular-respiration/2.2.0/index.html",
+      "currentVersion": "2.2.0"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "osmosis",
+      "version": "2.1.0",
+      "publish": true,
+      "title": {
+        "zh": "渗透作用",
+        "en": "Osmosis"
+      },
+      "summary": {
+        "zh": "选择漏斗内外液体，同步观察连续液面变化、半透膜两侧粒子与双向水分子运动。",
+        "en": "Compare liquids inside and outside a thistle funnel, with coupled liquid levels, solute concentrations and bidirectional water exchange."
+      },
+      "module": {
+        "id": "cell-metabolism",
+        "zh": "必修一 · 分子与细胞",
+        "en": "Molecules & Cells"
+      },
+      "technology": "svg-2d-interactive",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": false,
+        "viewPresets": true,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "initial",
+          "title": {
+            "zh": "初始条件",
+            "en": "Initial conditions"
+          }
+        },
+        {
+          "id": "osmosis",
+          "title": {
+            "zh": "净渗透与液面变化",
+            "en": "Net osmosis"
+          }
+        },
+        {
+          "id": "approaching",
+          "title": {
+            "zh": "趋近平衡",
+            "en": "Approaching equilibrium"
+          }
+        },
+        {
+          "id": "equilibrium",
+          "title": {
+            "zh": "动态平衡",
+            "en": "Dynamic equilibrium"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "physics.js",
+        "engine.js",
+        "brownian.js",
+        "scene.js",
+        "renderer.js",
+        "lab-gesture.js",
+        "osmosis-shell.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "osmosis-layout.css",
+        "brand-watermark.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/osmosis/2.1.0/index.html",
+      "currentVersion": "2.1.0"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "photosynthesis",
+      "version": "2.1.0",
+      "publish": true,
+      "title": {
+        "zh": "光合作用的过程",
+        "en": "Photosynthesis"
+      },
+      "summary": {
+        "zh": "在叶绿体中追踪光反应、卡尔文循环，以及 ATP 和 NADPH 的产生、利用与辅酶回流。",
+        "en": "Follow light reactions, the Calvin cycle and the supply and reuse of ATP and NADPH in a chloroplast."
+      },
+      "module": {
+        "id": "cell-metabolism",
+        "zh": "必修一 · 分子与细胞",
+        "en": "Molecules & Cells"
+      },
+      "technology": "svg-2d-interactive",
+      "entry": "index.html",
+      "cover": "assets/cover.webp",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": false,
+        "viewPresets": true,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "light",
+          "title": {
+            "zh": "光反应",
+            "en": "Light reactions"
+          }
+        },
+        {
+          "id": "calvin",
+          "title": {
+            "zh": "暗反应",
+            "en": "Calvin cycle"
+          }
+        },
+        {
+          "id": "coupled",
+          "title": {
+            "zh": "两阶段协同",
+            "en": "Coupled reactions"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "engine.js",
+        "renderer.js",
+        "model.js",
+        "brand-watermark.js",
+        "process-shell.js",
+        "lab-gesture.js"
+      ],
+      "styles": [
+        "model.css",
+        "brand-watermark.css",
+        "process-layout.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/photosynthesis/2.1.0/index.html",
+      "currentVersion": "2.1.0"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "respiratory-electron-transport",
+      "version": "2.5.0",
+      "publish": true,
+      "title": {
+        "zh": "细胞呼吸电子传递链",
+        "en": "Respiratory Electron Transport"
+      },
+      "summary": {
+        "zh": "追踪 NADH 和复合体 II 两条电子入口，观察质子梯度、氧还原与 ATP 旋转催化的能量耦联。",
+        "en": "Trace electron transfer, proton gradients, oxygen reduction and rotary ATP synthesis."
+      },
+      "module": {
+        "id": "cell-metabolism",
+        "zh": "必修一 · 分子与细胞",
+        "en": "Molecules & Cells"
+      },
+      "technology": "svg-2d-interactive",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": false,
+        "viewPresets": true,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "location",
+          "title": {
+            "zh": "结构定位",
+            "en": "Orientation"
+          }
+        },
+        {
+          "id": "entry",
+          "title": {
+            "zh": "电子输入",
+            "en": "Electron entry"
+          }
+        },
+        {
+          "id": "transfer",
+          "title": {
+            "zh": "载体接力与泵氢",
+            "en": "Carrier relay"
+          }
+        },
+        {
+          "id": "oxygen",
+          "title": {
+            "zh": "氧还原成水",
+            "en": "Oxygen reduction"
+          }
+        },
+        {
+          "id": "coupling",
+          "title": {
+            "zh": "ATP 合成",
+            "en": "ATP synthesis"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "reused-geometry.js",
+        "reused-motion.js",
+        "art-helpers.js",
+        "science-art.js",
+        "motion-paths.js",
+        "motion-timeline.js",
+        "engine.js",
+        "camera.js",
+        "lipids.js",
+        "molecules.js",
+        "scene.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "brand-watermark.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/respiratory-electron-transport/2.5.0/index.html",
+      "currentVersion": "2.5.0"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "photosynthetic-electron-transport",
+      "version": "2.2.1",
+      "publish": true,
+      "title": {
+        "zh": "光系统电子传递链",
+        "en": "Photosynthetic Electron Transport"
+      },
+      "summary": {
+        "zh": "分段观察光能输入、水供电子、链间接力、质子转移、ATP 和 NADPH 合成，最后展示协同运行。",
+        "en": "Guided light reactions followed by coupled operation, tracking four net electron equivalents."
+      },
+      "module": {
+        "id": "cell-metabolism",
+        "zh": "必修一 · 分子与细胞",
+        "en": "Molecules & Cells"
+      },
+      "technology": "svg-2d-interactive",
+      "entry": "index.html",
+      "cover": "assets/cover.svg",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": false,
+        "viewPresets": true,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "orientation",
+          "title": {
+            "zh": "结构与两侧",
+            "en": "Orientation"
+          }
+        },
+        {
+          "id": "light2",
+          "title": {
+            "zh": "光照 PSII",
+            "en": "Light input II"
+          }
+        },
+        {
+          "id": "water",
+          "title": {
+            "zh": "激发与水供电子",
+            "en": "Charge separation"
+          }
+        },
+        {
+          "id": "relay",
+          "title": {
+            "zh": "链间电子传递",
+            "en": "Electron relay"
+          }
+        },
+        {
+          "id": "protons",
+          "title": {
+            "zh": "H⁺ 转移",
+            "en": "Proton gradient"
+          }
+        },
+        {
+          "id": "atp",
+          "title": {
+            "zh": "ATP 合成",
+            "en": "ATP synthesis"
+          }
+        },
+        {
+          "id": "light1",
+          "title": {
+            "zh": "光照 PSI",
+            "en": "Light input I"
+          }
+        },
+        {
+          "id": "fd",
+          "title": {
+            "zh": "电子传给 Fd",
+            "en": "Electron transfer"
+          }
+        },
+        {
+          "id": "nadph",
+          "title": {
+            "zh": "NADPH 合成",
+            "en": "NADPH formation"
+          }
+        },
+        {
+          "id": "coupled",
+          "title": {
+            "zh": "协同运行",
+            "en": "Coupled overview"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "reused-geometry.js",
+        "reused-motion.js",
+        "path-utils.js",
+        "motion-timeline.js",
+        "engine.js",
+        "camera.js",
+        "lipids.js",
+        "molecules.js",
+        "scene.js",
+        "protein-assets.js",
+        "model.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "brand-watermark.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/photosynthetic-electron-transport/2.2.1/index.html",
+      "currentVersion": "2.2.1"
+    },
+    {
+      "schemaVersion": "2.0",
+      "id": "genetic-inheritance-laws",
+      "version": "2.1.2",
+      "publish": true,
+      "title": {
+        "zh": "遗传学三大定律",
+        "en": "Principles of Genetic Inheritance"
+      },
+      "summary": {
+        "zh": "以同一教学进度并排比较分离、自由组合和连锁交换的染色体基础。",
+        "en": "Compare segregation, independent assortment and linkage with crossing over on one shared teaching timeline."
+      },
+      "module": {
+        "id": "genetics-and-evolution",
+        "zh": "遗传与进化",
+        "en": "Genetics and Evolution"
+      },
+      "technology": "svg-2d-animation",
+      "entry": "index.html",
+      "cover": "assets/cover.png",
+      "minimumViewport": {
+        "width": 320,
+        "height": 480
+      },
+      "capabilities": {
+        "play": true,
+        "reset": true,
+        "stages": true,
+        "speed": true,
+        "labels": true,
+        "highlight": true,
+        "viewPresets": true,
+        "fullscreen": true,
+        "practice": false
+      },
+      "stages": [
+        {
+          "id": "replication",
+          "title": {
+            "zh": "复制",
+            "en": "DNA replication"
+          }
+        },
+        {
+          "id": "meiosis-1",
+          "title": {
+            "zh": "减数Ⅰ",
+            "en": "Meiosis I"
+          }
+        },
+        {
+          "id": "meiosis-2",
+          "title": {
+            "zh": "减数Ⅱ",
+            "en": "Meiosis II"
+          }
+        },
+        {
+          "id": "gamete-formation",
+          "title": {
+            "zh": "配子形成",
+            "en": "Haploid products"
+          }
+        }
+      ],
+      "packageKind": "standalone-model",
+      "content": "model-content.json",
+      "scripts": [
+        "shell-standard.js",
+        "model.js",
+        "science.js",
+        "atlas-geometry.js",
+        "renderer.js",
+        "lab-gesture.js",
+        "brand-watermark.js"
+      ],
+      "styles": [
+        "model.css",
+        "brand-watermark.css",
+        "shell-standard.css",
+        "window-standard.css"
+      ],
+      "runtime": {
+        "mode": "embedded",
+        "sharedRuntime": false,
+        "externalDependencies": []
+      },
+      "windowStandard": "adaptive-model-window-v1",
+      "shellStandard": "adaptive-model-shell-2.5.1",
+      "releasePath": "models/genetic-inheritance-laws/2.1.2/index.html",
+      "currentVersion": "2.1.2"
+    }
+  ]
+}

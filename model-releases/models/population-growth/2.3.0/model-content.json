@@ -1,0 +1,73 @@
+{
+  "id": "population-growth",
+  "title": {
+    "zh": "种群的增长曲线",
+    "en": "Population Growth Curves"
+  },
+  "stages": [
+    {
+      "id": "initial",
+      "title": {
+        "zh": "初始条件",
+        "en": "Initial conditions"
+      }
+    },
+    {
+      "id": "growth",
+      "title": {
+        "zh": "同步增长",
+        "en": "Compare growth"
+      }
+    },
+    {
+      "id": "near-capacity",
+      "title": {
+        "zh": "接近环境容纳量",
+        "en": "Approaching K"
+      }
+    }
+  ],
+  "defaultParameters": {
+    "n0": 20,
+    "r": 0.6,
+    "k": 400
+  },
+  "inputBounds": {
+    "n0": {
+      "min": 1,
+      "max": 399,
+      "integer": true
+    },
+    "r": {
+      "min": 0.05,
+      "max": 2
+    }
+  },
+  "science": {
+    "exponential": "N(t)=N0 exp(rt); dN/dt=rN",
+    "logistic": "N(t)=K/[1+(K/N0-1) exp(-rt)]; dN/dt=rN(1-N/K)",
+    "relativeGrowth": "(1/N) dN/dt; r for J and r(1-N/K) for S",
+    "inflection": "For 0<N0<K/2, t*=ln(K/N0-1)/r; N=K/2 and dN/dt=rK/4.",
+    "timeHorizon": "Reach at least 99.5% of K, then continue another 1.5/r years; round the horizon up to a practical tick interval.",
+    "verticalScale": "Both start with 0-500 individuals and 100 per division. S stays fixed. The J linear domain expands continuously with a smooth shoulder and at least 10% headroom, without discrete range jumps; all geometry derives deterministically from the current time.",
+    "assumptions": [
+      "Constant positive r and K; no migration.",
+      "Illustrative continuous predictions, not measured data for a species.",
+      "The S curve approaches K smoothly and is never artificially clamped to K.",
+      "N0 above K/2 has no later inflection, so the K/2 jump is disabled. N0 equal to K/2 starts at peak growth speed.",
+      "Finite-period percentage growth is distinct from instantaneous relative growth r."
+    ],
+    "comparisonCurves": "Each plot includes the other analytical growth model as a light-gray dashed curve, with identical N0, r and current time, mapped to that plot's linear axes. On the fixed S plot the J comparison ends exactly at the upper boundary with a continuation arrow, never clamped to K or compressed to fit."
+  },
+  "sources": [
+    {
+      "title": "OpenStax Calculus 2: The Logistic Equation",
+      "url": "https://openstax.org/books/calculus-volume-2/pages/4-4-the-logistic-equation"
+    },
+    {
+      "title": "Primer of Ecology: density-independent growth",
+      "url": "https://hankstevens.github.io/Primer-of-Ecology/03-Expo-growth.html"
+    }
+  ],
+  "version": "2.2.1"
+}

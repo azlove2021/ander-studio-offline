@@ -1,0 +1,9 @@
+{
+  "standard": "model-brand-watermark-1.0",
+  "runtimeVersion": "1.0.2",
+  "model": "sanger-sequencing",
+  "viewport": ".lab-scene-frame",
+  "host": ".lab-scene-frame",
+  "foreground": "#scene",
+  "ready": ".lab-toolbar"
+}

@@ -1,0 +1,912 @@
+:root {
+  color-scheme: light;
+  font-family: "Microsoft YaHei", "Noto Sans SC", Arial, sans-serif;
+  color: #17243a;
+  background: #f4fbff;
+  --line: #d4e2ee;
+  --blue: #2f6cec;
+  --cyan: #149db7;
+  --ink: #17243a;
+}
+
+* { box-sizing: border-box; }
+html { scrollbar-gutter: stable; }
+html, body { min-width: 320px; min-height: 100%; margin: 0; }
+button, input { font: inherit; }
+button { color: inherit; }
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8fdff 0%, #edf8fc 100%);
+}
+
+.independent-model-app { width: 100%; padding: 16px; }
+.independent-model-header {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: stretch; gap: 12px;
+  max-width: 1680px; margin: 0 auto 12px;
+}
+.independent-model-back {
+  min-height: 72px; display: inline-flex; align-items: center; justify-content: center;
+  padding: 12px 20px; border: 1px solid var(--line); border-radius: 8px;
+  color: #147b95; background: rgba(255,255,255,.94); font-weight: 800;
+  text-decoration: none; white-space: nowrap;
+}
+.independent-model-back:hover { border-color: #82c7d8; background: #f3fcff; }
+.independent-model-heading {
+  min-width: 0; display: flex; flex-direction: column; justify-content: center;
+  padding: 8px 14px; border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,.94);
+}
+.independent-model-kicker { color: #58718d; font-weight: 700; }
+.independent-model-header h1 { margin: 4px 0 0; font-size: clamp(22px, 2.1vw, 34px); line-height: 1.2; letter-spacing: 0; }
+.independent-model-header h1 small { color: #617792; font-size: .64em; font-weight: 600; }
+.stage-strip {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(132px, 1fr)); gap: 9px;
+  width: 100%; max-width: none; margin: 0; padding: 12px;
+  border-bottom: 1px solid var(--line); background: rgba(255,255,255,.94);
+}
+.stage-strip[hidden] { display: none !important; }
+.stage-tab {
+  min-height: 62px; padding: 10px 13px; border: 1px solid var(--line); border-radius: 7px;
+  background: rgba(255,255,255,.92); text-align: left; cursor: pointer;
+}
+.stage-tab strong, .stage-tab span { display: block; }
+.stage-tab strong { font-size: 15px; }
+.stage-tab span { margin-top: 4px; color: #7a8ca5; font-size: 12px; }
+.stage-tab.is-active { border-color: #76a2ff; color: #1f5bd5; background: #edf5ff; }
+
+.independent-model-workspace {
+  display: grid; grid-template-columns: minmax(0, 1fr) 330px; align-items: start; gap: 14px;
+  max-width: 1680px; margin: 0 auto;
+}
+.model-area, .lesson-card { border: 1px solid var(--line); background: rgba(255,255,255,.94); }
+.model-area {
+  width: 100%; min-width: 0; align-self: start; overflow: hidden; border-radius: 8px;
+  display: grid; grid-template-rows: auto minmax(0, 1fr) auto;
+}
+.model-stage { position: relative; min-height: min(68vh, 760px); overflow: hidden; background: linear-gradient(180deg,#fff 0%,#f8fbff 70%,#fffbea 100%); }
+.visual-wrap { position: relative; width: 100%; min-height: inherit; }
+.visual-wrap > * { margin-inline: auto; }
+
+.control-dock {
+  display: flex; align-items: center; gap: 10px; min-height: 72px; padding: 10px 12px;
+  border-top: 1px solid var(--line); background: #fff;
+}
+.control-group { display: flex; align-items: center; gap: 8px; }
+.control-group-view { margin-left: auto; }
+.control-group-end { margin-left: 6px; }
+.control-button, .practice-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 44px;
+  padding: 9px 13px; border: 1px solid var(--line); border-radius: 7px; background: #fff;
+  font-weight: 700; cursor: pointer; white-space: nowrap;
+}
+.control-button svg, .practice-button svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.control-button.is-primary, .control-button[aria-pressed="true"] { border-color: var(--blue); color: #fff; background: var(--blue); }
+
+.lesson-card {
+  width: 330px; min-width: 330px; max-width: 330px; align-self: start;
+  padding: 18px; overflow: hidden; border-radius: 8px;
+}
+.lesson-card > *, .lesson-section, .keyword-row { min-width: 0; }
+.lesson-section p, .keyword-row span, .legend-item { overflow-wrap: anywhere; }
+.lesson-card h2 { margin: 0 0 12px; font-size: 20px; }
+.lesson-section { padding: 11px 0; border-top: 1px solid #e6eef5; }
+.lesson-section h3 { margin: 0 0 6px; color: #49617d; font-size: 14px; }
+.lesson-section p { margin: 0; color: #51677f; font-size: 14px; line-height: 1.65; }
+.keyword-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.keyword-row span { padding: 5px 7px; border-radius: 5px; background: #eef5fb; color: #405a78; font-size: 12px; }
+.structure-legend { display: grid; gap: 7px; padding: 12px 0; border-top: 1px solid #e6eef5; }
+.legend-item { display: flex; align-items: center; gap: 8px; color: #5a6f88; font-size: 13px; }
+.legend-swatch { width: 13px; height: 13px; border-radius: 50%; background: var(--swatch); box-shadow: 0 0 0 3px color-mix(in srgb, var(--swatch) 20%, transparent); }
+.practice-button { width: 100%; margin-top: 8px; }
+
+html.model-css-fullscreen-active,
+html.model-css-fullscreen-active body { overflow: hidden; }
+.model-area:fullscreen, .model-area.is-css-fullscreen {
+  width: 100vw; height: 100vh; border: 0; border-radius: 0; background: #fff;
+  display: grid; grid-template-rows: auto minmax(0, 1fr) auto; overflow: hidden;
+}
+.model-area.is-css-fullscreen { position: fixed; inset: 0; z-index: 9999; }
+.model-area:fullscreen .model-stage, .model-area.is-css-fullscreen .model-stage {
+  min-height: 0; height: 100%; overflow: hidden;
+}
+.model-area:fullscreen .visual-wrap, .model-area.is-css-fullscreen .visual-wrap {
+  min-height: 0; height: 100%; overflow: hidden;
+}
+.model-area:fullscreen .control-dock, .model-area.is-css-fullscreen .control-dock {
+  position: static; z-index: auto; border: 0; border-top: 1px solid var(--line);
+  border-radius: 0; box-shadow: none;
+}
+
+.hidden-labels [class*="label"], .hidden-labels text.model-label, .hidden-labels text.tiny-label { opacity: 0 !important; pointer-events: none !important; }
+.highlight-on [data-selected], .highlight-on .focus-target { filter: saturate(1.2) brightness(1.08); }
+
+@media (max-width: 920px) {
+  .independent-model-app { padding: 8px; }
+  .independent-model-header { grid-template-columns: auto minmax(0, 1fr); align-items: stretch; }
+  .independent-model-back { min-height: 0; padding: 10px 12px; }
+  .independent-model-header h1 small { display: block; margin-top: 4px; }
+  .independent-model-workspace { grid-template-columns: 1fr; }
+  .lesson-card { width: 100%; min-width: 0; max-width: none; }
+  .model-stage { min-height: 60vh; }
+  .control-dock { align-items: stretch; flex-wrap: wrap; }
+  .control-group { flex: 1 1 100%; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); margin: 0; }
+  .control-group-end { grid-template-columns: 1fr; }
+  .control-button { min-width: 0; padding-inline: 8px; }
+}
+
+@media (max-width: 560px) {
+  .independent-model-header { grid-template-columns: 1fr; }
+  .independent-model-back { justify-self: start; }
+  .stage-strip { display: flex; overflow-x: auto; padding-bottom: 3px; scrollbar-width: thin; }
+  .stage-tab { flex: 0 0 148px; }
+  .model-stage { min-height: 56vh; }
+  .control-group-primary, .control-group-view { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .button-label { font-size: 14px; }
+}
+
+
+/* Model-specific rules extracted from the accepted legacy model. */
+.dna-visual-wrap {
+  padding: 0;
+}
+
+.dna-3d-shell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  display: grid;
+  place-items: stretch;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(37, 99, 235, 0.05), transparent 48%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.82));
+}
+
+.dna-3d-shell:active {
+  cursor: grabbing;
+}
+
+.dna-3d-shell.is-panning,
+.dna-3d-shell.is-panning:active {
+  cursor: move;
+}
+
+.dna-viewport {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+}
+
+.dna-webgl-shell {
+  height: clamp(360px, 58vh, 620px);
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.dna-webgl-stack {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+  align-self: stretch;
+  align-content: start;
+}
+
+.dna-webgl-viewport-frame {
+  position: absolute;
+  inset: 0;
+}
+
+.dna-webgl-host {
+  position: absolute;
+  inset: 0;
+}
+
+.dna-webgl-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.dna-webgl-labels {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.dna-webgl-label {
+  position: absolute;
+  max-width: min(220px, 38vw);
+  padding: 5px 8px;
+  border: 1px solid rgba(216, 225, 236, 0.92);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--label-color, #0f172a);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.dna-reference-disclosure {
+  width: min(100%, 920px);
+  justify-self: center;
+  border: 1px solid rgba(216, 225, 236, 0.96);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.dna-reference-toggle {
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.dna-reference-toggle span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dna-reference-toggle strong {
+  flex: 0 0 auto;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: var(--primary-dark);
+  font-size: 12px;
+}
+
+.dna-reference-disclosure.is-open .dna-reference-toggle {
+  border-bottom: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.dna-reference-panel-wrap[hidden] {
+  display: none;
+}
+
+.dna-reference-panel {
+  position: static;
+  width: auto;
+  max-height: 270px;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 10px;
+  border: 0;
+  background: rgba(248, 250, 252, 0.72);
+  box-shadow: none;
+  cursor: default;
+  user-select: text;
+  touch-action: pan-y;
+}
+
+.dna-reference-panel section {
+  display: grid;
+  gap: 7px;
+}
+
+.dna-reference-panel h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.dna-reference-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.dna-reference-card {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 6px;
+  align-items: center;
+  min-height: 46px;
+  padding: 5px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 8px;
+  background: rgba(248, 250, 252, 0.82);
+}
+
+.dna-reference-card--nucleotide {
+  grid-template-columns: 72px minmax(0, 1fr);
+}
+
+.dna-reference-card strong,
+.dna-reference-card span,
+.dna-reference-card p {
+  display: block;
+}
+
+.dna-reference-card strong {
+  color: var(--text);
+  font-size: 10.5px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.dna-reference-card span {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 9.5px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.dna-reference-card p {
+  margin: 3px 0 0;
+  color: #475569;
+  font-size: 9.5px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.dna-reference-structure {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.dna-reference-structure polygon,
+.dna-reference-structure path,
+.dna-reference-structure circle {
+  fill: var(--base-color);
+  stroke: #334155;
+  stroke-width: 1.8;
+  vector-effect: non-scaling-stroke;
+}
+
+.dna-reference-structure line {
+  stroke: #64748b;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.dna-reference-structure .purine-shared-edge {
+  stroke: #334155;
+  stroke-width: 1.8;
+}
+
+.dna-reference-structure text {
+  fill: #0f172a;
+  font-size: 13px;
+  font-weight: 900;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 3px;
+}
+
+.dna-reference-nucleotide .phosphate-node {
+  fill: #06b6d4;
+  stroke: #0891b2;
+}
+
+.dna-reference-nucleotide .sugar-node {
+  fill: #fbbf24;
+  stroke: #d97706;
+}
+
+.dna-reference-nucleotide .base-ring {
+  fill: var(--base-color);
+}
+
+.dna-reference-nucleotide .phosphate-label,
+.dna-reference-nucleotide .sugar-label {
+  font-size: 10px;
+}
+
+.membrane-webgl-stack {
+  width: 100%;
+}
+
+.membrane-webgl-shell {
+  min-width: 0;
+  height: clamp(430px, 62vh, 700px);
+  min-height: 430px;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(125, 211, 252, 0.2), transparent 38%),
+    linear-gradient(180deg, rgba(240, 249, 255, 0.96) 0%, rgba(224, 242, 254, 0.86) 44%, rgba(255, 241, 202, 0.82) 100%);
+}
+
+.membrane-state-control {
+  width: min(310px, calc(100% - 24px));
+}
+
+.membrane-state-control label + label {
+  margin-top: 8px;
+}
+
+.active-transport-2d-shell .dna-feedback {
+  z-index: 5;
+}
+
+.transport-2d-membrane-window {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.56);
+  stroke-width: 13px;
+  stroke-linecap: round;
+  opacity: 0.68;
+}
+
+.dna-webgl-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 900;
+  text-align: center;
+  pointer-events: none;
+}
+
+.dna-webgl-loading[hidden] {
+  display: none;
+}
+
+.dna-hit {
+  cursor: pointer;
+}
+
+.dna-floating-label-layer {
+  pointer-events: none;
+}
+
+.dna-base-text {
+  font-family:
+    "Microsoft YaHei",
+    Arial,
+    sans-serif;
+  font-weight: 900;
+  fill: #0f172a;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.92);
+  stroke-width: 4.5px;
+}
+
+.dna-floating-label {
+  font-size: 14px;
+  font-weight: 800;
+  fill: #102033;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.95);
+  stroke-width: 5px;
+}
+
+.dna-label-line {
+  pointer-events: none;
+}
+
+.dna-hud text {
+  fill: #64748b;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.dna-feedback {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 12px;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border: 1px solid rgba(216, 225, 236, 0.9);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+  pointer-events: none;
+}
+
+.dna-state-control {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: min(260px, calc(100% - 24px));
+  padding: 10px 12px;
+  border: 1px solid rgba(216, 225, 236, 0.96);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+  cursor: default;
+}
+
+.dna-state-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.dna-state-header strong {
+  color: var(--primary);
+}
+
+.dna-state-control label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.dna-state-control input[type="range"] {
+  width: 100%;
+  accent-color: var(--primary);
+}
+
+.transport-membrane-gap path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.46);
+  stroke-width: 10px;
+  stroke-linecap: round;
+}
+
+@media (max-width: 640px) {
+
+  .dna-3d-shell {
+    grid-template-rows: auto minmax(240px, 1fr) auto;
+    min-height: 390px;
+  }
+
+  .dna-state-control {
+    position: static;
+    grid-row: 1;
+    justify-self: stretch;
+    width: auto;
+    margin: 10px 12px 0;
+  }
+
+  .dna-reference-card p {
+    display: none;
+  }
+
+  .dna-viewport {
+    grid-row: 2;
+    min-height: 240px;
+  }
+
+  .dna-feedback {
+    position: static;
+    grid-row: 3;
+    min-height: 32px;
+    margin: 0 12px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 900px) {
+  .dna-webgl-shell {
+    grid-template-rows: auto minmax(320px, 54vh) auto auto;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .dna-webgl-viewport-frame {
+    position: relative;
+    inset: auto;
+    grid-row: 2;
+    place-self: stretch;
+    min-height: 320px;
+    height: min(54vh, 500px);
+  }
+
+  .dna-webgl-shell .dna-state-control {
+    position: static;
+    grid-row: 1;
+    justify-self: stretch;
+    width: auto;
+    margin: 10px 12px 0;
+  }
+
+  .dna-webgl-shell .dna-feedback {
+    position: static;
+    grid-row: 3;
+    min-height: 32px;
+    margin: 0 12px 8px;
+    font-size: 12px;
+  }
+
+  .dna-reference-panel {
+    grid-template-columns: 1fr;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .dna-reference-list {
+    grid-template-columns: 1fr;
+  }
+
+  .rna-webgl-shell .dna-webgl-viewport-frame {
+    position: relative;
+    inset: auto;
+    grid-row: 2;
+    place-self: stretch;
+    min-height: 320px;
+    height: min(54vh, 500px);
+  }
+
+  .rna-webgl-shell .dna-feedback {
+    position: static;
+    grid-row: 3;
+    min-height: 32px;
+    margin: 0 12px 8px;
+    font-size: 12px;
+  }
+
+  .protein-webgl-shell .dna-feedback {
+    position: static;
+    grid-row: 3;
+    min-height: 32px;
+    margin: 0 12px 8px;
+    font-size: 12px;
+  }
+
+  .protein-webgl-shell .dna-webgl-viewport-frame {
+    grid-row: 3;
+  }
+
+  .protein-webgl-shell .dna-feedback {
+    grid-row: 4;
+  }
+
+  .membrane-webgl-shell {
+    grid-template-rows: auto minmax(330px, 56vh) auto;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .membrane-webgl-shell .membrane-state-control {
+    position: static;
+    grid-row: 1;
+    justify-self: stretch;
+    width: auto;
+    margin: 10px 12px 0;
+  }
+
+  .membrane-webgl-shell .dna-webgl-viewport-frame {
+    position: relative;
+    inset: auto;
+    grid-row: 2;
+    place-self: stretch;
+    min-height: 330px;
+    height: min(56vh, 520px);
+  }
+
+  .membrane-webgl-shell .dna-feedback {
+    position: static;
+    grid-row: 3;
+    min-height: 32px;
+    margin: 0 12px 8px;
+    font-size: 12px;
+  }
+
+  .active-transport-2d-control .dna-state-header {
+    margin-bottom: 5px;
+  }
+
+  .active-transport-2d-shell .dna-feedback,
+  .transport-2d-shell .dna-feedback {
+    position: static;
+    grid-row: 4;
+    min-height: 32px;
+    margin: 6px 12px 8px;
+    font-size: 12px;
+  }
+}
+
+/* Modern light science homepage, approved sidebar concept */
+
+.preview-dna-strand {
+  position: absolute;
+  top: 14px;
+  width: 12px;
+  height: 188px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #37d7a1, #7d66f1);
+  box-shadow: 0 16px 28px rgba(80, 146, 165, 0.16);
+}
+
+.preview-dna-left {
+  left: 43%;
+  transform: rotate(-25deg);
+}
+
+.preview-dna-right {
+  left: 55%;
+  transform: rotate(25deg);
+}
+
+.preview-dna-rung {
+  position: absolute;
+  left: 42%;
+  width: 98px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(94, 126, 169, 0.38);
+  transform: rotate(0deg);
+}
+
+.preview-dna-rung.rung-1 { top: 48px; }
+.preview-dna-rung.rung-2 { top: 84px; left: 41%; width: 112px; }
+.preview-dna-rung.rung-3 { top: 121px; }
+.preview-dna-rung.rung-4 { top: 158px; left: 41%; width: 112px; }
+
+.model-area:fullscreen .dna-webgl-stack,
+.model-area:fullscreen .rna-webgl-stack,
+.model-area:fullscreen .protein-webgl-stack,
+.model-area:fullscreen .membrane-webgl-stack,
+.model-area.is-css-fullscreen .dna-webgl-stack,
+.model-area.is-css-fullscreen .rna-webgl-stack,
+.model-area.is-css-fullscreen .protein-webgl-stack,
+.model-area.is-css-fullscreen .membrane-webgl-stack {
+  height: 100%;
+  align-content: stretch;
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+
+.model-area:fullscreen .dna-3d-shell,
+.model-area:fullscreen .dna-webgl-shell,
+.model-area:fullscreen .rna-webgl-shell,
+.model-area:fullscreen .protein-webgl-shell,
+.model-area:fullscreen .membrane-webgl-shell,
+.model-area:fullscreen .plant-cell-webgl-shell,
+.model-area:fullscreen .active-transport-2d-shell,
+.model-area:fullscreen .transport-2d-shell,
+.model-area:fullscreen .transport-2d-comparison-shell,
+.model-area.is-css-fullscreen .dna-3d-shell,
+.model-area.is-css-fullscreen .dna-webgl-shell,
+.model-area.is-css-fullscreen .rna-webgl-shell,
+.model-area.is-css-fullscreen .protein-webgl-shell,
+.model-area.is-css-fullscreen .membrane-webgl-shell,
+.model-area.is-css-fullscreen .plant-cell-webgl-shell,
+.model-area.is-css-fullscreen .active-transport-2d-shell,
+.model-area.is-css-fullscreen .transport-2d-shell,
+.model-area.is-css-fullscreen .transport-2d-comparison-shell {
+  min-height: 0 !important;
+  height: 100% !important;
+  overflow: hidden;
+}
+
+.model-area:fullscreen .dna-webgl-viewport-frame,
+.model-area.is-css-fullscreen .dna-webgl-viewport-frame {
+  position: absolute;
+  inset: 0;
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+/* Content framing only: the shared shell and scientific scene are unchanged. */
+body[data-model-id="membrane"] .dna-visual-wrap,
+body[data-model-id="membrane"] .membrane-webgl-stack {
+  height: 100%;
+  min-height: 0;
+}
+body[data-model-id="membrane"] .membrane-webgl-stack .membrane-webgl-shell {
+  height: 100% !important;
+  min-height: 0 !important;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  grid-template-rows: 38px minmax(0, 1fr);
+  overflow: hidden;
+  cursor: auto;
+  touch-action: auto;
+}
+body[data-model-id="membrane"] .membrane-webgl-shell .dna-webgl-viewport-frame {
+  position: relative;
+  inset: auto;
+  grid-column: 1;
+  grid-row: 2;
+  height: auto !important;
+  min-height: 0 !important;
+  min-width: 0;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+}
+body[data-model-id="membrane"] .membrane-webgl-shell .membrane-state-control {
+  position: static;
+  grid-column: 2;
+  grid-row: 1 / -1;
+  place-self: start stretch;
+  width: auto;
+  max-height: calc(100% - 16px);
+  overflow-y: auto;
+  margin: 8px;
+  box-sizing: border-box;
+}
+.membrane-view-tools {
+  position: sticky;
+  top: 0;
+  z-index: 7;
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 38px;
+  padding: 3px 8px;
+  box-sizing: border-box;
+  background: #eff7f7;
+}
+.membrane-view-tools button {
+  min-width: 32px;
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid #c6dad2;
+  border-radius: 8px;
+  background: #fff;
+  color: #245f52;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+.membrane-view-tools button:focus-visible { outline: 2px solid #31816e; outline-offset: -2px; }
+.membrane-label-leaders { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+.membrane-label-leaders line { stroke: #87a6a3; stroke-width: 1; }
+.dna-webgl-labels.is-compact-labels .dna-webgl-label { font-size: 9px; padding: 2px 5px; box-shadow: none; }
+@media (max-width: 860px) and (orientation: portrait), (max-width: 599px) {
+  body[data-model-id="membrane"] .membrane-webgl-stack .membrane-webgl-shell {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  body[data-model-id="membrane"] .membrane-webgl-shell .dna-webgl-viewport-frame {
+    flex: 0 0 calc(100% - 38px);
+    min-height: 100px !important;
+  }
+  body[data-model-id="membrane"] .membrane-webgl-shell .membrane-state-control {
+    flex: 0 0 auto;
+    max-height: none;
+    overflow: visible;
+  }
+}
+@media (min-width: 861px), (min-width: 600px) and (orientation: landscape) {
+  .membrane-view-tools [data-membrane-view="panel"] { display: none; }
+}

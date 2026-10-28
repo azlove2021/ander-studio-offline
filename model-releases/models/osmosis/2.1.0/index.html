@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>渗透作用 / Osmosis</title><link rel="icon" href="assets/brand-stacked.svg" type="image/svg+xml"><link rel="stylesheet" href="model.css"><link rel="stylesheet" href="osmosis-layout.css"><link rel="stylesheet" href="brand-watermark.css"><link rel="stylesheet" href="shell-standard.css"><link rel="stylesheet" href="window-standard.css"><script src="/assets/accounts/model-favorites.js?v=e9af20c54e036dd9573d4611bbb8bee47cccdad160e10e9d5ba98730656177d4"></script>
+<script src="/assets/accounts/model-favorite-host.js?v=c616cfcae1d08ce04b9e0af0f0163800016def1b0a8a6c16f9bab30ff6e7b481" data-ander-model-host="website-v1" data-model-id="osmosis"></script>
+</head>
+<body><main class="independent-model-app">
+ <header class="independent-model-header"><a class="independent-model-back" href="#" aria-label="返回主页"></a><div class="independent-model-heading"><span class="independent-model-kicker"></span><h1></h1></div></header>
+ <div class="independent-model-workspace"><section class="model-area">
+  <nav class="stage-strip" aria-label="渗透作用阶段"></nav>
+  <div class="model-stage">
+   <div class="condition-bar"><span class="membrane-rule">半透膜：水可通过，蔗糖不能通过</span><span class="playback-badge" id="playback-state">准备观察</span></div>
+   <div class="science-layout">
+    <aside class="liquid-options" aria-label="实验液体选择">
+     <div class="liquid-field"><label for="inside-liquid"><span class="sample-mark" id="inside-mark"></span>漏斗内液体</label><select id="inside-liquid"><option value="water">清水</option><option value="low">低浓度蔗糖</option><option value="high" selected>高浓度蔗糖</option></select><span class="field-hint">对应放大图上侧</span></div>
+     <div class="liquid-field"><label for="outside-liquid"><span class="sample-mark" id="outside-mark"></span>漏斗外液体</label><select id="outside-liquid"><option value="water" selected>清水</option><option value="low">低浓度蔗糖</option><option value="high">高浓度蔗糖</option></select><span class="field-hint">对应放大图下侧</span></div>
+     <p class="selection-hint">更换液体后，回到初始条件。</p>
+    </aside>
+    <div class="science-viewport"><div class="art-scroll" tabindex="0" aria-label="实验画面，小屏可在画面内滚动"><div class="science-world" id="scene-host"></div></div><div class="scene-note"><span>液体着色、粒子数量和时间为教学示意。</span><span id="state-note"></span></div></div>
+   </div>
+  </div>
+  <footer class="control-dock">
+   <div class="control-group control-group-primary"><button type="button" class="control-button is-primary" data-action="play">播放</button><button type="button" class="control-button" data-action="reset">重置</button><button type="button" class="control-button" data-action="prev">上一步</button><button type="button" class="control-button" data-action="next">下一步</button></div>
+   <label class="timeline-wrap"><span>演示进度</span><input id="time-slider" type="range" min="0" max="10000" step="1" value="0" aria-label="演示进度"><output id="time-output">0%</output></label>
+   <div class="control-group control-group-view"><button type="button" class="control-button" data-action="speed">1×</button><button type="button" class="control-button" data-action="labels" aria-pressed="true">标签</button><button type="button" class="control-button" data-action="view" title="切换总览、装置和半透膜局部">视角</button><button type="button" class="control-button" data-action="fullscreen">全屏</button></div>
+  </footer>
+ </section></div></main><div class="sr-only" id="announcement" aria-live="polite" aria-atomic="true"></div><script src="shell-standard.js"></script><script type="module" src="model.js"></script><script type="module" src="brand-watermark.js"></script>    <script src="/session.js?v=experience-r1"></script>
+  </body></html>

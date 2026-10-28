@@ -1,0 +1,223 @@
+{
+  "id": "pcr",
+  "version": "2.4.4",
+  "title": {
+    "zh": "PCR的基本过程",
+    "en": "The Basic Process of PCR"
+  },
+  "parameters": {
+    "initialDoubleStrands": 1,
+    "defaultCycles": 30,
+    "minCycles": 1,
+    "maxCycles": 40,
+    "visibleBases": 54,
+    "primerBases": 18,
+    "displayCap": 16,
+    "detailedCycles": 4,
+    "summaryDisplayCap": 256,
+    "summaryPhaseSeconds": [
+      0.22,
+      0.22,
+      0.46
+    ],
+    "freezeSummaryAtCap": true,
+    "temperaturesC": [
+      95,
+      95,
+      55,
+      72,
+      72
+    ],
+    "holdSeconds": [
+      120,
+      30,
+      30,
+      60,
+      300
+    ],
+    "holdTimeExcludesRamps": true,
+    "presentationSeconds": [
+      4,
+      2,
+      3,
+      6,
+      4
+    ]
+  },
+  "sceneLayout": {
+    "width": 1210,
+    "height": 600,
+    "reactor": {
+      "x": 8,
+      "y": 96,
+      "width": 1194,
+      "height": 496
+    },
+    "grid": {
+      "x": 24,
+      "y": 132,
+      "width": 1162,
+      "height": 442
+    },
+    "stockCenters": [
+      180,
+      485,
+      790,
+      1095
+    ],
+    "source": {
+      "x": 107,
+      "y": 31,
+      "scale": 0.08
+    },
+    "dntp": {
+      "x": 398,
+      "y": 54,
+      "step": 58,
+      "scale": 0.7
+    },
+    "primerF": {
+      "x": 790,
+      "y": 42,
+      "scale": 0.37
+    },
+    "primerR": {
+      "x": 790,
+      "y": 69,
+      "scale": 0.37
+    },
+    "taq": {
+      "x": 1095,
+      "y": 52,
+      "scale": 0.52
+    },
+    "thermometer": {
+      "bottom": 313,
+      "units": 3.6
+    }
+  },
+  "strandLineage": {
+    "colors": {
+      "original": "#b6203a",
+      "new": "#096a3e",
+      "primer": "#aa5208"
+    },
+    "sugarFills": {
+      "original": "#df8b99",
+      "new": "#75b397",
+      "primer": "#d8a16e"
+    },
+    "originalStrands": 2,
+    "newStrandsKeepColorWhenReused": true,
+    "backboneWidth": 9,
+    "primerSegmentRetained": true
+  },
+  "scientificAssumptions": [
+    "Terminal primer boundaries equal the initial template boundaries.",
+    "Sequence symbols are illustrative, not experimentally validated primers.",
+    "Only completed extension doubles the ideal count. Final extension does not double it.",
+    "Template extraction is omitted; PCR occurs in vitro.",
+    "DNA primers remain incorporated; Taq is a reusable catalyst.",
+    "After four detailed cycles, compact DNA symbols show doubling up to 256. The static sample then retains both original-bearing molecules; its color proportions are not population fractions. Repeated steps are omitted visually, not removed from PCR.",
+    "Actual amplification may reach a plateau; the model uses ideal 100 percent efficiency."
+  ],
+  "stages": [
+    {
+      "id": "initial",
+      "zh": "预变性",
+      "en": "Initial denaturation",
+      "temp": 95,
+      "hold": 120,
+      "seconds": 4
+    },
+    {
+      "id": "denature",
+      "zh": "变性",
+      "en": "Denaturation",
+      "temp": 95,
+      "hold": 30,
+      "seconds": 2
+    },
+    {
+      "id": "anneal",
+      "zh": "复性（退火）",
+      "en": "Annealing",
+      "temp": 55,
+      "hold": 30,
+      "seconds": 3
+    },
+    {
+      "id": "extend",
+      "zh": "延伸",
+      "en": "Extension",
+      "temp": 72,
+      "hold": 60,
+      "seconds": 6
+    },
+    {
+      "id": "final",
+      "zh": "最后延伸",
+      "en": "Final extension",
+      "temp": 72,
+      "hold": 300,
+      "seconds": 4
+    }
+  ],
+  "sources": [
+    {
+      "title": "NCBI PCR principle: template, primers and new complementary strands",
+      "url": "https://dbgap.ncbi.nlm.nih.gov/projects/genome/probe/doc/TechPCR.shtml"
+    },
+    {
+      "title": "PCR basics",
+      "url": "https://www.thermofisher.com/us/en/home/life-science/cloning/cloning-learning-center/invitrogen-school-of-molecular-biology/pcr-education/pcr-reagents-enzymes/pcr-basics.html"
+    },
+    {
+      "title": "Taq PCR cycling example",
+      "url": "https://documents.thermofisher.com/TFS-Assets/LSG/manuals/MAN0012623_PCR_Master_2X_K0172_UG.pdf"
+    },
+    {
+      "title": "Taq domain structure reference (1TAQ)",
+      "url": "https://www.rcsb.org/structure/1TAQ"
+    }
+  ],
+  "reuse": {
+    "sequenceAndBaseColors": {
+      "source": "dna-replication",
+      "version": "2.3.1",
+      "objects": [
+        "illustrative sequence motif",
+        "A/T/C/G base color map"
+      ],
+      "copiedLocally": true
+    },
+    "cell": {
+      "source": "approved PCR proposal 20260928",
+      "originalDimensions": [
+        1254,
+        1254
+      ],
+      "runtimeDimensions": [
+        420,
+        420
+      ],
+      "method": "ImageGen original, proportionate runtime reduction"
+    },
+    "taq": {
+      "source": "Blender 5.2 procedural teaching mesh",
+      "runtimeDimensions": [
+        320,
+        320
+      ],
+      "anchorNormalized": [
+        0.5,
+        0.5
+      ],
+      "atomicReconstruction": false
+    }
+  },
+  "delivery": {
+    "websiteSync": false,
+    "protocolVersion": "1.0"
+  }
+}

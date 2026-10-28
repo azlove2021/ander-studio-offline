@@ -1,0 +1,212 @@
+/* Model content layout only; all public chrome is the approved Shell 2.5.1 copy. */
+body[data-model-shell] .model-area .model-stage{min-height:0;overflow:hidden!important}
+.lab-toolbar{display:flex;align-items:center;justify-content:flex-end;gap:5px;flex:none;min-width:0}
+.lab-toolbar>.shell-action{min-height:29px;padding:4px 8px;font-size:12px;white-space:nowrap}
+.lab-plane,.lab-svg-backdrop{position:absolute;inset:0;width:100%;height:100%;transform-origin:0 0;pointer-events:none}
+.lab-plane{z-index:2;pointer-events:auto}.lab-svg-backdrop{z-index:0}
+body[data-model-shell] .scene-viewport{position:relative;isolation:isolate;touch-action:none;overflow:hidden!important;min-width:0;min-height:0}
+.scene-viewport>.model-brand-background{z-index:1}.scene-viewport>.model-brand-layer{z-index:4}
+body[data-model-shell] .scene-viewport #scene{display:block;width:100%!important;height:100%!important;min-width:0!important;min-height:0!important;max-height:none!important;position:relative;z-index:2}
+body[data-model-shell] .timeline-wrap>span:first-child{flex:none!important;min-width:0!important;white-space:nowrap}
+.timeline-wrap output{flex:none;font-variant-numeric:tabular-nums;text-align:right;min-width:3.2em}
+.shell-dialog .lab-context-content{display:block!important}.shell-dialog .lab-toolbar{display:flex!important;flex-wrap:wrap;padding:0}
+.shell-dialog .lab-context-content input{font-size:16px}.shell-dialog .lab-context-content{font-size:13px;line-height:1.65}
+/* PCR: microscope-like instrument feedback stays beside the original reaction. */
+body[data-model-id=pcr] .pcr-layout{height:100%;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 245px;grid-template-rows:minmax(0,1fr);gap:12px;padding:10px}
+body[data-model-id=pcr] .reaction-heading{display:flex;align-items:center;justify-content:space-between;min-height:32px;gap:6px;padding:0 2px}
+body[data-model-id=pcr] .reaction-heading h2{font-size:15px;white-space:nowrap}
+body[data-model-id=pcr] .reaction-visual{height:auto;flex:1;min-height:0;grid-template-columns:minmax(0,1fr) 75px;gap:3px}
+body[data-model-id=pcr] .temperature-panel{position:static!important;inset:auto!important;width:75px;height:100%;min-height:0;gap:2px}
+body[data-model-id=pcr] #temperature-scene{height:calc(100% - 64px);max-height:300px;min-height:28px;width:70px;flex:1}
+body[data-model-id=pcr] .phase-readout{flex:none;gap:1px;line-height:1.4;font-size:10px}
+body[data-model-id=pcr] .phase-readout b,body[data-model-id=pcr] #temperature{font-size:12px}
+body[data-model-id=pcr] .scene-tools{order:initial;margin:0;padding:1px 65px 1px 45px;min-height:20px;font-size:10px;flex:none}
+body[data-model-id=pcr] .scroll-hint{display:none}
+body[data-model-id=pcr] .reaction-program{order:initial;flex:none;margin:3px 0 0;grid-template-columns:44px minmax(0,1fr);gap:5px;padding:0}
+body[data-model-id=pcr] .program-caption{font-size:10px}
+body[data-model-id=pcr] .phase-track{padding-bottom:7px;gap:4px}
+body[data-model-id=pcr] .phase-step strong{font-size:10px;margin-top:3px}body[data-model-id=pcr] .phase-step small{font-size:9px;margin-top:1px}
+body[data-model-id=pcr] .cycle-caption{font-size:10px}.cycle-caption b{font-size:10px}
+body[data-model-id=pcr] .products-area{min-height:0;overflow:auto;padding:0 0 0 10px}
+.lab-count-summary{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px 8px;padding:0 0 8px}
+.lab-count-summary .count-label{font-size:12px;margin:0}.lab-count-summary #count-value{font-size:22px;line-height:1.3;margin:0}
+.lab-count-summary #visible-count{grid-column:1/-1;font-size:10px;margin:0}
+.lab-context-content .product-history{max-height:180px}.lab-context-content .target-count{margin-top:10px}
+/* Primer comparison: original mode buttons, reaction, linked detail and counts. */
+body[data-model-id=pcr-primer-engineering] .engineering-layout{height:100%;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,30%);grid-template-rows:auto minmax(0,1fr) auto;gap:6px 12px;padding:8px 10px}
+.engineering-layout>.lab-toolbar{grid-column:1/-1;justify-content:flex-start;padding-bottom:4px;border-bottom:1px solid #dbe7e1}
+.engineering-layout .primer-library{display:flex;flex:1;gap:6px;overflow:visible;min-width:0;align-items:center}
+.engineering-layout .primer-library h2,.engineering-layout .primer-library p,.engineering-layout .primer-library svg,.engineering-layout .primer-library span{display:none}
+.engineering-layout .primer-library button{width:auto;flex:none;margin:0;padding:5px 9px;text-align:center;min-height:30px}.engineering-layout .primer-library strong{font-size:12px}
+body[data-model-id=pcr-primer-engineering] .reaction-area{grid-column:1;grid-row:2;height:auto;min-height:0;flex:initial}
+body[data-model-id=pcr-primer-engineering] .reaction-heading{min-height:37px;flex:none;margin:0 0 3px}
+body[data-model-id=pcr-primer-engineering] .reaction-heading h2{font-size:14px}.reaction-heading>div>span{font-size:10px}
+body[data-model-id=pcr-primer-engineering] .strand-legend{font-size:10px;gap:10px;min-height:20px;padding-left:40px;flex:none}
+body[data-model-id=pcr-primer-engineering] #jump-detail{display:none}
+body[data-model-id=pcr-primer-engineering] .reaction-progress{flex:none;min-height:25px;padding:2px 0;gap:6px}
+body[data-model-id=pcr-primer-engineering] .site-detail{grid-column:2;grid-row:2;display:flex;flex-direction:column;min-height:0;overflow:hidden;padding:0 0 0 10px;border-left:1px solid #d7e7e0;border-top:0}
+.site-detail .detail-heading{flex:none;min-height:25px}.site-detail .detail-heading h2{font-size:13px;margin:0}
+body[data-model-id=pcr-primer-engineering] #back-reaction{display:none}.site-detail #site-label{font-size:10px;margin:2px 0}
+body[data-model-id=pcr-primer-engineering] .zoom-viewport{height:auto!important;flex:1;min-height:40px;max-height:280px;width:100%;max-width:none;margin:0}
+.site-detail .zoom-directions{flex:none;font-size:10px;max-width:none;margin:3px 0}
+.site-detail .lab-context-content{overflow:auto;min-height:0;flex:1}.site-detail .lab-notes p{font-size:11px;min-height:0;margin:6px 0;line-height:1.5}
+.engineering-layout>.lab-primer-summary{grid-column:1/-1;grid-row:3;display:flex;align-items:center;gap:10px;padding:4px 0 0;margin:0;min-height:25px}
+.lab-primer-summary h2{font-size:11px;margin:0}.lab-primer-summary #total-count{font-size:14px;margin:0}.lab-primer-summary>.subtle{font-size:10px}.lab-primer-summary .category-counts{display:flex;gap:12px;flex:1;justify-content:flex-end;padding:0;font-size:10px}.lab-primer-summary .category-counts b{font-size:12px}
+.model-area[data-lab-view=detail] .engineering-layout>.reaction-area{display:none}.model-area[data-lab-view=detail] .engineering-layout>.site-detail{grid-column:1/-1;border:0;padding:0}
+.model-area[data-lab-view=detail] .zoom-viewport{max-height:none}.model-area[data-lab-view=detail] .site-detail .lab-context-content{flex:0}
+/* Sanger keeps the original viewBox camera and its projected, clickable readout. */
+body[data-model-id=sanger-sequencing] .sequencing-workbench{padding:6px 10px 3px}
+body[data-model-id=sanger-sequencing] .scene-viewport{background:#fcfefd}
+body[data-model-id=sanger-sequencing] #sequence{z-index:3}
+body[data-model-id=sanger-sequencing] .sequencing-workbench>.lab-context-content{display:none}
+body[data-model-id=sanger-sequencing] .reaction-heading{flex:none;min-height:30px;gap:7px}
+body[data-model-id=sanger-sequencing] .view-tools{min-height:29px}
+body[data-model-id=sanger-sequencing] .strand-legend{font-size:10px;gap:9px}
+@media(max-width:1050px),(max-height:620px){
+ body[data-model-id=pcr] .pcr-layout{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;gap:3px;padding:5px 7px}
+ body[data-model-id=pcr] .products-area{border:0;border-top:1px solid #dbe7e1;padding:3px 0 0;overflow:visible}
+ body[data-model-id=pcr] .lab-context-content{display:none}
+ .lab-count-summary{display:flex;justify-content:space-between;gap:7px;padding:0;min-height:20px}.lab-count-summary .count-label{font-size:10px}.lab-count-summary #count-value{font-size:15px}.lab-count-summary #visible-count{font-size:10px;white-space:nowrap}
+ .site-detail .lab-context-content{display:none}
+}
+@media(max-width:700px) and (orientation:portrait){
+ .lab-toolbar>.shell-action{font-size:11px;min-height:27px;padding:3px 5px}
+ body[data-model-id=pcr] .reaction-heading h2{font-size:12px}.lab-count-summary .count-label{max-width:85px;line-height:1.2}
+ body[data-model-id=pcr] .reaction-visual{grid-template-columns:minmax(0,1fr) 55px}
+ body[data-model-id=pcr] .temperature-panel{width:55px}body[data-model-id=pcr] #temperature-scene{width:53px}
+ body[data-model-id=pcr] .scene-tools{padding:2px 15px 2px 42px;font-size:9px}
+ body[data-model-id=pcr] .reaction-program{grid-template-columns:minmax(0,1fr)}body[data-model-id=pcr] .program-caption{display:none}
+ body[data-model-id=pcr-primer-engineering] .engineering-layout{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) minmax(85px,.48fr) auto;padding:4px 6px;gap:3px}
+ .engineering-layout>.lab-toolbar{flex-wrap:wrap;gap:4px}.engineering-layout .primer-library{flex-basis:100%}
+ .engineering-layout .primer-library button{flex:1;padding:4px 6px;min-height:27px}.engineering-layout .primer-library strong{font-size:11px}
+ body[data-model-id=pcr-primer-engineering] .site-detail{grid-column:1;grid-row:3;border:0;border-top:1px solid #d7e7e0;padding:3px 0 0}
+ .engineering-layout>.lab-primer-summary{grid-row:4;flex-wrap:wrap;gap:3px 7px;padding-top:3px}
+ .lab-primer-summary .category-counts{flex-basis:100%;justify-content:space-around;gap:5px}
+ body[data-model-id=pcr-primer-engineering] .reaction-heading>div>span{display:none}.phase-badge{gap:1px}.phase-badge strong,.phase-badge span{font-size:10px}
+ .model-area[data-lab-view=detail] .engineering-layout{grid-template-rows:auto minmax(0,1fr) auto}.model-area[data-lab-view=detail] .engineering-layout>.site-detail{grid-row:2}.model-area[data-lab-view=detail] .lab-primer-summary{grid-row:3}
+ body[data-model-id=sanger-sequencing] .reaction-heading{min-height:31px;flex-wrap:wrap;gap:3px 5px}
+ body[data-model-id=sanger-sequencing] .reaction-heading strong{font-size:12px}body[data-model-id=sanger-sequencing] .reaction-heading span{display:none}
+ body[data-model-id=sanger-sequencing] .reaction-heading output{font-size:10px}
+ body[data-model-id=sanger-sequencing] .view-tools{min-height:46px;gap:2px}.camera-buttons button{min-height:27px}
+}
+@media(max-height:500px){
+ body[data-model-id=pcr] .reaction-heading{min-height:27px}.lab-toolbar>.shell-action{min-height:26px;padding:2px 6px;font-size:11px}
+ body[data-model-id=pcr] .reaction-program{margin-top:0}.phase-once-first,.phase-once-last{padding:2px 0 6px}.cycle-loop{padding-top:2px;padding-bottom:7px}
+ body[data-model-id=pcr] .phase-step small{font-size:8px}body[data-model-id=pcr] .scene-tools{min-height:15px;font-size:9px}
+ body[data-model-id=pcr] .phase-readout{font-size:9px}body[data-model-id=pcr] .phase-readout b{font-size:10px}
+ body[data-model-id=pcr-primer-engineering] .engineering-layout{gap:3px 7px;padding:3px 6px;grid-template-columns:minmax(0,1fr) minmax(180px,30%)}
+ body[data-model-id=pcr-primer-engineering] .reaction-heading{min-height:23px}.reaction-heading h2{font-size:12px}
+ body[data-model-id=pcr-primer-engineering] .strand-legend{min-height:17px;font-size:9px}
+ .lab-primer-summary .subtle{display:none}.site-detail .detail-heading{min-height:18px}.site-detail .detail-heading h2{font-size:11px}
+ body[data-model-id=sanger-sequencing] .view-tools{display:flex;justify-content:space-between;gap:5px;min-height:26px}
+ body[data-model-id=sanger-sequencing] .reaction-heading{min-height:26px}
+}
+@media(max-width:700px) and (orientation:portrait) and (max-height:560px){
+ body[data-model-id=pcr-primer-engineering] .engineering-layout{grid-template-columns:minmax(0,1fr)}
+ .engineering-layout>.lab-toolbar{flex-wrap:nowrap}.engineering-layout .primer-library{flex:1;gap:3px}.engineering-layout .primer-library strong{font-size:9px}
+ .engineering-layout .primer-library button{padding:3px}.engineering-layout>.lab-toolbar>.shell-action{font-size:9px;padding:3px}
+ body[data-model-id=pcr-primer-engineering] .reaction-heading{display:none}.site-detail #site-label{margin:0}.site-detail .zoom-directions{font-size:9px}
+ body[data-model-id=pcr] .reaction-heading h2{display:none}
+}
+.model-area[data-immersive=true] :is(.lab-toolbar,.reaction-heading,.reaction-program,.reaction-progress,.view-tools,.scene-tools,.strand-legend,.lab-context-content){display:none}
+.model-area[data-immersive=true] :is(.pcr-layout,.engineering-layout,.sequencing-workbench){padding:0!important;gap:0!important}
+.model-area[data-immersive=true] .pcr-layout{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto}
+.model-area[data-immersive=true] .products-area{border:0;padding:2px 6px}
+.model-area[data-immersive=true] .lab-count-summary{display:flex;align-items:center;justify-content:space-between;padding:0;font-size:10px}.model-area[data-immersive=true] .lab-count-summary #count-value{font-size:13px}
+.model-area[data-immersive=true] .engineering-layout{grid-template-rows:minmax(0,1fr) auto}
+.model-area[data-immersive=true] .engineering-layout>.reaction-area,.model-area[data-immersive=true] .engineering-layout>.site-detail{grid-row:1}
+.model-area[data-immersive=true] .engineering-layout>.lab-primer-summary{grid-row:2;padding:2px 7px}
+@media(max-width:700px) and (orientation:portrait){
+ .model-area[data-immersive=true] .engineering-layout{grid-template-rows:minmax(0,1fr) minmax(80px,.42fr) auto}
+ .model-area[data-immersive=true] .engineering-layout>.site-detail{grid-row:2}.model-area[data-immersive=true] .engineering-layout>.lab-primer-summary{grid-row:3}
+ .model-area[data-immersive=true][data-lab-view=detail] .engineering-layout{grid-template-rows:minmax(0,1fr) auto}.model-area[data-immersive=true][data-lab-view=detail] .engineering-layout>.site-detail{grid-row:1}.model-area[data-immersive=true][data-lab-view=detail] .lab-primer-summary{grid-row:2}
+}
+.shell-dialog .lab-toolbar .primer-library{display:flex;gap:8px;flex:1 0 100%;min-width:0}.shell-dialog .primer-library button{flex:1;min-width:0}.shell-dialog .primer-library svg{display:block;height:55px;width:100%}
+.shell-dialog .lab-toolbar .primer-library h2,.shell-dialog .lab-toolbar .primer-library p{display:none}
+.lab-scene-frame{position:relative;display:flex;flex-direction:column;flex:1;min-height:0;min-width:0}
+body[data-model-id=sanger-sequencing] .lab-scene-frame>.scene-viewport{background:transparent;isolation:auto}
+.lab-scene-frame>.model-brand-background{z-index:1}.lab-scene-frame>.model-brand-layer{z-index:4}
+.lab-scene-frame>.view-tools{z-index:3;padding-inline:45px}
+@media(orientation:landscape) and (max-height:500px){.lab-scene-frame>.view-tools{padding-inline:28px}}
+@media(orientation:landscape) and (max-height:500px){
+ body[data-model-id=sanger-sequencing] .view-tools{display:grid;grid-template-columns:minmax(30px,1fr) auto minmax(175px,1fr);grid-template-rows:auto}
+ body[data-model-id=sanger-sequencing] .view-tools .strand-legend{grid-column:2;grid-row:1;justify-self:center}
+ body[data-model-id=sanger-sequencing] .view-tools .camera-buttons{grid-column:3;grid-row:1;justify-self:end}
+}
+@media(max-width:700px) and (orientation:portrait) and (max-height:560px){
+ body[data-model-id=pcr-primer-engineering] .engineering-layout{grid-template-rows:auto minmax(80px,1fr) 67px 24px}
+ .engineering-layout>.lab-primer-summary{flex-wrap:nowrap;padding-top:1px;gap:3px;min-height:20px}.lab-primer-summary h2{font-size:9px}.lab-primer-summary .category-counts{flex:1;gap:3px;font-size:9px}.lab-primer-summary .category-counts b{font-size:10px}
+ body[data-model-id=pcr-primer-engineering] .site-detail .detail-heading{display:none}.site-detail #site-label{font-size:9px;line-height:12px}.site-detail .zoom-directions{margin:1px 0;font-size:8px;line-height:10px}
+ body[data-model-id=pcr-primer-engineering] .zoom-viewport{min-height:30px}
+}
+
+/* Keep the extracted SVG environment in precisely the scientific SVG viewport. */
+body[data-model-shell] .scene-viewport>.lab-svg-backdrop{display:block;width:100%!important;height:100%!important;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important}
+body[data-model-id=pcr] .reaction-visual{align-items:stretch}
+body[data-model-id=pcr] .temperature-panel{box-sizing:border-box;min-width:0;overflow:hidden}
+body[data-model-id=pcr] #temperature-scene{display:block;flex:0 1 auto;height:auto;min-height:0;max-height:calc(100% - 48px);width:100%;aspect-ratio:112/390}
+body[data-model-id=pcr] .phase-readout{white-space:nowrap}
+
+/* Short landscape: put reaction steps beside the scene, freeing its full height. */
+@media(orientation:landscape) and (max-height:620px){
+ body[data-model-id=pcr] .reaction-area{display:grid;grid-template-columns:106px minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto;column-gap:8px;row-gap:2px}
+ body[data-model-id=pcr] .reaction-heading{grid-column:1/-1;grid-row:1;min-height:25px;order:0}
+ body[data-model-id=pcr] .reaction-program{grid-column:1;grid-row:2/4;display:flex;flex-direction:column;align-items:stretch;min-height:0;gap:2px;margin:0;padding:0;order:0}
+ body[data-model-id=pcr] .program-caption{display:block;flex:none;font-size:10px;line-height:12px;padding:0;text-align:center}
+ body[data-model-id=pcr] .phase-track{display:flex;flex-direction:column;flex:1;min-height:0;gap:2px;padding:0}
+ body[data-model-id=pcr] :is(.phase-once-first,.phase-once-last){display:flex;flex:1;min-height:0;padding:0 4px}
+ body[data-model-id=pcr] .cycle-loop{display:flex;flex-direction:column;flex:3.4;min-height:0;padding:2px 3px 10px}
+ body[data-model-id=pcr] .cycle-loop-steps{display:flex;flex-direction:column;flex:1;min-height:0;gap:2px}
+ body[data-model-id=pcr] .phase-step{display:flex;flex-direction:column;justify-content:center;flex:1;min-height:0;padding:0}
+ body[data-model-id=pcr] .phase-line{width:100%;height:3px;flex:none}
+ body[data-model-id=pcr] .phase-step strong{font-size:10px;line-height:12px;margin-top:1px;white-space:nowrap}
+ body[data-model-id=pcr] .phase-step small{font-size:8px;line-height:10px;margin:0;white-space:nowrap}
+ body[data-model-id=pcr] .cycle-caption{font-size:9px;line-height:11px;padding:0 3px;bottom:3px;transform:translateX(-50%)}
+ body[data-model-id=pcr] .cycle-caption b{font-size:9px}
+ body[data-model-id=pcr] .reaction-visual{grid-column:2;grid-row:2;height:auto;min-height:0;grid-template-columns:minmax(0,1fr) 64px;order:0}
+ body[data-model-id=pcr] .temperature-panel{width:64px}
+ body[data-model-id=pcr] .scene-tools{grid-column:2;grid-row:3;justify-content:center;min-height:15px;padding:0 64px 0 30px;order:0}
+ body[data-model-id=pcr] .phase-readout{font-size:9px;line-height:1.2}
+ body[data-model-id=pcr] .phase-readout b,body[data-model-id=pcr] #temperature{font-size:10px}
+
+ body[data-model-id=pcr-primer-engineering] .reaction-area{display:grid;grid-template-columns:86px minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto;gap:3px 6px}
+ body[data-model-id=pcr-primer-engineering] .reaction-heading{grid-column:1;grid-row:1;justify-content:center;min-height:0;margin:0;text-align:center}
+ body[data-model-id=pcr-primer-engineering] .reaction-heading>div:first-child{display:none}
+ body[data-model-id=pcr-primer-engineering] .phase-badge{align-items:center;white-space:normal;line-height:1.3}
+ body[data-model-id=pcr-primer-engineering] .phase-badge strong{font-size:10px}
+ body[data-model-id=pcr-primer-engineering] .phase-badge span{font-size:9px}
+ body[data-model-id=pcr-primer-engineering] .reaction-progress{grid-column:1;grid-row:2/4;display:flex;flex-direction:column;min-height:0;padding:3px 4px;gap:3px;border-right:1px solid #dfebe5}
+ body[data-model-id=pcr-primer-engineering] .reaction-progress>strong{font-size:10px;line-height:13px}
+ body[data-model-id=pcr-primer-engineering] .reaction-steps{flex-direction:column;width:100%;min-height:0;gap:5px;justify-content:space-evenly}
+ body[data-model-id=pcr-primer-engineering] .reaction-steps>div{display:flex;flex-direction:column;justify-content:center;min-height:0}
+ body[data-model-id=pcr-primer-engineering] .reaction-steps span{height:4px;flex:none}
+ body[data-model-id=pcr-primer-engineering] .reaction-steps b{font-size:10px;line-height:13px;margin-top:2px}
+ body[data-model-id=pcr-primer-engineering] .reaction-progress output{font-size:9px;min-width:0;line-height:12px;text-align:center}
+ body[data-model-id=pcr-primer-engineering] .scene-viewport{grid-column:2;grid-row:1/3}
+ body[data-model-id=pcr-primer-engineering] .reaction-area>.strand-legend{grid-column:2;grid-row:3;min-height:16px;padding:0 3px 0 32px;font-size:9px;gap:5px;flex-wrap:nowrap}
+ body[data-model-id=pcr-primer-engineering] .strand-legend i{width:12px}
+}
+
+/* The scene keeps a stable viewport as immersive chrome appears/disappears.
+   Only the separate instrument is inset by the measured overlay heights. */
+body[data-model-id=pcr] .model-area[data-immersive=true] .reaction-area{display:flex;flex-direction:column}
+body[data-model-id=pcr] .model-area[data-immersive=true] .reaction-visual{flex:1;grid-template-columns:minmax(0,1fr) 66px;gap:2px}
+body[data-model-id=pcr] .model-area[data-immersive=true] .temperature-panel{width:66px;height:auto!important;margin-top:var(--lab-identity-height,44px);margin-bottom:var(--lab-dock-height,60px);align-self:stretch}
+body[data-model-id=pcr-primer-engineering] .model-area[data-immersive=true] .reaction-area{display:flex;flex-direction:column}
+body[data-model-id=pcr-primer-engineering] .model-area[data-immersive=true] .reaction-area>.scene-viewport{flex:1}
+.model-area[data-immersive=true] :is(.reaction-heading,.reaction-program,.reaction-progress,.scene-tools,.strand-legend){display:none!important}
+@media(orientation:portrait) and (max-width:700px){
+ body[data-model-id=pcr] .model-area[data-immersive=true] .reaction-visual{grid-template-columns:minmax(0,1fr) 52px}
+ body[data-model-id=pcr] .model-area[data-immersive=true] .temperature-panel{width:52px}
+ body[data-model-id=pcr] .model-area[data-immersive=true] .phase-readout{font-size:9px}
+}
+/* Prevent native selection/callout from taking over the scientific gesture surface. */
+body[data-model-id=sanger-sequencing] .scene-viewport,body[data-model-id=sanger-sequencing] .scene-viewport *{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;touch-action:none}
+
+@media(orientation:landscape) and (max-height:620px){
+ body[data-model-id=pcr] .model-area:not([data-immersive=true]) .reaction-visual{grid-template-columns:minmax(0,1fr) 94px}
+ body[data-model-id=pcr] .model-area:not([data-immersive=true]) .temperature-panel{display:grid;grid-template-columns:42px minmax(0,1fr);align-items:center;width:94px;gap:3px}
+ body[data-model-id=pcr] .model-area:not([data-immersive=true]) #temperature-scene{width:42px;height:100%;max-height:100%;aspect-ratio:auto}
+ body[data-model-id=pcr] .model-area:not([data-immersive=true]) .phase-readout{align-items:center;font-size:8px}
+ body[data-model-id=pcr] .model-area:not([data-immersive=true]) .scene-tools{padding-right:94px}
+}

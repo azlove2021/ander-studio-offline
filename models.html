@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>教学模型库 · 离线版</title>
+<style>
+  :root{--ink:#173e49;--muted:#577580;--green:#207a68;--green-d:#196452;--mint:#e6f4ee;
+        --line:#cddfd9;--paper:#fff;--bg:#f3f8f6;--shadow:0 10px 28px #234f490a}
+  *{box-sizing:border-box}
+  body{margin:0;font:15px/1.65 "Microsoft YaHei","PingFang SC",system-ui,sans-serif;color:var(--ink);
+       background:radial-gradient(ellipse at 15% 0,#e6f4ee,transparent 44rem),
+                  radial-gradient(ellipse at 100% 30%,#e0f1f4,transparent 38rem),var(--bg);
+       min-height:100vh}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1560px;margin:auto;padding:34px clamp(18px,3vw,44px) 70px}
+  header.top{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;
+              padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+  .eyebrow{font:800 10px/1.7 system-ui;letter-spacing:2px;color:var(--green);margin:0 0 8px}
+  h1{font-size:clamp(26px,3vw,38px);line-height:1.25;margin:0 0 8px;letter-spacing:-.5px}
+  .sub{margin:0;color:var(--muted);font-size:13px}
+  .stats{display:flex;gap:26px;flex-wrap:wrap}
+  .stats div{text-align:right}
+  .stats b{display:block;font-size:26px;line-height:1.1;color:var(--green-d)}
+  .stats span{font-size:11px;color:var(--muted);letter-spacing:.5px}
+  .tools{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:20px}
+  .tools input{flex:1 1 240px;min-width:0;padding:11px 15px;border:1px solid var(--line);border-radius:11px;
+               background:var(--paper);font:inherit;font-size:14px;outline:0}
+  .tools input:focus{border-color:var(--green);box-shadow:0 0 0 3px #56ad9423}
+  .chip{border:1px solid var(--line);background:var(--paper);color:var(--muted);border-radius:100px;
+        padding:8px 15px;font:600 12px/1 inherit;cursor:pointer;transition:.15s;white-space:nowrap}
+  .chip:hover{color:var(--green-d);border-color:var(--green)}
+  .chip.on{background:var(--green);border-color:var(--green);color:#fff}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:18px}
+  .card{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);
+        border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:.18s}
+  .card:hover{transform:translateY(-3px);box-shadow:0 16px 38px #234f4914;border-color:#a9d3c3}
+  .cover{position:relative;aspect-ratio:16/10;background:linear-gradient(135deg,#eef7f2,#e4f2f6);overflow:hidden}
+  .cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .body{padding:14px 16px 17px;display:flex;flex-direction:column;gap:5px}
+  .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:3px}
+  .tag{font:600 10px/1 inherit;padding:5px 9px;border-radius:99px;background:var(--mint);color:var(--green-d)}
+  .tag.tech{background:#e6effa;color:#2b5f8f}
+  .tag.tech3d{background:#efe7fb;color:#5b3f96}
+  .tag.stage{background:#faf1e2;color:#8a6320}
+  h3{font-size:16px;line-height:1.45;margin:0}
+  .en{margin:0;font:400 11px/1.4 system-ui;color:#8aa0a8;letter-spacing:.3px}
+  .sum{margin:4px 0 0;font-size:12px;line-height:1.65;color:var(--muted);
+       display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .empty{grid-column:1/-1;text-align:center;padding:70px 20px;color:var(--muted)}
+  footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);font-size:11px;
+         color:var(--muted);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  @media(max-width:640px){.stats{gap:18px} .stats b{font-size:21px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <p class="eyebrow">BIOLOGY MODEL LIBRARY · OFFLINE</p>
+      <h1>教学模型库</h1>
+      <p class="sub">共 29 个交互模型，已全部下载到本地，点击即可打开，无需联网。</p>
+    </div>
+    <div class="stats">
+      <div><b>29</b><span>个模型</span></div>
+      <div><b>7</b><span>个模块</span></div>
+      <div><b>7</b><span>3D 模型</span></div>
+    </div>
+  </header>
+
+  <div class="tools">
+    <input type="search" id="q" placeholder="搜索模型名称或知识点…" aria-label="搜索模型">
+  </div>
+  <div class="tools" id="chips"><button type="button" class="chip on" data-filter="*">全部 29</button><button type="button" class="chip" data-filter="molecules-and-cells">分子与细胞 10</button><button type="button" class="chip" data-filter="molecular-genetics">遗传信息的复制 3</button><button type="button" class="chip" data-filter="homeostasis">选择性必修一 · 神经调节 3</button><button type="button" class="chip" data-filter="biotechnology">选择性必修三 · 生物技术与工程 4</button><button type="button" class="chip" data-filter="ecology">选择性必修二 · 生物与环境 3</button><button type="button" class="chip" data-filter="cell-metabolism">必修一 · 分子与细胞 5</button><button type="button" class="chip" data-filter="genetics-and-evolution">遗传与进化 1</button></div>
+
+  <div class="grid" id="grid">
+    <a class="card" href="/model-releases/models/cell-elements/2.6.1/index.html" data-mod="molecules-and-cells" data-text="组成细胞的元素（2d） elements in cells (2d) 比较所有元素、大量元素、微量元素、基本元素和最基本元素，并查看元素功能与常见物质组成。">
+      <div class="cover"><img src="/assets/model-covers/cards/cell-elements.webp" alt="组成细胞的元素（2D）" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">分子与细胞</span><span class="tag tech">2D 交互</span><span class="tag stage">5 步</span></div>
+        <h3>组成细胞的元素（2D）</h3>
+        <p class="en">Elements in Cells (2D)</p>
+        <p class="sum">比较所有元素、大量元素、微量元素、基本元素和最基本元素，并查看元素功能与常见物质组成。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/bacteriophage-reproduction/2.5.0/index.html" data-mod="molecules-and-cells" data-text="噬菌体的繁殖（2d动画） bacteriophage reproduction (2d animation) 分阶段观察噬菌体吸附、注入、合成、装配与裂解释放的裂解周期。">
+      <div class="cover"><img src="/assets/model-covers/cards/bacteriophage-reproduction.webp" alt="噬菌体的繁殖（2D动画）" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">分子与细胞</span><span class="tag tech">2D 动画</span><span class="tag stage">5 步</span></div>
+        <h3>噬菌体的繁殖（2D动画）</h3>
+        <p class="en">Bacteriophage Reproduction (2D Animation)</p>
+        <p class="sum">分阶段观察噬菌体吸附、注入、合成、装配与裂解释放的裂解周期。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/dna-webgl/2.4.2/index.html" data-mod="molecules-and-cells" data-text="dna 双螺旋结构模型 dna double helix model 观察 dna 双螺旋、核苷酸组成、碱基配对和信息储存。">
+      <div class="cover"><img src="/assets/model-covers/cards/dna-webgl.webp" alt="DNA 双螺旋结构模型" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">分子与细胞</span><span class="tag tech3d">3D 模型</span><span class="tag stage">5 步</span></div>
+        <h3>DNA 双螺旋结构模型</h3>
+        <p class="en">DNA Double Helix Model</p>
+        <p class="sum">观察 DNA 双螺旋、核苷酸组成、碱基配对和信息储存。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/dna-replication/2.4.2/index.html" data-mod="molecular-genetics" data-text="dna复制模型（2d） dna replication model (2d) 以原核生物dna复制为基础，连续展示超螺旋松弛、同步解旋与复制、引物形成、冈崎片段成熟及连接。">
+      <div class="cover"><img src="/assets/model-covers/cards/dna-replication.webp" alt="DNA复制模型（2D）" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">遗传信息的复制</span><span class="tag tech">2D 动画</span><span class="tag stage">5 步</span></div>
+        <h3>DNA复制模型（2D）</h3>
+        <p class="en">DNA Replication Model (2D)</p>
+        <p class="sum">以原核生物DNA复制为基础，连续展示超螺旋松弛、同步解旋与复制、引物形成、冈崎片段成熟及连接。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/dna-transcription/2.2.4/index.html" data-mod="molecular-genetics" data-text="dna转录与rna加工模型（2d） dna transcription and rna processing model (2d) 连续展示rna聚合酶识别启动子、形成转录泡、沿模板链合成前体mrna，并经剪接、加帽和加尾形成成熟mrna。">
+      <div class="cover"><img src="/model-releases/models/dna-transcription/2.2.4/assets/cover.webp" alt="DNA转录与RNA加工模型（2D）" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">遗传信息的转录与加工</span><span class="tag tech">2D 动画</span><span class="tag stage">5 步</span></div>
+        <h3>DNA转录与RNA加工模型（2D）</h3>
+        <p class="en">DNA Transcription and RNA Processing Model (2D)</p>
+        <p class="sum">连续展示RNA聚合酶识别启动子、形成转录泡、沿模板链合成前体mRNA，并经剪接、加帽和加尾形成成熟mRNA。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/translation/2.2.2/index.html" data-mod="molecular-genetics" data-text="mrna翻译模型（2d） mrna translation model (2d) 连续展示核糖体装配、trna识别密码子、肽键形成、逐密码子易位和终止释放。">
+      <div class="cover"><img src="/model-releases/models/translation/2.2.2/assets/cover.webp" alt="mRNA翻译模型（2D）" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">遗传信息的翻译</span><span class="tag tech">2D 动画</span><span class="tag stage">6 步</span></div>
+        <h3>mRNA翻译模型（2D）</h3>
+        <p class="en">mRNA Translation Model (2D)</p>
+        <p class="sum">连续展示核糖体装配、tRNA识别密码子、肽键形成、逐密码子易位和终止释放。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/rna-webgl/2.4.2/index.html" data-mod="molecules-and-cells" data-text="rna 结构模型 rna structure model 观察 rna 单链、核糖、四种碱基及单链折叠。">
+      <div class="cover"><img src="/assets/model-covers/cards/rna-webgl.webp" alt="RNA 结构模型" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">分子与细胞</span><span class="tag tech3d">3D 模型</span><span class="tag stage">5 步</span></div>
+        <h3>RNA 结构模型</h3>
+        <p class="en">RNA Structure Model</p>
+        <p class="sum">观察 RNA 单链、核糖、四种碱基及单链折叠。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/protein-webgl/2.4.2/index.html" data-mod="molecules-and-cells" data-text="蛋白质的结构模型 protein structure model 规范氨基和羧基的直角几何，并以双色包裹光晕突出反应基团。">
+      <div class="cover"><img src="/assets/model-covers/cards/protein-webgl.webp" alt="蛋白质的结构模型" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">分子与细胞</span><span class="tag tech3d">3D 模型</span><span class="tag stage">5 步</span></div>
+        <h3>蛋白质的结构模型</h3>
+        <p class="en">Protein Structure Model</p>
+        <p class="sum">规范氨基和羧基的直角几何，并以双色包裹光晕突出反应基团。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/transport/2.3.0/index.html" data-mod="molecules-and-cells" data-text="物质跨膜运输模型 membrane transport model 恢复 2.1.4 的载体凹坑绘制与构象切换，保留后续非凹坑改进。">
+      <div class="cover"><img src="/assets/model-covers/cards/transport.webp" alt="物质跨膜运输模型" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">分子与细胞</span><span class="tag tech">2.5D</span><span class="tag stage">6 步</span></div>
+        <h3>物质跨膜运输模型</h3>
+        <p class="en">Membrane Transport Model</p>
+        <p class="sum">恢复 2.1.4 的载体凹坑绘制与构象切换，保留后续非凹坑改进。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/membrane/2.4.0/index.html" data-mod="molecules-and-cells" data-text="细胞膜流动镶嵌模型 fluid mosaic model 观察磷脂双层、膜蛋白、糖链、胆固醇及细胞膜流动性。">
+      <div class="cover"><img src="/assets/model-covers/cards/membrane.webp" alt="细胞膜流动镶嵌模型" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">分子与细胞</span><span class="tag tech3d">3D 模型</span><span class="tag stage">6 步</span></div>
+        <h3>细胞膜流动镶嵌模型</h3>
+        <p class="en">Fluid Mosaic Model</p>
+        <p class="sum">观察磷脂双层、膜蛋白、糖链、胆固醇及细胞膜流动性。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/plant-cell-webgl/2.5.1/index.html" data-mod="molecules-and-cells" data-text="植物细胞结构模型 plant cell structure model 综合观察植物细胞边界、细胞核、膜系统、能量转化和蛋白质合成加工。">
+      <div class="cover"><img src="/assets/model-covers/cards/plant-cell-webgl.webp" alt="植物细胞结构模型" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">分子与细胞</span><span class="tag tech3d">3D 模型</span><span class="tag stage">6 步</span></div>
+        <h3>植物细胞结构模型</h3>
+        <p class="en">Plant Cell Structure Model</p>
+        <p class="sum">综合观察植物细胞边界、细胞核、膜系统、能量转化和蛋白质合成加工。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/animal-cell/2.2.3/index.html" data-mod="molecules-and-cells" data-text="动物细胞结构模型 animal cell structure model 观察球形动物细胞膜、细胞核、主要细胞器，以及中心体和溶酶体。">
+      <div class="cover"><img src="/assets/model-covers/cards/animal-cell.webp" alt="动物细胞结构模型" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">分子与细胞</span><span class="tag tech3d">3D 模型</span><span class="tag stage">7 步</span></div>
+        <h3>动物细胞结构模型</h3>
+        <p class="en">Animal Cell Structure Model</p>
+        <p class="sum">观察球形动物细胞膜、细胞核、主要细胞器，以及中心体和溶酶体。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/optical-microscope/2.7.5/index.html" data-mod="molecules-and-cells" data-text="光学显微镜模型 optical microscope model 认识光学显微镜的机械结构、成像系统、照明光路和规范调焦过程。">
+      <div class="cover"><img src="/assets/model-covers/cards/optical-microscope.webp" alt="光学显微镜模型" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">分子与细胞</span><span class="tag tech3d">3D 模型</span><span class="tag stage">6 步</span></div>
+        <h3>光学显微镜模型</h3>
+        <p class="en">Optical Microscope Model</p>
+        <p class="sum">认识光学显微镜的机械结构、成像系统、照明光路和规范调焦过程。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/resting-action-potential/2.7.1/index.html" data-mod="homeostasis" data-text="静息电位与动作电位 resting and action potentials 将钠钾泵、离子通道、离子流动与局部膜电位记录联动，比较阈下刺激与阈上刺激。">
+      <div class="cover"><img src="/model-releases/models/resting-action-potential/2.7.1/assets/cover.png" alt="静息电位与动作电位" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">选择性必修一 · 神经调节</span><span class="tag tech">2D 动画</span><span class="tag stage">5 步</span></div>
+        <h3>静息电位与动作电位</h3>
+        <p class="en">Resting and Action Potentials</p>
+        <p class="sum">将钠钾泵、离子通道、离子流动与局部膜电位记录联动，比较阈下刺激与阈上刺激。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/action-potential-conduction/2.7.2/index.html" data-mod="homeostasis" data-text="动作电位的传导 action potential conduction 观察无髓轴突中部刺激后，局部电流推动动作电位向两侧逐段再生。">
+      <div class="cover"><img src="/model-releases/models/action-potential-conduction/2.7.2/assets/cover.png" alt="动作电位的传导" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">选择性必修一 · 神经调节</span><span class="tag tech">2D 动画</span><span class="tag stage">5 步</span></div>
+        <h3>动作电位的传导</h3>
+        <p class="en">Action Potential Conduction</p>
+        <p class="sum">观察无髓轴突中部刺激后，局部电流推动动作电位向两侧逐段再生。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/biphasic-nerve-potential/2.3.1/index.html" data-mod="homeostasis" data-text="双相神经干电位 biphasic nerve potential 观察成束神经纤维的兴奋传导，比较双极膜外记录与四种电极条件下的复合电位。">
+      <div class="cover"><img src="/model-releases/models/biphasic-nerve-potential/2.3.1/assets/cover.png" alt="双相神经干电位" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">选择性必修一 · 神经调节</span><span class="tag tech">2D 动画</span><span class="tag stage">5 步</span></div>
+        <h3>双相神经干电位</h3>
+        <p class="en">Biphasic Nerve Potential</p>
+        <p class="sum">观察成束神经纤维的兴奋传导，比较双极膜外记录与四种电极条件下的复合电位。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/pcr/2.5.1/index.html" data-mod="biotechnology" data-text="pcr的基本过程 the basic process of pcr 跟随模板、引物、dntp与taq观察pcr三步循环、等长子代形成及理想指数扩增。">
+      <div class="cover"><img src="/model-releases/models/pcr/2.5.1/assets/cover.webp" alt="PCR的基本过程" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">选择性必修三 · 生物技术与工程</span><span class="tag tech">2D 动画</span><span class="tag stage">5 步</span></div>
+        <h3>PCR的基本过程</h3>
+        <p class="en">The Basic Process of PCR</p>
+        <p class="sum">跟随模板、引物、dNTP与Taq观察PCR三步循环、等长子代形成及理想指数扩增。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/pcr-product-types/2.3.5/index.html" data-mod="biotechnology" data-text="pcr的产物类型 types of pcr products 前六轮按产物类型分组同步延伸，第七轮起保留第六轮末dna画面，统计区继续记录产物数量。">
+      <div class="cover"><img src="/model-releases/models/pcr-product-types/2.3.5/assets/cover.webp" alt="PCR的产物类型" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">选择性必修三 · 生物技术与工程</span><span class="tag tech">2D 动画</span><span class="tag stage">8 步</span></div>
+        <h3>PCR的产物类型</h3>
+        <p class="en">Types of PCR Products</p>
+        <p class="sum">前六轮按产物类型分组同步延伸，第七轮起保留第六轮末DNA画面，统计区继续记录产物数量。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/pcr-primer-engineering/2.2.1/index.html" data-mod="biotechnology" data-text="利用引物改造dna engineering dna with primers 通过三轮pcr，对比5′端添加酶切位点与引物内部定点替换的形成过程。">
+      <div class="cover"><img src="/model-releases/models/pcr-primer-engineering/2.2.1/assets/cover.png" alt="利用引物改造DNA" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">选择性必修三 · 生物技术与工程</span><span class="tag tech">2D 动画</span><span class="tag stage">5 步</span></div>
+        <h3>利用引物改造DNA</h3>
+        <p class="en">Engineering DNA with Primers</p>
+        <p class="sum">通过三轮PCR，对比5′端添加酶切位点与引物内部定点替换的形成过程。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/sanger-sequencing/2.5.1/index.html" data-mod="biotechnology" data-text="sanger测序 sanger sequencing 荧光单管测序：核苷酸逐个接入、链终止与向上电泳读序。">
+      <div class="cover"><img src="/model-releases/models/sanger-sequencing/2.5.1/assets/cover.png" alt="Sanger测序" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">选择性必修三 · 生物技术与工程</span><span class="tag tech">2D 动画</span><span class="tag stage">5 步</span></div>
+        <h3>Sanger测序</h3>
+        <p class="en">Sanger Sequencing</p>
+        <p class="sum">荧光单管测序：核苷酸逐个接入、链终止与向上电泳读序。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/population-growth/2.3.0/index.html" data-mod="ecology" data-text="种群的增长曲线 population growth curves 同步比较 j 型与 s 型增长，自设初始数量和内禀增长率，观察自适应纵轴、k 与 k/2。">
+      <div class="cover"><img src="/model-releases/models/population-growth/2.3.0/assets/cover.png" alt="种群的增长曲线" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">选择性必修二 · 生物与环境</span><span class="tag tech">2D 交互</span><span class="tag stage">3 步</span></div>
+        <h3>种群的增长曲线</h3>
+        <p class="en">Population Growth Curves</p>
+        <p class="sum">同步比较 J 型与 S 型增长，自设初始数量和内禀增长率，观察自适应纵轴、K 与 K/2。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/species-interactions/2.0.4/index.html" data-mod="ecology" data-text="种间关系曲线变化 interspecific population dynamics 同步观察捕食、寄生、竞争和互利关系；比较周期波动、竞争排斥及解除互利作用后的变化。">
+      <div class="cover"><img src="/model-releases/models/species-interactions/2.0.4/assets/cover.png" alt="种间关系曲线变化" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">选择性必修二 · 生物与环境</span><span class="tag tech">2D 交互</span><span class="tag stage">4 步</span></div>
+        <h3>种间关系曲线变化</h3>
+        <p class="en">Interspecific Population Dynamics</p>
+        <p class="sum">同步观察捕食、寄生、竞争和互利关系；比较周期波动、竞争排斥及解除互利作用后的变化。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/community-succession/2.2.0/index.html" data-mod="ecology" data-text="群落的演替 ecological succession 独立选择初生或次生演替进度，比较裸岩定居与火后恢复；写实土壤剖面可按需开启。">
+      <div class="cover"><img src="/model-releases/models/community-succession/2.2.0/assets/cover.webp" alt="群落的演替" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">选择性必修二 · 生物与环境</span><span class="tag tech">2D 交互</span><span class="tag stage">6 步</span></div>
+        <h3>群落的演替</h3>
+        <p class="en">Ecological Succession</p>
+        <p class="sum">独立选择初生或次生演替进度，比较裸岩定居与火后恢复；写实土壤剖面可按需开启。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/cellular-respiration/2.2.0/index.html" data-mod="cell-metabolism" data-text="细胞呼吸的过程 cellular respiration 在统一细胞图中追踪有氧呼吸、乳酸发酵和酒精发酵的物质转化、反应场所与 atp 产生。">
+      <div class="cover"><img src="/model-releases/models/cellular-respiration/2.2.0/assets/cover.webp" alt="细胞呼吸的过程" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">必修一 · 分子与细胞</span><span class="tag tech">2D 交互</span><span class="tag stage">3 步</span></div>
+        <h3>细胞呼吸的过程</h3>
+        <p class="en">Cellular Respiration</p>
+        <p class="sum">在统一细胞图中追踪有氧呼吸、乳酸发酵和酒精发酵的物质转化、反应场所与 ATP 产生。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/osmosis/2.1.0/index.html" data-mod="cell-metabolism" data-text="渗透作用 osmosis 选择漏斗内外液体，同步观察连续液面变化、半透膜两侧粒子与双向水分子运动。">
+      <div class="cover"><img src="/model-releases/models/osmosis/2.1.0/assets/cover.png" alt="渗透作用" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">必修一 · 分子与细胞</span><span class="tag tech">2D 交互</span><span class="tag stage">4 步</span></div>
+        <h3>渗透作用</h3>
+        <p class="en">Osmosis</p>
+        <p class="sum">选择漏斗内外液体，同步观察连续液面变化、半透膜两侧粒子与双向水分子运动。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/photosynthesis/2.1.0/index.html" data-mod="cell-metabolism" data-text="光合作用的过程 photosynthesis 在叶绿体中追踪光反应、卡尔文循环，以及 atp 和 nadph 的产生、利用与辅酶回流。">
+      <div class="cover"><img src="/model-releases/models/photosynthesis/2.1.0/assets/cover.webp" alt="光合作用的过程" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">必修一 · 分子与细胞</span><span class="tag tech">2D 交互</span><span class="tag stage">3 步</span></div>
+        <h3>光合作用的过程</h3>
+        <p class="en">Photosynthesis</p>
+        <p class="sum">在叶绿体中追踪光反应、卡尔文循环，以及 ATP 和 NADPH 的产生、利用与辅酶回流。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/respiratory-electron-transport/2.5.0/index.html" data-mod="cell-metabolism" data-text="细胞呼吸电子传递链 respiratory electron transport 追踪 nadh 和复合体 ii 两条电子入口，观察质子梯度、氧还原与 atp 旋转催化的能量耦联。">
+      <div class="cover"><img src="/model-releases/models/respiratory-electron-transport/2.5.0/assets/cover.png" alt="细胞呼吸电子传递链" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">必修一 · 分子与细胞</span><span class="tag tech">2D 交互</span><span class="tag stage">5 步</span></div>
+        <h3>细胞呼吸电子传递链</h3>
+        <p class="en">Respiratory Electron Transport</p>
+        <p class="sum">追踪 NADH 和复合体 II 两条电子入口，观察质子梯度、氧还原与 ATP 旋转催化的能量耦联。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/photosynthetic-electron-transport/2.2.1/index.html" data-mod="cell-metabolism" data-text="光系统电子传递链 photosynthetic electron transport 分段观察光能输入、水供电子、链间接力、质子转移、atp 和 nadph 合成，最后展示协同运行。">
+      <div class="cover"><img src="/model-releases/models/photosynthetic-electron-transport/2.2.1/assets/cover.svg" alt="光系统电子传递链" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">必修一 · 分子与细胞</span><span class="tag tech">2D 交互</span><span class="tag stage">10 步</span></div>
+        <h3>光系统电子传递链</h3>
+        <p class="en">Photosynthetic Electron Transport</p>
+        <p class="sum">分段观察光能输入、水供电子、链间接力、质子转移、ATP 和 NADPH 合成，最后展示协同运行。</p>
+      </div>
+    </a>
+    <a class="card" href="/model-releases/models/genetic-inheritance-laws/2.1.2/index.html" data-mod="genetics-and-evolution" data-text="遗传学三大定律 principles of genetic inheritance 以同一教学进度并排比较分离、自由组合和连锁交换的染色体基础。">
+      <div class="cover"><img src="/model-releases/models/genetic-inheritance-laws/2.1.2/assets/cover.png" alt="遗传学三大定律" loading="eager" decoding="async"></div>
+      <div class="body">
+        <div class="tags"><span class="tag">遗传与进化</span><span class="tag tech">2D 动画</span><span class="tag stage">4 步</span></div>
+        <h3>遗传学三大定律</h3>
+        <p class="en">Principles of Genetic Inheritance</p>
+        <p class="sum">以同一教学进度并排比较分离、自由组合和连锁交换的染色体基础。</p>
+      </div>
+    </a>
+    <div class="empty" id="empty" hidden>没有匹配的模型，换个关键词试试。</div>
+  </div>
+
+  <footer>
+    <span>安德生物工作室 · 本地离线镜像</span>
+    <span>模型为自包含应用，可单独复制目录到其他电脑使用</span>
+  </footer>
+</div>
+<script>
+(function(){
+  var grid=document.getElementById('grid'), q=document.getElementById('q'),
+      empty=document.getElementById('empty'), chips=document.getElementById('chips'),
+      mod='*', kw='';
+  var cards=[].slice.call(grid.querySelectorAll('.card'));
+  function apply(){
+    var shown=0;
+    cards.forEach(function(c){
+      var okMod = mod==='*' || c.getAttribute('data-mod')===mod;
+      var okKw = !kw || c.getAttribute('data-text').indexOf(kw)>=0;
+      var show = okMod && okKw;
+      c.hidden = !show;
+      if(show) shown++;
+    });
+    empty.hidden = shown>0;
+  }
+  q.addEventListener('input', function(){ kw=this.value.trim().toLowerCase(); apply(); });
+  chips.addEventListener('click', function(e){
+    var b=e.target.closest('.chip'); if(!b) return;
+    [].forEach.call(chips.querySelectorAll('.chip'), function(x){ x.classList.remove('on'); });
+    b.classList.add('on'); mod=b.getAttribute('data-filter'); apply();
+  });
+})();
+</script>
+</body>
+</html>

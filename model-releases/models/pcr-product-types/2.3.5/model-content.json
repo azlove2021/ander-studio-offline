@@ -1,0 +1,194 @@
+{
+  "id": "pcr-product-types",
+  "version": "2.3.2",
+  "title": {
+    "zh": "PCR的产物类型",
+    "en": "Types of PCR Products"
+  },
+  "stages": [
+    {
+      "id": "template",
+      "title": {
+        "zh": "内侧引物",
+        "en": "Internal primers"
+      }
+    },
+    {
+      "id": "cycle-1",
+      "title": {
+        "zh": "第一轮",
+        "en": "First cycle"
+      }
+    },
+    {
+      "id": "cycle-2",
+      "title": {
+        "zh": "第二轮",
+        "en": "Second cycle"
+      }
+    },
+    {
+      "id": "cycle-3",
+      "title": {
+        "zh": "第三轮",
+        "en": "Third cycle"
+      }
+    },
+    {
+      "id": "cycle-4",
+      "title": {
+        "zh": "第四轮",
+        "en": "Fourth cycle"
+      }
+    },
+    {
+      "id": "cycle-5",
+      "title": {
+        "zh": "第五轮",
+        "en": "Fifth cycle"
+      }
+    },
+    {
+      "id": "cycle-6",
+      "title": {
+        "zh": "第六轮",
+        "en": "Sixth cycle"
+      }
+    },
+    {
+      "id": "amplification",
+      "title": {
+        "zh": "产物积累",
+        "en": "Product accumulation"
+      }
+    }
+  ],
+  "geometry": {
+    "bases": 84,
+    "left": 15,
+    "right": 69,
+    "primer": 18,
+    "step": 14,
+    "width": 1440,
+    "height": 640,
+    "dnaX": 142,
+    "scale": 0.86,
+    "gap": 44,
+    "rowTop": 62,
+    "rowBottom": 608,
+    "initialPrimerOffset": 60
+  },
+  "colors": {
+    "original": "#a41734",
+    "new": "#075b35",
+    "primer": "#9d4a07"
+  },
+  "sugarFills": {
+    "original": "#c8526a",
+    "new": "#388a61",
+    "primer": "#bf7d3e"
+  },
+  "parameters": {
+    "initialDuplexes": 1,
+    "defaultCycles": 30,
+    "cycleRange": [
+      1,
+      40
+    ],
+    "detailedCycles": 6,
+    "defaultPresentationSeconds": 114.09999999999997,
+    "explicitStrands": 128,
+    "temperaturesC": {
+      "denature": 95,
+      "anneal": 55,
+      "extend": 72
+    }
+  },
+  "science": {
+    "countUnit": "completed double-stranded molecules at the end of a cycle",
+    "formulas": {
+      "double": "2",
+      "single": "2(n-1)",
+      "exact": "2^n-2n",
+      "total": "2^n",
+      "domain": "integer n >= 1"
+    },
+    "exactSingleStrandFirstCycle": 2,
+    "exactDuplexFirstCycle": 3,
+    "templateEndDeterminesSynthesisEnd": true,
+    "primerFivePrimeEndsDefineTarget": true,
+    "sequenceIllustrative": true,
+    "originalStrandsRemainRed": true,
+    "newStrandsRemainGreenWhenTemplates": true,
+    "primerIntegratedInNewStrand": true,
+    "overhangsHaveNoPairingBonds": true
+  },
+  "presentation": {
+    "groupedExtension": "All daughters of the same product class extend together; double, single and exact classes are inspected in sequence through cycle six. Classes can also react concurrently in real PCR.",
+    "countTiming": "Statistics are the last completed cycle, never partial ssDNA plus dsDNA totals.",
+    "afterCycle6": "From cycle seven, retain the exact completed sixth-cycle scene with its 64 duplexes, positions, names and colors. Only the right-side actual counts continue.",
+    "primerContinuity": "The same first-cycle primer nodes remain visible and stationary through initial positioning and denaturation. During annealing they move directly from those fixed positions onto the binding sites, before extension starts.",
+    "layout": "Fixed 1440 by 640 plane with no reaction scrolling. Cycles 1 to 3 preserve their single-column positions; cycles 4 to 6 use two columns at uniform molecular scales 0.45, 0.32 and 0.20.",
+    "inactiveOpacity": 0.28,
+    "finalExtension": "No additional doubling",
+    "reducedMotion": "Paused initial state and manual timeline are available."
+  },
+  "assumptions": [
+    "One finite original duplex, internal specific primers, ideal complete extension and 100 percent efficiency.",
+    "First products are asymmetric duplexes with overhangs, not equal-length long pairs.",
+    "A long or single-long category is defined by the envelope of the whole paired molecule.",
+    "Ignore late-cycle cross-reannealing, non-specific products, plateau effects and non-templated A addition.",
+    "The representative drawing does not encode the actual abundance by the number of visible objects."
+  ],
+  "reuse": {
+    "modelId": "pcr",
+    "version": "2.4.0",
+    "objects": [
+      "84-position extension of the original illustrative motif and complement mapping",
+      "phosphate circle",
+      "pentagonal sugar",
+      "base connector and colored base glyph",
+      "9-unit connected sugar-phosphate band",
+      "original/new/primer origin color semantics (tones darkened in 2.1.0)",
+      "local shared shell copies"
+    ],
+    "sourceFiles": [
+      {
+        "file": "models/pcr/pcr-engine.js",
+        "sourceVersion": "2.4.0",
+        "sha256": "bd789803c47aef1f15dce9c9f51982b4bfa51d72dcc5ed8dbebf2b88c66d0a11"
+      },
+      {
+        "file": "models/pcr/model.js",
+        "sourceVersion": "2.4.0",
+        "sha256": "d509089ccc873bd956300d2a507206b8866bc6fb02e38647629e24debdd2d40f"
+      },
+      {
+        "file": "assets-src/pcr/make-strand-assets.mjs",
+        "sourceVersion": "2.4.0",
+        "sha256": "88925642abafde24a3d445022b21009ff6adb676bbadf9c612bcf0f04c62c34a"
+      }
+    ],
+    "coordinateAdaptations": [
+      "Local x origin shifted to interval start; base cell width remains 14.",
+      "Full template extended to 84 positions; internal target [15,69), primer spans 18 each.",
+      "Continuous clipping reveals primer then each residue to the actual template end."
+    ],
+    "crossModelRuntimeImports": false
+  },
+  "sources": [
+    {
+      "title": "Memorial University: PCR in detail",
+      "url": "https://www.mun.ca/biology/scarr/PCR_in_detail.html"
+    },
+    {
+      "title": "Bio-Rad PV92 PCR Informatics Kit",
+      "url": "https://www.bio-rad.com/sites/default/files/webroot/web/pdf/lse/literature/4110052.pdf"
+    }
+  ],
+  "delivery": {
+    "websiteSync": false,
+    "protocolVersion": "1.0",
+    "shellStandard": "adaptive-model-shell-2.4"
+  }
+}

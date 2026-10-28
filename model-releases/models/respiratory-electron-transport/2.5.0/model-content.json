@@ -1,0 +1,338 @@
+{
+  "id": "respiratory-electron-transport",
+  "version": "2.5.0",
+  "title": {
+    "zh": "细胞呼吸电子传递链",
+    "en": "Respiratory Electron Transport"
+  },
+  "scientificModel": {
+    "scope": {
+      "mustShow": [
+        "同一条线粒体内膜；上为膜间隙/相通嵴腔，下为基质。",
+        "NADH→I→Q/QH2→III→细胞色素c→IV→O2/H2O",
+        "琥珀酸→II内结合型FAD/FADH2→Q；II不泵质子",
+        "I/III/IV向膜间隙侧的质子转运；梯度含浓度差和电位差",
+        "Fo膜内转子/两个半通道、基质侧F1头部与ADP+Pi→ATP的耦联",
+        "电子反应可释放自由能、质子电化学势、ATP合成用能三个不同层次"
+      ],
+      "optionalDetailsInPanel": [
+        "Q循环净反应与2e/4e计量切换",
+        "辅基名称和相对自由能示意的适用范围",
+        "不同比例、速度与ATP产额的简化说明"
+      ],
+      "outOfScope": [
+        "重做糖酵解/TCA/完整葡萄糖呼吸总览",
+        "原子分辨率各亚基、全部辅基电位、Q循环自由基与逐电子微观机制",
+        "药物抑制剂、无氧动力学、解偶联/质子泄漏实验、反向电子传递和ATP水解反转",
+        "植物AOX、细菌多分支链、NADH穿梭、ROS与疾病",
+        "每葡萄糖总ATP、固定38ATP、逐质子固定ATP比值",
+        "账户、题库/评分、网站发布"
+      ],
+      "incrementOverCellularRespiration": "原2.2.0的内膜第三阶段总览深化为电子载体拓扑、两入口转运差异、膜的储能作用与旋转催化；不沿用一葡萄糖24[H]/12H2O口径到本模型。"
+    },
+    "stoichiometry": {
+      "unit": "每2e−为计量单位；动画完整O2轮转使用两组供体即4e−。数量只描述所选教学追踪单位，不是整个线粒体粒子总量。",
+      "perPair": {
+        "NADH": {
+          "I": 4,
+          "II": 0,
+          "III": 4,
+          "IV": 2,
+          "totalOutwardH": 10
+        },
+        "succinateViaII": {
+          "I": 0,
+          "II": 0,
+          "III": 4,
+          "IV": 2,
+          "totalOutwardH": 6
+        },
+        "oxygen": 0.5,
+        "water": 1,
+        "chemicalHForWater": 2
+      },
+      "perOxygenTurnover": {
+        "electrons": 4,
+        "oxygen": 1,
+        "water": 2,
+        "chemicalHForWater": 4,
+        "outwardH": {
+          "NADH": 20,
+          "succinateViaII": 12
+        }
+      },
+      "oxygenEquations": [
+        "2 e− + 2 H+(基质,造水) + 1/2 O2 → H2O",
+        "4 e− + 4 H+(基质,造水) + O2 → 2 H2O"
+      ],
+      "complexIIIEquation": "QH2 + 2 cyt c(ox) + 2 H+(基质) → Q + 2 cyt c(red) + 4 H+(膜间隙)；Q循环净式，详细循环有两个Qo周转及Qi再生。",
+      "display": "始终标明每2e−对应的4/4/2或0/4/2；各位点累计值与氧还原4e、4H+单独显示。",
+      "ledgerSeparation": [
+        "泵送/净转运当量",
+        "形成水的化学H+",
+        "Q/QH2携带的质子",
+        "ATP合酶回流",
+        "未计数背景水相"
+      ],
+      "noFalseIdentity": "本轮累计外向转运不等于当下膜间隙H+库存，也不能直接换算Δp、pH或ATP个数；造水质子不重复计入IV泵送数。",
+      "donorNetEquations": [
+        "NADH → NAD+ + H+ + 2e−；Q + 2e− + 2H+ → QH2，结合I泵4H+的净式为 NADH + Q + 5H+(基质) → NAD+ + QH2 + 4H+(膜间隙)。",
+        "琥珀酸 + Q → 延胡索酸 + QH2；II内FAD/FADH2作为结合辅基循环，不增加自由FADH2池。"
+      ],
+      "ATP": "展示代表性催化事件及输出方向，不设置ATP累计产量；无固定H+/ATP比值。"
+    },
+    "invariants": [
+      "All complexes use one continuous mitochondrial inner membrane; matrix below, IMS above.",
+      "II uses enzyme-bound FAD/FADH2 and contributes no outward proton translocation.",
+      "Per 2e: I 4H+, III net Q-cycle 4H+, IV 2H+.",
+      "A complete oxygen reduction uses 4e and 4 matrix chemical protons per O2, producing 2 waters; chemical H+ and pumped H+ differ.",
+      "Q is an inner-membrane carrier; cytochrome c is on the IMS side and carries one electron at a time.",
+      "Electrons terminate at oxygen; the Fo return route does not pass through the central shaft.",
+      "Displayed background and return protons are representative; no physical concentration, fixed H+/ATP or ATP yield is calculated.",
+      "All scientific states, including poses, particles and counts, are determined by entry and its single distance-derived teaching clock.",
+      "Two 2-electron batches use one representative Q, with capacity two; one cytochrome c carries one electron per trip and returns before its next load. Adjacent portions of the same relay can overlap.",
+      "ATP adenine has fused six- and five-member rings; ribose has five members, and phosphates connect through its 5-prime branch.",
+      "No proton return, synthase rotation or ATP formation before the final ATP chapter; its start is derived independently for each entry.",
+      "O2 is resident below the membrane from the start and approaches IV before the first terminal electron arrives.",
+      "The terminal phosphate joins only while ADP is in the visible F1 pocket."
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "title": "Structure and function of mitochondrial membrane protein complexes",
+        "authors": "Werner Kühlbrandt",
+        "year": 2015,
+        "url": "https://link.springer.com/article/10.1186/s12915-015-0201-x",
+        "doi": "10.1186/s12915-015-0201-x",
+        "type": "research-review-supplied-lead",
+        "checked": "publisher HTML: membrane compartments and complexes; used for structural context, not as the sole source of proton stoichiometry",
+        "use": [
+          "内膜/基质/膜间隙与嵴腔的拓扑",
+          "Q与细胞色素c的环境",
+          "结构比例和并排顺序仅为教学展开"
+        ]
+      },
+      {
+        "id": "S2",
+        "title": "Respiratory Complex I in Bos taurus and Paracoccus denitrificans Pumps Four Protons across the Membrane for Every NADH Oxidized",
+        "authors": "Jones, Blaza, Varghese and Hirst",
+        "year": 2017,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5377811/",
+        "doi": "10.1074/jbc.M116.771899",
+        "type": "primary-research",
+        "checked": "indexed full-text Results, Figure 1 and Discussion; direct PMC open challenged, indexed passages accessible",
+        "use": [
+          "哺乳动物经典链I的4H+/2e−",
+          "NADH与琥珀酸入口的10/6H+每对电子口径",
+          "II不转运质子；III+IV合计6H+/2e−"
+        ]
+      },
+      {
+        "id": "S3",
+        "title": "Electron transfer from ubiquinol to cytochrome c of complex III",
+        "year": 2024,
+        "url": "https://www.reactome.org/content/detail/R-HSA-164651",
+        "type": "official-curated-reaction",
+        "checked": "reaction equation and input/output participants, reviewed 2024-05-16",
+        "use": [
+          "III的Q循环净反应",
+          "QH2是双电子载体，细胞色素c为单电子载体",
+          "4H+指膜间隙端净释放/转运贡献，不能画成四个质子穿过直通孔"
+        ]
+      },
+      {
+        "id": "S4",
+        "title": "Transfer of electrons through the succinate dehydrogenase complex",
+        "url": "https://reactome.org/content/detail/R-HSA-163213",
+        "type": "official-curated-reaction",
+        "checked": "indexed full reaction description",
+        "use": [
+          "琥珀酸→延胡索酸；II内结合型FAD/FADH2",
+          "II从基质侧经内部辅基把电子交给膜内Q"
+        ]
+      },
+      {
+        "id": "S5",
+        "title": "The electron distribution in the “activated” state of cytochrome c oxidase",
+        "year": 2018,
+        "url": "https://www.nature.com/articles/s41598-018-25779-w",
+        "doi": "10.1038/s41598-018-25779-w",
+        "type": "primary-research",
+        "checked": "publisher HTML/search indexed introduction and experimental system",
+        "use": [
+          "IV每O2接受4e−及4个造水H+，另泵出4H+",
+          "单电子传递与反应位点，造水质子和泵送质子区别"
+        ]
+      },
+      {
+        "id": "S6",
+        "title": "Structural basis of proton translocation and force generation in mitochondrial ATP synthase",
+        "authors": "Klusch et al.",
+        "year": 2017,
+        "url": "https://elifesciences.org/articles/33274",
+        "doi": "10.7554/eLife.33274",
+        "type": "primary-research",
+        "checked": "indexed full-text abstract, two aqueous channels and conclusion; direct publisher page challenged",
+        "use": [
+          "Fo两个半通道、转子与F1耦联",
+          "H+从膜间隙/嵴腔侧进入，向基质释放",
+          "不照搬该物种c10环亚基数到泛化示意"
+        ]
+      },
+      {
+        "id": "S7",
+        "title": "Bioenergetic cost of making an adenosine triphosphate molecule in animal mitochondria",
+        "authors": "Watt et al.",
+        "year": 2010,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2947889/",
+        "doi": "10.1073/pnas.1011099107",
+        "type": "primary-research",
+        "checked": "indexed paper abstract/result; no independent structural reanalysis",
+        "use": [
+          "ATP合酶c环计量有物种限定",
+          "首版不使用1H+=1ATP或固定通用ATP产额"
+        ]
+      },
+      {
+        "id": "S8",
+        "title": "ATP chemical structure, CHEBI:15422",
+        "url": "https://www.ebi.ac.uk/chebi/CHEBI:15422",
+        "checked": "2026-10-09, definition, structure and isomeric SMILES",
+        "use": [
+          "六元环与五元环稠合的腺嘌呤",
+          "核糖及5-prime triphosphate连接"
+        ]
+      },
+      {
+        "id": "S9",
+        "title": "wwPDB chemical component ATP",
+        "url": "https://www.rcsb.org/ligand/ATP",
+        "checked": "2026-10-09 ligand summary and chemical identity",
+        "use": [
+          "adenosine-5-triphosphate topology cross-check"
+        ]
+      },
+      {
+        "id": "S10",
+        "title": "Reactome Ubiquinol biosynthesis: CoQ shuttles between I/II and III",
+        "url": "https://www.reactome.org/content/detail/R-HSA-2142789",
+        "checked": "2026-10-09 official curated pathway description",
+        "use": [
+          "Q在内膜中作为可移动载体，连接I/II和III；展示一个代表以说明周转。"
+        ]
+      }
+    ],
+    "energy": {
+      "primaryLabel": "氧化还原反应可释放自由能（相对示意）",
+      "redoxTrack": "按供体→Q→细胞色素c→O2分组下降。纵向仅高/低，无kJ/mol、eV、mV或0—100数值；组间高度不用于比较泵数或计算效率。",
+      "meaning": "表示所选电子转移反应沿路线的自由能释放趋势，不是电子动能、热量或逐个辅基的真实能级；不保证每一微观步骤单调。",
+      "couplingTrack": "I/III/IV处由反应连到H+电化学梯度，再连Fo/F1催化；相对电荷分离和H+浓度差均可见。质子顺电化学势回流释放可用自由能，耦联ADP与Pi形成ATP。",
+      "twoEntries": "II入口在Q汇合，缺少I的转运贡献；不通过虚构两条能级的数值差推算ATP。",
+      "synthesis": "ATP合成是需能过程，能量被保存在可用于后续水解供能的化学状态中；不画成成键本身释放能量。留一条定性耗散分支，不给效率百分比。",
+      "synchronization": "科学图、能量强调、梯度状态及读数由同一个stateAt(entry,t)更新；点击能量节点只选择/定位观察对象，不跳科学时间。"
+    }
+  },
+  "durationSeconds": 47.79,
+  "entries": [
+    "nadh",
+    "succinate-via-II"
+  ],
+  "stages": [
+    {
+      "id": "location",
+      "title": {
+        "zh": "结构定位",
+        "en": "Orientation"
+      }
+    },
+    {
+      "id": "entry",
+      "title": {
+        "zh": "电子输入",
+        "en": "Electron entry"
+      }
+    },
+    {
+      "id": "transfer",
+      "title": {
+        "zh": "载体接力与泵氢",
+        "en": "Carrier relay"
+      }
+    },
+    {
+      "id": "oxygen",
+      "title": {
+        "zh": "氧还原成水",
+        "en": "Oxygen reduction"
+      }
+    },
+    {
+      "id": "coupling",
+      "title": {
+        "zh": "ATP 合成",
+        "en": "ATP synthesis"
+      }
+    }
+  ],
+  "teachingSimplifications": [
+    "蛋白外观为功能结构示意；不是原子结构复刻。",
+    "教学时间不代表细胞真实速率；H+ 累计净转运与即时梯度库存分别表达。",
+    "ATP 在最后一步独立展示一个代表性催化事件，实际细胞呼吸中的电子传递、质子转运和 ATP 合成持续耦联；不计算固定 H+/ATP 或总 ATP 产额。",
+    "F1结合槽复用原运输模型凹陷路径，独立按催化相位变形；不复用旧 ATP 水解控制器。",
+    "主画面的空间转移统一按120科学坐标单位/教学秒匀速推进，局部成键/构象变化单独插值；两入口时长不同，不表示细胞真实反应速度。首份底物预先结合，点击播放即递出电子；结构定位可在未播放时观察。"
+  ],
+  "protocol": {
+    "version": "1.0",
+    "progress": "stage-local 0-1",
+    "overallProgress": "whole selected-entry teaching process 0-1; duration is read from runtime state, never hard-coded",
+    "hostCommands": [
+      "init",
+      "play",
+      "pause",
+      "reset",
+      "set-stage",
+      "set-speed",
+      "set-labels",
+      "set-view"
+    ],
+    "entrySwitch": "local control; resets the demonstration, retains speed and manual camera."
+  },
+  "implementationScope": "complete-two-entry-process",
+  "rendering": {
+    "camera": "One deterministic camera matrix shared by background and foreground SVGs",
+    "watermark": "Unmodified 1.0.2 HTML background adapter; science is the foreground. Avoids WebKit foreignObject compositing displacement.",
+    "membrane": "111 original lipid columns and 444 original tail geometries batched into eight SVG paths; original lipid geometry and native membrane motion retained.",
+    "ATP": "正确6+5稠合腺嘌呤、5元核糖及5prime磷酸链紧凑布局；同一ADP与Pi进入F1头部可见催化位点，在位点内连接第三个磷酸后以ATP释放。"
+  },
+  "revision": {
+    "reason": "统一所有主画面转移速度；到达即衔接；首份底物预结合，播放后立即递电子。",
+    "timeline": "起始电子从0秒发出；电子输入标签0.01秒起高亮，之后阶段锚点按路径距离、载体空载返回及物质到齐时刻推导。NADH47.79秒，II33.83秒；两批各2e，第二批补齐4e。",
+    "oxygen": "O2从0秒常驻膜下，按120单位/秒移入IV并在首个终末电子到达时就位；4e和4个造水H到齐后，0.65秒局部成水，随后立即沿原水释放路径匀速离开。",
+    "style": "延续暖珊瑚红电子；H上行3条等高直线加粗为5，同色同形；H回流只在出口留箭头；III-c-IV连续主线仅IV末端箭头；空载体返回统一柔和虚线。",
+    "electronPaths": "原有路径几何不变。电子、Q、细胞色素c、底物、O2/H2O、造水H、跨膜H与回流H的空间转移均为120单位/秒；路径箭头随对应实际移动高亮。Q收齐2e即递送，III→c→IV连续；空载体返回后立即接续下一次装载。",
+    "ATP": "N9-C1连接从20缩到11.4，C5-O简化连接约27.3缩到19.4；磷酸球间可见键从6缩到1（科学坐标）。保留6+5腺嘌呤、5元核糖、5prime链。位点背景无硬边，径向透明度渐消，原蛋白纹理透出。",
+    "Q": "膜内Q池中许多Q并行工作，动画只跟踪一个代表的两个净周转，不将两个Q当作左右串联载体；III仍为Q循环净过程，非微观中间体重建。",
+    "synchronization": "ATP独立末章在成水释放和外向H示踪到齐后开始。原有H按完整回流路径匀速运动，多个H连续经过Fo；ADP/Pi到达F1位点的时刻与首个H进入转子相接，0.65秒局部接磷酸后立即释放ATP。转角只由H实际通过转子段推进。",
+    "protons": "沿原有限示踪H回流，NADH18个、II10个，各保留2个；每个行程时长由自身完整路径长度推导，非统一固定1.8秒。按路径到达安排相邻转子入口至少0.42秒间隔；示踪数不换算固定H/ATP。"
+  },
+  "durationByEntry": {
+    "nadh": 47.79,
+    "succinate-via-II": 33.83
+  },
+  "stageStartByEntry": {
+    "nadh": {
+      "location": 0,
+      "entry": 0.01,
+      "transfer": 3.6367206203690503,
+      "oxygen": 27.881469260770473,
+      "coupling": 30.85351713160943
+    },
+    "succinate-via-II": {
+      "location": 0,
+      "entry": 0.01,
+      "transfer": 2.6629347426456143,
+      "oxygen": 19.230013022991265,
+      "coupling": 22.20206089383022
+    }
+  }
+}

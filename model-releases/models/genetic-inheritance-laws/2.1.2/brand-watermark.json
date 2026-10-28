@@ -1,0 +1,7 @@
+{
+  "standard": "model-brand-watermark-1.0",
+  "runtimeVersion": "1.0.2",
+  "model": "genetic-inheritance-laws",
+  "viewport": ".science-viewport",
+  "foreground": ".science-world"
+}

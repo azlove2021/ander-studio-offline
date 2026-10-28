@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>管理员安全登录 · 安德生物工作室</title>
+<link rel="stylesheet" href="/assets/accounts/account.css?v=d8888f376f63e4a3">
+<link rel="icon" href="/assets/ande-biology-logo.png">
+<link rel="stylesheet" href="/assets/accounts/captcha.css?v=d8888f376f63e4a3">
+<script defer src="/assets/accounts/captcha.js?v=d8888f376f63e4a3"></script><script defer src="/assets/accounts/admin-login.js?v=d8888f376f63e4a3"></script></head>
+<body><main class="admin-auth-layout"><section class="form-card"><a href="/">安德生物工作室</a><h1>管理员安全登录</h1>
+<p>账号（或绑定手机号）、密码和短信验证码必须同时正确。登录后有效 8 小时，到期须重新验证。</p>
+<p class="notice" data-admin-notice role="status" aria-live="polite">正在检查登录服务……</p>
+<form data-admin-login><label>账号或绑定手机号<input name="username" autocomplete="username" maxlength="64" required></label>
+<label>密码<span class="password-row"><input name="password" type="password" autocomplete="current-password" maxlength="128" required><button type="button" data-admin-show aria-pressed="false">显示密码</button></span></label>
+<button type="button" data-admin-send class="secondary" disabled>验证密码并获取短信验证码</button>
+<label>短信验证码<input name="code" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required></label>
+<button type="submit" class="primary" disabled>安全登录</button></form>
+<p>仅输入密码或仅输入短信验证码都不能登录。原教师管理入口也使用此验证流程。</p><a href="/account/login">普通用户登录</a>
+</section></main></body></html>

@@ -1,0 +1,181 @@
+/* Life Ark portal only. Keep the shared sidebar and other portal sections intact. */
+.ark-portal[hidden], .ark-portal [hidden] { display: none !important; }
+.studio-shell[data-portal-current="ark"] { padding-bottom: 0; background: #030e17; }
+/* One continuous scene behind both columns; the navigation card itself is unchanged. */
+.studio-shell[data-portal-current="ark"]::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: 1;
+  background: linear-gradient(180deg, rgba(3, 14, 23, .86), rgba(3, 14, 23, .1) 30%, rgba(3, 14, 23, .36) 62%, #030e17 97%), url("../life-ark-nav.png") center 47% / cover no-repeat;
+  pointer-events: none;
+}
+.studio-shell[data-portal-current="ark"] .organelle-background,
+.studio-shell[data-portal-current="ark"] .organelle-gesture-layer { display: none; }
+.studio-shell[data-portal-current="ark"] .studio-main {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: clip;
+  color: #e1ebe9;
+  background: transparent;
+}
+.studio-shell[data-portal-current="ark"] .studio-main::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 24px;
+  border: 1px solid rgba(116, 193, 194, .1);
+  background: linear-gradient(#95dcd9, #95dcd9) left top / 46px 1px no-repeat, linear-gradient(#95dcd9, #95dcd9) left top / 1px 28px no-repeat, linear-gradient(#ac965d, #ac965d) right bottom / 46px 1px no-repeat;
+  pointer-events: none;
+}
+.studio-shell[data-portal-current="ark"] .resource-view {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1520px;
+  padding: clamp(36px, 5vh, 58px) clamp(32px, 4vw, 76px) 28px;
+}
+.studio-shell[data-portal-current="ark"] .resource-header {
+  min-height: 156px;
+  margin: 0;
+  padding: 36px 0 28px;
+}
+.studio-shell[data-portal-current="ark"] .resource-header::before {
+  color: #8bc4c1;
+  font: 600 12px/1.4 ui-monospace, Consolas, monospace;
+  letter-spacing: .28em;
+}
+.studio-shell[data-portal-current="ark"] .resource-header::after { display: none; }
+.studio-shell[data-portal-current="ark"] .resource-hero-copy { gap: 14px; transform: none; }
+.studio-shell[data-portal-current="ark"] .resource-header h1 {
+  color: #f0e4c6;
+  font-family: "STKaiti", "KaiTi", "Noto Serif SC", "SimSun", serif;
+  font-size: clamp(38px, 3.7vw, 58px);
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-shadow: 0 2px 22px #010b13;
+}
+.studio-shell[data-portal-current="ark"] .resource-header p { color: #b0c8cc; font-size: clamp(14px, 1.2vw, 18px); }
+.ark-portal {
+  display: grid;
+  flex: 1;
+  align-items: center;
+  justify-items: center;
+  min-height: 440px;
+  padding: 12px 0 50px;
+}
+.ark-boarding { width: min(100%, 720px); text-align: center; }
+.ark-verse {
+  margin: 0 0 32px;
+  color: #e4ece8;
+  font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+  font-size: clamp(17px, 1.4vw, 21px);
+  font-weight: 500;
+  line-height: 2.1;
+  letter-spacing: .05em;
+  text-shadow: 0 2px 10px #000, 0 0 28px #020b15;
+}
+.ark-verse span { display: block; color: #ecd9a7; }
+.ark-access {
+  position: relative;
+  width: min(100%, 620px);
+  margin: 0 auto;
+  padding: 24px 28px 18px;
+  text-align: left;
+  background: linear-gradient(120deg, rgba(5, 27, 37, .94), rgba(3, 18, 28, .86));
+  border: 1px solid rgba(125, 204, 204, .38);
+  box-shadow: 0 18px 60px rgba(0, 5, 12, .45), inset 0 0 28px rgba(111, 220, 213, .025);
+  backdrop-filter: blur(7px);
+}
+.ark-access::before, .ark-access::after { content: ""; position: absolute; width: 24px; height: 6px; background: #8accc9; pointer-events: none; }
+.ark-access::before { left: -1px; top: -2px; }
+.ark-access::after { right: -1px; bottom: -2px; background: #c4ad76; }
+.ark-access-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+.ark-access-label { color: #d1e9e7; font-size: 14px; letter-spacing: .16em; }
+.ark-access-english { color: #8bb3b8; font: 10px/1.5 ui-monospace, Consolas, monospace; letter-spacing: .16em; }
+.ark-field-label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.ark-input-row { display: flex; gap: 12px; }
+.ark-portal input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 54px;
+  padding: 12px 16px;
+  border: 1px solid #517781;
+  border-radius: 2px;
+  background: rgba(1, 11, 20, .8);
+  color: #f1f7f4;
+  font: 16px/1.5 "Microsoft YaHei", sans-serif;
+  letter-spacing: .035em;
+  box-shadow: inset 0 1px 8px #0005;
+}
+.ark-portal input::placeholder { color: #9ab5ba; letter-spacing: .04em; }
+.ark-portal input:focus { outline: 2px solid #98e4de; outline-offset: 3px; border-color: #a4e6df; }
+.ark-primary {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 54px;
+  flex: 0 0 auto;
+  padding: 12px 22px;
+  border: 1px solid #e9d39e;
+  border-radius: 2px;
+  color: #102932;
+  background: linear-gradient(130deg, #f1e2b8, #c7ad72);
+  font: 700 15px/1.5 "Microsoft YaHei", sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  transition: filter 140ms ease, box-shadow 140ms ease;
+}
+.ark-primary:hover { filter: brightness(1.12); box-shadow: 0 0 22px #dfbd6830; }
+.ark-primary:focus-visible, .ark-secondary:focus-visible, .ark-login:focus-visible { outline: 3px solid #9aede3; outline-offset: 4px; }
+.ark-portal button:disabled { opacity: .55; cursor: wait; filter: none; }
+.ark-access-note, .ark-access-status { margin: 12px 0 0; color: #a6bfc4; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+.ark-access-status { margin-top: 8px; color: #bcdad9; }
+.ark-access-status:empty { display: none; }
+.ark-access-status.is-error { color: #ffb9ac; }
+.ark-login { display: inline; color: #e9d79f; font: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.ark-login:hover { color: #fff0c6; }
+.ark-confirmation { margin-top: 16px; border-top: 1px solid #54767c; padding-top: 14px; }
+.ark-confirmation p, .ark-ready p { margin: 0 0 14px; color: #d7e9e7; font-size: 14px; line-height: 1.8; overflow-wrap: anywhere; }
+.ark-secondary { min-height: 44px; padding: 8px 12px; border: 0; background: transparent; color: #b6d1d4; font: inherit; font-size: 13px; cursor: pointer; }
+.ark-voyage-note { margin: 24px 0 0; color: #a8c1c8; font-size: 12px; letter-spacing: .18em; text-shadow: 0 2px 8px #000; }
+.studio-shell[data-portal-current="ark"] .site-record-footer { position: relative; width: 100%; margin-top: auto; padding: 20px 40px 36px; border: 0; background: none; color: #9ab5bc; font-size: 11px; }
+.studio-shell[data-portal-current="ark"] .site-record-footer a { color: #9ab5bc; }
+.studio-shell[data-portal-current="ark"] .site-record-footer a:hover { color: #efdba4; }
+@media (max-width: 1180px) {
+  .studio-shell[data-portal-current="ark"] .resource-view { padding: 36px 28px 20px; }
+  .ark-access { padding: 22px; }
+  .ark-verse { font-size: 17px; letter-spacing: .02em; }
+}
+@media (max-width: 820px), (max-width: 960px) and (max-height: 600px) {
+  .studio-shell[data-portal-current="ark"] .resource-view { padding: 30px 22px 16px; }
+  .studio-shell[data-portal-current="ark"] .resource-header { min-height: 150px; padding-top: 32px; }
+  .studio-shell[data-portal-current="ark"]::before { background-position: center, 53% center; background-size: auto, auto 100%; }
+  .studio-shell[data-portal-current="ark"] .studio-main::after { inset: 12px; }
+  .ark-portal { min-height: 400px; padding: 18px 0 36px; }
+  .ark-verse { font-size: 17px; line-height: 2; margin-bottom: 26px; }
+  .ark-wide-break { display: none; }
+  .ark-access { padding: 20px 18px 14px; }
+  .ark-input-row { flex-wrap: wrap; gap: 12px; }
+  .ark-input-row .ark-primary { width: 100%; }
+  .studio-shell[data-portal-current="ark"] .site-record-footer { padding: 18px 26px 28px; gap: 10px 14px; }
+}
+@media (orientation: landscape) and (max-height: 600px) {
+  .studio-shell[data-portal-current="ark"] .resource-header { min-height: 124px; }
+  .ark-portal { min-height: 340px; }
+  .ark-wide-break { display: initial; }
+  .ark-input-row { flex-wrap: nowrap; }
+  .ark-input-row .ark-primary { width: auto; }
+}
+@media (prefers-reduced-motion: reduce) { .ark-primary { transition: none; } }

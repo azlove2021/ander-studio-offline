@@ -1,0 +1,87 @@
+{
+  "id": "cellular-respiration",
+  "version": "2.1.1",
+  "title": {
+    "zh": "细胞呼吸的过程",
+    "en": "Cellular Respiration"
+  },
+  "stages": [
+    {
+      "id": "glycolysis",
+      "title": {
+        "zh": "糖酵解",
+        "en": "Glycolysis"
+      }
+    },
+    {
+      "id": "second",
+      "title": {
+        "zh": "丙酮酸彻底氧化",
+        "en": "Pyruvate oxidation & TCA"
+      }
+    },
+    {
+      "id": "oxidative",
+      "title": {
+        "zh": "氧化磷酸化",
+        "en": "Oxidative phosphorylation"
+      }
+    }
+  ],
+  "defaultOptions": {
+    "mode": "aerobic",
+    "playing": false,
+    "speed": 1,
+    "labels": true,
+    "view": "overview"
+  },
+  "modes": [
+    "aerobic",
+    "lactate",
+    "ethanol"
+  ],
+  "scientificModel": {
+    "scope": "按高中三阶段框架追踪一份葡萄糖的反应；演示时间不表示真实速率，细胞内不同反应可同时发生。三种途径用于比较，不意味着任一细胞均能执行全部途径。",
+    "first": "细胞质基质：1 C6H12O6 → 2 C3H4O3 + 4 [H]，净得 2 ATP；不直接消耗 O2。",
+    "secondAerobic": "线粒体基质：2 C3H4O3 + 6 H2O → 6 CO2 + 20 [H] + 少量 ATP；合并丙酮酸氧化与三羧酸循环。",
+    "thirdAerobic": "线粒体内膜：24 [H] + 6 O2 → 12 H2O，释放能量用于 ADP + Pi 合成大量 ATP；不指定统一 ATP 总数。",
+    "lactate": "细胞质基质：2 C3H4O3 + 4 [H] → 2 C3H6O3；再生 NAD+，本阶段不生成 ATP，不释放 CO2。",
+    "ethanol": "细胞质基质：2 C3H4O3 → 2 C2H4O + 2 CO2；2 C2H4O + 4 [H] → 2 C2H5OH；再生 NAD+，本阶段不生成 ATP。",
+    "reducingPower": "[H] 是还原型辅酶携带的还原力的教材记号，不是游离氢原子；细胞质产生的还原力以虚线示意穿梭传递，不绘制 NADH 自由穿越线粒体内膜。",
+    "water": "有氧第二阶段消耗 6 H2O，第三阶段形成 12 H2O，全程净形成 6 H2O。",
+    "art": "二维新绘细胞与线粒体剖面；不调用任何 3D 细胞数据；所有模式使用同一张固定底图。线粒体局部放大，非真实比例。",
+    "record": "丙酮酸及还原力框沿原轨迹移动；离开原位置后，原位置保留同素材的固定框作为反应过程记录，不表示重复生成或实际剩余量。[H] 为还原力记号。",
+    "atp": "使用分子式而非球棍表示 ATP 合成，遵从用户明确要求；未引入跨膜运输模型的 ATP 水解过程。"
+  },
+  "sources": [
+    {
+      "title": "OpenStax Biology 2e, Glycolysis",
+      "url": "https://openstax.org/books/biology-2e/pages/7-2-glycolysis"
+    },
+    {
+      "title": "OpenStax Biology 2e, Pyruvate oxidation and citric acid cycle",
+      "url": "https://openstax.org/books/biology-2e/pages/7-3-oxidation-of-pyruvate-and-the-citric-acid-cycle"
+    },
+    {
+      "title": "OpenStax Biology 2e, Oxidative phosphorylation",
+      "url": "https://openstax.org/books/biology-2e/pages/7-4-oxidative-phosphorylation"
+    },
+    {
+      "title": "OpenStax Biology 2e, Metabolism without oxygen",
+      "url": "https://openstax.org/books/biology-2e/pages/7-5-metabolism-without-oxygen"
+    }
+  ],
+  "externalLesson": {
+    "keyPoints": [
+      "第一阶段均在细胞质基质中",
+      "O2 仅直接参与有氧第三阶段，CO2 在有氧第二阶段或酒精发酵脱羧时形成",
+      "乳酸和酒精发酵都只有第一阶段产生 ATP",
+      "线粒体内膜具有与氧化磷酸化相关的酶系统；本模型不展开电子传递复合体与质子梯度"
+    ],
+    "comparison": [
+      "有氧终产物为 CO2 和水",
+      "乳酸途径不释放 CO2",
+      "酒精途径有乙醛中间产物与 CO2"
+    ]
+  }
+}

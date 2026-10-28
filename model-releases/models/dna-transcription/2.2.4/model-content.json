@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2.0",
+  "id": "dna-transcription",
+  "title": "DNA转录与RNA加工模型（2D）",
+  "titleEn": "DNA Transcription and RNA Processing Model (2D)",
+  "chapter": "遗传信息的转录与加工 / Transcription and Processing of Genetic Information",
+  "scientificScope": "以真核生物含外显子和内含子的基因为例，连续展示转录及转录后RNA加工。",
+  "stages": [
+    {
+      "id": "promoter-recognition",
+      "title": "识别启动子",
+      "titleEn": "Promoter Recognition",
+      "summary": "巨大的RNA聚合酶从DNA左侧进入，识别基因上游的启动子并与DNA结合。",
+      "keyPoint": "启动子是DNA上的调控序列，不会被转录进RNA。"
+    },
+    {
+      "id": "bubble-formation",
+      "title": "形成转录泡",
+      "titleEn": "Transcription Bubble Formation",
+      "summary": "RNA聚合酶局部解开DNA双链，包裹整个转录泡，使模板链暴露。",
+      "keyPoint": "DNA只在聚合酶内部局部解开，酶后方的双链及时复性。"
+    },
+    {
+      "id": "elongation",
+      "title": "延伸前体mRNA",
+      "titleEn": "Pre-mRNA Elongation",
+      "summary": "RNA的3′端在转录泡内与模板短暂配对并按5′→3′延伸，较早合成的部分连续弯出形成直链。",
+      "keyPoint": "初始转录产物是含外显子和内含子的前体mRNA。"
+    },
+    {
+      "id": "termination",
+      "title": "终止与释放",
+      "titleEn": "Termination and Release",
+      "summary": "RNA聚合酶到达终止子后停止延伸，前体mRNA释放，聚合酶离开DNA。",
+      "keyPoint": "终止子发出停止转录的信号，DNA双链恢复闭合。"
+    },
+    {
+      "id": "rna-processing",
+      "title": "RNA加工成熟",
+      "titleEn": "RNA Processing",
+      "summary": "剪接体切除内含子并连接外显子，随后添加5′帽和3′多聚A尾，形成成熟mRNA。",
+      "keyPoint": "内含子必须在物理切除后才消失；成熟mRNA只保留连接后的外显子。"
+    }
+  ],
+  "structures": [
+    {
+      "id": "promoter",
+      "name": "启动子",
+      "nameEn": "Promoter",
+      "role": "RNA聚合酶识别和起始结合的位置"
+    },
+    {
+      "id": "rna-polymerase",
+      "name": "RNA聚合酶",
+      "nameEn": "RNA Polymerase",
+      "role": "解开局部DNA并催化RNA按5′→3′延伸"
+    },
+    {
+      "id": "transcription-bubble",
+      "name": "转录泡",
+      "nameEn": "Transcription Bubble",
+      "role": "RNA聚合酶内部局部解开的DNA区域"
+    },
+    {
+      "id": "pre-mrna",
+      "name": "前体mRNA",
+      "nameEn": "pre-mRNA",
+      "role": "含外显子和内含子的初始转录产物"
+    },
+    {
+      "id": "spliceosome",
+      "name": "剪接体",
+      "nameEn": "Spliceosome",
+      "role": "切除内含子并连接相邻外显子"
+    },
+    {
+      "id": "cap",
+      "name": "5′帽",
+      "nameEn": "5′ Cap",
+      "role": "保护RNA并参与后续识别"
+    },
+    {
+      "id": "poly-a",
+      "name": "多聚A尾",
+      "nameEn": "Poly(A) Tail",
+      "role": "添加在成熟mRNA的3′端"
+    }
+  ],
+  "geneRegions": [
+    {
+      "id": "promoter",
+      "name": "启动子",
+      "type": "regulatory"
+    },
+    {
+      "id": "exon-1",
+      "name": "外显子1",
+      "type": "exon"
+    },
+    {
+      "id": "intron-1",
+      "name": "内含子1",
+      "type": "intron"
+    },
+    {
+      "id": "exon-2",
+      "name": "外显子2",
+      "type": "exon"
+    },
+    {
+      "id": "intron-2",
+      "name": "内含子2",
+      "type": "intron"
+    },
+    {
+      "id": "exon-3",
+      "name": "外显子3",
+      "type": "exon"
+    },
+    {
+      "id": "terminator",
+      "name": "终止子",
+      "type": "regulatory"
+    }
+  ],
+  "version": "2.1.4"
+}

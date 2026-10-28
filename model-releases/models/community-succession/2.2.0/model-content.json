@@ -1,0 +1,95 @@
+{
+  "id": "community-succession",
+  "version": "2.1.1",
+  "title": {
+    "zh": "群落的演替",
+    "en": "Ecological Succession"
+  },
+  "stages": [
+    {
+      "id": "initial",
+      "title": {
+        "zh": "初始条件",
+        "en": "Initial sites"
+      }
+    },
+    {
+      "id": "pioneers",
+      "title": {
+        "zh": "先锋定居",
+        "en": "Pioneer establishment"
+      }
+    },
+    {
+      "id": "expansion",
+      "title": {
+        "zh": "植被扩展",
+        "en": "Vegetation expansion"
+      }
+    },
+    {
+      "id": "turnover",
+      "title": {
+        "zh": "群落更替",
+        "en": "Community turnover"
+      }
+    },
+    {
+      "id": "woodland",
+      "title": {
+        "zh": "木本发展",
+        "en": "Woody establishment"
+      }
+    },
+    {
+      "id": "forest",
+      "title": {
+        "zh": "森林形成",
+        "en": "Forest development"
+      }
+    }
+  ],
+  "defaultOptions": {
+    "labels": true,
+    "soil": false,
+    "activeKind": "primary"
+  },
+  "time": {
+    "playbackSeconds": 60,
+    "stageTimes": [
+      0,
+      12,
+      24,
+      36,
+      48,
+      60
+    ],
+    "meaning": "Separate retained illustrative progress per succession type. Select one side before playback; durations are not ecological years."
+  },
+  "science": {
+    "scope": "A schematic route under climate suitable for forest establishment, access to propagules and absence of renewed severe disturbance. Not a universal, inevitable or fixed-duration route.",
+    "primary": "Bare rock with no developed soil; lichen establishment; moss; herbs; shrubs and saplings; tree-dominated forest with understory. Weathering, organic inputs and colonization overlap.",
+    "secondary": "Postfire site retains soil and some viable seeds or underground organs. Annual herbs, perennial herbs, establishing shrubs, thickets and saplings, forest. Some deadwood remains.",
+    "transition": "Layer weights represent illustrative dominance and cover, not measured abundance or calibrated soil depth. Roots, seed bank and soil section are schematic, not to scale.",
+    "coexistence": "Earlier functional groups can persist. Herbs, shrubs and trees overlap; later stages do not wipe out all earlier organisms.",
+    "animation": "Each side has a deterministic retained clock. Selecting a type pauses playback and changes only the controlled timeline. All plants and animals use their own side clock."
+  },
+  "sources": [
+    {
+      "title": "National Park Service: Success-ion",
+      "url": "https://www.nps.gov/kefj/blogs/success-ion.htm"
+    },
+    {
+      "title": "National Park Service: Plant Succession",
+      "url": "https://home.nps.gov/romo/plant_succession.htm"
+    },
+    {
+      "title": "OpenStax Biology 2e: Community Ecology",
+      "url": "https://openstax.org/books/biology-2e/pages/45-6-community-ecology"
+    },
+    {
+      "title": "US Forest Service: Postfire regeneration context",
+      "url": "https://research.fs.usda.gov/treesearch/66435"
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN" data-site-theme="green">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>题目训练 · 安德生物工作室（离线版）</title>
+<link rel="icon" href="/assets/ande-biology-logo.png">
+<link rel="stylesheet" href="/assets/studio-themes.css">
+<link rel="stylesheet" href="/assets/questions/library.css">
+<script src="/assets/studio-theme.js" defer></script>
+<script src="/assets/questions/library-view.js" defer></script>
+<script src="/_local/qbank.js" defer></script>
+<style>
+  /* 离线版：两列布局（去掉试题篮列），并把筛选做成复选框组 */
+  .ql-columns{grid-template-columns:224px minmax(0,1fr)}
+  @media(max-width:900px){.ql-columns{display:block}}
+  .ql-filter-tags{display:block}
+  .ql-filter-tags legend{float:none;width:auto;margin-bottom:2px;font-size:12px}
+  .ql-filter-tags label{display:inline-flex;align-items:center;gap:6px;margin:0 16px 0 0;font-size:13px;font-weight:400;cursor:pointer}
+  .ql-filter-tags input{accent-color:var(--s-green,var(--ql-accent));width:15px;height:15px;margin:0}
+  .ql-search button{white-space:nowrap}
+  .ql-offline-note{margin:0 0 14px;padding:10px 14px;border:1px dashed #cddfd9;border-radius:10px;
+                   font-size:12px;line-height:1.7;color:var(--ql-muted);background:#fbfefc}
+  .ql-offline-note b{color:var(--green,#207a68)}
+</style>
+</head>
+<body class="ql">
+
+<header class="ql-top">
+  <a class="ql-brand" href="/"><img src="/assets/ande-biology-logo.png" alt=""><span>安德生物工作室<small>ANDER BIOLOGY STUDIO</small></span></a>
+  <nav aria-label="主导航">
+    <a href="/">生物学模型</a>
+    <a href="/models.html">教学模型库</a>
+    <a href="/question-bank.html" aria-current="page">题目训练</a>
+    <a href="/manage">统一管理中心</a>
+  </nav>
+  <div class="ql-theme" role="group" aria-label="外观">
+    <span class="appearance-label">外观</span>
+    <button type="button" data-theme-choice="green" aria-pressed="true">绿</button>
+    <button type="button" data-theme-choice="blue" aria-pressed="false">蓝</button>
+    <button type="button" data-theme-choice="dark" aria-pressed="false">深色</button>
+  </div>
+</header>
+
+<main class="ql-main">
+
+  <div class="ql-heading ql-browse-heading">
+    <a class="studio-back" href="/">
+      <span class="studio-back-icon"><svg viewBox="0 0 46 36" aria-hidden="true"><path class="back-arrow-secondary" d="M4 18 16 6v8h26v8H16v8z"/><path class="back-arrow-primary" d="M2 18 13 7v7h31v8H13v7z"/></svg></span>
+      <span class="studio-back-label"><span>返回</span></span>
+    </a>
+    <div class="ql-heading-copy">
+      <p class="ql-kicker">BIOLOGY QUESTION LIBRARY · OFFLINE</p>
+      <h1>题目训练</h1>
+    </div>
+    <span class="ql-total" data-total>共 0 题</span>
+    <button type="button" class="ql-mobile-tree" data-toggle-tree>目录</button>
+  </div>
+
+  <p class="ql-offline-note" data-offline-note>
+    这是<b>离线快照</b>：题目、答案、图片都已下载到本地，断网可用。收藏、试题篮、试卷导出在离线版中不提供。
+  </p>
+
+  <section class="ql-panel ql-filters" data-filter-details aria-label="筛选">
+    <div class="ql-filter-row">
+      <fieldset class="ql-filter-tags" data-kind-group>
+        <legend>题型</legend>
+        <label><input type="checkbox" name="kind" value="single" checked> 单选题</label>
+        <label><input type="checkbox" name="kind" value="multi" checked> 多选题</label>
+        <label><input type="checkbox" name="kind" value="indeterminate" checked> 不定项</label>
+        <label><input type="checkbox" name="kind" value="written" checked> 非选择题</label>
+      </fieldset>
+    </div>
+    <div class="ql-filter-row">
+      <fieldset class="ql-filter-tags">
+        <legend>难度</legend>
+        <label><input type="checkbox" name="difficulty" value="0" checked> 基础</label>
+        <label><input type="checkbox" name="difficulty" value="1" checked> 中档</label>
+        <label><input type="checkbox" name="difficulty" value="2" checked> 提高</label>
+      </fieldset>
+      <fieldset class="ql-filter-tags">
+        <legend>来源</legend>
+        <label><input type="checkbox" name="source" value="gaokao" checked> 高考真题</label>
+        <label><input type="checkbox" name="source" value="mock" checked> 模拟题</label>
+      </fieldset>
+    </div>
+    <div class="ql-filter-row">
+      <fieldset class="ql-filter-tags">
+        <legend>年份</legend>
+        <label><input type="checkbox" name="year" value="2026" checked> 2026</label>
+        <label><input type="checkbox" name="year" value="2025" checked> 2025</label>
+        <label><input type="checkbox" name="year" value="2024" checked> 2024</label>
+        <label><input type="checkbox" name="year" value="2023" checked> 2023</label>
+        <label><input type="checkbox" name="year" value="2022" checked> 2022</label>
+        <label><input type="checkbox" name="year" value="2021" checked> 2021</label>
+        <label><input type="checkbox" name="year" value="2020" checked> 2020</label>
+        <label><input type="checkbox" name="year" value="2019" checked> 2019</label>
+        <label><input type="checkbox" name="year" value="2018" checked> 2018</label>
+        <label><input type="checkbox" name="year" value="2017" checked> 2017</label>
+      </fieldset>
+      <button type="button" class="secondary" data-filter-reset>清空筛选</button>
+    </div>
+  </section>
+
+  <form class="ql-search" role="search" data-search-form>
+    <input type="search" name="q" placeholder="搜索题干关键词（如「光合作用」「基因突变」）" aria-label="搜索题目" data-search-input>
+    <button type="submit" class="ql-primary">搜索</button>
+  </form>
+
+  <div class="ql-columns">
+    <aside class="ql-panel ql-tree" data-tree-panel aria-label="题目目录">
+      <div class="ql-tree-head">
+        <div class="ql-group-title">考点目录</div>
+        <div class="ql-directory-modes">
+          <button type="button" data-tree-all>全选</button>
+          <button type="button" data-tree-clear>清空</button>
+        </div>
+      </div>
+      <input type="search" class="ql-scope-search" placeholder="筛选目录" data-tree-search aria-label="筛选目录">
+      <div class="ql-scope-stack" data-setup-tree></div>
+    </aside>
+
+    <div class="ql-content" data-content>
+      <div data-question-list></div>
+      <div class="ql-pagebar">
+        <span data-page-info>第 1 页</span>
+        <div>
+          <button type="button" data-page-prev disabled>上一页</button>
+          <button type="button" data-page-next>下一页</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+{
+  "id": "transport",
+  "accent": "#F59E0B",
+  "title": "物质跨膜运输",
+  "titleEn": "Membrane Transport",
+  "chapter": "物质输入和输出 / Transport Across Membranes",
+  "type": "2D 动态样板",
+  "state": "过程演示",
+  "visual": "transport",
+  "structures": [
+    [
+      "小分子 Small Molecule",
+      "#38BDF8"
+    ],
+    [
+      "通道蛋白 Channel Protein",
+      "#7ECCEB"
+    ],
+    [
+      "载体蛋白 Carrier Protein",
+      "#A855F7"
+    ],
+    [
+      "ATP / ADP / Pi",
+      "#EF4444"
+    ],
+    [
+      "协同转运 Cotransport",
+      "#F59E0B"
+    ],
+    [
+      "浓度梯度 Concentration Gradient",
+      "#2563EB"
+    ]
+  ],
+  "stages": [
+    {
+      "title": "物质运输",
+      "titleEn": "Transport Overview",
+      "goal": "在同一条细胞膜上比较五种跨膜运输方式，观察是否需要蛋白质、是否消耗 ATP，以及运输方向和构象变化的差异。",
+      "keywords": [
+        "跨膜运输 Membrane Transport",
+        "浓度梯度 Gradient",
+        "膜蛋白 Membrane Protein",
+        "ATP"
+      ],
+      "explanation": "物质跨膜运输包括不需要蛋白质的自由扩散，也包括依赖通道蛋白或载体蛋白的运输方式。不同方式的共同点是都发生在细胞膜上，差异主要体现在是否需要膜蛋白、运输方向是否顺浓度梯度、是否直接或间接需要能量。",
+      "mistake": "不要把所有通过膜蛋白的运输都称为主动运输；协助扩散需要蛋白质，但不直接消耗 ATP，方向仍然是顺浓度梯度。",
+      "question": "观察五种运输方式时，可以从哪些角度判断它们是否需要能量？",
+      "id": "overview"
+    },
+    {
+      "title": "自由扩散",
+      "titleEn": "Simple Diffusion",
+      "goal": "观察脂溶性小分子或气体分子直接顺浓度梯度通过磷脂双分子层。",
+      "keywords": [
+        "自由扩散 Diffusion",
+        "浓度梯度 Gradient"
+      ],
+      "explanation": "自由扩散不需要膜蛋白，也不消耗 ATP，物质从高浓度一侧向低浓度一侧移动。",
+      "mistake": "不是所有小分子都能自由扩散；带电离子和较大的极性分子通常需要膜蛋白帮助。",
+      "question": "氧气、二氧化碳这类分子为什么可以直接通过磷脂双分子层？",
+      "id": "simple-diffusion"
+    },
+    {
+      "title": "通道蛋白协助扩散",
+      "titleEn": "Channel-Mediated Facilitated Diffusion",
+      "goal": "观察离子或水分子通过通道蛋白顺浓度梯度扩散。",
+      "keywords": [
+        "通道蛋白 Channel",
+        "协助扩散 Facilitated Diffusion",
+        "顺浓度梯度"
+      ],
+      "explanation": "通道蛋白提供亲水通道，使特定离子或水分子顺浓度梯度快速通过细胞膜，不直接消耗 ATP。",
+      "mistake": "通道蛋白不是把物质主动推过去，而是提供选择性通路。",
+      "question": "为什么 Na+、K+ 等离子通常不能像氧气一样直接穿过磷脂双分子层？",
+      "id": "channel"
+    },
+    {
+      "title": "载体蛋白协助扩散",
+      "titleEn": "Carrier-Mediated Facilitated Diffusion",
+      "goal": "观察溶质与载体蛋白结合后，载体构象改变并顺浓度梯度释放溶质。",
+      "keywords": [
+        "载体蛋白 Carrier",
+        "构象变化 Conformational Change",
+        "不消耗 ATP"
+      ],
+      "explanation": "载体蛋白协助扩散需要溶质先与载体结合，载体蛋白改变形状后把溶质释放到另一侧，但运输方向仍然是顺浓度梯度。",
+      "mistake": "载体蛋白发生构象变化不等于一定消耗 ATP。",
+      "question": "葡萄糖进入某些细胞时，为什么可能需要载体蛋白？",
+      "id": "carrier"
+    },
+    {
+      "title": "载体主动运输",
+      "titleEn": "ATP-Driven Active Transport",
+      "goal": "观察载体蛋白利用 ATP 水解释放的能量，将物质逆浓度梯度运输。",
+      "keywords": [
+        "主动运输 Active Transport",
+        "ATP",
+        "逆浓度梯度 Against Gradient"
+      ],
+      "explanation": "主动运输通常需要载体蛋白，并消耗 ATP，使物质可以从低浓度一侧运输到高浓度一侧。",
+      "mistake": "逆浓度梯度运输不能只靠扩散完成，需要能量输入。",
+      "question": "为什么主动运输对细胞维持内部环境很重要？",
+      "id": "active"
+    },
+    {
+      "title": "协同转运",
+      "titleEn": "Cotransport",
+      "goal": "观察一种物质顺浓度梯度移动时，带动另一种物质逆浓度梯度通过同一载体。",
+      "keywords": [
+        "协同转运 Cotransport",
+        "次级主动运输 Secondary Active Transport",
+        "同向/反向转运"
+      ],
+      "explanation": "协同转运利用某种物质已有的浓度梯度作为能量来源，带动另一种物质逆浓度梯度运输，属于主动运输的一种形式。",
+      "mistake": "协同转运不一定直接消耗 ATP，但它依赖先前建立的浓度梯度。",
+      "question": "为什么协同转运可以不直接消耗 ATP，却仍然属于主动运输？",
+      "id": "cotransport"
+    }
+  ],
+  "version": "2.2.2"
+}

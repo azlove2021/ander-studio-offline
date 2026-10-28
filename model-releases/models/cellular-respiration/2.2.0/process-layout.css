@@ -1,0 +1,66 @@
+/* Content only: public chrome is the exact 2.5.1 component. */
+body[data-model-shell] .model-area .model-stage{display:flex;flex-direction:column;min-height:0;overflow:hidden}
+.process-toolbar{display:flex;align-items:center;gap:8px;padding:5px 10px;flex:none;min-width:0;border-bottom:1px solid #deebe6;background:#f8fbf9}
+.process-stage-title{font-size:13px;color:#326d60;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}
+.process-views{display:flex;align-items:center;gap:5px;flex:none}
+.process-toolbar .shell-action{padding:5px 9px;min-height:32px;font-size:12px;white-space:nowrap}
+.process-context{display:none}.shell-dialog-body>.process-context{display:block;font-size:14px;line-height:1.8}
+.shell-dialog-body .notation-note{display:block!important;text-align:left;padding:10px;font-size:13px;border:0}
+body[data-model-shell] .model-area .science-viewport{display:flex;flex-direction:column;flex:1;min-width:0;min-height:0;overflow:hidden}
+body[data-model-shell] .model-area .scene-layout{display:grid;grid-template-columns:156px minmax(0,1fr);flex:1;min-height:0;gap:6px;padding:4px 8px 0}
+body[data-model-shell] .model-area[data-process-model=photosynthesis] .scene-layout{display:flex;padding:0}
+body[data-model-shell] .model-area .art-scroll,body[data-model-shell] .model-area .animation-viewport{position:relative;flex:1;min-width:0;min-height:0;height:auto;overflow:hidden;padding:0;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;isolation:isolate}
+body[data-model-shell] .model-area .science-world{position:relative;display:block;flex:1;width:100%;height:100%;min-width:0!important;min-height:0!important;padding:0;transform-origin:0 0;z-index:1}
+body[data-model-shell] .model-area .science-world>svg{display:block;width:100%;height:100%;max-height:none;overflow:visible}
+body[data-model-shell] .model-area .animation-viewport{border:0;border-radius:0}
+.process-scene-backdrop{position:absolute;inset:0;z-index:-1;pointer-events:none;transform-origin:0 0}
+.process-scene-backdrop>svg{display:block;width:100%;height:100%}
+.phage-model-stage .science-world :is(.scene-background,.scene-pattern){visibility:hidden}
+body[data-model-shell] .model-area .mode-panel{padding:12px 8px;align-self:center;margin:0;max-height:100%;overflow:auto}
+body[data-model-shell] .model-area .mode-panel h2{font-size:14px;margin:0 0 10px;letter-spacing:0}
+body[data-model-shell] .model-area .mode-options{gap:8px}
+body[data-model-shell] .model-area .mode-option{min-height:52px;padding:6px;font-size:13px}
+body[data-model-shell] .model-area .mode-option span{font-size:11px;margin-top:3px}
+body[data-model-shell] .model-area .science-caption{position:relative;display:flex;flex:none;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:6px 10px 6px 70px;font-size:11px;text-align:center}
+body[data-model-shell] .model-area .science-caption strong{font-size:12px}
+body[data-model-shell] .model-area .science-caption p{font-size:11px;margin:3px 0 0;line-height:1.45}
+body[data-model-shell] .model-area .science-caption>span{font-size:11px;padding-left:8px;max-width:200px;white-space:normal}
+.process-readonly .progress-track{flex:1;width:auto;min-width:24px;height:6px;margin:0;border:0;background:#dde8e4;border-radius:10px;overflow:hidden}
+.process-readonly .progress-track>span{display:block;height:100%;background:#348b75;border-radius:inherit}
+.process-readonly output{min-width:4ch;text-align:right;font-size:12px}
+body[data-model-shell] .model-area .phage-speed-control{padding:0;background:none;border:0;box-shadow:none}
+body[data-model-shell] .model-area[data-immersive=true] .process-toolbar,body[data-model-shell] .model-area[data-immersive=true] .mode-panel,body[data-model-shell] .model-area[data-immersive=true] .science-caption{display:none}
+body[data-model-shell] .model-area[data-immersive=true] .scene-layout{display:flex;padding:0;gap:0}
+body[data-model-shell] .model-area[data-immersive=true] .art-scroll{flex:1;width:100%}
+body[data-model-shell][data-shell-compact=true] .model-area .scene-layout{grid-template-columns:106px minmax(0,1fr);padding:0 4px;gap:3px}
+body[data-model-shell][data-shell-compact=true] .model-area .mode-panel{padding:5px}
+body[data-model-shell][data-shell-compact=true] .model-area .mode-panel h2{display:none}
+body[data-model-shell][data-shell-compact=true] .model-area .mode-options{gap:5px}
+body[data-model-shell][data-shell-compact=true] .model-area .mode-option{min-height:40px;font-size:11px;padding:3px}
+body[data-model-shell][data-shell-compact=true] .model-area .mode-option span{font-size:10px;margin:0}
+body[data-model-shell][data-shell-compact=true] .model-area .science-caption{min-height:24px;padding-block:2px;padding-left:45px}
+body[data-model-shell][data-shell-compact=true] .model-area .science-caption p{display:none}
+body[data-model-shell][data-shell-compact=true] .model-area .science-caption>span{border:0;max-width:none}
+body[data-model-shell][data-shell-compact=true] .model-area .process-toolbar{padding:3px 8px}
+body[data-model-shell][data-shell-compact=true] .model-area[data-focus=true] .process-toolbar{display:none}
+@media(max-width:599px){
+ body[data-model-shell] .model-area .process-stage-title{display:none}
+ body[data-model-shell] .model-area .process-toolbar{justify-content:space-between;padding:4px 7px;gap:5px}
+ body[data-model-shell] .model-area .process-toolbar .shell-action{padding:5px 8px}
+ body[data-model-shell] .model-area .scene-layout{display:flex;flex-direction:column;padding:0;gap:0}
+ body[data-model-shell] .model-area .mode-panel{flex:none;align-self:stretch;border-radius:0;border-width:0 0 1px;padding:5px 7px}
+ body[data-model-shell] .model-area .mode-panel h2{display:none}
+ body[data-model-shell] .model-area .mode-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+ body[data-model-shell] .model-area .mode-option{min-height:36px;padding:3px;font-size:12px}
+ body[data-model-shell] .model-area .mode-option span{font-size:10px;margin:0}
+ body[data-model-shell] .model-area .science-caption{flex-wrap:wrap;gap:3px;padding-left:55px;min-height:48px}
+ body[data-model-shell] .model-area .science-caption>span{border:0;max-width:none;padding:0;font-size:10px}
+}
+@media(max-height:560px) and (max-width:599px){
+ body[data-model-shell] .model-area .science-caption{min-height:20px;padding-block:2px}
+ body[data-model-shell] .model-area .science-caption p,body[data-model-shell] .model-area .science-caption>span{display:none}
+ body[data-model-shell] .model-area .process-toolbar .shell-action{min-height:28px;padding:3px 7px}
+}
+body[data-model-shell] .model-area[data-process-model][data-immersive=true] .scene-layout{display:flex;flex-direction:column;padding:0;gap:0}
+body[data-model-shell] .model-area[data-process-model][data-immersive=true] .mode-panel{display:none}
+body[data-model-shell] .model-area .shell-dialog-body .mode-panel{display:block!important;max-height:none}

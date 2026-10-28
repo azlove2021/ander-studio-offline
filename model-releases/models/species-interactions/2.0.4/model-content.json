@@ -1,0 +1,80 @@
+{
+  "id": "species-interactions",
+  "version": "2.0.1",
+  "title": {
+    "zh": "种间关系曲线变化",
+    "en": "Interspecific Population Dynamics"
+  },
+  "stages": [
+    {
+      "id": "initial",
+      "title": {
+        "zh": "开始观察",
+        "en": "Start"
+      }
+    },
+    {
+      "id": "first-period",
+      "title": {
+        "zh": "第 1 段结束",
+        "en": "First interval"
+      }
+    },
+    {
+      "id": "second-period",
+      "title": {
+        "zh": "第 2 段结束",
+        "en": "Second interval"
+      }
+    },
+    {
+      "id": "complete",
+      "title": {
+        "zh": "完整曲线",
+        "en": "Complete curves"
+      }
+    }
+  ],
+  "defaultOptions": {
+    "competition": "periodic",
+    "mutual": "obligate",
+    "separate": false,
+    "reference": true
+  },
+  "time": {
+    "duration": 36,
+    "unit": "illustrative time unit",
+    "playbackSeconds": 36,
+    "predatorAndCompetitionPeriod": 12,
+    "mutualismPeriod": 36,
+    "interventionTime": 18
+  },
+  "science": {
+    "scope": "Constructed continuous population scenarios, not observations of named species. A cycle is not a universal diagnostic of any interaction.",
+    "predation": "Lotka-Volterra: dA=s(0.65A-0.009AB), dB=s(0.0032AB-0.38B), s=1.0936666666666668. One time-unit calibration produces about 3 complete orbits in t=0..36.",
+    "competition": "dA=0.65A[1-(A+alpha B)/KA(t)], dB=0.65B[1-(B+beta A)/KB(t)]. KA=240[1+0.52 sin(2pi t/12)], KB=240[1-0.52 sin(2pi t/12)]. Default alpha=beta=0.6, settled periodic coexistence; exclusion alpha=0.25,beta=2.4 starts with both populations present. Both cross effects remain negative.",
+    "mutualism": "Saturating mutualistic benefits plus self-limitation. Self-limitation is divided by E(t)=1+0.42 sin(2pi t/36). Obligate independent rates are -0.18,-0.15; facultative rates are +0.18,+0.15. Optional removal at t=18 sets only mutualistic benefit terms to zero; populations are not reset. The same environment continues after removal.",
+    "parasitism": "H=hosts, P=total resident adult parasites, L=free-living infective stages. dH=0.5H-0.0015H^2-0.06P; dP=0.015HL-P[0.3+0.0015H+0.06+0.12P/H]; dL=2P-(0.015H+1.1)L. Negative-binomial aggregation k=1; density regulation enters host mortality. Right axis counts P, not infected hosts or L.",
+    "counterfactual": "Parasite-free host reference uses the same H0=40 and host vital rates with P=L=0.",
+    "numerics": "Deterministic RK4, step 0.03; intervention boundary split with left-limit endpoint evaluation. No artificial curve clamping, stitching or periodic population resets.",
+    "axes": "Fixed linear domains include all relevant scenario and counterfactual values. Competition axes share a range; other dual axes need separate readings."
+  },
+  "sources": [
+    {
+      "title": "OpenStax Biology 2e: Community Ecology",
+      "url": "https://openstax.org/books/biology-2e/pages/45-6-community-ecology"
+    },
+    {
+      "title": "Hoek et al. (2016): Resource Availability Modulates the Cooperative and Competitive Nature of a Microbial Cross-Feeding Mutualism",
+      "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002540"
+    },
+    {
+      "title": "Competitive Coexistence in a Seasonally Fluctuating Environment II (1983)",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0040580983710336"
+    },
+    {
+      "title": "Exclusion and spatial segregation in the apparent competition between two hosts sharing macroparasites (2013)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0040580913000245"
+    }
+  ]
+}

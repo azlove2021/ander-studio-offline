@@ -1,0 +1,144 @@
+/* Student-library only. No changes to global panels, navigation or model pages. */
+/* Integration: preserve the verified dark-theme foreground fix. */
+html[data-site-theme=dark] :is(.ql,.ql-training) :is(.ql-brand small,.ql-kicker,.ql-chip,.ql-option em,.ql-actions a,.ql-reference h2,.ql-basket .ql-total,.ql-training-summary .ql-total,.ql-training-card h2 span){color:var(--s-green,#75dcd1)}
+html[data-site-theme=dark] .ql :is(.ql-segment button,.ql-actions button)[aria-pressed=true]{color:var(--s-green,#75dcd1)}
+.ql{--ql-ink:var(--s-ink,#203e42);--ql-muted:var(--s-muted,#63808a);--ql-accent:var(--t-solid,#237e6b);--ql-line:var(--s-line,#d4e7e2);--ql-paper:var(--s-paper,#fff);--ql-soft:var(--t-soft,#edf7f3);color:var(--ql-ink);font:16px/1.6 "Microsoft YaHei",sans-serif;background:var(--t-bg,#f2f8f6);margin:0;min-height:100vh}
+.ql *{box-sizing:border-box}.ql a{color:inherit;text-decoration:none}.ql button:not(:where(.qe-dialog *,.qe-preview *)),.ql input:not(:where(.qe-dialog *,.qe-preview *)),.ql select:not(:where(.qe-dialog *,.qe-preview *)){font:inherit;color:inherit}.ql button:not(:where(.qe-dialog *,.qe-preview *)),.ql select:not(:where(.qe-dialog *,.qe-preview *)){cursor:pointer}.ql button:not(:where(.qe-dialog *,.qe-preview *)),.ql input:not(:where(.qe-dialog *,.qe-preview *)),.ql select:not(:where(.qe-dialog *,.qe-preview *)){border:1px solid var(--ql-line);border-radius:9px;background:var(--ql-paper);padding:8px 12px}.ql button:not(:where(.qe-dialog *,.qe-preview *)):hover,.ql a:hover{color:var(--ql-accent)}.ql :focus-visible{outline:2px solid var(--s-green,var(--ql-accent));outline-offset:2px}.ql [hidden]{display:none!important}.ql .ql-primary{background:var(--ql-accent);color:var(--t-on,#fff);border-color:transparent}.ql .ql-primary:hover{filter:brightness(.95);color:var(--t-on,#fff)}
+.ql-top{display:flex;align-items:center;gap:24px;padding:14px max(24px,calc((100vw - 1640px)/2));border-bottom:1px solid var(--ql-line);background:var(--ql-paper)}.ql-brand{display:flex;align-items:center;gap:10px;font-weight:800;white-space:nowrap}.ql-brand img{width:44px;height:44px;object-fit:contain}.ql-brand small{display:block;font-size:10px;letter-spacing:1.1px;color:var(--ql-accent)}.ql-top nav{margin-left:auto;display:flex;align-items:center;gap:18px;font-size:14px}.ql-theme{display:flex;gap:6px}.ql-theme button{font-size:12px;padding:7px}.ql-top .appearance-label{display:none}
+.ql-main{max-width:1640px;margin:auto;padding:28px 24px 50px}.ql-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:18px}.ql-heading h1{font-family:"Noto Serif SC",SimSun,serif;font-size:32px;line-height:1.3;margin:4px 0}.ql-kicker{font-size:11px;letter-spacing:2px;font-weight:700;color:var(--ql-accent);margin:0}.ql-heading p:last-child{margin:6px 0 0;color:var(--ql-muted);font-size:14px}.ql-panel{background:var(--ql-paper);border:1px solid var(--ql-line);border-radius:16px}.ql-filters{padding:12px 18px;margin-bottom:12px}.ql-filter-row{display:flex;gap:12px;align-items:center;min-height:38px;font-size:14px;flex-wrap:wrap}.ql-filter-row+.ql-filter-row{border-top:1px solid var(--ql-line);padding-top:8px;margin-top:8px}.ql-filter-row label{display:flex;gap:8px;align-items:center}.ql-filter-row select{padding:4px 8px}.ql-segment{display:flex;gap:6px}.ql-segment button{font-size:14px;padding:5px 12px;border-color:transparent}.ql-segment [aria-pressed=true]{background:var(--ql-soft);color:var(--ql-accent);border-color:var(--ql-accent)}.ql-answer-toggle{margin-left:auto}.ql-search{display:flex;gap:8px;margin-bottom:18px}.ql-search input{min-width:0;flex:1;background:var(--ql-paper)}.ql-search button{white-space:nowrap}
+.ql-columns{display:grid;grid-template-columns:224px minmax(0,1fr) 208px;gap:18px;align-items:start}.ql-tree{padding:16px;max-height:calc(100dvh - 60px);overflow:auto;position:sticky;top:20px}.ql-tree h2,.ql-basket h2{font-size:16px;margin:0 0 12px}.ql-tree ul{list-style:none;padding-left:14px;margin:2px 0}.ql-tree>ul{padding:0}.ql-tree li{font-size:13px}.ql-tree label{display:flex;align-items:center;gap:6px;padding:7px 0}.ql-tree input{accent-color:var(--ql-accent)}.ql-tree summary{cursor:pointer;padding:6px 0}.ql-tree small{color:var(--ql-muted);margin-left:auto}.ql-content{min-width:0}.ql-card{padding:15px 18px;margin-bottom:12px;overflow:hidden}.ql-card-head{display:flex;align-items:center;gap:9px;margin-bottom:8px;font-size:12px;color:var(--ql-muted)}.ql-chip{background:var(--ql-soft);border-radius:5px;padding:1px 7px;color:var(--ql-accent);font-size:12px}.ql-prompt{line-height:1.7;overflow-wrap:anywhere}.ql-prompt p{margin:3px 0 8px}.ql-card img{max-width:100%;height:auto;vertical-align:middle}.ql-prompt table,.ql-reference table{max-width:100%;border-collapse:collapse}.ql-table-scroll{overflow:auto;max-width:100%}.ql-prompt td,.ql-prompt th,.ql-reference td{border:1px solid var(--ql-line);padding:5px}.ql-options{display:grid;grid-template-columns:minmax(0,1fr);gap:4px 16px;margin:8px 0}.ql-option{padding:4px 7px;border:1px solid transparent;border-radius:6px;overflow-wrap:anywhere}.ql-option.long{grid-column:1/-1}.ql-option.correct{background:var(--ql-soft);border-color:var(--ql-accent)}.ql-option em{font-size:12px;color:var(--ql-accent);font-style:normal;margin-left:7px}.ql-actions{display:flex;align-items:center;gap:8px;border-top:1px solid var(--ql-line);padding-top:9px;margin-top:10px;font-size:13px}.ql-actions a{margin-right:auto;color:var(--ql-accent)}.ql-actions button{padding:5px 10px;min-height:34px}.ql-actions [aria-pressed=true]{background:var(--ql-soft);color:var(--ql-accent)}.ql-inline-answer{color:var(--ql-accent);border-bottom:1px solid currentColor;padding:0 4px}.ql-mapped-answer{margin:6px 0;padding:7px 10px;background:var(--ql-soft);font-size:14px}.ql-reference{border-top:1px solid var(--ql-line);margin-top:20px;padding-top:12px;overflow-wrap:anywhere}.ql-reference h2{font-size:17px;color:var(--ql-accent)}.ql-basket{padding:18px;position:sticky;top:20px}.ql-basket .ql-total{font-size:40px;line-height:1.1;letter-spacing:-1px;color:var(--ql-accent);margin:18px 0 4px}.ql-total small{font-size:14px;color:var(--ql-muted);letter-spacing:0}.ql-basket dl{font-size:13px;margin:18px 0}.ql-basket dl div{display:flex;justify-content:space-between;border-bottom:1px solid var(--ql-line);padding:7px 0}.ql-basket dd{margin:0}.ql-basket>a{display:block;text-align:center;border-radius:9px;padding:9px}.ql-basket>p{font-size:12px;color:var(--ql-muted)}.ql-pagebar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13px;margin-top:18px}.ql-pagebar div{display:flex;gap:8px;align-items:center}.ql-notice{padding:14px 18px;background:var(--ql-soft);border-radius:10px;font-size:14px}.ql-status{color:var(--ql-muted);font-size:13px;min-height:24px;margin:8px 0}.ql-empty{text-align:center;padding:48px 20px}.ql-empty h2{font-size:22px;margin:6px 0}.ql-empty p{color:var(--ql-muted)}.ql-basket-page,.ql-detail-page{max-width:1120px;margin:auto}.ql-basket-tools{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.ql-group-title{font-size:18px;margin:24px 0 12px}.ql-unavailable{border-style:dashed}.ql-mobile-tree,.ql-mobile-basket{display:none}.ql-dialog{border:1px solid var(--ql-line);border-radius:16px;max-width:min(92vw,660px);padding:24px;background:var(--ql-paper);color:var(--ql-ink)}.ql-dialog::backdrop{background:#102c365e}.ql-dialog>button[data-close]{float:right}.ql-dialog img{max-width:100%;max-height:80dvh;object-fit:contain}.ql-prototype-strip{background:#22383c;color:#fff;font-size:13px;padding:10px 24px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.ql-prototype-strip select{background:#fff;color:#22383c;font-size:13px}.ql-prototype-strip small{margin-left:auto}
+/* Only the new training root owns these constraints. */
+.ql-training{--ql-ink:var(--s-ink,#203e42);--ql-muted:var(--s-muted,#63808a);--ql-accent:var(--t-solid,#237e6b);--ql-line:var(--s-line,#d4e7e2);--ql-paper:var(--s-paper,#fff);--ql-soft:var(--t-soft,#edf7f3);color:var(--s-ink,#203e42)}.ql-training *{box-sizing:border-box}.ql-training button,.ql-training input,.ql-training select{font:inherit;color:inherit}.ql-training button,.ql-training select,.ql-training input[type=number],.ql-training input[type=search]{border:1px solid var(--s-line,#d4e7e2);border-radius:9px;padding:9px;background:var(--s-paper,#fff)}.ql-training button{cursor:pointer}.ql-training .ql-primary{background:var(--t-solid,#237e6b);color:var(--t-on,#fff);border-color:transparent}.ql-training :focus-visible{outline:2px solid var(--s-green,var(--t-solid,#237e6b));outline-offset:2px}.ql-training [hidden]{display:none!important}.ql-training-grid{display:grid;grid-template-columns:1.15fr 1fr 1fr .85fr;gap:16px;align-items:stretch}.ql-training-card{border:1px solid var(--s-line,#d4e7e2);border-radius:18px;padding:18px;background:var(--s-paper,#fff);height:clamp(540px,calc(100dvh - 150px),720px);display:flex;flex-direction:column;min-height:0;gap:10px}.ql-training-card h2{font-size:18px;margin:0 0 6px}.ql-training-card h2 span{color:var(--t-solid,#237e6b);font-size:13px;background:var(--t-soft,#edf7f3);padding:6px;margin-right:8px;border-radius:8px}.ql-training-card>button{text-align:left}.ql-training-card>button[aria-pressed=true]{border-color:var(--t-solid,#237e6b);background:var(--t-soft,#edf7f3)}.ql-training-tree{overflow:auto;min-height:0;flex:1}.ql-training-tree ul{list-style:none;padding-left:14px;margin:3px 0}.ql-training-tree>ul{padding:0}.ql-training-tree label{display:flex;align-items:center;gap:6px;padding:6px 0;font-size:13px}.ql-training-tree summary{cursor:pointer;font-size:13px;padding:5px 0}.ql-training-card .ql-preference{margin-top:auto;font-size:12px;line-height:1.8}.ql-training-card .ql-counts{font-size:13px;display:grid;grid-template-columns:1fr 1fr;gap:8px}.ql-counts label{display:flex;flex-direction:column}.ql-counts input{width:100%;min-width:0}.ql-difficulty small{display:block;font-size:12px;line-height:1.8;font-weight:400;color:var(--s-muted,#63808a)}.ql-training-summary{background:var(--t-soft,#edf7f3)}.ql-training-summary .ql-total{font-size:50px;color:var(--t-solid,#237e6b);line-height:1.2;margin:8px 0}.ql-training-summary dl{font-size:13px;margin:0}.ql-training-summary dl div{border-bottom:1px solid var(--s-line,#d4e7e2);padding:8px 0}.ql-training-summary dd{margin:2px 0 0;font-weight:600}.ql-training-summary .ql-generate{margin-top:auto;text-align:center}.ql-training-error{font-size:13px;max-height:100px;overflow:auto;color:var(--s-muted,#63808a)}.ql-pref-form{display:grid;gap:16px}.ql-pref-form fieldset{border:0;padding:0}.ql-pref-form legend{font-weight:700;margin-bottom:8px}.ql-pref-form label{display:inline-flex;align-items:center;gap:4px;margin-right:12px;font-size:14px}
+.ql-preset-scroll{min-height:0;overflow:auto;display:flex;flex-direction:column;gap:8px;flex:1}.ql-preset-scroll>button{text-align:left;flex-shrink:0;font-size:14px}.ql-preset-scroll>button small{font-size:12px}.ql-preset-scroll>button[aria-pressed=true]{background:var(--t-soft,#edf7f3);border-color:var(--t-solid,#237e6b)}.ql-preset-scroll select{max-width:100%;min-width:0}.ql-training-card .ql-counts[hidden]{display:none!important}
+@media(max-width:759px){.ql-filters.is-collapsed [data-filter-details]{display:none}.ql-preset-scroll{overflow:visible}.ql-training-card .ql-counts{grid-template-columns:1fr 1fr}}
+@media(max-width:1279px){.ql-columns{grid-template-columns:210px minmax(0,1fr)}.ql-basket{position:static;grid-column:1/-1;display:flex;gap:20px;align-items:center}.ql-basket dl,.ql-basket>p{display:none}.ql-basket h2,.ql-basket .ql-total{margin:0}.ql-basket>a{margin-left:auto}.ql-training-grid{grid-template-columns:1fr 1fr}.ql-training-card{height:560px}.ql-top{padding:14px 20px}.ql-top nav{gap:12px}}
+@media(max-width:759px){.ql{font-size:15px}.ql-top{padding:12px 14px;gap:8px;flex-wrap:wrap}.ql-brand{font-size:15px}.ql-brand img{width:34px;height:34px}.ql-top nav{gap:12px;font-size:12px}.ql-theme{width:100%;justify-content:flex-end}.ql-main{padding:20px 12px 96px}.ql-heading{align-items:flex-start}.ql-heading h1{font-size:26px}.ql-heading p:last-child{font-size:12px}.ql-heading>a{font-size:13px;white-space:nowrap}.ql-filters{padding:10px 12px}.ql-filter-row{gap:8px;font-size:13px}.ql-answer-toggle{margin-left:0}.ql-search{gap:6px}.ql-search input{width:80px}.ql-search button{padding:7px 10px;font-size:13px}.ql-columns{display:block}.ql-tree{display:none;position:fixed;z-index:20;inset:0 20% 0 0;max-height:none;border-radius:0;box-shadow:0 0 0 100vw #102c365e}.ql-tree[data-open=true]{display:block}.ql-mobile-tree{display:inline-block}.ql-basket{display:none}.ql-card{padding:12px;margin-bottom:10px;border-radius:12px}.ql-options{gap:4px 8px}.ql-actions{gap:6px;font-size:12px}.ql-actions button{min-height:40px;padding:7px 9px}.ql-card-head{flex-wrap:wrap;font-size:11px}.ql-mobile-basket{position:fixed;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:var(--ql-paper);border-top:1px solid var(--ql-line);z-index:5;font-size:14px}.ql-mobile-basket a{border-radius:8px;padding:8px 12px}.ql-training-grid{grid-template-columns:1fr}.ql-training-card{height:auto;min-height:0}.ql-training-tree{max-height:320px}.ql-training-card .ql-preference{margin-top:12px}.ql-training-summary .ql-generate{margin-top:18px}.ql-dialog{max-width:94vw;padding:18px}.ql-training .ql-dialog{width:94vw}.ql-pagebar{align-items:flex-start}.ql-pref-form label{margin:5px 10px 5px 0}}
+@media(max-height:650px) and (min-width:760px){.ql-training-card{height:auto;min-height:500px}.ql-training-tree{max-height:330px}}
+
+/* QL-STYLE-01: Return controls use the shared studio-back geometry and palette. */
+.ql-main>.studio-back,.ql-detail-page>.studio-back,.ql-basket-page>.studio-back{margin-bottom:12px}
+.ql-heading{justify-content:flex-start}
+/* QL-LAYOUT-02: Browse return and title share one row; other page headers retain their layout. */
+.ql .ql-browse-heading{align-items:center;gap:16px}
+.ql .ql-browse-heading>.studio-back{flex:0 0 auto;margin:0;align-self:center}
+.ql .ql-browse-heading>.ql-heading-copy{flex:1;min-width:0}
+.ql .ql-browse-heading .ql-kicker{overflow-wrap:anywhere}
+@media(max-width:759px){.ql .ql-browse-heading{gap:10px}}
+.ql-card-head{flex-wrap:wrap}
+.ql-number{order:-1;font-weight:700;font-variant-numeric:tabular-nums;color:var(--ql-ink);min-width:1.8em}
+
+/* QL-UI-02: Explicit checkboxes within each filter group; answers remain radios. */
+.ql-filter-tags{border:0;min-width:0;margin:0;padding:8px 0;font-size:14px}
+.ql-filter-tags+ .ql-filter-tags{border-top:1px solid var(--ql-line)}
+.ql-filter-tags legend{float:left;width:58px;padding:6px 0;font-weight:600;line-height:22px;color:var(--ql-muted)}
+.ql-tag-options{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-left:68px;min-height:34px}
+.ql-filter-tags::after{content:"";display:table;clear:both}
+.ql .ql-tag{display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:5px 9px;border:1px solid transparent;border-radius:8px;font-size:13px;line-height:22px;cursor:pointer;white-space:nowrap}
+.ql .ql-tag input{flex:none;width:15px;height:15px;margin:0;padding:0;accent-color:var(--ql-accent)}
+.ql .ql-tag:has(input:checked){background:var(--ql-soft);border-color:var(--ql-line);color:var(--s-green,var(--ql-accent));font-weight:700}
+.ql .ql-tag:has(input:focus-visible){outline:2px solid var(--s-green,var(--ql-accent));outline-offset:2px}
+.ql .ql-tag input:focus-visible{outline:none}
+.ql .ql-tag-all{min-height:34px;padding:5px 10px;border:1px solid transparent;font-size:13px;line-height:22px;background:transparent}
+.ql .ql-tag-all[aria-pressed=true]{background:var(--ql-soft);border-color:var(--ql-line);color:var(--s-green,var(--ql-accent));font-weight:700}
+.ql-answer-toggle{border:0;min-width:0;padding:0;margin:0 0 0 auto;display:flex;align-items:center;gap:8px;font-size:13px}
+.ql-answer-toggle legend{float:left;margin:0 8px 0 0;padding:5px 0;color:var(--ql-muted);font-weight:600}
+.ql-answer-toggle label{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.ql .ql-answer-toggle input{width:15px;height:15px;flex:none;margin:0;padding:0;accent-color:var(--ql-accent)}
+.ql-directory-modes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:0 0 12px}
+.ql .ql-directory-modes label{display:flex;align-items:center;justify-content:center;gap:5px;min-width:0;padding:7px 4px;min-height:36px;font-size:13px;line-height:20px;white-space:nowrap;border:1px solid var(--ql-line);border-radius:9px;background:var(--ql-paper);cursor:pointer}
+.ql .ql-directory-modes input{width:15px;height:15px;flex:none;margin:0;padding:0;accent-color:var(--ql-accent)}
+.ql .ql-directory-modes label:has(input:checked){background:var(--ql-soft);border-color:var(--ql-accent);color:var(--s-green,var(--ql-accent));box-shadow:inset 0 0 0 1px var(--ql-accent)}
+
+/* QL-UI-03: Single-column options and bounded intrinsic-size thumbnails. */
+.ql-card .ql-options{grid-template-columns:minmax(0,1fr)}
+.ql-card img[data-question-image]{width:auto;height:auto;max-width:min(100%,480px);max-height:320px;object-fit:contain;cursor:zoom-in}
+.ql-card img:not([data-question-image]){cursor:default}
+.ql-card .ql-difficulty-stars,.ql-card img[src^="/api/questions/style/star-a-"]{height:14px;width:auto;max-width:170px;object-fit:contain;flex:none;cursor:default}
+.ql-difficulty-unavailable{font-size:11px;color:var(--ql-muted);white-space:nowrap}
+
+/* QL-UI-04: Training uses shared model-intro; no separate hero geometry/font rules. */
+.ql-training .model-intro.ql-hero .resource-hero-actions{display:flex} /* Override the legacy non-model action hiding rule only within training. */
+.ql-training .model-intro.ql-hero{line-height:normal} /* Match the model hero's inherited line height, including its kicker. */
+.ql-training{font:16px/1.6 var(--s-sans,"Microsoft YaHei",sans-serif);--ql-option-height:72px}
+.ql-training-card{min-width:0;background:linear-gradient(145deg,var(--t-card-top,var(--ql-soft)),var(--t-card-bottom,var(--ql-paper)));border-color:var(--t-card-edge,var(--ql-line));box-shadow:inset 0 1px 0 #ffffff24}
+.ql-training-card h2{flex:none}
+.ql-training .ql-training-option,.ql-training .ql-scope-choice{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:2px;width:100%;height:var(--ql-option-height);min-height:var(--ql-option-height);flex-shrink:0;padding:8px 12px;border:1px solid var(--ql-line);border-radius:12px;background:var(--ql-paper);color:var(--ql-ink);font-size:14px;line-height:1.35;text-align:left}
+.ql-training .ql-training-option strong,.ql-training .ql-scope-choice strong{display:block;font-size:15px;line-height:1.4}
+.ql-training .ql-training-option small,.ql-training .ql-scope-choice small{display:block;font-size:11px;line-height:1.5;color:var(--ql-muted);font-weight:400}
+.ql-training .ql-training-option[aria-pressed=true],.ql-training .ql-scope-choice[aria-pressed=true]{border-color:var(--ql-accent);background:var(--ql-soft);box-shadow:inset 0 0 0 1px var(--ql-accent);color:var(--s-green,var(--ql-accent))}
+.ql-training button:focus:not(:focus-visible){outline:none}
+.ql-difficulty-options{display:flex;flex-direction:column;gap:8px;min-height:0}
+.ql-preset-scroll{flex:1;min-height:0;overflow:auto;scrollbar-gutter:stable}
+.ql-preset-extra{height:124px;min-height:124px;flex:0 0 124px;overflow:auto}
+.ql-preset-extra [data-province-panel]{display:grid;gap:6px}
+.ql-preset-extra label{font-size:12px;line-height:18px}
+.ql-training .ql-preset-extra select{width:100%;min-width:0;max-width:100%;height:40px;padding:7px 9px}
+.ql-training .ql-counts{gap:8px}
+.ql-training .ql-counts input{height:34px;padding:5px 8px;line-height:22px}
+.ql-preset-card>[data-count-summary]{height:38px;min-height:38px;overflow:auto;margin:0;font-size:12px;line-height:19px}
+.ql-training-card .ql-preference{margin-top:auto;flex:none;min-height:72px;font-size:11px;line-height:1.6}
+.ql-preference>[data-pref-summary]{display:block}
+.ql-training .ql-preference button{padding:5px 8px;font-size:12px;margin-top:4px}
+.ql-preference p{margin:3px 0 0;min-height:18px;font-size:11px}
+.ql-training .ql-generate{min-height:42px;flex:none}
+
+/* QL-UI-05: Direct range controls retain selection while only the tree scrolls. */
+.ql-scope-stack{display:flex;flex-direction:column;gap:8px;min-height:0;flex:1}
+.ql-training .ql-scope-choice{flex-direction:row;align-items:center;justify-content:space-between}
+.ql-scope-choice>span{min-width:0}
+.ql-scope-choice>b{flex:none;font-size:16px;color:var(--s-green,var(--ql-accent));transition:transform .15s}
+.ql-scope-choice[aria-expanded=true]>b{transform:rotate(180deg)}
+.ql-scope-directory{display:flex;flex-direction:column;min-height:0;flex:1;overflow:hidden;gap:6px;border:1px solid var(--ql-line);border-radius:12px;padding:10px;background:var(--ql-paper)}
+.ql-scope-search{display:block;flex:none}
+.ql-training .ql-scope-search input{width:100%;min-width:0;height:38px;padding:7px 9px;background:var(--ql-soft);font-size:12px}
+.ql-scope-help{flex:none;font-size:11px;line-height:1.5;color:var(--ql-muted)}
+.ql-training-tree{min-height:0;overflow:auto;scrollbar-gutter:stable}
+.ql-training-tree ul{padding-left:12px}
+.ql-training-tree>ul{padding-left:0}
+.ql-tree-row{display:flex;align-items:center;gap:5px;min-height:36px;border-radius:7px}
+.ql-tree-row.is-selected{background:var(--ql-soft)}
+.ql-training .ql-tree-expand{display:inline-flex;align-items:center;justify-content:center;width:22px;height:28px;min-height:0;flex:none;padding:0;border:0;border-radius:5px;background:transparent;color:var(--s-green,var(--ql-accent));font-size:17px;line-height:1}
+.ql-tree-leaf-mark{display:block;width:22px;flex:none}
+.ql-training-tree .ql-tree-row label{flex:1;min-width:0;padding:4px 0;line-height:1.4}
+.ql-training-tree .ql-tree-row label span{min-width:0;overflow-wrap:anywhere}
+.ql-training-tree input[type=checkbox]{width:16px;height:16px;flex:none;margin:0;accent-color:var(--ql-accent)}
+.ql-tree-row>small{font-size:10px;white-space:nowrap;color:var(--ql-muted);padding-right:3px}
+.ql-scope-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:5px;flex:none;padding-top:6px;border-top:1px solid var(--ql-line);font-size:11px}
+.ql-scope-footer>div{display:flex;gap:4px}
+.ql-training .ql-scope-footer button{padding:4px 6px;font-size:11px}
+.ql-visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* QL-UI-06: Preserve mobile drawers and bounded images without changing choice geometry. */
+@media(max-width:759px){
+ .ql-answer-toggle{margin-left:0;gap:6px}
+ .ql-filter-tags{font-size:13px;padding:7px 0}
+ .ql-filter-tags legend{width:44px;font-size:12px}
+ .ql-tag-options{margin-left:50px;gap:4px}
+ .ql .ql-tag,.ql .ql-tag-all{font-size:12px;padding:5px 7px;min-height:34px}
+ .ql-card img[data-question-image]{max-width:100%;max-height:320px}
+ .ql-card .ql-difficulty-stars,.ql-card img[src^="/api/questions/style/star-a-"]{max-width:155px}
+ .ql-scope-stack{flex:none}
+ .ql-scope-directory{flex:none;max-height:420px}
+ .ql-training-tree{max-height:280px}
+ .ql-preset-scroll{flex:none;overflow:visible;scrollbar-gutter:auto}
+ .ql-preset-extra{height:124px;min-height:124px}
+ .ql-training-card .ql-preference{margin-top:0}
+}
+@media(prefers-reduced-motion:reduce){.ql-scope-choice>b{transition:none}}
+
+/* QL-STYLE-02: Answer emphasis follows the active palette without altering content. */
+.ql-training-kind-counts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;list-style:none;padding:0;margin:0 0 8px;flex:none}
+.ql-training-kind-counts>li{display:flex;align-items:center;justify-content:space-between;gap:3px;padding:6px 8px;border:1px solid var(--t-card-edge,var(--ql-line));border-radius:9px;background:color-mix(in srgb,var(--ql-paper) 68%,transparent)}
+.ql-training-kind-counts>li>span{font-size:11px;line-height:1.4;color:var(--ql-ink)}
+.ql-training-kind-counts>li>span:first-child{flex:1;min-width:0}
+.ql-training-kind-counts>li>span:last-child{font-size:10px;flex:none}
+.ql-training-kind-counts>li>strong{font-size:20px;line-height:1.2;font-weight:750;font-variant-numeric:tabular-nums;color:var(--s-green,var(--ql-accent))}
+.ql .ql-option.correct{background:color-mix(in srgb,var(--ql-accent) 22%,var(--t-card-top,var(--ql-soft)));border-color:var(--s-green,var(--ql-accent));box-shadow:inset 3px 0 0 var(--s-green,var(--ql-accent));color:var(--ql-ink)}
+.ql .ql-answer-text{font-family:var(--s-kai,"KaiTi","STKaiti","Kaiti SC",serif);color:var(--ql-ink);text-decoration-line:underline;text-decoration-thickness:1px;text-underline-offset:.18em;text-decoration-skip-ink:auto}
+.ql .ql-inline-answer{display:inline;border-bottom:0;padding:0 3px;line-height:inherit}
+.ql .ql-answer-block{display:block;margin:8px 0;padding:10px 12px;border-left:3px solid var(--s-green,var(--ql-accent));background:var(--ql-soft);border-radius:0 8px 8px 0;overflow-wrap:anywhere}
+.ql .ql-answer-heading{font-size:12px;font-weight:600;color:var(--ql-muted)}
+.ql .ql-answer-marker{font-family:var(--s-kai,"KaiTi","STKaiti","Kaiti SC",serif);color:var(--ql-ink);white-space:normal}
+.ql .ql-answer-content{margin-top:6px;min-width:0;overflow-wrap:anywhere}
+.ql .ql-answer-content>p,.ql .ql-answer-content>div{margin:4px 0}
+.ql .ql-answer-content .ql-table-scroll{max-width:100%;overflow:auto}

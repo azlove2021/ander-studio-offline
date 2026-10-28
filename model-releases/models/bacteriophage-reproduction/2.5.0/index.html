@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light" />
+    <title>噬菌体的繁殖（2D动画）</title>
+    <link rel="stylesheet" href="model.css" />
+    <link rel="stylesheet" href="shell.css" />
+    <link rel="stylesheet" href="brand-watermark.css"><link rel="stylesheet" href="process-layout.css"><link rel="stylesheet" href="shell-standard.css?v=2.5.0-shell251" />
+    <link rel="stylesheet" href="window-standard.css?v=2.5.0-shell251" />
+  <script src="/assets/accounts/model-favorites.js?v=e9af20c54e036dd9573d4611bbb8bee47cccdad160e10e9d5ba98730656177d4"></script>
+<script src="/assets/accounts/model-favorite-host.js?v=c616cfcae1d08ce04b9e0af0f0163800016def1b0a8a6c16f9bab30ff6e7b481" data-ander-model-host="website-v1" data-model-id="bacteriophage-reproduction"></script>
+</head>
+  <body data-model-id="bacteriophage-reproduction" data-model-version="2.5.0">
+    <main class="model-shell" data-independent-model-root>
+      <header class="model-header">
+        <a class="back-link" href="/">← 返回模型库</a>
+        <div class="heading-copy">
+          <p class="eyebrow">二维分步动画 · 裂解周期</p>
+          <h1>噬菌体的繁殖</h1>
+          <p class="lead">观察噬菌体如何吸附细菌、注入 DNA、利用宿主合成部件，最后装配并裂解释放。</p>
+        </div>
+        <div class="stage-badge"><span id="stageCounter">01 / 05</span><strong id="stageBadgeTitle">吸附</strong></div>
+      </header>
+
+      <section class="animation-card" aria-labelledby="stageTitle">
+        <div class="stage-copy">
+          <div>
+            <span class="stage-number" id="stageNumber">阶段 01</span>
+            <h2 id="stageTitle">吸附</h2>
+          </div>
+          <p id="stageDescription">噬菌体尾纤维识别细菌表面受体，尾部逐渐靠近并稳定结合细菌。</p>
+        </div>
+
+        <div class="animation-viewport">
+          <svg id="phageScene" viewBox="0 0 1000 620" role="img" aria-labelledby="sceneTitle sceneDescription">
+            <title id="sceneTitle">噬菌体裂解周期动画</title>
+            <desc id="sceneDescription">展示噬菌体吸附细菌、注入DNA、复制与合成、装配和裂解释放的五个阶段。</desc>
+            <defs>
+              <linearGradient id="sceneBg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#EEF9F7" />
+                <stop offset="1" stop-color="#E8F0F7" />
+              </linearGradient>
+              <linearGradient id="capsidGradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#63C7B8" />
+                <stop offset="1" stop-color="#167C80" />
+              </linearGradient>
+              <linearGradient id="bacteriumGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#9BDCC6" />
+                <stop offset="1" stop-color="#5FB7A4" />
+              </linearGradient>
+              <pattern id="microDots" width="24" height="24" patternUnits="userSpaceOnUse">
+                <circle cx="3" cy="3" r="1.3" fill="#6FA8A0" opacity="0.18" />
+              </pattern>
+              <clipPath id="bacteriaClip">
+                <rect x="170" y="270" width="660" height="250" rx="125" />
+              </clipPath>
+              <filter id="softShadow" x="-40%" y="-40%" width="180%" height="180%">
+                <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#17384A" flood-opacity="0.18" />
+              </filter>
+              <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur stdDeviation="4" result="blur" />
+                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+
+              <g id="phage-head-structure">
+                <polygon points="0,-52 38,-30 44,13 0,45 -44,13 -38,-30" fill="url(#capsidGradient)" stroke="#145E66" stroke-width="3" />
+                <polygon points="0,-52 0,45 -44,13 -38,-30" fill="#1B7776" opacity="0.5" />
+                <polygon points="0,-52 38,-30 0,-12 -38,-30" fill="#87D7C8" opacity="0.65" />
+                <polygon points="0,-12 38,-30 44,13 0,45" fill="#2B9B91" opacity="0.5" />
+              </g>
+              <g id="phage-dna-structure" fill="none" stroke="#E84957" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M-26 -18 C-16 -37 6 -35 18 -22 C31 -8 19 10 2 7 C-17 4 -23 24 -5 29 C13 34 30 18 27 1" stroke-width="6" />
+                <path d="M-27 9 C-15 19 -2 17 6 5 C14 -8 27 -8 30 3" stroke-width="3" opacity="0.78" />
+              </g>
+              <g id="phage-neck-structure">
+                <rect x="-15" y="44" width="30" height="12" rx="5" fill="#185F67" />
+                <rect x="-10" y="56" width="20" height="17" rx="5" fill="#51B7AA" stroke="#185F67" stroke-width="3" />
+                <rect x="-18" y="70" width="36" height="8" rx="4" fill="#185F67" />
+              </g>
+              <g id="phage-tail-structure" fill="none" stroke="#245B63" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M0 78 L0 157" stroke-width="10" />
+                <path d="M-10 84 H10 M-11 98 H11 M-11 112 H11 M-11 126 H11 M-10 140 H10" stroke="#5EB9AA" stroke-width="6" />
+                <path d="M-22 158 H22 L13 171 H-13 Z" fill="#2D7E78" stroke-width="3" />
+                <path d="M-16 165 L-48 202 M-5 170 L-20 211 M16 165 L48 202 M5 170 L20 211" stroke-width="6" />
+                <circle cx="0" cy="157" r="5" fill="#E09B3D" stroke="none" />
+              </g>
+              <g id="phage-complete-structure">
+                <use href="#phage-head-structure" />
+                <use href="#phage-dna-structure" />
+                <use href="#phage-neck-structure" />
+                <use href="#phage-tail-structure" />
+              </g>
+            </defs>
+
+            <rect class="scene-background" x="0" y="0" width="1000" height="620" rx="30" />
+            <rect class="scene-pattern" x="0" y="0" width="1000" height="620" rx="30" />
+
+            <g id="bacteriumShell" filter="url(#softShadow)">
+              <path id="bacteriumLeftOuter" fill="url(#bacteriumGradient)" stroke="#287D76" stroke-width="0" stroke-linejoin="round" />
+              <path id="bacteriumRightOuter" fill="url(#bacteriumGradient)" stroke="#287D76" stroke-width="0" stroke-linejoin="round" />
+              <path id="bacteriumLeftInner" fill="#D8F0DF" stroke="#54A794" stroke-width="0" stroke-linejoin="round" />
+              <path id="bacteriumRightInner" fill="#D8F0DF" stroke="#54A794" stroke-width="0" stroke-linejoin="round" />
+              <g id="bacteriumContinuousOutline">
+                <rect x="170" y="270" width="660" height="250" rx="125" fill="none" stroke="#287D76" stroke-width="8" />
+                <rect x="182" y="282" width="636" height="226" rx="113" fill="none" stroke="#54A794" stroke-width="3" />
+              </g>
+            </g>
+
+            <g id="bacterialInterior" clip-path="url(#bacteriaClip)">
+              <path id="nucleoid" d="M315 388 C340 325 430 322 478 367 C530 416 577 471 651 447 C724 424 751 343 698 310 C655 283 606 308 632 343 C659 379 713 372 709 411 C705 459 626 486 560 461 C490 435 446 374 389 366 C338 359 306 388 330 422 C355 456 414 466 449 438 C482 411 460 376 421 389 C383 401 350 434 315 420 C291 410 290 391 315 388 Z" fill="none" stroke="#3478D4" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" opacity="0.92" />
+              <path d="M315 388 C340 325 430 322 478 367 C530 416 577 471 651 447 C724 424 751 343 698 310 C655 283 606 308 632 343 C659 379 713 372 709 411 C705 459 626 486 560 461 C490 435 446 374 389 366 C338 359 306 388 330 422 C355 456 414 466 449 438 C482 411 460 376 421 389 C383 401 350 434 315 420 C291 410 290 391 315 388 Z" fill="none" stroke="#8CB9F2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.8" />
+              <g id="ribosomeGroup" fill="#E09B3D"></g>
+            </g>
+
+            <g id="infectingPhage" transform="translate(500 105) scale(.55)" filter="url(#softShadow)">
+              <g id="infectingHead"><use href="#phage-head-structure" /></g>
+              <g id="infectingNeck"><use href="#phage-neck-structure" /></g>
+              <g id="infectingTail"><use href="#phage-tail-structure" /></g>
+            </g>
+
+            <g id="contactSignal" opacity="0" filter="url(#glow)">
+              <circle cx="500" cy="270" r="13" fill="none" stroke="#F3A53C" stroke-width="4" />
+              <circle cx="500" cy="270" r="4" fill="#F3A53C" />
+            </g>
+            <path id="injectionTube" d="M500 251 L500 334" fill="none" stroke="#245B63" stroke-width="8" stroke-linecap="round" opacity="0" />
+            <g id="componentPool"></g>
+            <g id="genomeLineageGroup" fill="none" stroke="#E84957" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+              <path id="genome-0" class="genome-lineage" data-lineage="0" />
+              <path id="genome-1" class="genome-lineage" data-lineage="1" opacity="0" />
+              <path id="genome-2" class="genome-lineage" data-lineage="2" opacity="0" />
+              <path id="genome-3" class="genome-lineage" data-lineage="3" opacity="0" />
+            </g>
+            <g id="burstLines" fill="none" stroke="#E84957" stroke-width="5" stroke-linecap="round" opacity="0">
+              <path d="M500 246 L500 205" /><path d="M466 258 L444 220" /><path d="M534 258 L556 220" />
+              <path d="M500 530 L500 572" /><path d="M458 518 L432 556" /><path d="M542 518 L568 556" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="playback-controls" aria-label="动画播放控制">
+          <button id="resetButton" type="button">重新开始</button>
+          <button id="prevButton" type="button">上一阶段</button>
+          <button class="primary-control" id="playButton" type="button" aria-pressed="false">播放全程</button>
+          <button id="nextButton" type="button">下一阶段</button>
+          <label class="speed-control" for="speedSelect">速度
+            <select id="speedSelect">
+              <option value="0.75">0.75×</option>
+              <option value="1" selected>1×</option>
+              <option value="1.5">1.5×</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="timeline-wrap"><span>过程进度</span><input id="time-slider" type="range" min="0" max="13900" step="1" value="0" aria-label="噬菌体繁殖过程进度"><output id="process-progress" for="time-slider">0%</output></label>
+
+        <ol class="stage-navigation" aria-label="裂解周期阶段">
+          <li><button type="button" data-stage="attachment" aria-current="step"><span>01</span><strong>吸附</strong></button></li>
+          <li><button type="button" data-stage="injection"><span>02</span><strong>注入</strong></button></li>
+          <li><button type="button" data-stage="biosynthesis"><span>03</span><strong>复制与合成</strong></button></li>
+          <li><button type="button" data-stage="assembly"><span>04</span><strong>装配</strong></button></li>
+          <li><button type="button" data-stage="lysis"><span>05</span><strong>裂解释放</strong></button></li>
+        </ol>
+      </section>
+
+      <footer class="model-footer">
+        <p>模型边界：以典型有尾双链 DNA 噬菌体的裂解周期为示意，不代表所有噬菌体都具有相同形态或生命周期。</p>
+        <p>比例为教学示意：细菌显著大于噬菌体。</p>
+      </footer>
+    </main>
+    <script src="shell-standard.js?v=2.5.0-shell251"></script>
+    <script type="module" src="model.js"></script>
+  <script type="module" src="brand-watermark.js"></script>    <script src="/session.js?v=experience-r1"></script>
+  </body>
+</html>

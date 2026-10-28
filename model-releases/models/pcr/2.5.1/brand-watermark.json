@@ -1,0 +1,9 @@
+{
+  "standard": "model-brand-watermark-1.0",
+  "runtimeVersion": "1.0.2",
+  "model": "pcr",
+  "viewport": ".scene-viewport",
+  "host": ".scene-viewport",
+  "foreground": ".lab-plane",
+  "ready": ".lab-toolbar"
+}

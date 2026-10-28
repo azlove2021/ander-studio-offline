@@ -1,0 +1,9 @@
+{
+  "standard": "model-brand-watermark-1.0",
+  "runtimeVersion": "1.0.2",
+  "model": "community-succession",
+  "viewport": ".science-viewport",
+  "foreground": ".scene-world",
+  "ready": "#ecology-canvas[data-ready]",
+  "host": ".science-viewport"
+}

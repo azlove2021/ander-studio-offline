@@ -1,0 +1,8 @@
+{
+  "standard": "model-brand-watermark-1.0",
+  "runtimeVersion": "1.0.2",
+  "model": "dna-replication",
+  "viewport": ".replication-scene-viewport",
+  "host": ".replication-scene-panel",
+  "foreground": ".replication-scene-viewport"
+}

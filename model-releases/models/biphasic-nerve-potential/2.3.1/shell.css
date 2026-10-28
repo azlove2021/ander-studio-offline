@@ -1,0 +1,108 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+  --ink: #18384a;
+  --muted: #6d8290;
+  --line: #cfe1df;
+  --panel: rgba(255, 255, 255, 0.92);
+  --mint: #2f927d;
+  --mint-dark: #1e6f61;
+  --mint-soft: #e9f7f3;
+  --shadow: 0 12px 34px rgba(32, 83, 80, 0.12);
+}
+
+* { box-sizing: border-box; }
+html, body { min-width: 320px; min-height: 100%; margin: 0; }
+body {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(137, 224, 210, .2), transparent 31%),
+    linear-gradient(180deg, #f4fbfc 0%, #edf7f5 100%);
+}
+button, input { font: inherit; }
+button { color: inherit; }
+
+.independent-model-app { min-height: 100vh; display: flex; flex-direction: column; }
+.independent-model-header {
+  min-height: 94px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 26px 12px;
+  border-bottom: 1px solid rgba(142, 181, 181, .45);
+}
+.independent-model-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 102px;
+  padding: 10px 12px 10px 8px;
+  color: #246a5e;
+  text-decoration: none;
+  background: rgba(255,255,255,.88);
+  border: 1px solid #c8e0dc;
+  border-radius: 17px;
+  box-shadow: 0 5px 16px rgba(43, 105, 95, .08);
+}
+.independent-model-back-icon { width: 45px; height: 32px; display: block; }
+.independent-model-back-icon svg { width: 100%; height: 100%; }
+.back-arrow-primary { fill: #53ab98; }
+.back-arrow-secondary { fill: #82c8b9; }
+.back-arrow-separator { fill: #f8fffd; }
+.independent-model-back-label { display: grid; font-weight: 800; line-height: 1.05; }
+.independent-model-heading { min-width: 0; }
+.independent-model-kicker { color: #2d7567; font-size: 13px; font-weight: 800; letter-spacing: .03em; }
+.independent-model-heading h1 { margin: 6px 0 0; font-size: clamp(25px, 3vw, 38px); line-height: 1.08; }
+.independent-model-heading h1 small { margin-left: 12px; color: #5f7480; font-size: .48em; font-weight: 600; }
+
+.independent-model-workspace { flex: 1; padding: 10px 22px 20px; }
+.model-area {
+  min-height: calc(100vh - 126px);
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  overflow: hidden;
+  background: rgba(255,255,255,.86);
+  border: 1px solid #c9dfdd;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+.stage-strip {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(155px, 1fr));
+  gap: 7px;
+  padding: 10px;
+  overflow-x: auto;
+  border-bottom: 1px solid #d4e5e3;
+}
+.stage-tab {
+  min-width: 155px;
+  min-height: 78px;
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  align-items: start;
+  gap: 6px;
+  padding: 12px 11px;
+  text-align: left;
+  background: #fff;
+  border: 1px solid #d3e1e2;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: border-color .2s, background .2s, box-shadow .2s;
+}
+.stage-tab:hover { border-color: #79baae; }
+.stage-tab.is-active { background: #e9f8f4; border-color: #55a998; box-shadow: inset 0 0 0 2px rgba(85,169,152,.15); }
+.stage-number { color: #56717c; font-size: 13px; }
+.stage-tab strong, .stage-tab small { display: block; }
+.stage-tab strong { font-size: 16px; }
+.stage-tab small { margin-top: 4px; color: #72858e; font-size: 11px; }
+
+.control-dock { display: flex; align-items: center; gap: 14px; padding: 10px 12px; border-top: 1px solid #d2e3e0; background: rgba(255,255,255,.96); }
+.control-group { display: flex; align-items: center; gap: 7px; }
+.control-group-view { margin-left: auto; }
+.control-button { min-height: 42px; padding: 0 13px; border: 1px solid #cddfdd; border-radius: 13px; background: #fff; font-weight: 700; cursor: pointer; }
+.control-button:hover { background: #eff9f6; border-color: #76b8aa; }
+.control-button.is-primary { color: #fff; background: #318b78; border-color: #318b78; }
+.control-icon { margin-right: 5px; font-weight: 900; }
+.timeline-wrap { min-width: 230px; display: flex; align-items: center; gap: 9px; color: #647a82; font-size: 12px; }
+.timeline-wrap input { width: 100%; accent-color: #368f7c; }
+

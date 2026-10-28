@@ -1,0 +1,2010 @@
+:root {
+  color-scheme: light;
+  font-family: "Microsoft YaHei", "Noto Sans SC", Arial, sans-serif;
+  color: #17243a;
+  background: #f4fbff;
+  --line: #d4e2ee;
+  --blue: #2f6cec;
+  --cyan: #149db7;
+  --ink: #17243a;
+}
+
+* { box-sizing: border-box; }
+html { scrollbar-gutter: stable; }
+html, body { min-width: 320px; min-height: 100%; margin: 0; }
+button, input { font: inherit; }
+button { color: inherit; }
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8fdff 0%, #edf8fc 100%);
+}
+
+.independent-model-app { width: 100%; padding: 16px; }
+.independent-model-header {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: stretch; gap: 12px;
+  max-width: 1680px; margin: 0 auto 12px;
+}
+.independent-model-back {
+  min-height: 72px; display: inline-flex; align-items: center; justify-content: center;
+  padding: 12px 20px; border: 1px solid var(--line); border-radius: 8px;
+  color: #147b95; background: rgba(255,255,255,.94); font-weight: 800;
+  text-decoration: none; white-space: nowrap;
+}
+.independent-model-back:hover { border-color: #82c7d8; background: #f3fcff; }
+.independent-model-heading {
+  min-width: 0; display: flex; flex-direction: column; justify-content: center;
+  padding: 8px 14px; border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,.94);
+}
+.independent-model-kicker { color: #58718d; font-weight: 700; }
+.independent-model-header h1 { margin: 4px 0 0; font-size: clamp(22px, 2.1vw, 34px); line-height: 1.2; letter-spacing: 0; }
+.independent-model-header h1 small { color: #617792; font-size: .64em; font-weight: 600; }
+.stage-strip {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(132px, 1fr)); gap: 9px;
+  width: 100%; max-width: none; margin: 0; padding: 12px;
+  border-bottom: 1px solid var(--line); background: rgba(255,255,255,.94);
+}
+.stage-strip[hidden] { display: none !important; }
+.stage-tab {
+  min-height: 62px; padding: 10px 13px; border: 1px solid var(--line); border-radius: 7px;
+  background: rgba(255,255,255,.92); text-align: left; cursor: pointer;
+}
+.stage-tab strong, .stage-tab span { display: block; }
+.stage-tab strong { font-size: 15px; }
+.stage-tab span { margin-top: 4px; color: #7a8ca5; font-size: 12px; }
+.stage-tab.is-active { border-color: #76a2ff; color: #1f5bd5; background: #edf5ff; }
+
+.independent-model-workspace {
+  display: grid; grid-template-columns: minmax(0, 1fr) 330px; align-items: start; gap: 14px;
+  max-width: 1680px; margin: 0 auto;
+}
+.model-area, .lesson-card { border: 1px solid var(--line); background: rgba(255,255,255,.94); }
+.model-area {
+  width: 100%; min-width: 0; align-self: start; overflow: hidden; border-radius: 8px;
+  display: grid; grid-template-rows: auto minmax(0, 1fr) auto;
+}
+.model-stage { position: relative; min-height: min(68vh, 760px); overflow: hidden; background: linear-gradient(180deg,#fff 0%,#f8fbff 70%,#fffbea 100%); }
+.visual-wrap { position: relative; width: 100%; min-height: inherit; }
+.visual-wrap > * { margin-inline: auto; }
+
+.control-dock {
+  display: flex; align-items: center; gap: 10px; min-height: 72px; padding: 10px 12px;
+  border-top: 1px solid var(--line); background: #fff;
+}
+.control-group { display: flex; align-items: center; gap: 8px; }
+.control-group-view { margin-left: auto; }
+.control-group-end { margin-left: 6px; }
+.control-button, .practice-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 44px;
+  padding: 9px 13px; border: 1px solid var(--line); border-radius: 7px; background: #fff;
+  font-weight: 700; cursor: pointer; white-space: nowrap;
+}
+.control-button svg, .practice-button svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.control-button.is-primary, .control-button[aria-pressed="true"] { border-color: var(--blue); color: #fff; background: var(--blue); }
+
+.lesson-card {
+  width: 330px; min-width: 330px; max-width: 330px; align-self: start;
+  padding: 18px; overflow: hidden; border-radius: 8px;
+}
+.lesson-card > *, .lesson-section, .keyword-row { min-width: 0; }
+.lesson-section p, .keyword-row span, .legend-item { overflow-wrap: anywhere; }
+.lesson-card h2 { margin: 0 0 12px; font-size: 20px; }
+.lesson-section { padding: 11px 0; border-top: 1px solid #e6eef5; }
+.lesson-section h3 { margin: 0 0 6px; color: #49617d; font-size: 14px; }
+.lesson-section p { margin: 0; color: #51677f; font-size: 14px; line-height: 1.65; }
+.keyword-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.keyword-row span { padding: 5px 7px; border-radius: 5px; background: #eef5fb; color: #405a78; font-size: 12px; }
+.structure-legend { display: grid; gap: 7px; padding: 12px 0; border-top: 1px solid #e6eef5; }
+.legend-item { display: flex; align-items: center; gap: 8px; color: #5a6f88; font-size: 13px; }
+.legend-swatch { width: 13px; height: 13px; border-radius: 50%; background: var(--swatch); box-shadow: 0 0 0 3px color-mix(in srgb, var(--swatch) 20%, transparent); }
+.practice-button { width: 100%; margin-top: 8px; }
+
+html.model-css-fullscreen-active,
+html.model-css-fullscreen-active body { overflow: hidden; }
+.model-area:fullscreen, .model-area.is-css-fullscreen {
+  width: 100vw; height: 100vh; border: 0; border-radius: 0; background: #fff;
+  display: grid; grid-template-rows: auto minmax(0, 1fr) auto; overflow: hidden;
+}
+.model-area.is-css-fullscreen { position: fixed; inset: 0; z-index: 9999; }
+.model-area:fullscreen .model-stage, .model-area.is-css-fullscreen .model-stage {
+  min-height: 0; height: 100%; overflow: hidden;
+}
+.model-area:fullscreen .visual-wrap, .model-area.is-css-fullscreen .visual-wrap {
+  min-height: 0; height: 100%; overflow: hidden;
+}
+.model-area:fullscreen .control-dock, .model-area.is-css-fullscreen .control-dock {
+  position: static; z-index: auto; border: 0; border-top: 1px solid var(--line);
+  border-radius: 0; box-shadow: none;
+}
+
+.hidden-labels [class*="label"], .hidden-labels text.model-label, .hidden-labels text.tiny-label { opacity: 0 !important; pointer-events: none !important; }
+.highlight-on [data-selected], .highlight-on .focus-target { filter: saturate(1.2) brightness(1.08); }
+
+@media (max-width: 920px) {
+  .independent-model-app { padding: 8px; }
+  .independent-model-header { grid-template-columns: auto minmax(0, 1fr); align-items: stretch; }
+  .independent-model-back { min-height: 0; padding: 10px 12px; }
+  .independent-model-header h1 small { display: block; margin-top: 4px; }
+  .independent-model-workspace { grid-template-columns: 1fr; }
+  .lesson-card { width: 100%; min-width: 0; max-width: none; }
+  .model-stage { min-height: 60vh; }
+  .control-dock { align-items: stretch; flex-wrap: wrap; }
+  .control-group { flex: 1 1 100%; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); margin: 0; }
+  .control-group-end { grid-template-columns: 1fr; }
+  .control-button { min-width: 0; padding-inline: 8px; }
+}
+
+@media (max-width: 560px) {
+  .independent-model-header { grid-template-columns: 1fr; }
+  .independent-model-back { justify-self: start; }
+  .stage-strip { display: flex; overflow-x: auto; padding-bottom: 3px; scrollbar-width: thin; }
+  .stage-tab { flex: 0 0 148px; }
+  .model-stage { min-height: 56vh; }
+  .control-group-primary, .control-group-view { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .button-label { font-size: 14px; }
+}
+
+
+/* Model-specific rules extracted from the accepted legacy model. */
+.active-transport-stage-note {
+  border-color: rgba(220, 38, 38, 0.16);
+}
+
+.active-transport-2d-shell {
+  position: relative;
+  width: 100%;
+  height: clamp(430px, 66vh, 720px);
+  min-height: 430px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at 50% 20%, rgba(125, 211, 252, 0.2), transparent 42%),
+    linear-gradient(180deg, #eff6ff 0%, #f8fafc 100%);
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.active-transport-2d-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+}
+
+.active-transport-2d-svg [data-part] {
+  cursor: pointer;
+}
+
+.active-transport-2d-membrane circle,
+.active-transport-2d-membrane path {
+  vector-effect: non-scaling-stroke;
+}
+
+.active-transport-2d-membrane .lipid-tail {
+  fill: none;
+  stroke-linecap: round;
+  vector-effect: none;
+}
+
+.active-transport-2d-membrane .lipid-tail-shadow {
+  stroke: rgba(14, 165, 233, 0.16);
+  stroke-width: 4.6;
+}
+
+.active-transport-2d-membrane .lipid-tail-core {
+  stroke: url(#lipidTail2d);
+  stroke-width: 2.7;
+}
+
+.active-transport-2d-carrier path {
+  vector-effect: non-scaling-stroke;
+}
+
+.active-transport-2d-carrier [data-carrier-left],
+.active-transport-2d-carrier [data-carrier-right] {
+  stroke: rgba(15, 23, 42, 0.22);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.active-transport-2d-carrier [data-carrier-grooves] path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.72);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.active-transport-2d-atpase text,
+.active-transport-2d-nucleotide text,
+.active-transport-2d-labels text,
+.active-transport-2d-callouts text,
+[data-transported-ion] text {
+  font-family: "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: 0;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.86);
+  stroke-width: 5px;
+}
+
+.active-transport-2d-atpase text {
+  fill: #7c2d12;
+  font-size: 14px;
+  text-anchor: middle;
+}
+
+.active-transport-2d-labels text,
+.active-transport-2d-callouts text {
+  fill: #0f172a;
+  font-size: 18px;
+}
+
+.active-transport-2d-labels .tiny {
+  fill: #1d4ed8;
+  font-size: 14px;
+}
+
+.active-transport-2d-labels path,
+.active-transport-2d-callouts path {
+  fill: none;
+  stroke: #2563eb;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 7 7;
+  opacity: 0.7;
+}
+
+.active-transport-2d-nucleotide .phosphate-bond {
+  stroke: #9a3412;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  fill: none;
+}
+
+.active-transport-2d-nucleotide .nucleotide-bond {
+  fill: none;
+  stroke: #9a3412;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.active-transport-2d-nucleotide .adenine-ring {
+  fill: #fde68a;
+  stroke: #d97706;
+  stroke-width: 1.7;
+}
+
+.active-transport-2d-nucleotide .adenine-ring-small {
+  fill: #fcd34d;
+}
+
+.active-transport-2d-nucleotide .ribose-ring {
+  fill: #fdba74;
+  stroke: #d97706;
+  stroke-width: 1.8;
+}
+
+.active-transport-2d-nucleotide [data-atp-label],
+.active-transport-2d-nucleotide [data-adp-label] {
+  fill: #9a3412;
+  font-size: 15px;
+  text-anchor: middle;
+}
+
+.active-transport-2d-phosphate path {
+  fill: none;
+  stroke: #0891b2;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+.active-transport-2d-phosphate text {
+  fill: #0e7490;
+  font-size: 9px;
+  text-anchor: middle;
+  stroke: rgba(255, 255, 255, 0.74);
+  stroke-width: 2px;
+}
+
+.active-transport-2d-note {
+  max-width: min(390px, calc(100% - 24px));
+}
+
+.active-transport-2d-control {
+  top: auto;
+  right: auto;
+  left: 12px;
+  bottom: 58px;
+  z-index: 5;
+  width: min(360px, calc(100% - 24px));
+}
+
+.active-transport-2d-shell .dna-feedback {
+  z-index: 5;
+}
+
+.transport-2d-shell {
+  position: relative;
+  width: 100%;
+  height: clamp(430px, 66vh, 720px);
+  min-height: 430px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at 50% 20%, rgba(125, 211, 252, 0.2), transparent 42%),
+    linear-gradient(180deg, #eff6ff 0%, #f8fafc 100%);
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.transport-2d-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+}
+
+.transport-2d-title-block text:first-child {
+  fill: #0f172a;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 0;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.82);
+  stroke-width: 5px;
+}
+
+.transport-2d-title-block text:last-child {
+  fill: #475569;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.8);
+  stroke-width: 4px;
+}
+
+.transport-2d-labels path {
+  marker-end: url("#transport2dArrow");
+}
+
+.transport-2d-flow-path {
+  fill: none;
+  stroke: rgba(37, 99, 235, 0.68);
+  stroke-width: 7px;
+  stroke-linecap: round;
+  stroke-dasharray: 14 13;
+  opacity: 0.72;
+}
+
+.transport-2d-flow-path.red {
+  stroke: rgba(220, 38, 38, 0.68);
+}
+
+.transport-2d-membrane-window {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.56);
+  stroke-width: 13px;
+  stroke-linecap: round;
+  opacity: 0.68;
+}
+
+.transport-2d-token {
+  pointer-events: none;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.transport-2d-token text {
+  fill: #0f172a;
+  font-family: "Microsoft YaHei", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-anchor: middle;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.82);
+  stroke-width: 3px;
+}
+
+.transport-2d-token.ion text,
+.transport-2d-token.sodium text {
+  fill: #ffffff;
+  stroke: rgba(15, 23, 42, 0.45);
+  stroke-width: 2px;
+}
+
+.transport-2d-callout text {
+  fill: #0f172a;
+  font-family: "Microsoft YaHei", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 850;
+  letter-spacing: 0;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.82);
+  stroke-width: 5px;
+}
+
+.transport-2d-channel-shell,
+.transport-2d-carrier [data-transport-carrier-left],
+.transport-2d-carrier [data-transport-carrier-right] {
+  stroke: rgba(15, 23, 42, 0.24);
+  stroke-width: 2.4;
+  vector-effect: non-scaling-stroke;
+}
+
+.transport-2d-channel-shell {
+  fill: url("#channelProtein2d");
+}
+
+.transport-2d-channel-pore {
+  fill: rgba(15, 23, 42, 0.32);
+  stroke: rgba(255, 255, 255, 0.46);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.transport-2d-helix {
+  fill: none;
+  stroke: rgba(14, 116, 144, 0.78);
+  stroke-width: 13px;
+  stroke-linecap: round;
+  opacity: 0.86;
+  vector-effect: non-scaling-stroke;
+}
+
+.transport-2d-helix.light {
+  stroke: rgba(224, 242, 254, 0.9);
+  stroke-width: 11px;
+}
+
+.transport-2d-channel-gate {
+  fill: none;
+  stroke: rgba(15, 23, 42, 0.56);
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform-box: fill-box;
+  transform-origin: center;
+  vector-effect: non-scaling-stroke;
+}
+
+.transport-2d-carrier path {
+  vector-effect: non-scaling-stroke;
+}
+
+.transport-2d-carrier[data-transport-part] {
+  cursor: pointer;
+}
+
+.transport-2d-carrier [data-transport-carrier-cavity],
+.transport-2d-carrier [data-transport-carrier-channel],
+.transport-2d-carrier [data-transport-carrier-pocket] {
+  pointer-events: none;
+}
+
+.transport-2d-note {
+  max-width: min(460px, calc(100% - 24px));
+}
+
+.transport-2d-control {
+  z-index: 6;
+}
+
+.transport-2d-feedback {
+  z-index: 6;
+}
+
+.transport-2d-comparison-shell {
+  height: clamp(460px, 70vh, 760px);
+  min-height: 460px;
+}
+
+.transport-2d-comparison-svg {
+  min-height: 460px;
+}
+
+.transport-2d-panel {
+  opacity: 0.92;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.transport-2d-panel.is-current {
+  opacity: 1;
+  filter: drop-shadow(0 14px 18px rgba(15, 23, 42, 0.16));
+}
+
+.transport-2d-panel-frame {
+  fill: rgba(255, 255, 255, 0.58);
+  stroke: rgba(15, 23, 42, 0.12);
+  stroke-width: 2;
+}
+
+.transport-2d-panel.is-current .transport-2d-panel-frame {
+  stroke: rgba(245, 158, 11, 0.82);
+  stroke-width: 3.5;
+}
+
+.transport-2d-panel-outside {
+  fill: rgba(224, 242, 254, 0.56);
+}
+
+.transport-2d-panel-inside {
+  fill: rgba(253, 230, 138, 0.28);
+}
+
+.transport-2d-panel-title {
+  fill: #0f172a;
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-anchor: middle;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.84);
+  stroke-width: 4px;
+}
+
+.transport-2d-panel-title.second-line {
+  font-size: 15px;
+}
+
+.transport-2d-panel-subtitle,
+.transport-2d-panel-note,
+.transport-2d-zone-mini,
+.transport-2d-mode-tag {
+  font-family: "Microsoft YaHei", Arial, sans-serif;
+  letter-spacing: 0;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.82);
+}
+
+.transport-2d-panel-subtitle {
+  fill: #64748b;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-anchor: middle;
+  stroke-width: 3px;
+}
+
+.transport-2d-panel-note {
+  fill: #334155;
+  font-size: 10.8px;
+  font-weight: 850;
+  text-anchor: middle;
+  stroke-width: 3px;
+}
+
+.transport-2d-zone-mini {
+  fill: #475569;
+  font-size: 11px;
+  font-weight: 850;
+  stroke-width: 3px;
+}
+
+.transport-2d-mode-tag {
+  fill: #0f172a;
+  font-size: 12px;
+  font-weight: 900;
+  text-anchor: middle;
+  stroke-width: 4px;
+}
+
+.transport-2d-mini-membrane .lipid-tail {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.transport-2d-mini-membrane .lipid-tail-shadow {
+  stroke: rgba(14, 165, 233, 0.16);
+  stroke-width: 3.6;
+}
+
+.transport-2d-mini-membrane .lipid-tail-core {
+  stroke: url("#lipidTail2d");
+  stroke-width: 2.2;
+}
+
+.transport-2d-mini-flow {
+  fill: none;
+  stroke: rgba(37, 99, 235, 0.66);
+  stroke-width: 4.4px;
+  stroke-linecap: round;
+  stroke-dasharray: 10 10;
+  opacity: 0.78;
+}
+
+.transport-2d-mini-flow.red {
+  stroke: rgba(220, 38, 38, 0.72);
+}
+
+.transport-2d-mini-lipid-window {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.62);
+  stroke-width: 9px;
+  stroke-linecap: round;
+  opacity: 0.78;
+}
+
+.transport-2d-mini-channel-shell,
+.transport-2d-mini-carrier [data-mini-left],
+.transport-2d-mini-carrier [data-mini-right],
+.transport-2d-mini-atpase path {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.transport-2d-mini-channel-shell {
+  fill: url("#channelProtein2d");
+  stroke: #0e7490;
+  stroke-width: 2.2px;
+}
+
+.transport-2d-mini-channel-pore {
+  fill: rgba(15, 23, 42, 0.34);
+  stroke: rgba(255, 255, 255, 0.42);
+  stroke-width: 1.6px;
+}
+
+.transport-2d-mini-gate {
+  fill: none;
+  stroke: rgba(15, 23, 42, 0.56);
+  stroke-width: 4.4px;
+  stroke-linecap: round;
+  transform-box: fill-box;
+  transform-origin: center;
+  vector-effect: non-scaling-stroke;
+}
+
+.transport-2d-mini-carrier [data-mini-left],
+.transport-2d-mini-carrier [data-mini-right] {
+  stroke: rgba(15, 23, 42, 0.22);
+  stroke-width: 2px;
+}
+
+.transport-2d-mini-carrier [data-mini-cavity] {
+  stroke: rgba(255, 255, 255, 0.42);
+  stroke-width: 1.4px;
+}
+
+.transport-2d-mini-carrier [data-mini-channel-shadow],
+.transport-2d-mini-carrier [data-mini-pocket] {
+  pointer-events: none;
+}
+
+.transport-2d-mini-carrier [data-mini-pocket] {
+  stroke: rgba(255, 255, 255, 0.34);
+  stroke-width: 1.2px;
+}
+
+.transport-2d-mini-atpase text {
+  fill: #7c2d12;
+  font-size: 9px;
+  font-weight: 900;
+  text-anchor: middle;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.72);
+  stroke-width: 2px;
+}
+
+.transport-2d-mini-atp {
+  pointer-events: none;
+}
+
+.transport-2d-mini-token text {
+  font-size: 9.5px;
+}
+
+.transport-2d-mini-token.glucose text {
+  font-size: 8.5px;
+}
+
+.transport-integrated-shell {
+  display: grid;
+  grid-template-rows: auto auto minmax(420px, auto) auto;
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+  align-items: start;
+}
+
+.transport-integrated-svg {
+  grid-row: 3;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 1280 / 660;
+}
+
+.transport-integrated-shell .transport-2d-note {
+  position: static;
+  grid-row: 1;
+  justify-self: stretch;
+  max-width: none;
+  margin: 10px 12px 0;
+}
+
+.transport-integrated-shell .transport-2d-control {
+  position: static;
+  grid-row: 2;
+  justify-self: stretch;
+  width: auto;
+  max-width: none;
+  margin: 8px 12px 0;
+}
+
+.transport-integrated-shell .transport-2d-feedback {
+  position: static;
+  grid-row: 4;
+  min-height: 32px;
+  margin: 8px 12px 10px;
+}
+
+.transport-integrated-membrane .lipid-tail {
+  fill: none;
+  stroke-linecap: round;
+  vector-effect: none;
+}
+
+.transport-integrated-membrane .lipid-tail-shadow {
+  stroke: rgba(14, 165, 233, 0.16);
+  stroke-width: 4.6;
+}
+
+.transport-integrated-membrane .lipid-tail-core {
+  stroke: url("#lipidTail2d");
+  stroke-width: 2.7;
+}
+
+.transport-integrated-module {
+  opacity: 0.32;
+  transition: opacity 0.2s ease;
+}
+
+.transport-integrated-module.is-current {
+  opacity: 1;
+}
+
+.transport-integrated-label,
+.transport-integrated-sublabel {
+  font-family: "Microsoft YaHei", Arial, sans-serif;
+  letter-spacing: 0;
+  text-anchor: middle;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.86);
+}
+
+.transport-integrated-label {
+  fill: #0f172a;
+  font-size: 17px;
+  font-weight: 900;
+  stroke-width: 5px;
+}
+
+.transport-integrated-sublabel {
+  fill: #475569;
+  font-size: 12px;
+  font-weight: 850;
+  stroke-width: 4px;
+}
+
+.transport-integrated-token text {
+  font-size: 10px;
+}
+
+.transport-integrated-channel-shell,
+.transport-integrated-channel-pore,
+.transport-integrated-channel-mouth,
+.transport-integrated-channel-gate,
+.transport-integrated-module.carrier [data-integrated-carrier-left],
+.transport-integrated-module.carrier [data-integrated-carrier-right],
+.transport-integrated-module.carrier [data-integrated-carrier-cavity],
+.transport-integrated-module.carrier [data-integrated-carrier-channel],
+.transport-integrated-module.carrier [data-integrated-pocket],
+.transport-integrated-module.carrier [data-integrated-facilitated-pocket-recess],
+.transport-integrated-module.carrier [data-integrated-cotransport-pocket-recess],
+.transport-integrated-active-reuse .active-transport-2d-carrier path {
+  vector-effect: non-scaling-stroke;
+}
+
+.transport-integrated-channel-shell {
+  fill: url("#proteinChannelUnified2d");
+  stroke: #0e7490;
+  stroke-width: 2.4px;
+  stroke-linejoin: round;
+}
+
+.transport-integrated-channel-pore {
+  fill: rgba(15, 23, 42, 0.3);
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 1.6px;
+}
+
+.transport-integrated-channel-mouth {
+  fill: rgba(15, 23, 42, 0.26);
+  stroke: rgba(255, 255, 255, 0.48);
+  stroke-width: 1.4px;
+}
+
+.transport-integrated-channel-gate {
+  fill: url("#proteinChannelUnified2d");
+  stroke: rgba(15, 23, 42, 0.24);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.transport-integrated-particles .transport-integrated-particle-glow {
+  opacity: 0.11;
+}
+
+.transport-integrated-particles .transport-integrated-particle-core {
+  stroke: rgba(15, 23, 42, 0.18);
+  stroke-width: 0.85px;
+  vector-effect: non-scaling-stroke;
+}
+
+.transport-integrated-module.carrier [data-integrated-carrier-left],
+.transport-integrated-module.carrier [data-integrated-carrier-right],
+.transport-integrated-active-reuse .active-transport-2d-carrier [data-carrier-left],
+.transport-integrated-active-reuse .active-transport-2d-carrier [data-carrier-right] {
+  stroke: rgba(15, 23, 42, 0.22);
+  stroke-width: 2.2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.transport-integrated-module.carrier [data-integrated-carrier-cavity] {
+  stroke: rgba(255, 255, 255, 0.42);
+  stroke-width: 1.5px;
+}
+
+.transport-integrated-module.carrier [data-integrated-pocket] {
+  stroke: rgba(255, 255, 255, 0.62);
+  stroke-width: 1.2px;
+}
+
+.transport-integrated-module.carrier [data-integrated-pocket-recess] {
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 1.05px;
+  vector-effect: non-scaling-stroke;
+}
+
+.transport-integrated-module.carrier [data-integrated-facilitated-pocket-recess] {
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 1.05px;
+  vector-effect: non-scaling-stroke;
+}
+
+.transport-integrated-module.carrier [data-integrated-cotransport-pocket-recess] {
+  stroke: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.transport-integrated-atp-particle text,
+.transport-integrated-labeled-particle text {
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.78);
+  stroke-width: 3px;
+}
+
+.transport-integrated-atp-particle text {
+  font-size: 19px;
+}
+
+.transport-integrated-active-reuse .active-transport-2d-atpase text {
+  font-size: 14px;
+}
+
+.transport-integrated-active-reuse [data-phosphate-link] {
+  stroke-linecap: round;
+}
+
+.model-label {
+  font-size: 16px;
+  font-weight: 800;
+  fill: #102033;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.92);
+  stroke-width: 5px;
+}
+
+.tiny-label {
+  font-size: 12px;
+  font-weight: 800;
+  fill: #475569;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.92);
+  stroke-width: 4px;
+}
+
+.hidden-labels .model-label,
+.hidden-labels .tiny-label,
+.hidden-labels .label-line {
+  display: none;
+}
+
+.highlight-on .focus-target {
+  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.88));
+}
+
+.playing .motion-target {
+  animation: soft-motion calc(4s / var(--speed-factor, 1)) ease-in-out infinite alternate;
+}
+
+.playing .transport-particle {
+  animation: travel calc(3s / var(--speed-factor, 1)) linear infinite;
+}
+
+.transport-comparison {
+  width: min(100%, 1280px);
+  max-height: 100%;
+  font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+}
+
+.visual-wrap.transport-visual-wrap {
+  overflow-x: auto;
+}
+
+.visual-wrap svg.transport-comparison {
+  width: min(100%, 1280px);
+}
+
+.transport-bg.outside {
+  fill: url("#transportOutside");
+}
+
+.transport-bg.inside {
+  fill: url("#transportInside");
+}
+
+.transport-zone-label,
+.transport-gradient-label,
+.transport-mode-title,
+.transport-mode-subtitle,
+.transport-mode-note,
+.transport-energy-label,
+.transport-legend-strip text {
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 5px;
+  stroke-linejoin: round;
+}
+
+.transport-zone-label {
+  fill: #134263;
+  font-size: 22px;
+  font-weight: 850;
+}
+
+.transport-gradient-label {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.transport-gradient-label.high {
+  fill: #C84D4C;
+}
+
+.transport-gradient-label.low {
+  fill: #276F8B;
+}
+
+.transport-legend-strip text:first-child {
+  fill: #134263;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.transport-legend-strip text:last-child {
+  fill: #475569;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.transport-lipid {
+  animation: transport-lipid-sway calc(3.4s / var(--speed-factor, 1)) ease-in-out infinite alternate;
+  animation-delay: var(--lipid-delay, 0s);
+  animation-play-state: paused;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.transport-lipid circle {
+  fill: #F8D67A;
+  stroke: #C99C3B;
+  stroke-width: 1.5px;
+}
+
+.transport-lipid path {
+  fill: none;
+  stroke: rgba(61, 82, 92, 0.72);
+  stroke-width: 4.2px;
+  stroke-linecap: round;
+}
+
+.transport-mode {
+  opacity: 0.82;
+  transition: opacity 0.25s ease, filter 0.25s ease;
+}
+
+.transport-mode.is-current {
+  opacity: 1;
+}
+
+.highlight-on .transport-mode:not(.is-current) {
+  opacity: 0.3;
+}
+
+.transport-mode-frame {
+  fill: rgba(255, 255, 255, 0.42);
+  stroke: rgba(19, 66, 99, 0.14);
+  stroke-width: 2px;
+}
+
+.transport-mode.is-current .transport-mode-frame {
+  fill: rgba(255, 255, 255, 0.66);
+  stroke: rgba(245, 158, 11, 0.72);
+  stroke-width: 4px;
+  filter: drop-shadow(0 12px 16px rgba(15, 23, 42, 0.12));
+}
+
+.transport-mode-title {
+  fill: #134263;
+  font-size: 19px;
+  font-weight: 900;
+  text-anchor: middle;
+}
+
+.transport-mode-subtitle {
+  fill: #64748B;
+  font-size: 12px;
+  font-weight: 800;
+  text-anchor: middle;
+}
+
+.transport-mode-note {
+  fill: #134263;
+  font-size: 15px;
+  font-weight: 850;
+  text-anchor: middle;
+}
+
+.transport-energy-label {
+  fill: #276F8B;
+  font-size: 13px;
+  font-weight: 850;
+  text-anchor: middle;
+}
+
+.transport-energy-label.consumes {
+  fill: #C84D4C;
+}
+
+.transport-protein path:first-child {
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.transport-flow-arrow {
+  fill: none;
+  stroke: rgba(37, 99, 235, 0.72);
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-dasharray: 12 12;
+}
+
+.transport-flow-head {
+  fill: rgba(37, 99, 235, 0.72);
+}
+
+.transport-flow-arrow.active-up,
+.transport-flow-arrow.cotransport-paired {
+  stroke: rgba(200, 77, 76, 0.82);
+}
+
+.transport-flow-head.active-head,
+.transport-flow-head.paired {
+  fill: rgba(200, 77, 76, 0.82);
+}
+
+.transport-token,
+.transport-atp,
+.transport-pi {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.transport-token circle {
+  stroke: rgba(15, 23, 42, 0.28);
+  stroke-width: 2px;
+}
+
+.transport-token text,
+.transport-atp text,
+.transport-pi text {
+  fill: #0F172A;
+  font-size: 9px;
+  font-weight: 900;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.transport-token.oxygen circle {
+  fill: #EF4444;
+}
+
+.transport-token.small circle {
+  fill: #38BDF8;
+}
+
+.transport-token.ion circle {
+  fill: #7C3AED;
+}
+
+.transport-token.glucose circle {
+  fill: #FACC15;
+}
+
+.transport-token.glucose path {
+  stroke: #92400E;
+  stroke-width: 2px;
+  stroke-linecap: round;
+}
+
+.transport-atp circle {
+  fill: #F9AEBC;
+  stroke: #C84D4C;
+  stroke-width: 3px;
+}
+
+.transport-pi circle {
+  fill: #FFFFFF;
+  stroke: #C84D4C;
+  stroke-width: 3px;
+}
+
+.transport-animated {
+  animation-play-state: paused;
+}
+
+.playing .transport-animated {
+  animation-play-state: running;
+}
+
+.hidden-labels .transport-zone-label,
+.hidden-labels .transport-gradient-label,
+.hidden-labels .transport-mode-subtitle,
+.hidden-labels .transport-mode-note,
+.hidden-labels .transport-energy-label,
+.hidden-labels .transport-legend-strip {
+  display: none;
+}
+
+@keyframes soft-motion {
+  from {
+    transform: translateY(-4px);
+  }
+  to {
+    transform: translateY(4px);
+  }
+}
+
+@keyframes travel {
+  from {
+    transform: translateX(-80px);
+  }
+  to {
+    transform: translateX(85px);
+  }
+}
+
+@keyframes transport-lipid-sway {
+  from {
+    transform: translateY(-2px);
+  }
+  to {
+    transform: translateY(2px);
+  }
+}
+
+@keyframes transport-free-pass {
+  0% {
+    opacity: 0.2;
+    transform: translate(0, 0) scale(0.88);
+  }
+  18% {
+    opacity: 1;
+  }
+  55% {
+    transform: translate(8px, 150px) scale(1);
+  }
+  100% {
+    opacity: 0.15;
+    transform: translate(-4px, 320px) scale(0.86);
+  }
+}
+
+@keyframes transport-free-pass-soft {
+  0% {
+    opacity: 0.2;
+    transform: translate(0, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-8px, 150px);
+  }
+  100% {
+    opacity: 0.15;
+    transform: translate(9px, 302px);
+  }
+}
+
+@keyframes transport-channel-pass {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  16% {
+    opacity: 1;
+  }
+  82% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(318px);
+  }
+}
+
+@keyframes carrier-assisted-cycle {
+  0%,
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+  35% {
+    transform: scaleX(1.08) scaleY(0.95);
+  }
+  58% {
+    transform: scaleX(0.92) scaleY(1.04);
+  }
+}
+
+@keyframes carrier-substrate-down {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.88);
+  }
+  16% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 1;
+    transform: translateY(84px) scale(1);
+  }
+  74% {
+    opacity: 0.95;
+    transform: translateY(238px) scale(0.96);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(314px) scale(0.82);
+  }
+}
+
+@keyframes carrier-substrate-release {
+  0%,
+  55% {
+    opacity: 0;
+    transform: translateY(-130px) scale(0.84);
+  }
+  68% {
+    opacity: 1;
+    transform: translateY(-38px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.88);
+  }
+}
+
+@keyframes carrier-active-cycle {
+  0%,
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+  28% {
+    transform: scaleX(0.92) scaleY(1.04);
+  }
+  55% {
+    transform: scaleX(1.12) scaleY(0.93);
+  }
+}
+
+@keyframes active-ion-up {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.9);
+  }
+  16% {
+    opacity: 1;
+  }
+  56% {
+    opacity: 1;
+    transform: translateY(-184px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-345px) scale(0.84);
+  }
+}
+
+@keyframes atp-pulse {
+  0%,
+  18% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  45% {
+    opacity: 0.25;
+    transform: translate(-34px, -24px) scale(0.68);
+  }
+  100% {
+    opacity: 0.15;
+    transform: translate(-42px, -36px) scale(0.62);
+  }
+}
+
+@keyframes product-pop {
+  0%,
+  34% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  52% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateY(-26px) scale(0.76);
+  }
+}
+
+@keyframes cotransport-cycle {
+  0%,
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+  38% {
+    transform: scaleX(1.08) scaleY(0.94);
+  }
+  66% {
+    transform: scaleX(0.94) scaleY(1.05);
+  }
+}
+
+@keyframes cotransport-sodium {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  14% {
+    opacity: 1;
+  }
+  76% {
+    opacity: 1;
+    transform: translate(16px, 318px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(18px, 342px);
+  }
+}
+
+@keyframes cotransport-sugar {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  18% {
+    opacity: 1;
+  }
+  76% {
+    opacity: 1;
+    transform: translate(-12px, -318px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-14px, -342px);
+  }
+}
+
+.transport-dynamic-comparison .transport-mode-frame {
+  fill: rgba(255, 255, 255, 0.46);
+}
+
+.transport-free-track {
+  fill: none;
+  stroke: rgba(37, 99, 235, 0.22);
+  stroke-width: 16px;
+  stroke-linecap: round;
+  stroke-dasharray: 4 18;
+}
+
+.transport-membrane-gap path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.46);
+  stroke-width: 10px;
+  stroke-linecap: round;
+}
+
+.transport-protein-complex {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.transport-protein-complex .transport-animated,
+.transport-protein-complex .carrier-domain,
+.transport-protein-complex .transport-helix,
+.transport-protein-complex .protein-pocket,
+.transport-protein-complex .binding-site,
+.transport-protein-complex .carrier-gate,
+.transport-protein-complex .channel-gate,
+.transport-protein-complex .pump-head,
+.transport-protein-complex .pump-phosphate {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.transport-helix {
+  fill: none;
+  stroke-width: 13px;
+  stroke-linecap: round;
+  opacity: 0.82;
+}
+
+.cotransport-left,
+.cotransport-right {
+  fill: url("#cotransportGreen");
+  stroke: #316857;
+}
+
+.cotransport-left {
+  animation: cotransport-left-cycle calc(4.4s / var(--speed-factor, 1)) ease-in-out infinite;
+}
+
+.cotransport-right {
+  animation: cotransport-right-cycle calc(4.4s / var(--speed-factor, 1)) ease-in-out infinite;
+}
+
+.cotransport-helix-a,
+.cotransport-helix-b {
+  stroke: rgba(49, 104, 87, 0.78);
+  animation: cotransport-helix-cycle calc(4.4s / var(--speed-factor, 1)) ease-in-out infinite;
+}
+
+.cotransport-gate-top {
+  animation: cotransport-top-gate-cycle calc(4.4s / var(--speed-factor, 1)) ease-in-out infinite;
+}
+
+.cotransport-gate-bottom {
+  animation: cotransport-bottom-gate-cycle calc(4.4s / var(--speed-factor, 1)) ease-in-out infinite;
+}
+
+.cotransport-site-a,
+.cotransport-site-b,
+.sodium-pocket,
+.sugar-pocket {
+  animation: cotransport-site-cycle calc(4.4s / var(--speed-factor, 1)) ease-in-out infinite;
+}
+
+@keyframes channel-pore-cycle {
+  0%,
+  100% {
+    transform: scaleX(0.72);
+    opacity: 0.58;
+  }
+  28%,
+  70% {
+    transform: scaleX(1.18);
+    opacity: 0.92;
+  }
+}
+
+@keyframes channel-helix-breathe {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(var(--helix-shift, 2px));
+  }
+}
+
+@keyframes channel-gate-top-cycle {
+  0%,
+  100% {
+    transform: translateY(4px) scaleX(0.78);
+  }
+  28%,
+  72% {
+    transform: translateY(-8px) scaleX(1.36);
+  }
+}
+
+@keyframes channel-gate-bottom-cycle {
+  0%,
+  100% {
+    transform: translateY(-4px) scaleX(0.78);
+  }
+  28%,
+  72% {
+    transform: translateY(8px) scaleX(1.32);
+  }
+}
+
+@keyframes channel-water-cycle {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: translateY(-12px);
+  }
+  35%,
+  78% {
+    opacity: 0.95;
+    transform: translateY(12px);
+  }
+}
+
+@keyframes assisted-left-cycle {
+  0%,
+  100% {
+    transform: translate(-7px, -6px) rotate(-4deg);
+  }
+  28% {
+    transform: translate(2px, 0) rotate(0deg);
+  }
+  62% {
+    transform: translate(8px, 8px) rotate(5deg);
+  }
+}
+
+@keyframes assisted-right-cycle {
+  0%,
+  100% {
+    transform: translate(7px, -6px) rotate(4deg);
+  }
+  28% {
+    transform: translate(-2px, 0) rotate(0deg);
+  }
+  62% {
+    transform: translate(-8px, 8px) rotate(-5deg);
+  }
+}
+
+@keyframes assisted-helix-cycle {
+  0%,
+  100% {
+    transform: translateY(-6px);
+  }
+  45% {
+    transform: translateY(7px);
+  }
+}
+
+@keyframes assisted-pocket-cycle {
+  0%,
+  100% {
+    transform: translateY(-12px) scale(1.12);
+    opacity: 0.95;
+  }
+  38% {
+    transform: translateY(4px) scale(0.78);
+    opacity: 0.48;
+  }
+  68% {
+    transform: translateY(22px) scale(1.1);
+    opacity: 0.9;
+  }
+}
+
+@keyframes carrier-top-gate-cycle {
+  0%,
+  100% {
+    transform: translateY(-12px) scaleX(1.25);
+  }
+  35%,
+  70% {
+    transform: translateY(7px) scaleX(0.64);
+  }
+}
+
+@keyframes carrier-bottom-gate-cycle {
+  0%,
+  42% {
+    transform: translateY(-4px) scaleX(0.66);
+  }
+  68%,
+  100% {
+    transform: translateY(12px) scaleX(1.28);
+  }
+}
+
+@keyframes binding-site-pulse {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform: scale(0.9);
+  }
+  34%,
+  58% {
+    opacity: 0.86;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes pump-left-cycle {
+  0%,
+  100% {
+    transform: translate(7px, 8px) rotate(5deg);
+  }
+  35% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  66% {
+    transform: translate(-8px, -8px) rotate(-5deg);
+  }
+}
+
+@keyframes pump-right-cycle {
+  0%,
+  100% {
+    transform: translate(-7px, 8px) rotate(-5deg);
+  }
+  35% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  66% {
+    transform: translate(8px, -8px) rotate(5deg);
+  }
+}
+
+@keyframes pump-helix-cycle {
+  0%,
+  100% {
+    transform: translateY(8px);
+  }
+  55% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pump-pocket-cycle {
+  0%,
+  100% {
+    transform: translateY(20px) scale(1.1);
+    opacity: 0.92;
+  }
+  36% {
+    transform: translateY(2px) scale(0.76);
+    opacity: 0.5;
+  }
+  66% {
+    transform: translateY(-20px) scale(1.08);
+    opacity: 0.88;
+  }
+}
+
+@keyframes pump-top-gate-cycle {
+  0%,
+  38% {
+    transform: translateY(7px) scaleX(0.65);
+  }
+  64%,
+  100% {
+    transform: translateY(-12px) scaleX(1.3);
+  }
+}
+
+@keyframes pump-bottom-gate-cycle {
+  0%,
+  34% {
+    transform: translateY(12px) scaleX(1.28);
+  }
+  60%,
+  100% {
+    transform: translateY(-7px) scaleX(0.65);
+  }
+}
+
+@keyframes pump-head-cycle {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  36% {
+    transform: translateY(-10px) scale(0.92);
+  }
+  65% {
+    transform: translateY(-22px) scale(1.06);
+  }
+}
+
+@keyframes pump-phosphate-cycle {
+  0%,
+  28% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  43%,
+  74% {
+    opacity: 1;
+    transform: scale(1.18);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+}
+
+@keyframes cotransport-left-cycle {
+  0%,
+  100% {
+    transform: translate(-9px, -7px) rotate(-5deg);
+  }
+  34% {
+    transform: translate(1px, 0) rotate(0deg);
+  }
+  66% {
+    transform: translate(8px, 9px) rotate(5deg);
+  }
+}
+
+@keyframes cotransport-right-cycle {
+  0%,
+  100% {
+    transform: translate(9px, -7px) rotate(5deg);
+  }
+  34% {
+    transform: translate(-1px, 0) rotate(0deg);
+  }
+  66% {
+    transform: translate(-8px, 9px) rotate(-5deg);
+  }
+}
+
+@keyframes cotransport-helix-cycle {
+  0%,
+  100% {
+    transform: translateY(-7px);
+  }
+  56% {
+    transform: translateY(9px);
+  }
+}
+
+@keyframes cotransport-top-gate-cycle {
+  0%,
+  100% {
+    transform: translateY(-12px) scaleX(1.24);
+  }
+  35%,
+  68% {
+    transform: translateY(7px) scaleX(0.68);
+  }
+}
+
+@keyframes cotransport-bottom-gate-cycle {
+  0%,
+  45% {
+    transform: translateY(-7px) scaleX(0.66);
+  }
+  70%,
+  100% {
+    transform: translateY(12px) scaleX(1.28);
+  }
+}
+
+@keyframes cotransport-site-cycle {
+  0%,
+  100% {
+    transform: translateY(-18px) scale(1.12);
+    opacity: 0.9;
+  }
+  42% {
+    transform: translateY(0) scale(0.78);
+    opacity: 0.48;
+  }
+  72% {
+    transform: translateY(26px) scale(1.08);
+    opacity: 0.88;
+  }
+}
+
+@keyframes cotransport-sugar {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.9);
+  }
+  16% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 1;
+    transform: translate(-18px, 95px) scale(1);
+  }
+  76% {
+    opacity: 1;
+    transform: translate(-20px, 318px) scale(0.96);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-18px, 342px) scale(0.84);
+  }
+}
+
+@media (max-width: 640px) {
+
+  .visual-wrap.transport-visual-wrap {
+    justify-items: start;
+    padding: 12px;
+  }
+
+  .visual-wrap.transport-visual-wrap svg.transport-comparison {
+    width: 760px;
+    max-width: none;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 900px) {
+
+  .active-transport-2d-shell,
+  .transport-2d-shell {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .active-transport-2d-shell .active-transport-2d-note,
+  .transport-2d-shell .transport-2d-note {
+    position: static;
+    grid-row: 1;
+    justify-self: stretch;
+    max-width: none;
+    margin: 10px 12px 0;
+  }
+
+  .active-transport-2d-svg,
+  .transport-2d-svg {
+    grid-row: 3;
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 960 / 560;
+  }
+
+  .transport-2d-comparison-svg {
+    aspect-ratio: 1280 / 660;
+  }
+
+  .transport-integrated-svg {
+    aspect-ratio: 1280 / 660;
+  }
+
+  .active-transport-2d-control {
+    position: static;
+    grid-row: 2;
+    justify-self: stretch;
+    width: auto;
+    margin: 8px 12px 0;
+    padding: 8px 10px;
+  }
+
+  .active-transport-2d-control .dna-state-header {
+    margin-bottom: 5px;
+  }
+
+  .active-transport-2d-control label {
+    gap: 4px;
+    font-size: 11.5px;
+  }
+
+  .active-transport-2d-shell .dna-feedback,
+  .transport-2d-shell .dna-feedback {
+    position: static;
+    grid-row: 4;
+    min-height: 32px;
+    margin: 6px 12px 8px;
+    font-size: 12px;
+  }
+}
+
+/* Modern light science homepage, approved sidebar concept */
+
+@keyframes organelleBackgroundDrift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  52% {
+    transform: translate3d(var(--dx), var(--dy), 0);
+  }
+
+  100% {
+    transform: translate3d(calc(var(--dx) * -0.55), calc(var(--dy) * 0.72), 0);
+  }
+}
+
+@keyframes organelleBackgroundFlip {
+  0% {
+    transform: perspective(520px) rotateY(-14deg) rotateX(4deg);
+  }
+
+  100% {
+    transform: perspective(520px) rotateY(18deg) rotateX(-6deg);
+  }
+}
+
+@keyframes heroPreviewEnterUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0) scale(1.02);
+  }
+}
+
+@keyframes heroPreviewEnterDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0) scale(1.02);
+  }
+}
+
+@keyframes heroPreviewEnterLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0) scale(1.02);
+  }
+}
+
+@keyframes heroPreviewEnterFan {
+  from {
+    opacity: 0;
+    transform: rotate(-12deg) translate3d(-18%, 12%, 0) scale(1.02);
+    clip-path: polygon(0 100%, 0 100%, 0 100%, 0 100%);
+  }
+}
+
+.model-area:fullscreen .dna-3d-shell,
+.model-area:fullscreen .dna-webgl-shell,
+.model-area:fullscreen .rna-webgl-shell,
+.model-area:fullscreen .protein-webgl-shell,
+.model-area:fullscreen .membrane-webgl-shell,
+.model-area:fullscreen .plant-cell-webgl-shell,
+.model-area:fullscreen .active-transport-2d-shell,
+.model-area:fullscreen .transport-2d-shell,
+.model-area:fullscreen .transport-2d-comparison-shell,
+.model-area.is-css-fullscreen .dna-3d-shell,
+.model-area.is-css-fullscreen .dna-webgl-shell,
+.model-area.is-css-fullscreen .rna-webgl-shell,
+.model-area.is-css-fullscreen .protein-webgl-shell,
+.model-area.is-css-fullscreen .membrane-webgl-shell,
+.model-area.is-css-fullscreen .plant-cell-webgl-shell,
+.model-area.is-css-fullscreen .active-transport-2d-shell,
+.model-area.is-css-fullscreen .transport-2d-shell,
+.model-area.is-css-fullscreen .transport-2d-comparison-shell {
+  min-height: 0 !important;
+  height: 100% !important;
+  overflow: hidden;
+}
+
+.model-area:fullscreen .active-transport-2d-svg,
+.model-area:fullscreen .transport-2d-svg,
+.model-area:fullscreen .transport-2d-comparison-svg,
+.model-area.is-css-fullscreen .active-transport-2d-svg,
+.model-area.is-css-fullscreen .transport-2d-svg,
+.model-area.is-css-fullscreen .transport-2d-comparison-svg {
+  min-height: 0 !important;
+  height: 100%;
+}

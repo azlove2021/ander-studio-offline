@@ -1,0 +1,118 @@
+{
+  "id": "protein-webgl",
+  "accent": "#F97316",
+  "title": "蛋白质的结构",
+  "titleEn": "Protein Structure",
+  "chapter": "生命活动的主要承担者 / Proteins",
+  "type": "3D WebGL 动态模型",
+  "state": "结构层次演示",
+  "visual": "proteinWebgl",
+  "structures": [
+    [
+      "氨基酸 Amino Acid",
+      "#38BDF8"
+    ],
+    [
+      "肽键 Peptide Bond",
+      "#2563EB"
+    ],
+    [
+      "脱水缩合 H2O Released",
+      "#EF4444"
+    ],
+    [
+      "α 螺旋 Alpha Helix",
+      "#F59E0B"
+    ],
+    [
+      "β 折叠 Beta Sheet",
+      "#22C55E"
+    ],
+    [
+      "氢键 Hydrogen Bond",
+      "#94A3B8"
+    ],
+    [
+      "三级结构 Tertiary Fold",
+      "#A855F7"
+    ],
+    [
+      "蛋白质亚基 Subunit",
+      "#14B8A6"
+    ]
+  ],
+  "stages": [
+    {
+      "title": "脱水缩合",
+      "titleEn": "Dehydration Condensation",
+      "goal": "观察两个氨基酸通过脱水缩合形成肽键，并释放一分子水。",
+      "keywords": [
+        "氨基 Amino Group",
+        "羧基 Carboxyl Group",
+        "肽键 Peptide Bond",
+        "H2O"
+      ],
+      "explanation": "一个氨基酸羧基中的 -OH 与另一个氨基酸氨基上的 -H 脱去，二者结合成 H2O；剩余部分形成肽键，把两个氨基酸连接起来。",
+      "mistake": "脱水缩合不是先拿走一个现成的水分子，而是分别脱去 H 和 OH 后再形成水。",
+      "question": "如果很多个氨基酸连续发生脱水缩合，会形成什么结构？",
+      "id": "condensation"
+    },
+    {
+      "title": "一级结构",
+      "titleEn": "Primary Structure",
+      "goal": "观察氨基酸按一定顺序连接成多肽链，并理解肽键形成过程。",
+      "keywords": [
+        "氨基酸 Amino Acid",
+        "肽键 Peptide Bond",
+        "脱水缩合 Dehydration"
+      ],
+      "explanation": "蛋白质的一级结构是氨基酸的排列顺序。相邻氨基酸通过脱水缩合形成肽键，释放一分子水，逐步连接成多肽链。",
+      "mistake": "一级结构不是空间折叠形状，而是氨基酸的线性排列顺序。",
+      "question": "如果氨基酸排列顺序改变，蛋白质的后续结构可能会怎样变化？",
+      "id": "primary"
+    },
+    {
+      "title": "二级结构",
+      "titleEn": "Secondary Structure",
+      "goal": "观察多肽链局部形成 α 螺旋和 β 折叠两类常见二级结构。",
+      "keywords": [
+        "α 螺旋 Alpha Helix",
+        "β 折叠 Beta Sheet",
+        "主链氢键 Backbone H-bonds"
+      ],
+      "explanation": "蛋白质的二级结构是多肽链局部有规律的空间结构，常见形式包括 α 螺旋和 β 折叠，主要由主链之间的氢键稳定。",
+      "mistake": "二级结构不是由不同蛋白质亚基结合形成的，而是同一条多肽链的局部折叠。",
+      "question": "为什么氢键能让局部结构保持稳定？",
+      "id": "secondary"
+    },
+    {
+      "title": "三级结构",
+      "titleEn": "Tertiary Structure",
+      "goal": "观察一条多肽链在保留二级结构的基础上进一步折叠成复杂空间结构。",
+      "keywords": [
+        "空间折叠 3D Folding",
+        "侧链相互作用 Side-chain Interactions",
+        "结构域 Domain"
+      ],
+      "explanation": "蛋白质的三级结构是一条多肽链整体折叠形成的三维构象。α 螺旋、β 折叠等二级结构会作为局部结构保留下来，并通过侧链相互作用进一步稳定。",
+      "mistake": "三级结构仍然属于一条多肽链的整体结构，不等于多个亚基组合。",
+      "question": "为什么同一条多肽链可以折叠成非常复杂的空间形状？",
+      "id": "tertiary"
+    },
+    {
+      "title": "四级结构",
+      "titleEn": "Quaternary Structure",
+      "goal": "观察多个蛋白质亚基结合形成更大的功能性蛋白质结构。",
+      "keywords": [
+        "蛋白质亚基 Subunit",
+        "亚基组装 Assembly",
+        "四级结构 Quaternary Structure"
+      ],
+      "explanation": "有些蛋白质由两条或多条多肽链作为亚基共同组成。不同亚基通过相互作用结合在一起，形成四级结构。",
+      "mistake": "并不是所有蛋白质都有四级结构；只有由多个亚基组成的蛋白质才具有四级结构。",
+      "question": "为什么多个亚基组合后，蛋白质可能获得新的功能？",
+      "id": "quaternary"
+    }
+  ],
+  "version": "2.3.2"
+}

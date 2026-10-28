@@ -1,0 +1,51 @@
+/* Animal-cell content adapter. Public chrome comes only from Shell 2.5 RC4. */
+:root { --text:#18384a; --muted:#647c83; --primary:#31816e; --primary-dark:#245f52; --radius:14px; font-family:"Microsoft YaHei",system-ui,sans-serif; }
+* { box-sizing:border-box; }
+html,body { margin:0; }
+button,input { font:inherit; }
+body[data-model-id="animal-cell"] .model-stage { position:relative; overflow:hidden; background:#fbfefd; }
+body[data-model-id="animal-cell"] .visual-wrap { position:relative; width:100%; height:100%; min-width:0; min-height:0; }
+body[data-model-id="animal-cell"] .model-area .animal-cell-stack { position:relative; width:100%; height:100%; min-height:0; display:grid; grid-template-columns:minmax(0,1fr) 280px; grid-template-rows:minmax(0,1fr); gap:12px; padding:12px; align-content:stretch; }
+body[data-model-id="animal-cell"] .animal-cell-shell { height:100%; min-height:0; max-height:none; grid-template-rows:minmax(0,1fr); overflow:hidden; border:0; border-radius:12px; background:linear-gradient(180deg,#fbfefd,#f2f8f8); }
+body[data-model-id="animal-cell"] .animal-cell-shell .dna-webgl-viewport-frame { position:absolute; inset:0; grid-row:auto; width:100%; height:100%; min-height:0; }
+body[data-model-id="animal-cell"] .animal-cell-part-switcher { height:100%; max-height:100%; min-height:0; padding:14px; gap:12px; border-radius:14px; box-shadow:none; overscroll-behavior:contain; }
+body[data-model-id="animal-cell"] .animal-cell-part-switcher__head strong { font-size:17px; }
+body[data-model-id="animal-cell"] .animal-cell-part-switcher__head small { font-size:10px; font-weight:500; letter-spacing:0; text-transform:none; }
+body[data-model-id="animal-cell"] .animal-cell-part-switcher__hint { font-size:12px; line-height:1.6; }
+body[data-model-id="animal-cell"] .animal-cell-part-switcher__buttons { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+body[data-model-id="animal-cell"] .animal-cell-part-button { min-height:48px; padding:7px 6px; border-radius:10px; }
+body[data-model-id="animal-cell"] .animal-cell-part-button strong { font-size:13px; }
+body[data-model-id="animal-cell"] .animal-cell-part-button span { font-size:9px; margin-top:3px; }
+body[data-model-id="animal-cell"] .animal-cell-part-switcher__current { margin-top:0; padding:10px; border-radius:10px; }
+body[data-model-id="animal-cell"] .animal-cell-part-switcher__current strong { font-size:14px; }
+.animal-cell-stage-summary { border-top:1px solid #e0ebe6; padding-top:12px; }
+.animal-cell-stage-summary h2 { font-size:14px; margin:0 0 7px; color:#245f52; }
+.animal-cell-stage-summary p { font-size:12px; line-height:1.8; margin:0; color:#647c83; }
+.animal-cell-stack > .animal-cell-context-trigger { display:none; position:absolute; right:12px; top:10px; z-index:6; min-height:36px; padding:6px 10px; font-size:12px; background:#ffffffef; }
+.animal-cell-feedback { position:absolute; left:86px; bottom:16px; right:312px; z-index:4; margin:0; color:#356e61; font-size:12px; line-height:1.5; pointer-events:none; text-align:center; text-shadow:0 1px 4px #fff; }
+.animal-cell-feedback:empty { display:none; }
+body[data-model-id="animal-cell"] .dna-webgl-label { min-width:0; max-width:none; padding:4px 6px; font-size:12px; line-height:1.2; font-weight:600; box-shadow:0 2px 6px #193d4510; }
+body[data-model-id="animal-cell"] .dna-webgl-label[hidden] { display:none; }
+.animal-cell-label-lines { position:absolute; inset:0; width:100%; height:100%; overflow:visible; pointer-events:none; }
+.animal-cell-label-lines path { stroke-width:1; stroke-opacity:.52; fill:none; }
+body[data-model-id="animal-cell"] .shell-dialog .animal-cell-part-switcher { height:auto; max-height:none; padding:0; border:0; border-radius:0; overflow:visible; background:transparent; }
+body[data-model-id="animal-cell"] .shell-dialog .animal-cell-part-switcher__head { display:none; }
+body[data-model-id="animal-cell"] .model-area[data-immersive="true"] .animal-cell-stack { grid-template-columns:minmax(0,1fr); gap:0; padding:0; }
+body[data-model-id="animal-cell"] .model-area[data-immersive="true"] .animal-cell-stack > .animal-cell-part-switcher,
+body[data-model-id="animal-cell"] .model-area[data-immersive="true"] .animal-cell-context-trigger { display:none; }
+body[data-model-id="animal-cell"] .model-area[data-immersive="true"] .animal-cell-shell { border-radius:0; }
+body[data-model-id="animal-cell"] .model-area[data-immersive="true"] .animal-cell-feedback { right:16px; bottom:12px; }
+@media(max-width:980px) {
+  body[data-model-id="animal-cell"] .model-area .animal-cell-stack { grid-template-columns:minmax(0,1fr); gap:0; padding:0; }
+  .model-stage .animal-cell-stack > .animal-cell-part-switcher { display:none; }
+  .animal-cell-stack > .animal-cell-context-trigger { display:inline-flex; }
+  .animal-cell-feedback { right:12px; bottom:10px; font-size:11px; }
+  body[data-model-id="animal-cell"] .dna-webgl-label { font-size:11px; padding:4px 5px; }
+  body[data-model-id="animal-cell"] .animal-cell-shell { border-radius:0; }
+}
+body[data-model-id="animal-cell"][data-shell-compact="true"] .model-area .animal-cell-stack { grid-template-columns:minmax(0,1fr); gap:0; padding:0; }
+body[data-model-id="animal-cell"][data-shell-compact="true"] .animal-cell-stack > .animal-cell-part-switcher { display:none; }
+body[data-model-id="animal-cell"][data-shell-compact="true"] .animal-cell-context-trigger { display:inline-flex; }
+body[data-model-id="animal-cell"][data-shell-compact="true"] .model-area[data-immersive="true"] .animal-cell-context-trigger { display:none; }
+body[data-model-id="animal-cell"][data-shell-compact="true"] .animal-cell-feedback { right:12px; }
+@media(prefers-reduced-motion:reduce) { .animal-cell-part-button { transition:none; } }

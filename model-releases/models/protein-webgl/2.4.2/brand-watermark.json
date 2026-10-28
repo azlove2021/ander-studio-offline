@@ -1,0 +1,7 @@
+{
+  "standard": "model-brand-watermark-1.0",
+  "runtimeVersion": "1.0.2",
+  "model": "protein-webgl",
+  "viewport": "[data-protein-webgl-viewport]",
+  "foreground": "[data-protein-webgl-host]"
+}

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+ <title>光合作用的过程</title>
+ <link rel="icon" href="assets/brand-stacked.svg" type="image/svg+xml">
+ <link rel="preload" as="image" href="assets/chloroplast.webp">
+ <link rel="stylesheet" href="model.css"><link rel="stylesheet" href="brand-watermark.css">
+ <link rel="stylesheet" href="process-layout.css"><link rel="stylesheet" href="shell-standard.css"><link rel="stylesheet" href="window-standard.css">
+<script src="/assets/accounts/model-favorites.js?v=e9af20c54e036dd9573d4611bbb8bee47cccdad160e10e9d5ba98730656177d4"></script>
+<script src="/assets/accounts/model-favorite-host.js?v=c616cfcae1d08ce04b9e0af0f0163800016def1b0a8a6c16f9bab30ff6e7b481" data-ander-model-host="website-v1" data-model-id="photosynthesis"></script>
+</head>
+<body>
+ <main class="independent-model-app">
+  <header class="independent-model-header"><a class="independent-model-back" href="#" aria-label="返回主页"></a><div class="independent-model-heading"><span class="independent-model-kicker"></span><h1></h1></div></header>
+  <div class="independent-model-workspace"><section class="model-area">
+   <nav class="stage-strip" aria-label="演示阶段"></nav>
+   <div class="model-stage">
+    <div class="science-viewport">
+     <div class="scene-layout">
+      <div class="art-scroll" tabindex="0" aria-label="光合作用画面，可横向滚动查看">
+       <div class="science-world">
+        <svg id="photosynthesis-scene" viewBox="0 0 1792 896" role="img" aria-labelledby="scene-title scene-desc">
+         <title id="scene-title">叶绿体内的光反应与卡尔文循环</title>
+         <desc id="scene-desc">光反应在左侧类囊体薄膜进行，利用光和水形成氧、ATP及NADPH。右侧基质中的卡尔文循环利用ATP和NADPH固定二氧化碳并形成三碳糖，再生五碳化合物；ADP、无机磷酸和NADP正离子返回光反应。</desc>
+         <defs>
+          <marker id="arrow-green" markerWidth="12" markerHeight="12" refX="9.5" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1.8 1.5 9.5 6 1.8 10.5" fill="none" stroke="#418571" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          <marker id="arrow-gold" markerWidth="12" markerHeight="12" refX="9.5" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1.8 1.5 9.5 6 1.8 10.5" fill="none" stroke="#bc9250" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          <marker id="arrow-purple" markerWidth="12" markerHeight="12" refX="9.5" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1.8 1.5 9.5 6 1.8 10.5" fill="none" stroke="#a97e98" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="9.5" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1.8 1.5 9.5 6 1.8 10.5" fill="none" stroke="#659cb1" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          <marker id="arrow-light" markerWidth="15" markerHeight="15" refX="11.5" refY="7.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 2 11.5 7.5 2 13" fill="none" stroke="#d88e66" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/></marker>
+         </defs>
+         <image id="chloroplast-illustration" href="assets/chloroplast.webp" x="0" y="0" width="1792" height="896"/>
+         <g id="structure-labels">
+          <text x="896" y="62" text-anchor="middle" class="organelle-title">叶绿体</text>
+          <text x="896" y="91" text-anchor="middle" class="small-label">二维剖面 · 反应场所示意</text>
+          <text x="1530" y="99" class="structure-label">双层包膜</text><path d="M1576 113V191Q1576 203 1586 211L1608 232" class="leader"/>
+          <text x="483" y="697" text-anchor="middle" class="structure-label">基粒 · 类囊体堆叠</text><path d="M482 671V649" class="leader"/>
+          <text x="890" y="705" text-anchor="middle" class="structure-label">叶绿体基质</text>
+         </g>
+         <g class="reaction-group light-group">
+          <text x="522" y="225" text-anchor="middle" class="reaction-title">光反应</text>
+          <text x="522" y="256" text-anchor="middle" class="reaction-location">类囊体薄膜</text>
+          <g id="water-record" class="water molecule" transform="translate(249 284)"><rect width="109" height="63" rx="17"/><text x="54.5" y="40" class="formula">H₂O</text></g>
+          <path id="water-path" d="M358 318Q374 327 389 352" class="reaction-arrow blue"/>
+          <path id="oxygen-path" d="M650 333Q680 276 719 276" class="reaction-arrow blue"/>
+          <g id="oxygen-record" class="water molecule" transform="translate(731 244)"><rect width="102" height="63" rx="17"/><text x="51" y="40" class="formula">O₂</text></g>
+          <text x="713" y="223" text-anchor="middle" class="small-label water-label">水的光解</text>
+          <text x="190" y="398" text-anchor="middle" class="light-label">光能</text>
+          <path id="light-path" d="M126 432h16l9 -12 15 24 15 -24 15 24 15 -24 15 24 15 -24 15 12h100" class="light-arrow"/>
+          <g class="pigment-label" transform="translate(438 415)"><rect width="181" height="70" rx="20"/><text x="90.5" y="29">光合色素</text><text x="90.5" y="54" class="pigment-sub">吸收光能</text></g>
+          
+         </g>
+         <g class="reaction-group exchange-group">
+          <text x="900" y="285" text-anchor="middle" class="exchange-title">能量与还原力传递</text>
+          <path id="nadph-path" d="M693 371C815 305 967 320 1114 388" class="exchange-arrow gold"/>
+          <path id="atp-path" d="M699 443C824 382 973 405 1114 460" class="exchange-arrow purple"/>
+          <path id="adp-path" d="M1114 521C974 576 828 580 700 519" class="exchange-arrow purple"/>
+          <path id="nadp-path" d="M1127 592C973 661 823 652 703 586" class="exchange-arrow gold"/>
+          
+          <g id="nadph-record" class="carrier gold" transform="translate(804 320)"><rect width="173" height="48" rx="24"/><text x="86.5" y="33">NADPH</text></g>
+          <g id="atp-record" class="carrier purple" transform="translate(804 398)"><rect width="173" height="48" rx="24"/><text x="86.5" y="33">ATP</text></g>
+          <g id="adp-record" class="carrier purple pale" transform="translate(804 537)"><rect width="173" height="48" rx="24"/><text x="86.5" y="33">ADP + Pi</text></g>
+          <g id="nadp-record" class="carrier gold pale" transform="translate(804 604)"><rect width="173" height="48" rx="24"/><text x="86.5" y="33">NADP⁺</text></g>
+         </g>
+         <g class="reaction-group calvin-group">
+          <text x="1322" y="225" text-anchor="middle" class="reaction-title">暗反应</text>
+          <text x="1322" y="256" text-anchor="middle" class="reaction-location">叶绿体基质</text>
+          <path id="fixation-path" d="M1445 592C1538 496 1510 380 1426 324C1375 290 1305 284 1253 310" class="cycle-arrow"/>
+          <path id="reduction-path" d="M1195 359C1135 408 1134 519 1184 580" class="cycle-arrow"/>
+          <path id="regeneration-path" d="M1290 621H1365" class="cycle-arrow"/>
+          <path id="co2-path" d="M1541 320H1470" class="reaction-arrow"/>
+          <g id="co2-record" class="gas molecule" transform="translate(1548 287)"><rect width="107" height="63" rx="17"/><text x="53.5" y="40" class="formula">CO₂</text></g>
+          <text x="1437" y="399" text-anchor="middle" class="cycle-step">CO₂ 固定</text>
+          <text x="1201" y="468" text-anchor="middle" class="cycle-step" transform="rotate(-90 1201 468)">C₃ 还原</text>
+          <text x="1330" y="472" text-anchor="middle" class="cycle-title">卡尔文循环</text>
+          <text x="1330" y="505" text-anchor="middle" class="small-label">碳的固定与转化</text>
+          <g id="c3-record" class="carbon-node" transform="translate(1220 332)"><circle r="38"/><text y="11">C₃</text></g>
+          <text x="1220" y="281" text-anchor="middle" class="carbon-name">三碳化合物</text>
+          <g id="c5-record" class="carbon-node" transform="translate(1414 620)"><circle r="38"/><text y="11">C₅</text></g>
+          <text x="1530" y="627" text-anchor="middle" class="carbon-name">五碳化合物</text>
+          <g id="triose-record" class="triose molecule" transform="translate(1113 590)"><rect width="176" height="62" rx="18"/><text x="88" y="28" class="triose-title">三碳糖</text><text x="88" y="51" class="triose-sub">G3P 等</text></g>
+          <text x="1327" y="591" text-anchor="middle" class="cycle-step">C₅ 再生</text>
+          <text x="1330" y="650" text-anchor="middle" class="small-label atp-note">也需 ATP</text>
+          <path id="sugar-path" d="M1201 660V682Q1201 695 1214 695H1450" class="reaction-arrow"/>
+          <text x="1327" y="724" text-anchor="middle" class="small-label">部分用于合成糖类</text>
+          <g id="sugar-record" class="sugar molecule" transform="translate(1464 665)"><rect width="164" height="61" rx="17"/><text x="82" y="29" class="sugar-title">（CH₂O）</text><text x="82" y="50" class="sugar-sub">糖类</text></g>
+          
+         </g>
+         <g id="material-layer"></g><text id="conversion-note" x="896" y="824" text-anchor="middle" class="art-footnote"></text>
+        </svg>
+       </div>
+      </div>
+     </div>
+     <div class="science-caption"><div><strong id="caption-title"></strong><p id="caption-note" aria-live="polite"></p></div><span id="process-status">方向示意 · 未播放</span></div>
+    </div>
+    <div class="notation-note">暗反应依赖光反应产物，并非只在黑暗中进行。（CH₂O）概括表示糖类；固定标识表示物质持续产生，不表示分子计量。</div>
+   </div>
+   <footer class="control-dock"><div class="control-group control-group-primary"><button type="button" class="control-button is-primary" data-action="play">播放</button><button type="button" class="control-button" data-action="reset">重置</button><button type="button" class="control-button" data-action="prev">上一步</button><button type="button" class="control-button" data-action="next">下一步</button></div><label class="timeline-wrap"><span>进度</span><input id="time-slider" type="range" min="0" max="10000" step="1" value="0" aria-label="光合作用演示进度"><output id="time-output">0%</output></label><div class="control-group control-group-view"><button type="button" class="control-button" data-action="speed">1×</button><button type="button" class="control-button" data-action="view">视角</button><button type="button" class="control-button" data-action="labels" aria-pressed="true">标签</button><button type="button" class="control-button" data-action="fullscreen">全屏</button></div></footer>
+  </section></div>
+ </main>
+ <div id="announcement" class="sr-only" aria-live="polite"></div>
+ <script src="shell-standard.js"></script><script type="module" src="model.js"></script><script type="module" src="brand-watermark.js"></script>
+    <script src="/session.js?v=experience-r1"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+/* Model content only. Header, stages and controls use the shared 2.5.0 files. */
+:root { --ink:#17384a; --muted:#5f7481; --primary:#31816e; font-family:"Microsoft YaHei",system-ui,sans-serif; color:var(--ink); }
+* { box-sizing:border-box; }
+html,body { margin:0; }
+button,input { font:inherit; }
+body[data-model-id="translation"] .model-stage { position:relative; overflow:hidden; background:#fbfefe; }
+body[data-model-id="translation"] .translation-workbench { position:relative; width:100%; height:100%; min-height:0; overflow:hidden; display:grid; grid-template-columns:minmax(0,1fr) 284px; grid-template-rows:minmax(0,1fr); }
+body[data-model-id="translation"] .translation-scene-panel { position:relative; height:100%; min-height:0; overflow:hidden; padding:0; background:#fbfefe; }
+body[data-model-id="translation"] .translation-scene-viewport { position:absolute; inset:0; display:block; overflow:auto; overflow-anchor:none; overscroll-behavior:contain; touch-action:none; scrollbar-width:thin; scrollbar-color:#96beb3 #f4f9f7; }
+body[data-model-id="translation"] .translation-scene { display:block; min-width:0; min-height:0; max-width:none; margin:0 auto; border:0; border-radius:0; box-shadow:none; user-select:none; }
+body[data-model-id="translation"] [data-local-view] .translation-scene-viewport { cursor:grab; }
+body[data-model-id="translation"] [data-local-view] .translation-scene-viewport:active { cursor:grabbing; }
+body[data-model-id="translation"] .translation-scene-viewport:focus-visible { outline:2px solid #31816e; outline-offset:-2px; }
+body[data-model-id="translation"] .translation-info { height:100%; min-height:0; overflow:auto; padding:12px; overscroll-behavior:contain; }
+body[data-model-id="translation"] .stage-status { padding:10px; border-radius:12px; box-shadow:none; }
+body[data-model-id="translation"] .stage-status h2 { font-size:17px; }
+body[data-model-id="translation"] .stage-status h2 small { font-size:10px; }
+body[data-model-id="translation"] .stage-status p { font-size:12px; }
+body[data-model-id="translation"] .direction-rule { padding:9px 10px; font-size:12px; }
+body[data-model-id="translation"] .direction-rule strong { font-size:13px; }
+body[data-model-id="translation"] .direction-rule .direction-main { font-size:15px; }
+body[data-model-id="translation"] .structure-panel-title { flex-wrap:wrap; gap:3px; margin-top:12px; }
+body[data-model-id="translation"] .structure-panel-title strong { font-size:14px; }
+body[data-model-id="translation"] .structure-panel-title span { font-size:11px; }
+body[data-model-id="translation"] .structure-button { min-height:42px; padding:6px 8px; }
+body[data-model-id="translation"] .structure-button small { font-size:10px; }
+body[data-model-id="translation"] .structure-button-role { font-size:10px; }
+body[data-model-id="translation"] .structure-detail { min-height:0; font-size:12px; }
+.model-stage > .translation-context-trigger { display:none; position:absolute; top:9px; right:10px; z-index:4; padding:6px 9px; min-height:34px; font-size:12px; background:#ffffffee; }
+body[data-model-id="translation"] .shell-dialog .translation-info { height:auto; overflow:visible; padding:0; background:transparent; }
+body[data-model-id="translation"] .model-area[data-immersive="true"] .translation-workbench { grid-template-columns:minmax(0,1fr); }
+body[data-model-id="translation"] .model-area[data-immersive="true"] .translation-workbench > .translation-info,
+body[data-model-id="translation"] .model-area[data-immersive="true"] .translation-context-trigger { display:none; }
+@media(max-width:1100px) {
+  body[data-model-id="translation"] .translation-workbench { grid-template-columns:minmax(0,1fr); }
+  .model-stage .translation-workbench > .translation-info { display:none; }
+  .model-stage > .translation-context-trigger { display:inline-flex; }
+}
+body[data-model-id="translation"][data-shell-compact="true"] .translation-workbench { grid-template-columns:minmax(0,1fr); }
+body[data-model-id="translation"][data-shell-compact="true"] .translation-workbench > .translation-info { display:none; }
+body[data-model-id="translation"][data-shell-compact="true"] .translation-context-trigger { display:inline-flex; }
+body[data-model-id="translation"][data-shell-compact="true"] .model-area[data-immersive="true"] .translation-context-trigger { display:none; }
+
+/* Watermark stays behind the scientific SVG and independent of its local panning. */
+body[data-model-id="translation"] .translation-scene { background:transparent; }
+body[data-model-id="translation"] .translation-scene > rect[x="10"] { fill:transparent; }
+
+/* Hide scrollbars only during manual pinch framing; initial dimensions stay unchanged. */
+.translation-scene-viewport[data-gesture-scale] { scrollbar-width:none !important; }
+.translation-scene-viewport[data-gesture-scale]::-webkit-scrollbar { display:none; }

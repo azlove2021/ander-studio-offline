@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preload" as="image" href="assets/landscape-base.webp" fetchpriority="high"><link rel="preload" as="image" href="assets/soil-base.webp" fetchpriority="high"><title>群落的演替</title><link rel="icon" href="assets/brand-stacked.svg" type="image/svg+xml"><link rel="stylesheet" href="model.css"><link rel="stylesheet" href="ecology-layout.css"><link rel="stylesheet" href="brand-watermark.css"><link rel="stylesheet" href="shell-standard.css"><link rel="stylesheet" href="window-standard.css"><script src="/assets/accounts/model-favorites.js?v=e9af20c54e036dd9573d4611bbb8bee47cccdad160e10e9d5ba98730656177d4"></script>
+<script src="/assets/accounts/model-favorite-host.js?v=c616cfcae1d08ce04b9e0af0f0163800016def1b0a8a6c16f9bab30ff6e7b481" data-ander-model-host="website-v1" data-model-id="community-succession"></script>
+</head>
+<body><main class="independent-model-app">
+ <header class="independent-model-header"><a class="independent-model-back" href="#" aria-label="返回主页"></a><div class="independent-model-heading"><span class="independent-model-kicker"></span><h1></h1></div></header>
+ <div class="independent-model-workspace"><section class="model-area">
+  <nav class="stage-strip" aria-label="演替观察阶段"></nav>
+  <div class="model-stage"><div class="succession-workbench">
+   <div class="context-bar"><span><label class="kind-select" for="succession-kind">演替类型 <select id="succession-kind"><option value="primary">初生演替</option><option value="secondary">次生演替</option></select></label><small>本例：适宜森林形成，且长期没有再次严重干扰</small></span><label class="soil-toggle"><input id="soil-toggle" type="checkbox">土壤剖面</label></div>
+   <div class="science-viewport"><div class="scene-scroll"><div class="scene-world">
+    <canvas id="landscape-background" aria-hidden="true"></canvas><canvas class="ecology-canvas" id="ecology-canvas" role="img" aria-label="左右比较裸岩初生演替与保留土壤的火后次生演替"></canvas>
+    <div id="scene-headings"><section class="scene-heading" data-kind="primary"><div class="title-line"><span class="scene-number">01</span><h2>初生演替<span>Primary succession</span></h2><span class="site-tag">裸岩上的定居</span></div><div class="stage-readout"><b id="primary-stage">裸岩</b><span id="primary-note"></span></div></section><section class="scene-heading" data-kind="secondary"><div class="title-line"><span class="scene-number">02</span><h2>次生演替<span>Secondary succession</span></h2><span class="site-tag">火灾后的恢复</span></div><div class="stage-readout"><b id="secondary-stage">火后的森林遗迹</b><span id="secondary-note"></span></div></section></div>
+    <div class="loading-status" role="status">正在载入生态场景…</div>
+   </div></div><div class="science-footnote"><span>示意进程不代表真实年限，新旧类群可共存。</span><span>选中一侧独立播放，切换后各自进度保留。</span><span class="compact-note">两侧进度独立；森林为适宜条件下的示例。</span></div></div>
+  </div></div>
+  <footer class="control-dock"><div class="control-group control-group-primary"><button class="control-button is-primary" data-action="play" type="button">播放</button><button class="control-button" data-action="reset" type="button">重置</button><button class="control-button" data-action="prev" type="button">上一步</button><button class="control-button" data-action="next" type="button">下一步</button></div><div class="timeline-wrap"><label id="timeline-label" for="progress-slider">初生演替</label><input id="progress-slider" type="range" min="0" max="10000" value="0" step="1" aria-label="演替进程，阶段示意，非等时"><output id="progress-value" for="progress-slider">0%</output></div><div class="control-group control-group-view"><button class="control-button" data-action="speed" type="button">1×</button><button class="control-button" data-action="labels" type="button" aria-pressed="true">标签</button><button class="control-button" data-action="fullscreen" type="button">全屏</button></div></footer>
+ </section></div></main><div class="sr-only" id="announcement" aria-live="polite"></div>
+ <script src="shell-standard.js"></script><script type="module" src="model.js"></script><script type="module" src="brand-watermark.js"></script>
+    <script src="/session.js?v=experience-r1"></script>
+  </body></html>
+

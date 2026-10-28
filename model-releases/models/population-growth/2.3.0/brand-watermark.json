@@ -1,0 +1,9 @@
+{
+  "standard": "model-brand-watermark-1.0",
+  "runtimeVersion": "1.0.2",
+  "model": "population-growth",
+  "viewport": ".science-viewport",
+  "foreground": ".plots-scroll",
+  "ready": "#j-chart [data-current-point]",
+  "host": ".science-viewport"
+}

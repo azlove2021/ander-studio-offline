@@ -1,0 +1,147 @@
+{
+  "id": "optical-microscope",
+  "accent": "#31816e",
+  "title": "光学显微镜模型",
+  "titleEn": "Optical Microscope Model",
+  "chapter": "细胞的观察 / Cell Observation",
+  "type": "3D WebGL 交互模型",
+  "state": "显微镜结构与规范操作综合观察",
+  "visual": "opticalMicroscopeWebgl",
+  "structures": [
+    [
+      "目镜 Eyepiece",
+      "#2F4858"
+    ],
+    [
+      "镜筒 Body Tube",
+      "#5D756C"
+    ],
+    [
+      "转换器 Revolving Nosepiece",
+      "#52616B"
+    ],
+    [
+      "物镜 Objective Lenses",
+      "#E58B43"
+    ],
+    [
+      "载物台 Stage",
+      "#3E5D52"
+    ],
+    [
+      "粗准焦螺旋 Coarse Focus",
+      "#D39A3B"
+    ],
+    [
+      "细准焦螺旋 Fine Focus",
+      "#E7B65D"
+    ],
+    [
+      "聚光器与光圈 Condenser and Diaphragm",
+      "#4E9E8A"
+    ],
+    [
+      "反光镜 Mirror",
+      "#74B7C5"
+    ],
+    [
+      "镜臂 Arm",
+      "#71877D"
+    ],
+    [
+      "镜座 Base",
+      "#50675E"
+    ],
+    [
+      "玻片标本 Specimen Slide",
+      "#8CC9C1"
+    ]
+  ],
+  "stages": [
+    {
+      "id": "overview",
+      "title": "整体结构",
+      "titleEn": "Overall Structure",
+      "goal": "从整体上辨认显微镜的机械系统、成像系统和照明系统。",
+      "keywords": [
+        "机械系统 Mechanical System",
+        "成像系统 Imaging System",
+        "照明系统 Illumination System"
+      ],
+      "explanation": "镜座和镜臂支撑整机；目镜与物镜组成主要成像系统；反光镜、光圈和聚光器负责把光线送入标本。",
+      "mistake": "反光镜和光圈只负责照明，不参与物像的放大。",
+      "question": "显微镜中哪些结构负责放大，哪些结构负责照明？"
+    },
+    {
+      "id": "optical-system",
+      "title": "成像系统",
+      "titleEn": "Imaging System",
+      "goal": "观察目镜、镜筒、转换器和物镜之间连续、同轴的结构关系。",
+      "keywords": [
+        "目镜 Eyepiece",
+        "物镜 Objective",
+        "转换器 Nosepiece"
+      ],
+      "explanation": "当前物镜必须准确转到载玻片通光孔上方，光线通过物镜形成放大的实像，再由目镜进一步放大。总放大倍数等于目镜倍数与物镜倍数的乘积。",
+      "mistake": "切换倍率时应转动转换器，不能直接扳动物镜。",
+      "question": "目镜为10×、物镜为40×时，总放大倍数是多少？"
+    },
+    {
+      "id": "stage-focus",
+      "title": "载物与调焦",
+      "titleEn": "Stage and Focus",
+      "goal": "理解载玻片、通光孔与同轴粗细准焦螺旋的相对位置。",
+      "keywords": [
+        "载物台 Stage",
+        "粗准焦 Coarse Focus",
+        "细准焦 Fine Focus"
+      ],
+      "explanation": "玻片材料应正对通光孔。粗、细准焦螺旋安装在镜臂上部的同一调焦轴附近：粗准焦移动幅度大，细准焦用于精细调节。",
+      "mistake": "下降镜筒或升高载物台时，应从侧面观察，防止物镜压坏玻片。",
+      "question": "换成高倍物镜后物像略模糊，应优先调节哪一种准焦螺旋？"
+    },
+    {
+      "id": "illumination",
+      "title": "照明光路",
+      "titleEn": "Illumination Path",
+      "goal": "追踪反光镜到目镜的连续光路。",
+      "keywords": [
+        "反光镜 Mirror",
+        "光圈 Diaphragm",
+        "聚光器 Condenser"
+      ],
+      "explanation": "外界光线经反光镜改变方向，依次通过光圈、聚光器、通光孔和薄而透明的标本，再进入当前物镜、镜筒和目镜。",
+      "mistake": "反光镜必须通过支架连接主体，并调整到能把光线反射向通光孔的角度。",
+      "question": "从反光镜到眼睛，光线依次通过哪些主要结构？"
+    },
+    {
+      "id": "low-power",
+      "title": "低倍对焦",
+      "titleEn": "Low-power Focusing",
+      "goal": "使用低倍物镜寻找目标并完成初步对焦。",
+      "keywords": [
+        "低倍物镜 Low Power",
+        "视野较大 Wide Field",
+        "粗准焦 Coarse Focus"
+      ],
+      "explanation": "低倍物镜工作距离较长、视野较大且较亮，适合先寻找目标。先用粗准焦进入清晰范围，再用细准焦微调。",
+      "mistake": "开始观察时不能先使用高倍物镜寻找目标。",
+      "question": "为什么显微观察通常从低倍物镜开始？"
+    },
+    {
+      "id": "high-power",
+      "title": "高倍观察",
+      "titleEn": "High-power Observation",
+      "goal": "比较倍率升高后视野、亮度和工作距离的变化。",
+      "keywords": [
+        "高倍物镜 High Power",
+        "视野变小 Narrower Field",
+        "细准焦 Fine Focus"
+      ],
+      "explanation": "换用高倍物镜后物像变大、视野范围变小、亮度降低、工作距离缩短。此时主要使用细准焦螺旋，并适当增加进光量。",
+      "mistake": "高倍观察时不可大幅转动粗准焦螺旋。",
+      "question": "从低倍换到高倍后，视野亮度和看到的细胞数量通常怎样变化？"
+    }
+  ],
+  "version": "2.6.5"
+}

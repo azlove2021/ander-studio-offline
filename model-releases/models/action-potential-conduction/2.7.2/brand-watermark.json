@@ -1,0 +1,9 @@
+{
+  "standard": "model-brand-watermark-1.0",
+  "runtimeVersion": "1.0.2",
+  "model": "action-potential-conduction",
+  "viewport": ".neural-scene-view",
+  "host": ".scene-panel",
+  "foreground": ".neural-plane",
+  "ready": ".neural-plane"
+}

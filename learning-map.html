@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>生物学学习地图 / 安德生物工作室</title>
+    <link rel="icon" href="assets/ande-biology-logo.png" />
+    <link rel="stylesheet" href="styles.css?v=homepage-five-v1" />
+    <link rel="stylesheet" href="assets/learning-map.css?v=knowledge-map-all-v2" />
+  </head>
+  <body class="learning-map-page">
+    <main class="learning-map-shell" aria-label="安德生物工作室学习地图">
+      <header class="learning-map-header">
+        <a class="learning-map-brand" href="index.html" aria-label="返回网站首页">
+          <img src="assets/ande-biology-logo.png" alt="" />
+          <span><strong>安德生物工作室</strong><small>ANDER BIOLOGY STUDIO</small></span>
+        </a>
+        <a class="learning-map-back" href="index.html">返回首页</a>
+      </header>
+      <section class="learning-map-hero">
+        <div>
+          <p class="learning-map-kicker">BIOLOGY KNOWLEDGE MAP</p>
+          <h1>生物学学习地图</h1>
+          <p>全部知识点位于同一张地图，所有分支默认展开。拖动浏览，或搜索、定位模块；无需打开其他页面。</p>
+        </div>
+        <div class="learning-map-summary" aria-label="学习地图概览">
+          <span><strong data-count="modules">10</strong><small>个模块</small></span>
+          <span><strong data-count="sections">44</strong><small>个二级分类</small></span>
+          <span><strong data-count="topics">200</strong><small>个三级知识点</small></span>
+        </div>
+      </section>
+      <section class="learning-map-controls" aria-label="地图筛选与缩放">
+        <label><span>搜索知识</span><input type="search" placeholder="如：细胞、遗传、实验" data-map-search /></label>
+        <label><span>定位模块</span><select data-map-module-filter><option value="all">地图起点 · 全部模块</option></select></label>
+        <div class="learning-map-zoom" aria-label="地图缩放">
+          <button type="button" data-map-zoom-out aria-label="缩小地图">−</button>
+          <button type="button" data-map-fit>全图概览</button>
+          <button type="button" data-map-zoom-in aria-label="放大地图">＋</button>
+        </div>
+      </section>
+      <div class="knowledge-toolbar">
+        <p data-map-status role="status">正在准备学习地图…</p>
+        <div><button type="button" data-map-readable>可读字号</button><button type="button" data-map-expand>展开全部</button><button type="button" data-map-reset>重置地图</button></div>
+      </div>
+      <section class="learning-map-workspace" aria-label="三级知识思维导图">
+        <div class="learning-map-board" data-map-board tabindex="0" aria-label="完整知识地图；拖动平移，滚轮或加减按钮缩放，方向键平移，Home 键返回地图起点">
+          <div class="learning-map-canvas" data-map-canvas>
+            <svg class="learning-map-lines" data-map-lines aria-hidden="true"><g data-map-edges></g></svg>
+            <div class="learning-map-node-layer" data-map-nodes role="group" aria-label="知识节点"></div>
+          </div>
+          <p class="knowledge-map-error" data-map-error hidden>地图数据暂时未能载入，请刷新页面重试。</p>
+          <noscript><p class="knowledge-map-error">请启用浏览器 JavaScript，以查看和展开学习地图。</p></noscript>
+          <div class="learning-map-board-hint">同页全部展开 · 拖动浏览 · 滚轮 / 双指缩放 <span data-map-scale>100%</span></div>
+        </div>
+        <aside class="learning-map-detail" aria-live="polite">
+          <span class="learning-map-detail-status" data-map-detail-status>知识总览</span>
+          <h2 data-map-detail-title>一张地图，串起生物学</h2>
+          <p data-map-detail-summary>所有模块都在当前地图中。点击节点查看路径，搜索或选择模块只定位，不会切换页面或隐藏其他模块。</p>
+          <div class="knowledge-breadcrumb" data-map-breadcrumb>模块 → 一、 → 1.</div>
+          <div class="knowledge-map-note"><strong>先建立知识坐标</strong><p>本次仅展示目录层级，节点暂不连接模型、题目、视频或游戏。后续内容将接入这些知识节点。</p></div>
+          <small class="knowledge-map-source">目录来源：《生物笔记目录结构》<br />保留原始名称与顺序，仅取前三个层级。</small>
+        </aside>
+      </section>
+      <footer class="learning-map-legend" aria-label="地图图例">
+        <span><i class="level-module"></i>模块</span><span><i class="level-section"></i>二级分类 · 一、</span><span><i class="level-topic"></i>三级知识点 · 1.</span><span>连线仅表示目录隶属关系</span>
+      </footer>
+    </main>
+    <script src="assets/biology-knowledge-map-data.js?v=knowledge-map-v1"></script>
+    <script src="learning-map.js?v=knowledge-map-all-v2"></script>
+      <script src="/session.js?v=experience-r1"></script>
+  </body>
+</html>

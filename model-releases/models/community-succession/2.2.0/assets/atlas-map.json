@@ -1,0 +1,240 @@
+{
+  "schema": 1,
+  "coordinateSystem": "source image pixels; root or ground anchor; dimensions, source rectangles and alpha retained from 2.1.0; RGB encoded as WebP",
+  "sprites": {
+    "lichen": {
+      "asset": "groundcover-atlas",
+      "rect": [
+        19,
+        222,
+        598,
+        295
+      ],
+      "anchor": [
+        0.5,
+        0.98
+      ]
+    },
+    "moss": {
+      "asset": "groundcover-atlas",
+      "rect": [
+        635,
+        219,
+        607,
+        299
+      ],
+      "anchor": [
+        0.5,
+        0.98
+      ]
+    },
+    "annual": {
+      "asset": "groundcover-atlas",
+      "rect": [
+        49,
+        666,
+        561,
+        509
+      ],
+      "anchor": [
+        0.5,
+        0.98
+      ]
+    },
+    "grass": {
+      "asset": "groundcover-atlas",
+      "rect": [
+        632,
+        626,
+        620,
+        557
+      ],
+      "anchor": [
+        0.5,
+        0.98
+      ]
+    },
+    "smallShrub": {
+      "asset": "woody-atlas",
+      "rect": [
+        123,
+        123,
+        388,
+        435
+      ],
+      "anchor": [
+        0.5,
+        0.98
+      ]
+    },
+    "shrub": {
+      "asset": "woody-atlas",
+      "rect": [
+        635,
+        60,
+        595,
+        502
+      ],
+      "anchor": [
+        0.5,
+        0.98
+      ]
+    },
+    "sapling": {
+      "asset": "woody-atlas",
+      "rect": [
+        120,
+        610,
+        409,
+        597
+      ],
+      "anchor": [
+        0.5,
+        0.98
+      ]
+    },
+    "tree": {
+      "asset": "woody-atlas",
+      "rect": [
+        608,
+        609,
+        627,
+        599
+      ],
+      "anchor": [
+        0.5,
+        0.98
+      ]
+    },
+    "snag": {
+      "asset": "fire-remnants-atlas",
+      "rect": [
+        122,
+        15,
+        379,
+        690
+      ],
+      "anchor": [
+        0.5,
+        0.98
+      ]
+    },
+    "stump": {
+      "asset": "fire-remnants-atlas",
+      "rect": [
+        664,
+        243,
+        547,
+        462
+      ],
+      "anchor": [
+        0.5,
+        0.98
+      ]
+    },
+    "log": {
+      "asset": "fire-remnants-atlas",
+      "rect": [
+        20,
+        869,
+        622,
+        269
+      ],
+      "anchor": [
+        0.5,
+        0.98
+      ]
+    },
+    "litter": {
+      "asset": "fire-remnants-atlas",
+      "rect": [
+        644,
+        934,
+        590,
+        258
+      ],
+      "anchor": [
+        0.5,
+        0.98
+      ]
+    },
+    "bird": {
+      "asset": "fauna-atlas",
+      "rect": [
+        51,
+        62,
+        588,
+        563
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    "butterfly": {
+      "asset": "fauna-atlas",
+      "rect": [
+        756,
+        142,
+        443,
+        475
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    "insect": {
+      "asset": "fauna-atlas",
+      "rect": [
+        43,
+        752,
+        587,
+        390
+      ],
+      "anchor": [
+        0.5,
+        0.98
+      ]
+    },
+    "mouse": {
+      "asset": "fauna-atlas",
+      "rect": [
+        630,
+        787,
+        598,
+        370
+      ],
+      "anchor": [
+        0.5,
+        0.98
+      ]
+    }
+  },
+  "soilProfiles": {
+    "bare": [
+      35,
+      74,
+      1468,
+      187
+    ],
+    "forming": [
+      35,
+      309,
+      1468,
+      164
+    ],
+    "developed": [
+      35,
+      516,
+      1468,
+      211
+    ],
+    "postfire": [
+      35,
+      783,
+      1468,
+      212
+    ]
+  }
+}

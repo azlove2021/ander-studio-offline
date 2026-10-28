@@ -1,0 +1,578 @@
+/* Original model-specific structure, reference diagram and label styles. */
+.hidden-labels [class*="label"], .hidden-labels text.model-label, .hidden-labels text.tiny-label { opacity: 0 !important; pointer-events: none !important; }
+
+.dna-visual-wrap {
+  padding: 0;
+}
+
+.dna-3d-shell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  display: grid;
+  place-items: stretch;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(37, 99, 235, 0.05), transparent 48%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.82));
+}
+
+.dna-3d-shell:active {
+  cursor: grabbing;
+}
+
+.dna-3d-shell.is-panning,
+.dna-3d-shell.is-panning:active {
+  cursor: move;
+}
+
+.dna-viewport {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+}
+
+.dna-webgl-shell {
+  height: clamp(360px, 58vh, 620px);
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.dna-webgl-stack {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+  align-self: stretch;
+  align-content: start;
+}
+
+.dna-webgl-viewport-frame {
+  position: absolute;
+  inset: 0;
+}
+
+.dna-webgl-host {
+  position: absolute;
+  inset: 0;
+}
+
+.dna-webgl-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.dna-webgl-labels {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.dna-webgl-label {
+  position: absolute;
+  max-width: min(220px, 38vw);
+  padding: 5px 8px;
+  border: 1px solid rgba(216, 225, 236, 0.92);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--label-color, #0f172a);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.dna-reference-disclosure {
+  width: min(100%, 920px);
+  justify-self: center;
+  border: 1px solid rgba(216, 225, 236, 0.96);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.dna-reference-toggle {
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.dna-reference-toggle span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dna-reference-toggle strong {
+  flex: 0 0 auto;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: var(--primary-dark);
+  font-size: 12px;
+}
+
+.dna-reference-disclosure.is-open .dna-reference-toggle {
+  border-bottom: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.dna-reference-panel-wrap[hidden] {
+  display: none;
+}
+
+.dna-reference-panel {
+  position: static;
+  width: auto;
+  max-height: 270px;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 10px;
+  border: 0;
+  background: rgba(248, 250, 252, 0.72);
+  box-shadow: none;
+  cursor: default;
+  user-select: text;
+  touch-action: pan-y;
+}
+
+.dna-reference-panel section {
+  display: grid;
+  gap: 7px;
+}
+
+.dna-reference-panel h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.dna-reference-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.dna-reference-card {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 6px;
+  align-items: center;
+  min-height: 46px;
+  padding: 5px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 8px;
+  background: rgba(248, 250, 252, 0.82);
+}
+
+.dna-reference-card--nucleotide {
+  grid-template-columns: 72px minmax(0, 1fr);
+}
+
+.dna-reference-card strong,
+.dna-reference-card span,
+.dna-reference-card p {
+  display: block;
+}
+
+.dna-reference-card strong {
+  color: var(--text);
+  font-size: 10.5px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.dna-reference-card span {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 9.5px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.dna-reference-card p {
+  margin: 3px 0 0;
+  color: #475569;
+  font-size: 9.5px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.dna-reference-structure {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.dna-reference-structure polygon,
+.dna-reference-structure path,
+.dna-reference-structure circle {
+  fill: var(--base-color);
+  stroke: #334155;
+  stroke-width: 1.8;
+  vector-effect: non-scaling-stroke;
+}
+
+.dna-reference-structure line {
+  stroke: #64748b;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.dna-reference-structure .purine-shared-edge {
+  stroke: #334155;
+  stroke-width: 1.8;
+}
+
+.dna-reference-structure text {
+  fill: #0f172a;
+  font-size: 13px;
+  font-weight: 900;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 3px;
+}
+
+.dna-reference-nucleotide .phosphate-node {
+  fill: #06b6d4;
+  stroke: #0891b2;
+}
+
+.dna-reference-nucleotide .sugar-node {
+  fill: #fbbf24;
+  stroke: #d97706;
+}
+
+.dna-reference-nucleotide .base-ring {
+  fill: var(--base-color);
+}
+
+.dna-reference-nucleotide .phosphate-label,
+.dna-reference-nucleotide .sugar-label {
+  font-size: 10px;
+}
+
+.membrane-webgl-stack {
+  width: 100%;
+}
+
+.plant-cell-webgl-stack {
+  grid-template-columns: minmax(0, 1fr) minmax(248px, 286px);
+  gap: 12px;
+  align-items: stretch;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.plant-cell-part-switcher {
+  min-width: 0;
+  height: clamp(430px, 62vh, 700px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+  overflow: auto;
+  border: 1px solid rgba(188, 210, 216, 0.86);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 42px rgba(53, 102, 112, 0.13);
+  box-sizing: border-box;
+}
+
+.plant-cell-part-switcher__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.plant-cell-part-switcher__index {
+  flex: 0 0 auto;
+  padding-top: 3px;
+  color: #63a991;
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+}
+
+.plant-cell-part-switcher__head > div {
+  min-width: 0;
+}
+
+.plant-cell-part-switcher__head strong,
+.plant-cell-part-switcher__head small {
+  display: block;
+}
+
+.plant-cell-part-switcher__head strong {
+  color: #153b49;
+  font-size: 20px;
+  line-height: 1.16;
+}
+
+.plant-cell-part-switcher__head small {
+  margin-top: 4px;
+  color: #62808a;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.plant-cell-part-switcher__hint {
+  margin: -3px 0 0;
+  color: #6a828a;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.plant-cell-part-switcher__buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.plant-cell-part-button {
+  position: relative;
+  min-width: 0;
+  min-height: 68px;
+  border: 1px solid color-mix(in srgb, var(--part-color) 48%, #d9e4e1);
+  border-radius: 14px;
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--part-color) 24%, #ffffff),
+    color-mix(in srgb, var(--part-color) 11%, #ffffff)
+  );
+  color: #25424b;
+  cursor: pointer;
+  padding: 10px 8px;
+  text-align: center;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.plant-cell-part-button strong,
+.plant-cell-part-button span {
+  display: block;
+  color: inherit;
+}
+
+.plant-cell-part-button strong {
+  font-size: 16px;
+  line-height: 1.22;
+}
+
+.plant-cell-part-button span {
+  margin-top: 5px;
+  overflow: hidden;
+  font-size: 9px;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  opacity: 0.68;
+}
+
+.plant-cell-part-button:hover,
+.plant-cell-part-button:focus-visible {
+  outline: none;
+  transform: translateY(-2px);
+  box-shadow: 0 9px 18px color-mix(in srgb, var(--part-color) 20%, transparent);
+}
+
+.plant-cell-part-button.is-active {
+  border-color: color-mix(in srgb, var(--part-color) 84%, #24434d);
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--part-color) 88%, #20434a),
+    color-mix(in srgb, var(--part-color) 62%, #173e47)
+  );
+  color: #ffffff;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--part-color) 24%, transparent);
+}
+
+.plant-cell-part-switcher__current {
+  margin-top: auto;
+  padding: 12px 13px;
+  border: 1px solid rgba(188, 210, 216, 0.72);
+  border-radius: 14px;
+  background: rgba(239, 248, 246, 0.78);
+}
+
+.plant-cell-part-switcher__current span,
+.plant-cell-part-switcher__current strong {
+  display: block;
+}
+
+.plant-cell-part-switcher__current span {
+  color: #6d858c;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.plant-cell-part-switcher__current strong {
+  margin-top: 4px;
+  color: #18775f;
+  font-size: 15px;
+}
+
+.membrane-webgl-shell {
+  min-width: 0;
+  height: clamp(430px, 62vh, 700px);
+  min-height: 430px;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(125, 211, 252, 0.2), transparent 38%),
+    linear-gradient(180deg, rgba(240, 249, 255, 0.96) 0%, rgba(224, 242, 254, 0.86) 44%, rgba(255, 241, 202, 0.82) 100%);
+}
+
+.membrane-state-control {
+  width: min(310px, calc(100% - 24px));
+}
+
+.membrane-state-control label + label {
+  margin-top: 8px;
+}
+
+.dna-webgl-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 900;
+  text-align: center;
+  pointer-events: none;
+}
+
+.dna-webgl-loading[hidden] {
+  display: none;
+}
+
+.dna-hit {
+  cursor: pointer;
+}
+
+.dna-floating-label-layer {
+  pointer-events: none;
+}
+
+.dna-base-text {
+  font-family:
+    "Microsoft YaHei",
+    Arial,
+    sans-serif;
+  font-weight: 900;
+  fill: #0f172a;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.92);
+  stroke-width: 4.5px;
+}
+
+.dna-floating-label {
+  font-size: 14px;
+  font-weight: 800;
+  fill: #102033;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.95);
+  stroke-width: 5px;
+}
+
+.dna-label-line {
+  pointer-events: none;
+}
+
+.dna-hud text {
+  fill: #64748b;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.dna-feedback {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 12px;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border: 1px solid rgba(216, 225, 236, 0.9);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+  pointer-events: none;
+}
+
+.dna-state-control {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: min(260px, calc(100% - 24px));
+  padding: 10px 12px;
+  border: 1px solid rgba(216, 225, 236, 0.96);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+  cursor: default;
+}
+
+.dna-state-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.dna-state-header strong {
+  color: var(--primary);
+}
+
+.dna-state-control label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.dna-state-control input[type="range"] {
+  width: 100%;
+  accent-color: var(--primary);
+}

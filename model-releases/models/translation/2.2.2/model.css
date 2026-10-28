@@ -1,0 +1,95 @@
+.translation-workbench { height: 100%; display: grid; grid-template-columns: minmax(0, 1fr) 310px; }
+.translation-scene-panel { min-width: 0; min-height: 560px; padding: 12px; border-right: 1px solid #d7e5e3; }
+.translation-scene { width: 100%; height: 100%; min-height: 540px; display: block; background: #fbfefe; border-radius: 20px; }
+.translation-info { padding: 20px 16px; overflow-y: auto; background: rgba(249,253,252,.88); }
+.stage-status { padding: 15px; background: #fff; border: 1px solid #d7e5e4; border-radius: 17px; }
+.stage-status-kicker { margin: 0 0 6px; color: #5e7681; font-size: 12px; font-weight: 900; letter-spacing: .09em; }
+.stage-status h2 { margin: 0; font-size: 23px; line-height: 1.05; }
+.stage-status h2 small { display: block; margin-top: 5px; color: #72858e; font-size: 12px; font-weight: 700; }
+.stage-status p:last-child { margin: 13px 0 0; color: #657983; font-size: 14px; line-height: 1.65; }
+.direction-rule { margin-top: 12px; padding: 14px; color: #49636c; background: #eef8f5; border-radius: 15px; font-size: 13px; line-height: 1.58; }
+.direction-rule strong { display: block; margin-bottom: 5px; color: #256e61; }
+.direction-main { color: #e54d70; font-weight: 900; }
+.structure-panel-title { display: flex; justify-content: space-between; gap: 10px; margin: 17px 2px 9px; }
+.structure-panel-title span { color: #7e9098; font-size: 11px; }
+.structure-buttons { display: grid; gap: 7px; }
+.structure-button {
+  display: grid;
+  grid-template-columns: 12px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 10px;
+  text-align: left;
+  background: #fff;
+  border: 1px solid #d8e4e4;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.structure-button:hover, .structure-button.is-active { border-color: var(--structure-color); box-shadow: inset 3px 0 var(--structure-color); }
+.structure-button-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--structure-color); box-shadow: 0 0 0 3px color-mix(in srgb, var(--structure-color) 18%, transparent); }
+.structure-button strong, .structure-button small { display: block; }
+.structure-button strong { font-size: 13px; }
+.structure-button small { margin-top: 1px; color: #83939a; font-size: 10px; }
+.structure-button-role { color: #6d8088; font-size: 11px; }
+.structure-detail { margin-top: 10px; padding: 12px; color: #60747d; background: #fff; border: 1px solid #dde9e7; border-radius: 13px; font-size: 12px; line-height: 1.55; }
+.structure-detail strong { color: #2a665c; }
+.legend-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+.legend-pill { display: inline-flex; align-items: center; gap: 6px; padding: 5px 8px; color: #647982; background: #fff; border: 1px solid #dce8e6; border-radius: 999px; font-size: 10px; }
+.legend-line { width: 18px; height: 5px; background: var(--legend); border-radius: 9px; }
+
+.scene-background { fill: #fbfefe; }
+.mrna-backbone { fill: none; stroke: #f34850; stroke-width: 9; stroke-linecap: round; }
+.mrna-backbone-segment { fill: none; stroke-width: 9; stroke-linecap: round; }
+.mrna-backbone-segment.start { stroke: #38b66b; }
+.mrna-backbone-segment.stop { stroke: #8b5cf6; }
+.mrna-base-connector { fill: none; stroke: #239c82; stroke-width: 3.8; stroke-linecap: round; }
+.mrna-cap { fill: url(#capBallGradient); stroke: #a82b4d; stroke-width: 2; filter: url(#softShadow); }
+.poly-a-tail { fill: none; stroke: #8b5cf6; stroke-width: 15; stroke-linecap: round; stroke-dasharray: 3 8; }
+.base-box { stroke-width: 1.5; rx: 5px; }
+.base-letter { fill: #15394a; font-size: 24px; font-weight: 950; text-anchor: middle; dominant-baseline: middle; }
+.codon-zone { fill: none; stroke: transparent; stroke-width: 2; opacity: 0; stroke-linecap: round; }
+.codon-zone.start { stroke: #5fbd76; stroke-width: 4; opacity: .9; }
+.codon-zone.stop { stroke: #ee6380; stroke-width: 4; opacity: .9; }
+.codon-zone.is-active { filter: url(#codonGlow); stroke: #f3b232; stroke-width: 3; opacity: 1; }
+.codon-label { fill: #526d78; font-size: 12px; font-weight: 800; text-anchor: middle; }
+.end-label { fill: #1f5362; font-size: 17px; font-weight: 900; }
+.direction-arrow { fill: none; stroke: #2f8472; stroke-width: 3; stroke-dasharray: 13 10; marker-end: url(#arrowHead); }
+.direction-text { fill: #2b796a; font-size: 13px; font-weight: 800; text-anchor: middle; }
+
+.ribosome-image { opacity: .64; mix-blend-mode: normal; filter: drop-shadow(0 4px 5px rgba(64,38,94,.18)); }
+.ribosome-subunit { transition: filter .2s; }
+.site-marker { fill: rgba(255,255,255,.88); stroke-width: 2.2; }
+.site-marker.e { stroke: #66a7d8; }
+.site-marker.p { stroke: #e4ae45; }
+.site-marker.a { stroke: #e76d8c; }
+.site-letter { fill: #1d4050; font-size: 16px; font-weight: 950; text-anchor: middle; dominant-baseline: middle; }
+.site-caption { fill: #5d468a; font-size: 10px; font-weight: 900; text-anchor: middle; }
+.ribosome-label { fill: #344f5c; font-size: 13px; font-weight: 900; text-anchor: middle; }
+
+.trna-backbone { fill: rgba(255,255,255,.54); stroke: var(--trna-color); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.trna-stem { stroke: color-mix(in srgb, var(--trna-color) 68%, #24465a); stroke-width: 2.6; stroke-linecap: round; }
+.trna-model-image { opacity: 1; filter: drop-shadow(0 3px 4px rgba(25,66,79,.22)); }
+.anticodon-connectors { fill: none; stroke: #24a58a; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.trna-base-letter { fill: #173b4c; font-size: 33.333px; font-weight: 950; text-anchor: middle; dominant-baseline: middle; }
+.trna-amino-acid { stroke: none; filter: url(#aminoGlow); }
+.amino-specular { fill: rgba(255,255,255,.72); pointer-events: none; }
+.trna-amino-label { fill: #183c4c; font-size: 10px; font-weight: 950; text-anchor: middle; dominant-baseline: middle; }
+.trna-caption { fill: #2c5966; font-size: 11px; font-weight: 900; text-anchor: middle; }
+.pair-bond { stroke: #f0b63e; stroke-width: 2.4; stroke-dasharray: 3 4; }
+.pairing-label { fill: #b67a13; font-size: 12px; font-weight: 900; text-anchor: middle; }
+
+.peptide-link { fill: none; stroke: #e3537b; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; filter: url(#peptideGlow); }
+.peptide-bead { stroke: none; filter: url(#peptideGlow); }
+.peptide-label { fill: #a92e54; font-size: 12px; font-weight: 900; }
+.peptide-bond-flash { fill: none; stroke: #ffd75a; stroke-width: 5; opacity: 0; }
+.release-factor-shape { fill: url(#releaseGradient); stroke: #6846a4; stroke-width: 3; }
+.release-factor-core { fill: #f5efff; stroke: #7754b2; stroke-width: 2; }
+.release-factor-label { fill: #573f89; font-size: 12px; font-weight: 900; text-anchor: middle; }
+.stop-signal { fill: none; stroke: #ef5b77; stroke-width: 4; }
+
+.structure-node { transition: opacity .18s, filter .18s; }
+.structure-node.is-focused { filter: url(#structureFocus); }
+.structure-node.is-dimmed { opacity: .17 !important; }
+.hidden-labels text, .hidden-labels .codon-label, .hidden-labels .pairing-label { opacity: 0 !important; }
+.highlight-off .is-focused { filter: none; }
+

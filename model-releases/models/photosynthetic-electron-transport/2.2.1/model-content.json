@@ -1,0 +1,579 @@
+{
+  "id": "photosynthetic-electron-transport",
+  "version": "2.2.1",
+  "title": {
+    "zh": "光系统电子传递链",
+    "en": "Photosynthetic Electron Transport"
+  },
+  "maturity": "formal-release",
+  "scientificModel": {
+    "sources": [
+      {
+        "id": "S1",
+        "title": "OpenStax Biology 2e, 8.2 The Light-Dependent Reactions of Photosynthesis",
+        "url": "https://openstax.org/books/biology-2e/pages/8-2-the-light-dependent-reactions-of-photosynthesis",
+        "type": "official-textbook",
+        "checked": "正文、两光系统示意与化学渗透段；仅用于总因果，精确计量以下列原始研究和酶学条目复核。",
+        "adopted": [
+          "天线先传递激发能；反应中心发生光化学电荷分离。",
+          "电子流、水氧化、跨膜质子电化学势和光合磷酸化相关联。"
+        ],
+        "limits": [
+          "不采用其可能被误读为 PSII 直接泵氢的简写。",
+          "不将概述中的产物比例当作固定 ATP:NADPH。"
+        ]
+      },
+      {
+        "id": "S2",
+        "title": "IUBMB EC 1.18.1.2 ferredoxin—NADP+ reductase",
+        "url": "https://iubmb.qmul.ac.uk/enzyme/EC1/18/1/2.html",
+        "type": "official-curated-enzyme",
+        "checked": "酶条目净反应与 FAD 辅基说明。",
+        "adopted": [
+          "2 Fd(red) + NADP+ + H+(基质) → 2 Fd(ox) + NADPH。",
+          "FNR 是含结合型 FAD 的黄素蛋白；Fd 为单电子供体。"
+        ],
+        "limits": [
+          "不把 FADH2 画成游离输入物。"
+        ]
+      },
+      {
+        "id": "S3",
+        "title": "NLM MeSH: NADP",
+        "url": "https://www.ncbi.nlm.nih.gov/mesh/68009249",
+        "type": "official-chemical-terminology",
+        "checked": "NADP 的化学描述。",
+        "adopted": [
+          "与 NAD(H) 相比，NADP(H) 的腺苷核糖 2′ 位多一个磷酸基；该基团在氧化还原中保留。"
+        ],
+        "limits": [
+          "基团简图不逐个画酸碱电荷；NADP+ 中的 + 不表示生理 pH 下整个分子净电荷为 +1。"
+        ]
+      },
+      {
+        "id": "S4",
+        "title": "Molecular basis of plastoquinone reduction in plant cytochrome b6f",
+        "year": 2024,
+        "url": "https://www.nature.com/articles/s41477-024-01804-x",
+        "doi": "10.1038/s41477-024-01804-x",
+        "type": "primary-research",
+        "checked": "期刊正文索引 Main：Qp 腔侧氧化、Qn 基质侧还原、电子分流与两次 Qp 周转；直接页面访问不稳定，采用可读的索引正文。",
+        "adopted": [
+          "b6f 将 PQH2 的电子传向 PC，并通过 Q 循环参与跨膜质子转移。",
+          "完整 Q 循环的净效应可合并为每净 2e 向 PC 传递伴随腔侧释放 4H+，其中另取基质 2H+。"
+        ],
+        "inference": "由两次 PQH2 氧化、一次 PQ 再还原及 S6 的 2H/PQH2 合并得到净式；显示净反应，不把两个电子分流的细节改画为同一 PC 一次运 2e。",
+        "limits": [
+          "不将简化 b6f 画成四颗 H+ 穿过的直通孔。"
+        ]
+      },
+      {
+        "id": "S5",
+        "title": "Oxygen-evolving photosystem II structures during S1–S2–S3 transitions",
+        "year": 2024,
+        "url": "https://www.nature.com/articles/s41586-023-06987-5",
+        "doi": "10.1038/s41586-023-06987-5",
+        "type": "primary-research",
+        "checked": "期刊索引正文：四次氧化当量累积、S 状态及分步释质子；发表年为 2024，不能按 DOI 内 2023 写成年份。",
+        "adopted": [
+          "水氧化在 PSII 腔侧 OEC 累积四次氧化当量后形成 O2。",
+          "从 S0 起始的完整周期可用 1、0、1、2 的释 H+ 模式描述；不是每次光激发必放出一个 H+。"
+        ],
+        "limits": [
+          "选择 S0 为教学周期起点，不称其为暗适应起态。",
+          "不画未经支持的游离 OH、瞬间单水生成 O2 或水结合的逐原子中间机制。"
+        ]
+      },
+      {
+        "id": "S6",
+        "title": "Exchange pathways of plastoquinone and plastoquinol in the photosystem II complex",
+        "year": 2017,
+        "url": "https://www.nature.com/articles/ncomms15214",
+        "doi": "10.1038/ncomms15214",
+        "type": "primary-research",
+        "checked": "期刊正文及 PMC 索引 Figure 1 / Introduction，PQ 逐电子还原和载体交换。",
+        "adopted": [
+          "PQ 在膜内，接受两个电子和两个基质 H+ 后成为 PQH2；池内载体循环周转。"
+        ],
+        "limits": [
+          "主图突出一个净周转示踪代表，不宣称类囊体内只有一个 PQ，也不把 QA/QB/PQ 池混成两只必须相互交接的自由 Q。"
+        ]
+      },
+      {
+        "id": "S7",
+        "title": "RCSB PDB 6FKF; Structure, mechanism, and regulation of the chloroplast ATP synthase",
+        "year": 2018,
+        "url": "https://www.rcsb.org/structure/6FKF",
+        "doi": "10.1126/science.aat4318",
+        "type": "primary-structure-and-publication",
+        "checked": "PDB 条目、原始研究摘要与原始论文索引。",
+        "adopted": [
+          "Fo 质子动力驱动转动并耦联 F1 催化；叶绿体 F1 头位于基质侧。",
+          "结构来自特定植物；不能拿呼吸模型的视觉转子刻线数当作叶绿体 c 亚基数。"
+        ],
+        "limits": [
+          "功能示意不宣称原子结构复刻；不在本版计算固定 H+/ATP 或 ATP:NADPH。"
+        ]
+      },
+      {
+        "id": "S8",
+        "title": "RCSB PDB 4XK8; Structural basis for energy transfer pathways in the plant PSI–LHCI supercomplex",
+        "year": 2015,
+        "url": "https://www.rcsb.org/structure/4XK8",
+        "doi": "10.1126/science.aab0214",
+        "type": "primary-structure-and-publication",
+        "checked": "PDB 结构与原始文献摘要；用作 PSI 天线与反应中心的新制结构参考。",
+        "adopted": [
+          "PSI 与天线是有结构关联的复合体，能量汇聚与电子离开反应中心须使用不同视觉符号。"
+        ],
+        "limits": [
+          "不以呼吸复合体改名代替 PSI；后续资产记录所选结构、视向与简化，不在本轮生成资产。"
+        ]
+      },
+      {
+        "id": "S9",
+        "title": "Specific Distribution of Phosphatidylglycerol to Photosystem Complexes in the Thylakoid Membrane",
+        "year": 2017,
+        "url": "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2017.01991/full",
+        "doi": "10.3389/fpls.2017.01991",
+        "type": "original-analysis",
+        "checked": "期刊及 PubMed 摘要：类囊体脂类组成与分布。",
+        "adopted": [
+          "类囊体膜富含糖脂；复用头尾通用几何时标注为脂质双层。"
+        ],
+        "limits": [
+          "不称整层都是磷脂，不由示意头部数量推断真实脂类比例。"
+        ]
+      }
+    ],
+    "orientation": {
+      "stroma": "上方",
+      "lumen": "下方",
+      "membrane": "同一水平脂质双层",
+      "PSII_OEC": "腔侧",
+      "PQ": "膜内",
+      "PC": "腔侧水相",
+      "PSI_acceptor_Fd_FNR": "基质侧",
+      "ATP_F1": "基质侧，上方",
+      "ATP_Fo": "膜内，H+ 从腔侧经两个半通道/转子到基质"
+    },
+    "objects": [
+      {
+        "id": "membrane",
+        "parent": "chloroplast-thylakoid",
+        "role": "脂质屏障/能量耦联界面",
+        "rendering": "复用真实脂质头尾数据，糖脂丰富的功能示意，不标纯磷脂"
+      },
+      {
+        "id": "PSII",
+        "parent": "membrane",
+        "role": "天线激发能汇聚、反应中心电荷分离",
+        "children": [
+          "antenna",
+          "P680",
+          "internal-acceptors",
+          "OEC"
+        ],
+        "capacity": "每次有效激发转移一个净电子当量"
+      },
+      {
+        "id": "OEC",
+        "parent": "PSII-lumen-face",
+        "role": "累积 4 个氧化当量，净氧化 2H2O 产 1O2",
+        "children": [
+          "bound-water-oxygen-A",
+          "bound-water-oxygen-B"
+        ],
+        "capacity": "从人为选择的 S0 起点完成一轮，不宣称暗态"
+      },
+      {
+        "id": "PQ-pool-tracer",
+        "parent": "membrane",
+        "role": "2e/2H 膜内载体的一个净周转代表",
+        "capacity": "0、1、2e；1e 中间态留在 PSII 接受位点，2e/2H 才作为 PQH2 运走"
+      },
+      {
+        "id": "b6f",
+        "parent": "membrane",
+        "role": "Q 循环净电子接力及质子转移",
+        "capacity": "每净 2e 两次 PC 单电子交接；内部循环省略时始终标净式"
+      },
+      {
+        "id": "PC",
+        "parent": "lumen",
+        "role": "b6f 与 PSI 之间水溶性电子载体",
+        "capacity": "每次最多 1e"
+      },
+      {
+        "id": "PSI",
+        "parent": "membrane",
+        "role": "第二次光激发和电子转移",
+        "children": [
+          "antenna",
+          "P700",
+          "internal-acceptors"
+        ],
+        "capacity": "每次有效激发 1e；不泵 H+"
+      },
+      {
+        "id": "Fd",
+        "parent": "stroma",
+        "role": "PSI 至 FNR 单电子载体",
+        "capacity": "每次最多 1e"
+      },
+      {
+        "id": "FNR",
+        "parent": "stroma-near-PSI",
+        "role": "2 次 Fd 供电子后还原 NADP+",
+        "children": [
+          "bound-FAD",
+          "NADP-binding-site"
+        ],
+        "capacity": "每 NADPH 为 2e+1H+；不输出游离 FADH2"
+      },
+      {
+        "id": "NADP-pair",
+        "parent": "stroma",
+        "role": "两份 NADP+ 分别被还原",
+        "capacity": "各一次还原；2′-磷酸保留、烟酰胺端变化"
+      },
+      {
+        "id": "ATP-synthase",
+        "parent": "membrane",
+        "role": "H+ 电化学势→转动→F1 代表性催化",
+        "children": [
+          "Fo-half-channels",
+          "rotor",
+          "shaft",
+          "stator",
+          "F1-sites"
+        ],
+        "capacity": "功能示意无固定亚基数/产率"
+      },
+      {
+        "id": "nucleotide-pool",
+        "parent": "stroma",
+        "role": "代表性 ADP+Pi 结合、ATP 释放",
+        "capacity": "不记四电子批次 ATP 总量，基团身份在单个催化事件中保持"
+      }
+    ],
+    "trackingUnit": {
+      "netElectrons": 4,
+      "oxygenProducts": 1,
+      "nadphProducts": 2,
+      "waterReactants": 2,
+      "why": "4e 是完整产氧净反应的最小整数单位；PQ/FNR 分两组 2e 完成，PC/Fd 逐个交接。不是整叶粒子总数或必须串行的两轮生理生产。",
+      "electronIdentity": "e1–e4 是净电子当量的教学示踪标签，经过蛋白氧化还原接力；不声称在量子意义识别同一粒子，也不将天线能量转移绘成电子跨色素运动。",
+      "minimumProductiveExcitations": {
+        "PSII": 4,
+        "PSI": 4,
+        "total": 8,
+        "kind": "由 4e 各经历两个光系统推导的理想有效光化学事件数，不是入射光子量或 100% 光利用率。"
+      }
+    },
+    "equations": [
+      {
+        "id": "water",
+        "reaction": "2 H2O → O2 + 4 H+(腔) + 4 e−",
+        "basis": "4e 教学单位；分步氧化的净式",
+        "sources": [
+          "S1",
+          "S5"
+        ]
+      },
+      {
+        "id": "PQ",
+        "reaction": "PQ + 2 e− + 2 H+(基质) → PQH2",
+        "basis": "每组 2e，发生在 PSII 受体侧",
+        "sources": [
+          "S6"
+        ]
+      },
+      {
+        "id": "b6f",
+        "reaction": "PQH2 + 2 PC(ox) + 2 H+(基质) → PQ + 2 PC(red) + 4 H+(腔)",
+        "basis": "完整 Q 循环净式，非逐辅基机制",
+        "sources": [
+          "S4",
+          "S6"
+        ]
+      },
+      {
+        "id": "FNR",
+        "reaction": "2 Fd(red) + NADP+ + H+(基质) → 2 Fd(ox) + NADPH",
+        "basis": "每 2e；4e 时两次",
+        "sources": [
+          "S2"
+        ]
+      },
+      {
+        "id": "ATP",
+        "reaction": "ADP + Pi → ATP（光合磷酸化简式，需能）",
+        "basis": "不列酸碱形态/反应水的完整离子平衡，不用于总计量",
+        "sources": [
+          "S7"
+        ]
+      }
+    ],
+    "protonAccounting": {
+      "basis": "每 4 个净电子当量；数值为所选反应累计量，不是实时 H+ 库存",
+      "waterReleasedToLumen": 4,
+      "PQCarriedFromStroma": 4,
+      "b6fAdditionalFromStroma": 4,
+      "netStromaToLumen": 8,
+      "cumulativeLumenReleaseBeforeSubtractingReturn": 12,
+      "FNRConsumedInStroma": 2,
+      "identity": "4(PQ 携带)+4(Q 循环另取)=8 净跨膜；再加水的 4 才是累计腔侧释放 12。FNR 的 2 是基质化学消耗，独立记录。",
+      "ATPReturn": "只画定性示踪流，不给其累计数与 12 比较或作减法；本版不求实时腔内库存、pH、电位或产率。该限定位于主图图例及 ATP 局部说明。",
+      "tracerDesign": "返回示踪采用固定容量事件池，有限时窗内沿腔侧入口→Fo→基质出口快速错峰；每次都有可见起点/终点，不从出口生成粒子。与净式计数对象分开；不照搬呼吸回流数。界面写‘H+ 回流示踪；不按粒子数计算 ATP 产量’。",
+      "gradientDisplay": "用腔侧较密、基质侧较疏的定性纹理与‘梯度建立/供能’状态表示，兼顾浓度差及电势差；无假数值条，密度不对应库存，叶绿体缓冲/反离子未建模。"
+    },
+    "energy": {
+      "primary": "光能→反应中心电荷分离/还原能力提高；电子传递耦联质子电化学势；该势能驱动 ATP 合成，同时 NADP+ 还原储存还原力。",
+      "ZAxis": "电子还原能力（相对示意）向上；两个光系统的有效激发分别上升。不是电子动能、真实高度、逐辅基精确自由能或定量氧化还原电位。",
+      "ZNodes": [
+        "水/PSII",
+        "PSII 激发",
+        "PQ/b6f/PC",
+        "PSI 激发",
+        "Fd/FNR/NADPH"
+      ],
+      "coupling": "b6f 净作用和 PSII 水源 H+ 对梯度的贡献独立指向梯度提示；梯度→Fo/F1→ATP，使用 H+ /耦联的低显著度箭线，不延长电子主箭头到 ATP。",
+      "photonStyle": "深金色波浪向天线推进，亮波前到达后立即激发电子；末端箭头、局部吸收光晕，无 e− 标记。暂停和拖动共用科学时钟，光子不变成电子。",
+      "noFalseEnergyClaims": [
+        "不将成键本身说成放能",
+        "不将轨迹长度/高度/光晕面积换算效率",
+        "不显示固定 ATP:NADPH、H+/ATP、绝对能量",
+        "不宣称每一微观电子步骤都沿单调下坡"
+      ]
+    },
+    "imageCorrections": [
+      "保留基质在上、腔在下及 ATP 头朝基质；PSII/b6f/PSI/ATP 在同一功能膜。",
+      "水氧化式补足 2H2O；4e 末态是 1O2，O2 是产物，初始无本批产物。",
+      "NADP+ 还原补足 2NADP+ +4e− +2H+(基质)→2NADPH。",
+      "明确 PC（腔侧）、Fd（基质侧）与 FNR；‘黄素蛋白’标为 FNR，辅基结合在内。",
+      "4H/4H/8H 用同一四电子口径，明确 PQ携带与 Q循环净效应，防止相加成16。",
+      "脂质双层不得全称为磷脂；一条展开膜代表功能拓扑，不代表天然基粒所有蛋白相邻分布。"
+    ],
+    "invariants": [
+      "两次光输入方向与两个反应中心对应；天线能量汇聚不传出凭空新增电子。",
+      "电子主线完整到 NADPH；ATP 合酶没有电子输入线路。",
+      "PC/Fd 单电子；PQ 双电子；FNR 净每 NADPH 接受两次单电子。",
+      "PSII/OEC 向腔释 H+，PQ从基质取H，b6f净释到腔，FNR消耗基质H，ATP回流腔→基质。",
+      "第四次 PSII 有效氧化之前，本示踪单位无 O2 产物；两个水源氧作为产物氧来源。",
+      "4e结束净产1O2/2NADPH，水释4H、净跨膜8H、FNR耗2H，各累计不重复。",
+      "分步讲解保留用户确认的十阶段顺序，H⁺转移后单独展示 ATP 合成，再展示 PSI 和 NADPH；末段协同运行。讲解顺序不等于真实生理等待。",
+      "NADP(H)2′-P保留；ATP正确6+5腺嘌呤/5元核糖/5′磷酸链；Pi只在F1结合处加入γ端。",
+      "相同t总是相同科学状态，不受播放/seek顺序影响；UI布局不改变物料账本。",
+      "背景和科学微动受同科学时钟；标签/水印不参与化学计量；示踪粒子不充当数值浓度。"
+    ],
+    "simplifications": [
+      "所有位置/外形为功能示意，参考结构但非原子级复刻；比例与并排顺序为教学展开。",
+      "演示按路径长度计算相近的画面移动速度，前段逐项观察，最后协同运行；载体装载、催化变化及分步暂存仍需表达，不代表真实微观速率。",
+      "b6f只显示完整Q循环净效果，内部低电位分支/再生PQ说明保留在面板。",
+      "天线、QA/QB、辅基仅显示必要关系；OEC水进入蛋白后遮蔽中间态，不编造OH自由基。",
+      "Z图是定性还原能力示意，与质子电化学势分开；热耗散可短注释，不给效率。",
+      "可见 H+ 回流及 ATP 催化为代表性机制流，不与 4e 数值账本求固定产率。",
+      "PC 池用两份各载 1e 的代表分子帮助分步观察；它们沿同一路线运输，不是两个固定的串联站点。",
+      "e1–e4 是净电子当量；OEC 到反应中心的较小无编号电子表示补充电子，不作为额外净电子计入。",
+      "蛋白表面插图由 imagegen 生成，表示功能轮廓与统一材质，不是原子坐标或指定物种的结构重建。"
+    ]
+  },
+  "durationSeconds": 50.78,
+  "teachingTime": "Distance-derived teaching motion at 120 world units per second; guided stages first, then coupled operation. Deterministic and reversible; not microscopic reaction time.",
+  "stages": [
+    {
+      "id": "orientation",
+      "title": {
+        "zh": "结构与两侧",
+        "en": "Orientation"
+      }
+    },
+    {
+      "id": "light2",
+      "title": {
+        "zh": "光照 PSII",
+        "en": "Light input II"
+      }
+    },
+    {
+      "id": "water",
+      "title": {
+        "zh": "激发与水供电子",
+        "en": "Charge separation"
+      }
+    },
+    {
+      "id": "relay",
+      "title": {
+        "zh": "链间电子传递",
+        "en": "Electron relay"
+      }
+    },
+    {
+      "id": "protons",
+      "title": {
+        "zh": "H⁺ 转移",
+        "en": "Proton gradient"
+      }
+    },
+    {
+      "id": "atp",
+      "title": {
+        "zh": "ATP 合成",
+        "en": "ATP synthesis"
+      }
+    },
+    {
+      "id": "light1",
+      "title": {
+        "zh": "光照 PSI",
+        "en": "Light input I"
+      }
+    },
+    {
+      "id": "fd",
+      "title": {
+        "zh": "电子传给 Fd",
+        "en": "Electron transfer"
+      }
+    },
+    {
+      "id": "nadph",
+      "title": {
+        "zh": "NADPH 合成",
+        "en": "NADPH formation"
+      }
+    },
+    {
+      "id": "coupled",
+      "title": {
+        "zh": "协同运行",
+        "en": "Coupled overview"
+      }
+    }
+  ],
+  "eventAnchors": {
+    "PSII": [
+      2.320738428602685,
+      4.672765766338015,
+      33.75209194310174,
+      35.20200837967786
+    ],
+    "PSI": [
+      21.659673931096197,
+      25.018488369212108,
+      41.6100743977435,
+      44.96888883585942
+    ],
+    "FNR_e_arrivals": [
+      25.236181328339647,
+      28.594995766455558,
+      45.18658179498695,
+      48.54539623310286
+    ],
+    "NADPH_formed": [
+      30.770693342719234,
+      49.77644513863699
+    ],
+    "NADPH_release_complete": [
+      31.831353514499057,
+      50.77991135353634
+    ],
+    "O2_release_complete": 37.53824514024951,
+    "ATP_guided_window": [
+      14.825926058116204,
+      19.73893550249351
+    ],
+    "coupled_window": [
+      31.831353514499057,
+      50.78
+    ],
+    "ATP_illustrative_cycles": [
+      {
+        "start": 14.825926058116204,
+        "bound": 16.14377889933601,
+        "joinStart": 16.537313941632984,
+        "formed": 17.187313941632983,
+        "end": 18.723995069547584,
+        "index": 0,
+        "slot": 0
+      },
+      {
+        "start": 31.831353514499057,
+        "bound": 33.14920635571886,
+        "joinStart": 33.542741398015835,
+        "formed": 34.19274139801583,
+        "end": 35.72942252593043,
+        "index": 1,
+        "slot": 1
+      },
+      {
+        "start": 35.72942252593043,
+        "bound": 37.047275367150235,
+        "joinStart": 37.047275367150235,
+        "formed": 37.69727536715023,
+        "end": 39.23395649506483,
+        "index": 2,
+        "slot": 0
+      },
+      {
+        "start": 39.23395649506483,
+        "bound": 40.551809336284634,
+        "joinStart": 40.551809336284634,
+        "formed": 41.20180933628463,
+        "end": 42.73849046419923,
+        "index": 3,
+        "slot": 1
+      },
+      {
+        "start": 42.73849046419923,
+        "bound": 44.056343305419034,
+        "joinStart": 44.056343305419034,
+        "formed": 44.70634330541903,
+        "end": 46.24302443333363,
+        "index": 4,
+        "slot": 0
+      },
+      {
+        "start": 46.24302443333363,
+        "bound": 47.560877274553434,
+        "joinStart": 47.560877274553434,
+        "formed": 48.21087727455343,
+        "end": 49.74755840246803,
+        "index": 5,
+        "slot": 1
+      }
+    ],
+    "final_hold": null
+  },
+  "protocol": {
+    "version": "1.0",
+    "progress": "stage-local 0–1",
+    "overallProgress": "entire 50.78 teaching seconds 0–1"
+  },
+  "implementationScope": "Formal functional surface artwork and interactive teaching candidate; pending user visual acceptance.",
+  "dependencyChanges": [],
+  "websiteChanges": false,
+  "arrowPresentation": {
+    "revision": "2.2.0",
+    "lanes": "One continuous base stroke and terminal arrowhead per connected route; active logical steps overlay the base without separate casings.",
+    "light": "Dark gold, clock-driven travelling waves and bright fronts; fixed endpoints and terminal arrowheads; arrival triggers productive excitation.",
+    "protons": "Continuous b6f net transport and ATP Fo return routes; particles use the displayed geometry. Fo route is a functional schematic, not an atomic pore reconstruction.",
+    "energy": "Z graph and coupling arrows use the same terminal head family.",
+    "unchanged": "Ten stage identifiers, accepted default camera, continuous functional lanes, stoichiometry and protocol 1.0."
+  },
+  "motionPresentation": {
+    "revision": "2.2.0",
+    "speedWorldUnitsPerSecond": 120,
+    "timing": "Path length / shared screen speed; causal arrival-based starts, no arbitrary phase-tail holds.",
+    "handoffs": "PQ loading→delivery; delivery→relay; H uptake→net release; Fd return→next pickup; NADP binding→redox→product release.",
+    "necessaryHolds": [
+      "Two-electron carrier and FNR loading",
+      "PC storage during the guided H and ATP stages",
+      "Local catalytic change, distinct from molecular transport"
+    ],
+    "light": "All eight productive photon fronts end at their corresponding electron excitation event.",
+    "scope": "Teaching presentation only; no inferred microscopic rates or ATP yield."
+  }
+}

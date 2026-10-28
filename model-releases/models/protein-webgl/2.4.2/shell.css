@@ -1,0 +1,58 @@
+/* Content adapter only. Public chrome is the package copy of Shell 2.5.0. */
+:root { --text:#18384a; --muted:#647c83; --primary:#31816e; --primary-dark:#245f52; font-family:"Microsoft YaHei",system-ui,sans-serif; }
+* { box-sizing:border-box; }
+html,body { margin:0; }
+button,input { font:inherit; }
+.model-stage { position:relative; overflow:hidden; background:#fbfefd; }
+.model-stage .visual-wrap { position:relative; width:100%; height:100%; min-width:0; min-height:0; }
+body .model-area .structure-layout { position:relative; display:grid; width:100%; height:100%; min-height:0; min-width:0; grid-template-columns:minmax(0,1fr) 280px; grid-template-rows:minmax(0,1fr); gap:12px; padding:12px; align-content:stretch; }
+body .model-area .structure-scene { position:relative; width:100%; height:100%; min-height:0; max-height:none; display:block; padding:0; border:0; border-radius:12px; overflow:hidden; background:linear-gradient(180deg,#fbfefd,#f2f8f8); touch-action:none; }
+body .structure-scene .dna-webgl-viewport-frame { position:absolute; inset:0; width:100%; height:100%; min-height:0; }
+body .structure-scene .dna-webgl-host,body .structure-scene .dna-webgl-labels { position:absolute; inset:0; width:100%; height:100%; }
+body .structure-scene .dna-webgl-canvas { width:100%; height:100%; display:block; }
+body .structure-info { min-width:0; min-height:0; height:100%; max-height:100%; display:flex; flex-direction:column; gap:12px; padding:14px; overflow:auto; overscroll-behavior:contain; background:#fff; border:1px solid #dce8e4; border-radius:12px; box-shadow:none; }
+body .structure-info > * { flex:none; }
+.structure-stage-summary h2 { font-size:15px; margin:0 0 8px; color:#245f52; }
+.structure-stage-summary p { font-size:12px; line-height:1.8; margin:0; color:#647c83; }
+.structure-layout > .structure-context-trigger { display:none; position:absolute; right:12px; top:10px; z-index:6; min-height:36px; padding:6px 10px; font-size:12px; background:#ffffffef; }
+body .structure-info .dna-state-control { position:static; width:100%; padding:10px; border-radius:10px; }
+body .structure-info .dna-state-header { font-size:12px; flex-wrap:wrap; }
+body .structure-info .dna-state-control label { display:grid; gap:8px; font-size:12px; }
+body .structure-info input[type="range"] { width:100%; min-width:0; }
+body .structure-info .dna-reference-disclosure,body .structure-info .rna-reference-disclosure { position:static; width:100%; min-width:0; border-radius:10px; }
+body .structure-info .dna-reference-toggle,body .structure-info .rna-reference-toggle { padding:10px; gap:8px; font-size:12px; }
+body .structure-info .dna-reference-panel,body .structure-info .rna-reference-panel { position:static; display:grid; width:100%; min-width:0; max-height:none; padding:10px; overflow:visible; grid-template-columns:minmax(0,1fr); }
+body .structure-info .dna-reference-list,body .structure-info .rna-reference-list { grid-template-columns:minmax(0,1fr); }
+body .structure-info .protein-stage-note { position:static; width:auto; max-width:none; font-size:12px; line-height:1.8; padding:10px; margin:0; }
+body .structure-info .protein-progress-marks { display:none; }
+body .structure-info .plant-cell-part-switcher__head strong { font-size:16px; }
+body .structure-info .plant-cell-part-switcher__head small { font-size:10px; letter-spacing:0; }
+body .structure-info .plant-cell-part-switcher__hint { font-size:12px; line-height:1.6; }
+body .structure-info .plant-cell-part-switcher__buttons { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+body .structure-info .plant-cell-part-button { min-height:44px; padding:7px 6px; border-radius:10px; }
+body .structure-info .plant-cell-part-button strong { font-size:13px; }
+body .structure-info .plant-cell-part-button span { font-size:9px; }
+body .structure-info .plant-cell-part-switcher__current { padding:10px; margin:0; }
+body .structure-scene .dna-webgl-label { min-width:0; max-width:none; font-size:12px; font-weight:600; line-height:1.2; padding:4px 6px; box-shadow:0 2px 6px #193d4510; }
+body .structure-scene .dna-webgl-label[hidden] { display:none; }
+body .structure-feedback { position:absolute; z-index:4; left:88px; right:16px; bottom:10px; margin:0; font-size:11px; line-height:1.5; text-align:center; color:#356e61; pointer-events:none; text-shadow:0 1px 4px white; }
+body .structure-feedback:empty { display:none; }
+body .shell-dialog .structure-info { height:auto; max-height:none; padding:0; border:0; border-radius:0; overflow:visible; background:transparent; }
+body .model-area[data-immersive="true"] .structure-layout { grid-template-columns:minmax(0,1fr); padding:0; gap:0; }
+body .model-area[data-immersive="true"] .structure-layout > .structure-info,body .model-area[data-immersive="true"] .structure-context-trigger { display:none; }
+body .model-area[data-immersive="true"] .structure-scene { border-radius:0; }
+@media(max-width:980px) {
+ body .model-area .structure-layout { grid-template-columns:minmax(0,1fr); padding:0; gap:0; }
+ body .structure-layout > .structure-info { display:none; }
+ body .structure-layout > .structure-context-trigger { display:inline-flex; }
+ body .structure-scene { border-radius:0; }
+ body .structure-scene .dna-webgl-label { font-size:11px; padding:4px 5px; }
+}
+body[data-shell-compact="true"] .model-area .structure-layout { grid-template-columns:minmax(0,1fr); padding:0; gap:0; }
+body[data-shell-compact="true"] .structure-layout > .structure-info { display:none; }
+body[data-shell-compact="true"] .structure-context-trigger { display:inline-flex; }
+body[data-shell-compact="true"] .model-area[data-immersive="true"] .structure-context-trigger { display:none; }
+@media(prefers-reduced-motion:reduce) { .plant-cell-part-button { transition:none; } }
+
+.structure-label-lines { position:absolute; inset:0; width:100%; height:100%; overflow:visible; pointer-events:none; }
+.structure-label-lines path { stroke-width:1; stroke-opacity:.45; fill:none; }

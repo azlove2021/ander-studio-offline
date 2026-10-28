@@ -1,0 +1,551 @@
+/* Original model-specific structure, reference diagram and label styles. */
+.hidden-labels [class*="label"],
+.hidden-labels text.model-label,
+.hidden-labels text.tiny-label { opacity: 0 !important; pointer-events: none !important; }
+
+.dna-visual-wrap {
+  padding: 0;
+}
+
+.dna-3d-shell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  display: grid;
+  place-items: stretch;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(37, 99, 235, 0.05), transparent 48%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.82));
+}
+
+.dna-3d-shell:active {
+  cursor: grabbing;
+}
+
+.dna-3d-shell.is-panning,
+.dna-3d-shell.is-panning:active {
+  cursor: move;
+}
+
+.dna-viewport {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+}
+
+.dna-webgl-shell {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.dna-webgl-stack {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 340px);
+  grid-template-rows: minmax(0, 1fr);
+  gap: 8px;
+  align-self: stretch;
+  align-content: stretch;
+}
+
+.dna-webgl-sidecar {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 8px;
+  overflow: hidden;
+}
+
+.dna-webgl-viewport-frame {
+  position: absolute;
+  inset: 0;
+}
+
+.dna-webgl-host {
+  position: absolute;
+  inset: 0;
+}
+
+.dna-webgl-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.dna-webgl-labels {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.dna-webgl-label {
+  position: absolute;
+  max-width: min(220px, 38vw);
+  padding: 5px 8px;
+  border: 1px solid rgba(216, 225, 236, 0.92);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--label-color, #0f172a);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.dna-reference-disclosure {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  border: 1px solid rgba(216, 225, 236, 0.96);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+
+.dna-reference-toggle {
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.dna-reference-toggle span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dna-reference-toggle strong {
+  flex: 0 0 auto;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: var(--primary-dark);
+  font-size: 12px;
+}
+
+.dna-reference-disclosure.is-open .dna-reference-toggle {
+  border-bottom: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.dna-reference-panel-wrap[hidden] {
+  display: none;
+}
+
+.dna-reference-panel-wrap {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.dna-reference-panel {
+  position: static;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: start;
+  gap: 14px;
+  padding: 10px;
+  border: 0;
+  background: rgba(248, 250, 252, 0.72);
+  box-shadow: none;
+  cursor: default;
+  user-select: text;
+  touch-action: pan-y;
+}
+
+.dna-reference-panel section {
+  display: grid;
+  gap: 7px;
+}
+
+.dna-reference-panel h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.dna-reference-panel h3 span {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.dna-reference-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.dna-reference-card {
+  display: grid;
+  grid-template-rows: 92px auto;
+  gap: 6px;
+  align-items: center;
+  min-width: 0;
+  min-height: 142px;
+  padding: 6px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 8px;
+  background: rgba(248, 250, 252, 0.82);
+}
+
+.dna-reference-card-copy {
+  min-width: 0;
+  text-align: center;
+}
+
+.dna-reference-card strong,
+.dna-reference-card span,
+.dna-reference-card p {
+  display: block;
+}
+
+.dna-reference-card strong {
+  color: var(--text);
+  font-size: 10.5px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.dna-reference-card span {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 9.5px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.dna-reference-card p {
+  margin: 3px 0 0;
+  color: #475569;
+  font-size: 9.5px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.dna-nucleotide-figure {
+  padding: 8px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 10px;
+  background: rgba(248, 250, 252, 0.82);
+}
+
+.dna-nucleotide-figure > p {
+  margin: 6px 2px 0;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.dna-reference-structure {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.dna-reference-structure polygon,
+.dna-reference-structure path,
+.dna-reference-structure circle {
+  fill: color-mix(in srgb, var(--base-color) 36%, white);
+  stroke: #334155;
+  stroke-width: 1.8;
+  vector-effect: non-scaling-stroke;
+}
+
+.dna-reference-structure line {
+  stroke: #64748b;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.dna-reference-structure .purine-shared-edge {
+  stroke: #334155;
+  stroke-width: 1.8;
+}
+
+.dna-reference-structure .ring-fusion {
+  stroke: #334155;
+  stroke-width: 1.8;
+}
+
+.dna-reference-structure .double-bond {
+  stroke: #334155;
+  stroke-width: 1.35;
+}
+
+.dna-reference-structure .substituent-bond {
+  stroke: #334155;
+  stroke-width: 1.7;
+}
+
+.dna-reference-structure .chemical-ring-fill {
+  fill: color-mix(in srgb, var(--base-color) 34%, white);
+  stroke: none;
+}
+
+.dna-reference-structure .chemical-bond {
+  fill: none;
+  stroke: #334155;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.dna-reference-structure text {
+  fill: #0f172a;
+  font-size: 13px;
+  font-weight: 900;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 3px;
+}
+
+.dna-reference-base .chemical-atom {
+  font-size: 11px;
+}
+
+.dna-reference-base .chemical-group {
+  font-size: 10px;
+}
+
+.dna-reference-structure .chemical-node {
+  fill: #0f172a;
+  font-size: 10.5px;
+  font-weight: 900;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.98);
+  stroke-width: 4.5px;
+  stroke-linejoin: round;
+}
+
+.dna-reference-nucleotide .phosphate-node {
+  fill: #d8f5fa;
+  stroke: #0891b2;
+}
+
+.dna-reference-nucleotide .sugar-node {
+  fill: #fff0bd;
+  stroke: #d97706;
+}
+
+.dna-reference-nucleotide .sugar-ring {
+  fill: #fff0bd;
+  stroke: #d97706;
+  stroke-width: 1.8;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.dna-reference-nucleotide .carbon-vertex {
+  fill: #9a3412;
+  stroke: none;
+}
+
+.dna-reference-nucleotide .base-ring {
+  fill: var(--base-color);
+  stroke: #475569;
+  stroke-width: 1.8;
+  stroke-linejoin: round;
+}
+
+.dna-reference-nucleotide .phosphate-label,
+.dna-reference-nucleotide .sugar-label {
+  font-size: 10px;
+}
+
+.dna-reference-nucleotide .phosphate-label {
+  font-size: 18px;
+}
+
+.dna-reference-nucleotide .chemical-group,
+.dna-reference-nucleotide .carbon-index,
+.dna-reference-nucleotide .sugar-oxygen {
+  font-size: 10px;
+}
+
+.dna-reference-nucleotide .carbon-index {
+  fill: #9a3412;
+}
+
+.dna-reference-nucleotide .base-label {
+  font-size: 13px;
+}
+
+.dna-reference-nucleotide .base-options {
+  font-size: 8px;
+}
+
+.dna-reference-nucleotide .nucleotide-part-labels text {
+  fill: var(--muted);
+  font-size: 10px;
+  stroke-width: 2px;
+}
+
+.rna-reference-nucleotide .hydroxyl-node {
+  fill: #ec4899;
+  stroke: #be185d;
+}
+
+.rna-reference-nucleotide .hydroxyl-label {
+  font-size: 6px;
+  fill: #831843;
+  stroke-width: 1.8px;
+}
+
+.dna-webgl-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 900;
+  text-align: center;
+  pointer-events: none;
+}
+
+.dna-webgl-loading[hidden] {
+  display: none;
+}
+
+.dna-hit {
+  cursor: pointer;
+}
+
+.dna-floating-label-layer {
+  pointer-events: none;
+}
+
+.dna-base-text {
+  font-family:
+    "Microsoft YaHei",
+    Arial,
+    sans-serif;
+  font-weight: 900;
+  fill: #0f172a;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.92);
+  stroke-width: 4.5px;
+}
+
+.dna-floating-label {
+  font-size: 14px;
+  font-weight: 800;
+  fill: #102033;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.95);
+  stroke-width: 5px;
+}
+
+.dna-label-line {
+  pointer-events: none;
+}
+
+.dna-hud text {
+  fill: #64748b;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.dna-feedback {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 12px;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border: 1px solid rgba(216, 225, 236, 0.9);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+  pointer-events: none;
+}
+
+.dna-state-control {
+  position: static;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(216, 225, 236, 0.96);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+  cursor: default;
+}
+
+.dna-state-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.dna-state-header strong {
+  color: var(--primary);
+}
+
+.dna-state-control label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.dna-state-control input[type="range"] {
+  width: 100%;
+  accent-color: var(--primary);
+}

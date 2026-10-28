@@ -1,0 +1,124 @@
+*{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden}body{font-family:"Microsoft YaHei",sans-serif;color:#213c49}.independent-model-app{display:flex;flex-direction:column;height:100dvh}.independent-model-header{padding:14px 20px;flex:0 0 94px}.independent-model-workspace{flex:1;min-height:0;padding:0 14px 14px}.model-area{height:100%;display:grid;grid-template-rows:auto minmax(0,1fr) auto;overflow:hidden}.model-stage{min-height:0;position:relative}.science-viewport{height:100%;display:grid;grid-template-rows:40px minmax(0,1fr) 36px;position:relative;isolation:isolate;background:#fffdf8}.draft-badge{padding:8px 12px;border:1px solid #b7d4c7;border-radius:100px;background:#f5fbf8;font-size:12px;color:#44725e;white-space:nowrap}.scene-topline{display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:2;font-size:12px;color:#52756e}.scene-topline i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#e9a259;margin-right:6px}.view-tools{display:flex;gap:5px}.view-tools button{font:inherit;color:#376858;border:1px solid #bcd7cc;background:#fff;border-radius:7px;padding:4px 10px;cursor:pointer}.view-tools button[aria-pressed=true]{background:#e8f4ed;border-color:#78ad91}.content-layout{min-height:0;display:grid;grid-template-rows:minmax(0,1fr) 148px;z-index:1;position:relative}.diagram-window{min-height:0;overflow:hidden;position:relative}#science{width:100%;height:100%;display:block}#energy{display:block;width:100%;height:100%}.energy-area{border-top:1px solid #e7ece6;background:#fffdf8;min-width:0;overflow:hidden}.energy-compact{display:none}.sketch-caption{display:flex;justify-content:center;align-items:center;gap:22px;font-size:11px;color:#6d7c7d;border-top:1px solid #edf0eb;z-index:2;padding:0 12px}.caption-main{color:#496d62;font-weight:700}.corner-brand{position:absolute;left:12px;bottom:170px;width:100px;z-index:2;pointer-events:none}.brand-background{position:absolute;top:45%;left:50%;width:75%;max-height:65%;transform:translate(-50%,-50%);opacity:.06;z-index:0;pointer-events:none}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden}
+#science text,#energy text{font-family:"Microsoft YaHei",sans-serif;fill:#304c58}#science .label{font-size:23px;font-weight:700}#science .sub{font-size:16px;fill:#647b80}#science .tiny{font-size:14px;fill:#788b8f}#science .compartment{font-size:24px;fill:#49747f;font-weight:700}.leader{fill:none;stroke:#90a6a9;stroke-width:1.4}.electron-line{fill:none;stroke:#dd8850;stroke-width:4.5;marker-end:url(#electron-arrow);stroke-linecap:round;stroke-linejoin:round}.proton-line{fill:none;stroke:#3995c7;stroke-width:5;marker-end:url(#proton-arrow);stroke-linecap:round;stroke-linejoin:round}.alt-line{stroke-dasharray:8 7}.e-dot{fill:#fff7e5;stroke:#d68f51;stroke-width:1.7}.e-label{font-size:13px;fill:#ac6c36!important;font-weight:700}.proton-token{fill:#f0faff;stroke:#83bbd4;stroke-width:1.3}.proton-text{font-size:14px;fill:#347fa6!important}.protein{stroke-width:2.2;stroke-linejoin:round}.transport-integrated-membrane .lipid-tail{fill:none;stroke-linecap:round}.transport-integrated-membrane .lipid-tail-shadow{stroke:rgba(14,165,233,.16);stroke-width:4.6}.transport-integrated-membrane .lipid-tail-core{stroke:url(#lipidTail2d);stroke-width:2.7}.active-transport-2d-nucleotide .phosphate-bond{stroke:#9a3412;stroke-width:2.4;stroke-linecap:round;fill:none}.active-transport-2d-nucleotide .nucleotide-bond{fill:none;stroke:#9a3412;stroke-width:2;stroke-linecap:round}.active-transport-2d-nucleotide .adenine-ring{fill:#fde68a;stroke:#d97706;stroke-width:1.7}.active-transport-2d-nucleotide .adenine-ring-small{fill:#fcd34d}.active-transport-2d-nucleotide .ribose-ring{fill:#fdba74;stroke:#d97706;stroke-width:1.8}.active-transport-2d-nucleotide text,.active-transport-2d-phosphate text{font-size:15px;fill:#9a3412;text-anchor:middle}.active-transport-2d-nucleotide [data-atp-label],.active-transport-2d-nucleotide [data-adp-label]{font-size:15px;fill:#9a3412;text-anchor:middle}
+@media(max-width:860px){.independent-model-header{flex-basis:72px}.independent-model-workspace{padding:0 5px 5px}.draft-badge{display:none}.science-viewport{grid-template-rows:38px minmax(0,1fr) 28px}.scene-topline{padding:0 9px;gap:5px;font-size:10px}.scene-topline>span{max-width:148px}.view-tools{gap:3px}.view-tools button{padding:4px 7px;font-size:11px}.content-layout{grid-template-rows:minmax(0,1fr) 88px}.energy-area{padding:5px 12px}#energy{display:none}.energy-compact{display:block}.energy-compact p{margin:0 0 7px;font-size:12px;font-weight:700;color:#48625d}.energy-compact small{font-size:10px;color:#82908b;font-weight:400;margin-left:7px}.coupling-chain{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:#87725c}.coupling-chain span{line-height:1.55}.coupling-chain b{font-size:12px;color:#385f61}.coupling-chain em{font-style:normal;color:#8aa19a;padding:0 4px}.compact-note{font-size:9px;color:#8d9994;margin-top:4px}.sketch-caption{font-size:10px;gap:0}.caption-detail{display:none}.corner-brand{bottom:124px;width:76px;left:8px}}
+body[data-shell-compact=true] .science-viewport{grid-template-rows:30px minmax(0,1fr) 22px}
+body[data-shell-compact=true] .content-layout{grid-template-columns:minmax(0,1fr) 192px;grid-template-rows:minmax(0,1fr)}
+body[data-shell-compact=true] .energy-area{border-top:0;border-left:1px solid #dce8e2;padding:14px 14px}
+body[data-shell-compact=true] #energy{display:none}body[data-shell-compact=true] .energy-compact{display:block}
+body[data-shell-compact=true] .coupling-chain{display:grid;grid-template-columns:1fr;gap:3px;font-size:11px}
+body[data-shell-compact=true] .coupling-chain em{transform:rotate(90deg);width:18px;text-align:center}
+body[data-shell-compact=true] .coupling-chain span br{display:none}body[data-shell-compact=true] .coupling-chain b{margin-left:4px}
+body[data-shell-compact=true] .corner-brand{bottom:29px;width:72px}
+@media(max-width:650px) and (orientation:landscape){body[data-shell-compact=true] .content-layout{grid-template-columns:minmax(0,1fr) 157px}body[data-shell-compact=true] .energy-area{padding:9px}.compact-note{display:none}}
+@media(max-width:359px){.content-layout{grid-template-rows:minmax(0,1fr) 72px}.energy-area{padding:4px 8px}.energy-compact p{margin-bottom:3px;font-size:10px}.coupling-chain{font-size:10px}.coupling-chain b{font-size:10px}.compact-note{display:none}.scene-topline>span{display:none}.scene-topline{justify-content:flex-end}.corner-brand{bottom:108px;width:60px}}
+/* Appearance assets share the same camera as the original lipid geometry. */
+.protein-art{pointer-events:none}.electron-halo{paint-order:stroke;stroke-linecap:round}#science .proton-line{stroke:#478faf;stroke-width:4.8}#science .electron-line{stroke:#d98f55;stroke-width:4.2}#science .compartment{font-size:27px}#science .sub{font-size:18px}#science .tiny{font-size:15px}#science .leader{stroke:#a3b6ad;stroke-width:1.1}.scene-topline{background:#fffdf8}
+.local-region-label{display:none}body[data-shot="coupling"] .local-region-label{display:block}
+
+.diagram-window{touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab;isolation:isolate}.diagram-window:active{cursor:grabbing}.panel-home{display:none}.shell-dialog #structure-panel{display:block;line-height:1.7}
+.science-viewport{grid-template-rows:42px minmax(0,1fr) 50px}.content-layout{grid-template-rows:minmax(0,1fr) 120px}
+.science-status{font-size:12px;z-index:2;padding:5px 10px 5px 86px;border-top:1px solid #e6ece7;background:#fffdf8;text-align:center;overflow:hidden}.science-status p{margin:4px 0 0;line-height:1.35;color:#627a77}#reaction-readout{font-variant-numeric:tabular-nums;color:#456b70;white-space:nowrap}
+.entry-choice{display:flex;align-items:center;gap:6px;white-space:nowrap}.entry-choice select{font:inherit;color:#315e55;border:1px solid #c4d6cb;border-radius:7px;background:#fffdf8;padding:5px;max-width:166px}
+.timeline-wrap output{width:82px;min-width:82px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.location-badge{position:absolute;right:8px;bottom:4px;display:flex;gap:10px;font-size:10px;color:#6c8b89;pointer-events:none;z-index:2}
+.energy-area{position:relative;padding:0 12px}.energy-heading{display:none}.energy-area #energy{height:100%}.energy-area .coupling-chain,#gradient-state{display:none}
+#science .dynamic-electron{pointer-events:none}#science .dynamic-electron circle{fill:#ffead0;stroke:#c77b37;stroke-width:2}#science .dynamic-electron text{font-weight:700;fill:#a76624;font-size:16px}
+#science .tracked-proton circle{fill:#f0fbff;stroke:#509abd;stroke-width:2}#science .tracked-proton text{fill:#247899;font-weight:600;font-size:16px}
+#science .soft-label{paint-order:stroke;stroke:#fffdf8;stroke-width:4px;stroke-linejoin:round}
+#science .site-pocket{fill:#aa704e;fill-opacity:.3;stroke:#946141;stroke-width:1.2}
+#science[data-labels=false] [data-detail-label]{display:none}#science[data-paths=false] .electron-line,#science[data-paths=false] .proton-line{display:none}
+#science .carrier text{font-size:17px}#science .route-key{opacity:.75}#science .selected-art{filter:drop-shadow(0 0 3px #e9ad51)}
+#science .protein-art{pointer-events:visiblePainted}#science [data-object]{cursor:pointer}
+@media(max-width:860px){.content-layout{grid-template-rows:minmax(0,1fr) 70px}.science-viewport{grid-template-rows:39px minmax(0,1fr) 54px}.energy-area{padding:4px 12px}#energy{display:none}.energy-heading{display:block;font-size:11px;font-weight:700}.energy-heading small{font-size:9px;font-weight:400;margin-left:8px;color:#84958f}.energy-area .coupling-chain{display:flex;gap:5px;font-size:10px}.coupling-chain button{border:0;background:transparent;color:#897055;padding:2px;text-align:left;font:inherit;line-height:1.45;cursor:pointer}.coupling-chain b,.coupling-chain span{display:block}.coupling-chain b{font-size:11px}.coupling-chain button.active{background:#e5f2ed;border-radius:5px}#gradient-state{display:block;position:absolute;top:4px;right:10px;margin:0;font-size:10px;color:#598477}.science-status{font-size:10px;padding:5px 8px}.science-status p{margin-top:3px}.entry-choice select{max-width:128px;padding:4px;font-size:10px}.view-tools button{font-size:10px;padding:4px 5px}.scene-topline{padding:0 8px;gap:3px}.scene-topline>span{max-width:none}.entry-choice{font-size:10px;gap:3px}.location-badge{font-size:9px}.timeline-wrap output{width:73px;min-width:73px}}
+body[data-shell-compact=true] .science-viewport{grid-template-rows:31px minmax(0,1fr) 37px}
+body[data-shell-compact=true] .content-layout{grid-template-columns:minmax(0,1fr) 158px;grid-template-rows:minmax(0,1fr)}
+body[data-shell-compact=true] .energy-area{padding:8px}.energy-area .coupling-chain em{font-style:normal}
+body[data-shell-compact=true] .energy-heading{display:block;font-size:11px}body[data-shell-compact=true] .energy-area .coupling-chain{display:grid;grid-template-columns:1fr;gap:1px}body[data-shell-compact=true] .coupling-chain button{font-size:10px;padding:0}body[data-shell-compact=true] .coupling-chain em{line-height:10px;transform:rotate(90deg);width:12px}body[data-shell-compact=true] .coupling-chain b{font-size:11px;display:inline;margin-left:3px}body[data-shell-compact=true] .coupling-chain span{display:inline}body[data-shell-compact=true] #gradient-state{display:block;position:static;font-size:10px;margin-top:6px}
+body[data-shell-compact=true] .science-status{font-size:10px;padding:3px 8px}body[data-shell-compact=true] .science-status p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.model-area[data-immersive=true] .science-viewport{grid-template-rows:40px minmax(0,1fr) 52px;padding-top:45px;padding-bottom:var(--shell-dock-height,118px)}
+.model-area[data-immersive=true] .content-layout{grid-template-rows:minmax(0,1fr) 65px}.model-area[data-immersive=true] #energy{display:none}.model-area[data-immersive=true] .coupling-chain{display:flex}
+body[data-shell-compact=true] .model-area[data-immersive=true] .science-viewport{padding-top:45px;padding-bottom:48px;grid-template-rows:28px minmax(0,1fr) 35px}
+body[data-shell-compact=true] .model-area[data-immersive=true] .content-layout{grid-template-rows:minmax(0,1fr)}
+@media(max-width:359px) and (max-height:520px){.science-viewport{grid-template-rows:29px minmax(0,1fr) 37px}.content-layout{grid-template-rows:minmax(0,1fr) 36px}.energy-heading,#gradient-state{display:none}.energy-area{padding:2px 8px}.energy-area .coupling-chain b{font-size:9px}.energy-area .coupling-chain span{font-size:9px}.science-status{font-size:9px}.science-status p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.scene-topline .entry-choice{font-size:0}.entry-choice select{max-width:107px}.location-badge{font-size:8px}.model-area[data-immersive=true] .science-viewport{padding-bottom:118px;grid-template-rows:29px minmax(0,1fr) 37px}.model-area[data-immersive=true] .content-layout{grid-template-rows:minmax(0,1fr) 36px}}
+@media(max-width:650px) and (orientation:landscape){body[data-shell-compact=true] .content-layout{grid-template-columns:minmax(0,1fr) 133px}body[data-shell-compact=true] .energy-area{padding:4px}body[data-shell-compact=true] .energy-heading{font-size:10px}}
+
+.coupling-chain button{border:0;background:transparent;color:#897055;padding:2px;text-align:left;font:inherit;line-height:1.45;cursor:pointer}.coupling-chain button.active{background:#e5f2ed;border-radius:5px}
+#science[data-view=focus] #scene-foreground>.compartment,#science[data-view=focus] #scene-foreground>.sub,#science[data-view=focus] .route-key,#science[data-view=focus] [data-object=science-notes]{visibility:hidden}
+.location-badge{padding:3px 5px;border-radius:5px;background:#fffdf8dc}
+#science-background{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:-1;pointer-events:none}
+#science{position:relative;z-index:1}
+#science[data-view=focus][data-focus=synthase] [data-object]:not([data-object=ATP-synthase])>text,#science[data-view=focus][data-focus=synthase] [data-object]:not([data-object=ATP-synthase])>rect,#science[data-view=focus][data-focus=synthase] [data-object]:not([data-object=ATP-synthase])>.leader{visibility:hidden}
+@media(max-width:359px) and (max-height:530px){#science[data-view=focus] [data-object]>text,#science[data-view=focus] [data-object]>rect,#science[data-view=focus] .leader{visibility:hidden}}
+/* Immersive controls overlay the full scientific canvas. Their visibility never resizes it. */
+.model-area[data-immersive=true] .science-viewport{display:block;padding:0!important}
+.model-area[data-immersive=true] .content-layout{position:absolute;inset:0;display:block}
+.model-area[data-immersive=true] .diagram-window{position:absolute;inset:0}
+.model-area[data-immersive=true] .scene-topline{position:absolute;top:46px;left:6px;right:6px;height:31px;border-radius:6px;background:#fffdf8e8;transition:opacity .18s}
+.model-area[data-immersive=true] .energy-area{position:absolute;left:86px;right:6px;bottom:calc(var(--shell-dock-height,100px) + 44px);height:39px;padding:3px 7px;border:0;border-radius:7px;background:#fffdf8df}
+.model-area[data-immersive=true] .energy-heading,.model-area[data-immersive=true] #gradient-state{display:none}
+.model-area[data-immersive=true] .energy-area .coupling-chain{display:flex;justify-content:space-between;gap:3px;font-size:10px}
+.model-area[data-immersive=true] .coupling-chain b,.model-area[data-immersive=true] .coupling-chain span{display:block;font-size:10px;margin:0}
+.model-area[data-immersive=true] .coupling-chain em{transform:none;width:auto;align-self:center}
+.model-area[data-immersive=true] .science-status{position:absolute;left:6px;right:6px;bottom:var(--shell-dock-height,100px);height:43px;font-size:10px;border:0;border-radius:6px;background:#fffdf8de;padding:3px}
+.model-area[data-immersive=true] .science-status p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.model-area[data-immersive=true] .location-badge{bottom:calc(var(--shell-dock-height,100px) + 86px)}
+.model-area[data-immersive=true] .model-brand-corner{transform:translateY(calc(-1 * var(--shell-dock-height,100px) - 48px))}
+.model-area[data-immersive=true][data-chrome=hidden] .scene-topline{opacity:0;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.model-area[data-immersive=true] .scene-topline{transition:none}}
+
+/* Unified molecular rendering. Geometry carries meaning; shading is shared. */
+#science .molecular-bead circle{stroke:#8c9b96;stroke-width:1.25}
+#science .bead-electron{stroke:#af7d3e!important}
+#science .bead-proton{stroke:#658fa6!important}
+#science .bead-oxygen{stroke:#b67865!important}
+#science .species-symbol{font-size:14px;font-weight:700;fill:#435b61;stroke:none}
+#science .species-name{font-size:20px;font-weight:600;fill:#53685e;paint-order:stroke;stroke:#fffdf8;stroke-width:3px;stroke-linejoin:round}
+#science .molecule-bond{stroke:#92938a;stroke-width:2.6;stroke-linecap:round;fill:none}
+#science .molecular-ring,#science .nucleotide polygon{stroke:#99977f;stroke-width:1.5;stroke-linejoin:round}
+#science .atom-detail{font-size:9px;fill:#647466;stroke:none;font-weight:600}
+#science .nucleotide .species-symbol{font-size:11px}
+#science .pump-label{font-size:21px;font-weight:700;fill:#54819a}
+#science .pump-total{fill:#6b8a95}
+#science .charge{font-size:19px;fill:#668d92}
+#science .site-state{font-size:13px;fill:#fdf6e8;font-weight:600}
+#science .reaction-ledger{font-size:18px;fill:#5e7f80}
+#science .electron-line{stroke:#c79359;stroke-width:3.3;opacity:.62}
+#science .proton-line{stroke:#6a9fb5;stroke-width:3.1;opacity:.60}
+#science [data-route][opacity="0"]{opacity:0}
+#science .tracked-proton circle,#science .chemical-proton circle{fill:url(#mol-proton)}
+#science .dynamic-electron circle{fill:url(#mol-electron)}
+#science .tracked-proton .species-symbol,#science .chemical-proton .species-symbol{fill:#386881;font-size:14px}
+#science .dynamic-electron .species-symbol{fill:#7d6037;font-size:14px}
+#science .tracked-proton[ data-proton-mode="ims"]{opacity:.9}
+#science .nucleotide-state{font-size:19px}
+#science .q-carrier .q-name{font-size:15px}
+#energy .energy-outline{fill:#fffdf8;stroke:#e3e8de;stroke-width:1.2}
+#energy [data-active="true"] .energy-outline{fill:#f2f6ee;stroke:#acc4b8}
+#energy .energy-title{font-size:20px;font-weight:700;fill:#425e56}
+#energy .energy-state{font-size:17px;fill:#627c72}
+#energy .energy-small{font-size:14px;fill:#859288}
+#energy .energy-reaction{font-size:20px;font-weight:700;fill:#9b7b57}
+#reaction-readout{font-weight:600;white-space:normal;line-height:1.35}
+#science[data-view=focus][data-focus=synthase] .oxygen-ledger{visibility:hidden}
+.diagram-window:has(#science[data-view=focus]) .location-badge{top:48px;bottom:auto}
+@media(max-height:530px){.diagram-window:has(#science[data-view=focus]) .location-badge{display:none}}
+.science-status{padding-left:10px}
+@media(max-width:860px){.science-status{font-size:10px}.science-status p{line-height:1.25}}
+
+
+
+/* The electron is the primary tracking object, including while bound to a carrier. */
+#science .electron-glyph circle{stroke:none}#science .electron-glyph .electron-aura{fill:#d78b76;stroke:none}#science .electron-glyph .electron-rim{fill:#fff;stroke:#b96b5c;stroke-width:.8}#science .electron-glyph .electron-core{fill:url(#mol-electron);stroke:none}#science .electron-glyph .electron-symbol{fill:#fff;stroke:#995045;stroke-width:.6;paint-order:stroke;font-size:19px;font-weight:800}
+/* Common arrow grammar: rounded, white edged, large heads, deterministic activity. */
+#science .flow-route{pointer-events:none}
+#science .flow-route[data-enabled=false],#science[data-paths=false] .flow-route{display:none}
+#science .flow-route .flow-line{fill:none;stroke:var(--flow-color);stroke-width:var(--flow-width);stroke-linecap:round;stroke-linejoin:round}
+#science .flow-route .flow-casing{fill:none;stroke:#fffdf8;stroke-width:var(--flow-casing);stroke-linecap:round;stroke-linejoin:round}
+#science .flow-route[data-kind=electron][data-active=true] .flow-line{filter:drop-shadow(0 0 1.8px #dba08b)}
+#science .route-key .electron-line{fill:none;stroke:#bd6256;stroke-width:5.2;opacity:1;marker-end:url(#electron-flow-arrow)}
+#science .route-key .proton-line{fill:none;stroke:#7795a4;stroke-width:5;opacity:1;marker-end:url(#proton-flow-arrow)}
+#science .q-step{font-size:15px;fill:#7b8b86;font-weight:500;paint-order:stroke;stroke:#f0f9f8;stroke-width:4px;stroke-linejoin:round}#science .q-step[data-active=true]{fill:#b75c50;font-weight:800}#science .q-status{font-size:14px;font-weight:600;fill:#5d704e;paint-order:stroke;stroke:#f1f9f6;stroke-width:4px;stroke-linejoin:round}
+#science .binding-pocket-window{fill:url(#binding-soft-wash);stroke:none}#science .tracked-site-label{visibility:hidden}#science .terminal-phosphate .bead-phosphate{fill:url(#mol-terminal);stroke:#218d83!important;stroke-width:1.6}#science .terminal-bond{stroke:#208e82;stroke-width:3.5}#science .phosphate-indices text{font-size:10px;font-weight:700;fill:#568078}#science .nucleotide-detail .molecule-bond{stroke-width:2.4}#science .nucleotide-state{font-size:17px}#science .nucleotide-detail .nucleotide polygon{stroke-width:1.8}
+
+/* Empty carrier returns form one quiet visual family. */
+#science .flow-route[data-kind=carrier] .flow-line{stroke-dasharray:7 6}

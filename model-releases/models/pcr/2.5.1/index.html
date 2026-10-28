@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PCR的基本过程</title><link rel="icon" href="data:,"><link rel="stylesheet" href="model.css"><link rel="stylesheet" href="brand-watermark.css"><link rel="stylesheet" href="lab-layout.css"><link rel="stylesheet" href="shell-standard.css"><link rel="stylesheet" href="window-standard.css"><script src="/assets/accounts/model-favorites.js?v=e9af20c54e036dd9573d4611bbb8bee47cccdad160e10e9d5ba98730656177d4"></script>
+<script src="/assets/accounts/model-favorite-host.js?v=c616cfcae1d08ce04b9e0af0f0163800016def1b0a8a6c16f9bab30ff6e7b481" data-ander-model-host="website-v1" data-model-id="pcr"></script>
+</head>
+<body data-model-shell="adaptive-model-shell-2.5.1"><main class="independent-model-app">
+<header class="independent-model-header"><a class="independent-model-back" href="#" aria-label="返回主页"></a><div class="independent-model-heading"><span class="independent-model-kicker"></span><h1></h1></div></header>
+<div class="independent-model-workspace"><section class="model-area">
+<nav class="stage-strip" aria-label="PCR五个阶段"></nav>
+<div class="model-stage"><div class="pcr-layout">
+<section class="reaction-area" aria-label="PCR反应与程序">
+<div class="reaction-heading"><h2>PCR 反应区</h2></div>
+<div class="reaction-visual">
+<div class="scene-viewport" tabindex="0" aria-label="反应画布，窄屏可左右滑动"><svg id="scene" viewBox="0 0 1210 600" preserveAspectRatio="xMidYMid meet" role="img" aria-label="DNA模板与上方原料共同参与PCR反应"></svg></div>
+<div class="temperature-panel"><svg id="temperature-scene" viewBox="0 0 112 390" role="img" aria-label="玻璃温度计与当前反应温度"></svg><div class="phase-readout"><b id="phase-title">加入模板</b><span id="temperature">25°C</span><span id="cycle-readout">准备</span></div></div>
+</div>
+<div class="scene-tools"><span class="strand-legend"><i class="template"></i>初始母链 <i class="new"></i>新生链 <i class="primer"></i>引物区段</span><span class="scroll-hint">可左右滑动</span></div>
+<div class="reaction-program"><strong class="program-caption">反应阶段</strong>
+<div class="phase-track" aria-label="五段PCR进度及实验时间">
+  <div class="phase-once-first"></div>
+  <div class="cycle-loop"><div class="cycle-loop-steps"></div><span class="cycle-caption">②—④ 重复 <b id="repeat-count">30</b> 轮</span></div>
+  <div class="phase-once-last"></div>
+</div>
+</div>
+</section>
+<aside class="products-area" aria-label="循环设置与逐轮产物记录">
+<section class="program-settings" aria-labelledby="settings-title"><h2 id="settings-title">循环设置</h2>
+<div class="cycle-settings"><label>循环数 <input id="cycles-input" aria-label="循环次数" type="number" min="1" max="40" step="1" value="30"></label><button id="apply-cycles" type="button">应用并重置</button><label>定位第 <input id="jump-cycle" aria-label="定位轮次" type="number" min="1" max="30" step="1" value="1"> 轮</label><button id="jump-button" type="button">定位</button><button id="finish-cycle" type="button">本轮后结束</button></div>
+<div id="input-feedback" class="input-feedback" role="status">可设置 1–40 轮；默认 30 轮。</div>
+<details class="science-notes"><summary>示意约定与参数</summary><p>模板两端与引物限定的扩增区重合，所有子代等长。54 个碱基图符用于说明配对与方向，不代表实验片段的实际长度；两种引物各画 18 个碱基。</p><p>主链颜色追踪来源：初始的两条母链为红色，新生链为绿色，下一轮作为模板时仍保留绿色；橙色为嵌入新生链的引物区段。前四轮完整演示，第五轮起省略重复过程、逐轮展示产量翻倍；简图最多显示256个，此后固定画面并继续更新右侧实际总量。代表简图保留初始两条母链，达到显示上限后图中颜色比例不代表实际占比。</p><p>温度和保温时间为常规 Taq 体系的教学示例：预变性 95°C / 2 min；每轮 95°C / 30 s、55°C / 30 s、72°C / 1 min；最后 72°C / 5 min。实际退火温度由引物等条件决定，延伸时间依片段长度调整，进度时间不含升降温。</p><p>上方原料库表示已经加入同一反应液的游离组分；轨迹是放大示意。引物与 dNTP 被掺入子链，Taq 重复催化。计数采用理想的 100% 扩增效率，实际反应会受试剂与效率等限制。</p></details>
+</section>
+<p id="phase-description" class="phase-description" aria-live="polite"></p>
+<h2>每轮产物</h2><span class="subtle">同一体系 · 完成轮次快照</span><div class="count-label">已完成循环的双链总量</div><div id="count-value" class="count-value">1</div><span class="subtle">个 DNA 分子</span><div id="visible-count" class="visible-count">反应区显示 1 个</div><div id="product-history" class="product-history"></div><div class="target-count"><span>计划结束 · 理想总量</span><strong id="target-count">1,073,741,824</strong><small id="target-formula">1 × 2³⁰</small></div><p class="products-note">快照不相加，产物仍在反应液中。<br>最后延伸不增加循环或再次翻倍。</p></aside>
+</div></div>
+<footer class="control-dock"><div class="control-group control-group-primary"><button class="control-button is-primary" data-action="play">播放</button><button class="control-button" data-action="reset">重置</button><button class="control-button" data-action="prev">上一步</button><button class="control-button" data-action="next">下一步</button></div><label class="timeline-control"><span>总进度</span><input id="timeline" type="range" min="0" max="1000" step="1" value="0" aria-label="PCR总进度"><output id="percent">0%</output></label><div class="control-group control-group-view"><button class="control-button" data-action="speed">1 倍速</button><button class="control-button" data-action="labels" aria-pressed="true">标签</button><button class="control-button" data-action="fullscreen">全屏</button></div></footer>
+</section></div></main><script src="shell-standard.js"></script><script type="module" src="model.js"></script><script type="module" src="brand-watermark.js"></script>    <script src="/session.js?v=experience-r1"></script>
+  </body></html>

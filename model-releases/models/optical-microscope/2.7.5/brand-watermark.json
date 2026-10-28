@@ -1,0 +1,7 @@
+{
+  "standard": "model-brand-watermark-1.0",
+  "runtimeVersion": "1.0.2",
+  "model": "optical-microscope",
+  "viewport": "[data-microscope-viewport]",
+  "foreground": "[data-microscope-host]"
+}

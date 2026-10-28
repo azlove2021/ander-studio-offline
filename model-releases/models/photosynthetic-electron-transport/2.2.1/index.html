@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>光系统电子传递链</title><link rel="icon" href="assets/brand-stacked.svg"><link rel="stylesheet" href="model.css"><link rel="stylesheet" href="brand-watermark.css"><link rel="stylesheet" href="shell-standard.css"><link rel="stylesheet" href="window-standard.css"><script src="/assets/accounts/model-favorites.js?v=e9af20c54e036dd9573d4611bbb8bee47cccdad160e10e9d5ba98730656177d4"></script>
+<script src="/assets/accounts/model-favorite-host.js?v=c616cfcae1d08ce04b9e0af0f0163800016def1b0a8a6c16f9bab30ff6e7b481" data-ander-model-host="website-v1" data-model-id="photosynthetic-electron-transport"></script>
+</head>
+<body><main class="independent-model-app">
+ <header class="independent-model-header"><a href="#" class="independent-model-back" aria-label="返回"></a><div class="independent-model-heading"><span class="independent-model-kicker"></span><h1></h1></div></header>
+ <div class="independent-model-workspace"><section class="model-area">
+  <nav class="stage-strip" aria-label="教学阶段"></nav>
+  <div class="model-stage"><div class="science-viewport">
+   <div class="scene-topline"><span class="draft-badge"><b id="teaching-mode">分步讲解</b> <span>· 最后协同运行</span></span><div class="view-tools"><select id="display-view" aria-label="科学视图"><option value="linked">膜与能量</option><option value="membrane">膜剖面</option><option value="energy">能量图</option></select><button data-camera="overview">全链</button><button data-camera="follow">跟随</button><button data-camera="atp">ATP 局部</button></div></div>
+   <div class="linked-canvas" data-display="linked">
+    <div class="diagram-window" tabindex="0" aria-label="类囊体膜科学画面，可拖动、双指缩放；Home 显示全链">
+     <svg id="science" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 720" role="img" aria-label="基质在上、腔在下的光系统电子传递链"></svg>
+     <div class="compartments"><span>叶绿体基质 ↑</span><span>类囊体腔 ↓</span></div>
+     <div class="scene-key"><span class="electron-key">● e⁻</span><span class="proton-key">● H⁺</span><span class="light-key">⌁ 光能</span></div>
+    </div>
+    <div class="energy-area"><div class="energy-heading"><strong>两次光激发</strong><span>同一过程的能量视图</span></div><svg id="energy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1410 220" role="img" aria-label="两次光激发的定性 Z 型能量图"></svg></div>
+   </div>
+   <div class="science-status"><div class="result-row"><span>完成 e⁻ <b id="electrons-count">0/4</b></span><span>O₂ <b id="oxygen-count">0/1</b></span><span>NADPH <b id="nadph-count">0/2</b></span><span class="gradient-result" id="gradient-status">梯度：待建立</span></div><p id="caption-note"></p></div>
+  </div></div>
+  <footer class="control-dock"><div class="control-group control-group-primary"><button class="control-button is-primary" data-action="play">播放</button><button class="control-button" data-action="reset">重置</button><button class="control-button" data-action="prev">上一步</button><button class="control-button" data-action="next">下一步</button></div><label class="timeline-wrap"><span>过程进度</span><input id="time-slider" type="range" min="0" max="50.78" step=".01" value="0" aria-label="过程进度"><output id="time-output">0.0 / 50.8 s</output></label><div class="control-group control-group-view"><button class="control-button" data-action="speed">1×</button><button class="control-button" data-action="labels">标签</button></div><button class="control-button" data-shell-tools>观察</button><div class="control-group control-group-personal"><button class="control-button" data-shell-help>帮助</button><button class="control-button" data-shell-favorite>收藏</button><button class="control-button" data-action="fullscreen">全屏</button></div></footer>
+  <div class="panel-home"><section id="structure-panel"><h3 id="structure-title">结构与说明</h3><p id="structure-description"></p><div id="ledger"></div><p>只追踪一个 4e⁻净反应单位。H⁺回流和 ATP 催化是机制示踪，不按粒子数、转数或可见催化次数计算 ATP 产量。</p><p>2H₂O → O₂ + 4H⁺（腔）+ 4e⁻；2NADP⁺ + 4e⁻ + 2H⁺（基质）→ 2NADPH。</p><p>结构比例、相对能量与演示速度均为教学示意。粒子按相近画面速度移动，不代表真实微观速率。前段逐项突出供电子、H⁺转移、ATP 与 NADPH 合成，最后展示同时耦联；讲解先后不代表真实微观时序。</p><details><summary>科学来源与简化</summary><ul id="source-list"></ul><p>蛋白表面是统一材质的功能插图，不是原子结构复刻。b₆f 显示完整 Q 循环的净作用；两端的中间辅基不逐一展开。糖脂丰富的类囊体膜采用通用脂质头尾示意。</p></details></section></div>
+  <div id="announcement" class="sr-only" aria-live="polite"></div>
+ </section></div>
+</main><script src="shell-standard.js"></script><script src="reused-geometry.js"></script><script src="reused-motion.js"></script><script type="module" src="model.js"></script><script type="module" src="brand-watermark.js"></script>    <script src="/session.js?v=experience-r1"></script>
+  </body></html>

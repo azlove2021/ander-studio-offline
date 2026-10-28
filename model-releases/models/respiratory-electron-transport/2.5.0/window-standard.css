@@ -1,0 +1,151 @@
+/* ANDER_MODEL_WINDOW_STANDARD_V1
+ * Canonical desktop shell. Keep this file last in manifest.styles so model-
+ * specific artwork can vary without changing the outer teaching window.
+ */
+:root {
+  --ander-model-header-height: clamp(72px, 10.444svh, 94px);
+  --ander-model-edge-gap: clamp(8px, 1.556svh, 14px);
+  --ander-model-mobile-header-height: clamp(68px, 10.2svh, 86px);
+  --ander-model-mobile-edge-gap: clamp(4px, .72svh, 6px);
+}
+
+@media (min-width: 861px) {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .independent-model-app {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100svh !important;
+    min-height: 0 !important;
+    max-height: 100svh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0 !important;
+    padding: 0 !important;
+  }
+
+  .independent-model-header {
+    box-sizing: border-box;
+    flex: 0 0 var(--ander-model-header-height);
+    height: var(--ander-model-header-height) !important;
+    min-height: var(--ander-model-header-height) !important;
+    max-height: var(--ander-model-header-height);
+    margin: 0 !important;
+    padding: 14px 20px !important;
+  }
+
+  .independent-model-workspace {
+    box-sizing: border-box;
+    flex: 1 1 auto;
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 var(--ander-model-edge-gap) var(--ander-model-edge-gap) !important;
+    gap: 0 !important;
+    overflow: hidden;
+  }
+
+  .model-area {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    display: grid !important;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    overflow: hidden;
+  }
+
+  .model-stage {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: hidden;
+  }
+
+  .model-area:fullscreen,
+  .model-area.is-css-fullscreen {
+    width: 100vw !important;
+    height: 100svh !important;
+    max-height: 100svh !important;
+    border-radius: 0 !important;
+  }
+}
+
+@media (max-width: 860px) {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .independent-model-app {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100svh !important;
+    min-height: 0 !important;
+    max-height: 100svh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0 !important;
+    padding: 0 !important;
+  }
+
+  .independent-model-header {
+    box-sizing: border-box;
+    flex: 0 0 var(--ander-model-mobile-header-height);
+    height: var(--ander-model-mobile-header-height) !important;
+    min-height: var(--ander-model-mobile-header-height) !important;
+    max-height: var(--ander-model-mobile-header-height);
+    margin: 0 !important;
+    padding: 9px 10px !important;
+  }
+
+  .independent-model-workspace {
+    box-sizing: border-box;
+    flex: 1 1 auto;
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 var(--ander-model-mobile-edge-gap) var(--ander-model-mobile-edge-gap) !important;
+    gap: 0 !important;
+    overflow: hidden;
+  }
+
+  .model-area {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    display: grid !important;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    overflow: hidden;
+  }
+
+  .model-stage {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+
+  .model-area:fullscreen,
+  .model-area.is-css-fullscreen {
+    width: 100vw !important;
+    height: 100svh !important;
+    max-height: 100svh !important;
+    border-radius: 0 !important;
+  }
+}

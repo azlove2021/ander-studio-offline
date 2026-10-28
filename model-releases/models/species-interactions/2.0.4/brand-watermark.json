@@ -1,0 +1,10 @@
+{
+  "standard": "model-brand-watermark-1.0",
+  "runtimeVersion": "1.0.2",
+  "model": "species-interactions",
+  "viewport": ".plots-scroll",
+  "foreground": ".relationship-panels",
+  "ready": "#predation-chart [data-current-point]",
+  "host": ".science-viewport",
+  "cornerFooter": true
+}

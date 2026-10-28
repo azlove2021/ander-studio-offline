@@ -1,0 +1,8 @@
+{
+  "standard": "model-brand-watermark-1.0",
+  "runtimeVersion": "1.0.2",
+  "model": "pcr-product-types",
+  "viewport": ".scene-viewport",
+  "ready": "#target-guides",
+  "foreground": ".pcr-scene-plane"
+}

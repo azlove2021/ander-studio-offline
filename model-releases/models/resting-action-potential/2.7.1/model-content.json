@@ -1,0 +1,168 @@
+{
+  "id": "resting-action-potential",
+  "title": {
+    "zh": "静息电位与动作电位",
+    "en": "Resting and Action Potentials"
+  },
+  "stages": [
+    {
+      "id": "gradient",
+      "title": {
+        "zh": "离子梯度",
+        "en": "Ion Gradients"
+      }
+    },
+    {
+      "id": "rest",
+      "title": {
+        "zh": "静息电位",
+        "en": "Resting Potential"
+      }
+    },
+    {
+      "id": "depolarization",
+      "title": {
+        "zh": "刺激与去极化",
+        "en": "Depolarization"
+      }
+    },
+    {
+      "id": "repolarization",
+      "title": {
+        "zh": "复极化",
+        "en": "Repolarization"
+      }
+    },
+    {
+      "id": "recovery",
+      "title": {
+        "zh": "恢复与维持",
+        "en": "Recovery"
+      }
+    }
+  ],
+  "scope": "单个轴突局部膜电位；不包括沿轴突传播、浓度耗竭或药物实验。",
+  "scientificModel": {
+    "name": "HH 1952 local patch with explicit background-current decomposition",
+    "temperatureC": 6.3,
+    "Cm": 1,
+    "gNa": 120,
+    "gK": 36,
+    "gLeakK": 0.1,
+    "gOther": 0.2,
+    "ENa": 50,
+    "EK": -77,
+    "EL": -54.387,
+    "Ipump": 0.2,
+    "dtMs": 0.005,
+    "recordDurationMs": 30,
+    "stimulus": {
+      "startMs": 3,
+      "durationMs": 0.7,
+      "standard": 20,
+      "weak": 3,
+      "unit": "µA/cm²"
+    },
+    "caveats": [
+      "经典鱿鱼轴突参数，非所有神经元通用数值。",
+      "钾漏电流、其他背景电流与恒定泵电流的代数和等于经典混合漏电流；拆分是教学假设。",
+      "膜泵循环和粒子为慢放机制示意，非分子实际周转频率；内外离子库近似固定。",
+      "蛋白为Blender制作的结构简化剖面，不是原子级重建。",
+      "钠激活门和失活门独立驱动，孔径表示通道群门控趋势，不是单个通道部分开放的实测结构。",
+      "条形电导比例 m³h 与 n⁴ 不按本次刺激峰值重新归一化。",
+      "解剖定位图是无髓多极神经元示意，数值示例仍采用经典鱿鱼轴突参数。",
+      "图中的 −55 mV 是教学用阈电位参考，不是 HH 方程中的强制触发开关，也不是所有细胞恒定的阈值。"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Hodgkin & Huxley 1952",
+      "doi": "10.1113/jphysiol.1952.sp004764",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1392413/"
+    },
+    {
+      "title": "Guo et al. 2022 — sodium-potassium pump",
+      "doi": "10.1038/s41467-022-31602-y",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9270386/"
+    },
+    {
+      "title": "Duprat et al. 1997 — background K channel",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1170177/"
+    },
+    {
+      "title": "Bezanilla & Armstrong 1977 — Na activation and inactivation",
+      "doi": "10.1085/jgp.70.5.549",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/591911/"
+    },
+    {
+      "title": "PDBe chemical component ATP — adenosine 5′-triphosphate",
+      "url": "https://www.ebi.ac.uk/pdbe-srv/pdbechem/chemicalCompound/show/ATP"
+    },
+    {
+      "title": "OpenStax Biology 35.2 — How Neurons Communicate",
+      "url": "https://openstax.org/books/biology/pages/35-2-how-neurons-communicate",
+      "use": "−55 mV as a familiar teaching illustration only."
+    },
+    {
+      "title": "Platkiewicz & Brette 2010 — A Threshold Equation for Action Potential Initiation",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2900290/",
+      "use": "Threshold depends on cell properties, state and stimulation history."
+    }
+  ],
+  "presentation": {
+    "lessonDurationSeconds": 36,
+    "stageBoundsSeconds": [
+      0,
+      8,
+      16,
+      24,
+      32,
+      36
+    ],
+    "naFlowTokenLimit": 12,
+    "highlightDefault": true,
+    "highlightMeaning": "当前重点蛋白正常不透明显示，其余蛋白和对应离子流为 30% 不透明度；无柔光。半透明不表示停止工作。",
+    "atpDiagram": "基团结构简图，六元环和五元环共 C4-C5 边；腺嘌呤 N9 连接核糖 C1′，磷酸链经 C5′-O5′ 连接。省略其余原子、双键和立体化学。",
+    "timeMapping": "前四个教学窗口各 8 秒，恢复总览 4 秒；同一 HH 记录按阶段连续重采样。只调整教学时长，生理时间、门控、电流和刺激参数均不变。",
+    "flowGeometry": "Fixed central axes: Na x=570, K leak x=360, voltage-gated K x=780. All columns are straight with terminal arrowheads only. The centered Na column fades to zero if the central axis is occluded, instead of following a lateral slit.",
+    "segmentedPlaybackDefault": false,
+    "thresholdReferenceMv": -55,
+    "thresholdReferenceMeaning": "教学示意值；不参与电压或门控计算。",
+    "chargeSymbolsPerSide": 20,
+    "chargeSymbolFontSize": 30,
+    "polarityReadout": "Main-scene voltage card removed; voltage remains in the right-hand record. Charge symbols and soft bands follow the sign of V内−V外.",
+    "stimulusTerminology": {
+      "weak": "阈下刺激",
+      "standard": "阈上刺激"
+    },
+    "stimulusPulseSampling": "Rectangular pulse stays exactly zero before 3.0 ms and from 3.7 ms onward; no interpolation ramp across either edge.",
+    "playbackMode": "Continuous; stage buttons only seek; no automatic pauses at stage boundaries.",
+    "chargeBands": {
+      "blurSigmaSvgUnits": 5,
+      "visualPulsePeriodSeconds": 1,
+      "pulseOpacityRange": [
+        0.35,
+        1
+      ],
+      "pauseBehavior": "Freeze at current shade",
+      "speedBehavior": "Visual pulse remains 1 Hz at every playback speed",
+      "meaning": "A visual emphasis only, not the frequency of action potentials or ion-pump turnover."
+    },
+    "zoomFraming": "Keep the small axon locator; remove the large green membrane frame and its connector lines.",
+    "initialStage": "gradient",
+    "focusOrder": [
+      "pump",
+      "leak",
+      "nav",
+      "kv",
+      null
+    ],
+    "focusOpacityInactive": 0.3,
+    "focusTransitionSeconds": 0.3,
+    "focusTiming": "由演示进度决定，暂停冻结、倒退可复现。阶段按钮定位到阶段开始后 0.3 秒，直接显示该阶段已完成的聚焦切换。",
+    "recoveryFocus": "全部蛋白正常显示，不再次单独聚焦泵。",
+    "weakStimulusFocus": "阈下响应和消退阶段保持钾漏通道为重点，不模拟完整钠/钾激活阶段。",
+    "gradientVoltageDisplay": "第一阶段仅呈现离子梯度：电表为横线，指针、正负号与电荷带隐藏；不把未展示的电位表示为 0 mV。"
+  },
+  "version": "2.6.2"
+}

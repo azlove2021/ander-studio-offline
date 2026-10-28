@@ -1,0 +1,124 @@
+{
+  "id": "rna-webgl",
+  "accent": "#14B8A6",
+  "title": "RNA 单链结构（WebGL 测试版）",
+  "titleEn": "RNA Single-Strand / WebGL Prototype",
+  "chapter": "遗传信息的表达 / Gene Expression",
+  "type": "3D WebGL 动态模型",
+  "state": "单链与折叠观察",
+  "visual": "rnaWebgl",
+  "practiceStageIndex": 1,
+  "structures": [
+    [
+      "磷酸球形 Phosphate",
+      "#06B6D4"
+    ],
+    [
+      "核糖五边形 Ribose",
+      "#F59E0B"
+    ],
+    [
+      "2'-OH 羟基 2'-OH",
+      "#EC4899"
+    ],
+    [
+      "A 腺嘌呤 Adenine",
+      "#22C55E"
+    ],
+    [
+      "U 尿嘧啶 Uracil",
+      "#EF4444"
+    ],
+    [
+      "C 胞嘧啶 Cytosine",
+      "#A855F7"
+    ],
+    [
+      "G 鸟嘌呤 Guanine",
+      "#F97316"
+    ],
+    [
+      "3',5'-磷酸二酯键 Phosphodiester",
+      "#2563EB"
+    ],
+    [
+      "内部氢键 Internal H-bonds",
+      "#94A3B8"
+    ]
+  ],
+  "stages": [
+    {
+      "title": "整体观察",
+      "titleEn": "Overview",
+      "goal": "认识 RNA 通常为单链结构，并可在局部形成折叠。",
+      "keywords": [
+        "RNA",
+        "单链 Single Strand",
+        "可折叠 Foldable"
+      ],
+      "explanation": "RNA 与 DNA 一样由核苷酸连接而成，但 RNA 通常是单链。单链并不代表完全伸直，它可以通过局部碱基互补配对形成折叠结构。",
+      "mistake": "不要把 RNA 简单理解为 DNA 的一半；RNA 的糖、碱基和空间折叠都有自己的特点。",
+      "question": "为什么单链 RNA 也能形成复杂的空间结构？",
+      "id": "overview"
+    },
+    {
+      "title": "核糖特点",
+      "titleEn": "Ribose Feature",
+      "goal": "识别 RNA 核糖中的 2'-OH 羟基。",
+      "keywords": [
+        "核糖 Ribose",
+        "2'-OH",
+        "脱氧核糖 Deoxyribose"
+      ],
+      "explanation": "RNA 的糖是核糖，2' 号碳上有一个羟基 2'-OH；DNA 的脱氧核糖在这个位置少一个氧原子，这是两者的重要区别。",
+      "mistake": "RNA 不是脱氧核糖核酸，不能把核糖写成脱氧核糖。",
+      "question": "RNA 名称中的“核糖”与 DNA 的“脱氧核糖”有什么差别？",
+      "id": "ribose"
+    },
+    {
+      "title": "四种碱基",
+      "titleEn": "Four Bases",
+      "goal": "观察 RNA 中 A、U、C、G 四种含氮碱基。",
+      "keywords": [
+        "A",
+        "U",
+        "C",
+        "G",
+        "尿嘧啶 Uracil"
+      ],
+      "explanation": "RNA 使用 A、U、C、G 四种碱基，其中 U 是尿嘧啶。与 DNA 相比，RNA 中通常用 U 代替 T。",
+      "mistake": "RNA 中讲互补关系时应使用 A-U、C-G，不应写成 A-T。",
+      "question": "如果 RNA 中出现 A，它在互补配对时通常对应哪一种碱基？",
+      "id": "bases"
+    },
+    {
+      "title": "骨架方向",
+      "titleEn": "Backbone Direction",
+      "goal": "观察 RNA 的磷酸-核糖骨架和 5' 到 3' 方向。",
+      "keywords": [
+        "磷酸-核糖骨架 Backbone",
+        "5' 端",
+        "3' 端"
+      ],
+      "explanation": "相邻核糖核苷酸通过 3',5'-磷酸二酯键连接，形成具有方向性的磷酸-核糖骨架。RNA 序列通常按 5' 到 3' 方向书写。",
+      "mistake": "不能只看碱基字母，还要注意单链有 5' 端和 3' 端方向。",
+      "question": "为什么 RNA 序列通常要注明 5' 到 3' 方向？",
+      "id": "direction"
+    },
+    {
+      "title": "单链折叠",
+      "titleEn": "Single-Strand Folding",
+      "goal": "理解 RNA 可以通过内部互补配对形成局部折叠。",
+      "keywords": [
+        "内部配对 Internal Pairing",
+        "发夹结构 Hairpin",
+        "氢键 Hydrogen Bonds"
+      ],
+      "explanation": "同一条 RNA 链的不同片段之间也可能发生 A-U、C-G 配对，使 RNA 形成发夹、环和更复杂的空间构象。",
+      "mistake": "RNA 的单链状态不等于没有碱基配对；配对可以发生在同一条链内部。",
+      "question": "tRNA 为什么能形成比较稳定的三维形态？",
+      "id": "folding"
+    }
+  ],
+  "version": "2.3.2"
+}

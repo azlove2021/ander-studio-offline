@@ -1,0 +1,139 @@
+/* Microscope content layout. Public chrome is the exact shared Shell 2.5 RC5 copy. */
+:root { --ink:#18384a; --muted:#647c83; --primary:#31816e; font-family:"Microsoft YaHei",system-ui,sans-serif; color:var(--ink); }
+* { box-sizing:border-box; }
+html,body { margin:0; }
+button,input { font:inherit; }
+body[data-model-id="optical-microscope"] .model-stage { position:relative; overflow:hidden; }
+.microscope-layout { display:grid; position:relative; height:100%; min-height:0; grid-template-columns:minmax(0,1fr) 288px 236px; grid-template-rows:minmax(0,1fr); overflow:hidden; }
+.microscope-viewport { grid-column:1; grid-row:1; min-width:0; min-height:0; }
+.microscope-information { display:contents; }
+.microscope-lab { grid-column:2; grid-row:1; padding:12px; display:flex; flex-direction:column; gap:10px; min-height:0; overflow:auto; border-left:1px solid #dce8e4; background:#f6faf8; }
+.microscope-lab-heading { display:flex; align-items:center; justify-content:space-between; gap:6px; }
+.microscope-lab-heading h2 { margin:0; font-size:14px; color:#245f52; }
+.microscope-lab-heading button { border:1px solid #cddfd8; border-radius:8px; padding:6px 8px; color:#245f52; background:#fff; font-size:11px; min-height:32px; cursor:pointer; }
+.microscope-sidepanel { grid-column:3; grid-row:1; min-height:0; height:100%; overflow:auto; padding:12px; overscroll-behavior:contain; }
+.microscope-sidepanel h2 { font-size:15px; }
+.microscope-sidepanel .microscope-panel-note { margin:6px 0 10px; }
+.microscope-part-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; }
+.microscope-part-button { min-height:42px; padding:7px 6px; box-shadow:none; }
+.microscope-part-button span { font-size:9px; }
+.microscope-stage-notes { margin-top:12px; border-top:1px solid #dce8e4; padding-top:10px; font-size:12px; line-height:1.65; color:#627b72; }
+.microscope-stage-notes h3 { margin:0 0 6px; font-size:13px; color:#245f52; }
+.microscope-stage-notes p { margin:6px 0; }
+.microscope-field-card { flex:0 0 auto; margin:0; padding:8px; display:flex; flex-direction:column; gap:6px; border-radius:12px; background:#fff; }
+.microscope-eyepiece-frame { position:relative; width:142px; max-width:100%; aspect-ratio:1; flex:0 0 auto; }
+.microscope-eyepiece-frame .microscope-field-view { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%) scale(var(--eyepiece-scale,2)); transform-origin:center; }
+.microscope-field-copy { width:100%; text-align:center; }
+.microscope-field-copy strong { font-size:12px; white-space:nowrap; font-variant-numeric:tabular-nums; }
+.microscope-field-copy span { font-size:11px; margin-top:5px; }
+.microscope-field-copy [data-focus-summary] { display:none; }
+.microscope-control-block { min-width:0; margin:0; padding:0; border:0; }
+.microscope-control-block h3 { margin:0 0 5px; }
+.microscope-objective-button { padding:6px; min-height:32px; border-radius:8px; }
+.microscope-range { margin-top:8px; gap:0; font-size:11px; }
+.microscope-range input { height:26px; margin:0; cursor:pointer; }
+.microscope-mirror-control { margin-top:6px; }
+.microscope-light-controls { margin-top:6px; }
+.microscope-lab-more { display:none; }
+.microscope-label { padding:3px 6px; font-size:11px; font-weight:600; border-radius:7px; box-shadow:0 2px 5px #18384a12; }
+.microscope-labels.is-compact-labels .microscope-label { font-size:10px; padding:3px 5px; }
+@media(max-width:679px) and (max-height:580px) and (orientation:portrait){
+ body[data-model-id="optical-microscope"] .model-stage .microscope-layout { grid-template-rows:minmax(0,1fr) 36px; }
+ body[data-model-id="optical-microscope"] .model-stage .microscope-lab { display:block; padding:5px 7px; }
+ body[data-model-id="optical-microscope"] .model-stage .microscope-lab > :is(.microscope-field-card,.microscope-control-block) { display:none; }
+}
+@media(max-width:1199px){
+ .microscope-layout { grid-template-columns:minmax(0,1fr) 280px; }
+ .microscope-information > .microscope-sidepanel { display:none; }
+}
+@media(max-width:679px){
+ .microscope-layout { grid-template-columns:minmax(0,1fr); grid-template-rows:minmax(0,1fr) 198px; }
+ .microscope-lab { grid-column:1; grid-row:2; padding:6px; display:grid; grid-template-columns:136px minmax(0,1fr); grid-template-rows:24px minmax(0,1fr); gap:3px 10px; border-left:0; border-top:1px solid #dce8e4; overflow:hidden; }
+ .microscope-lab-heading { grid-column:1/-1; }
+ .microscope-lab-heading h2 { font-size:12px; }
+ .microscope-lab-heading button { min-height:24px; padding:2px 7px; }
+ .microscope-field-card { grid-column:1; grid-row:2; padding:0; border:0; background:transparent; justify-content:center; gap:3px; }
+ .microscope-eyepiece-frame { width:108px; }
+ .microscope-field-copy strong { font-size:10px; }
+ .microscope-field-copy [data-field-copy] { display:none; }
+ .microscope-field-copy [data-focus-summary] { display:block; font-size:10px; line-height:1.35; margin-top:2px; }
+ .microscope-control-block { grid-column:2; grid-row:2; }
+ .microscope-control-block > h3 { display:none; }
+ .microscope-objective-button { min-height:30px; padding:4px 6px; }
+ .microscope-range { margin-top:1px; font-size:11px; line-height:14px; }
+ .microscope-range input { height:27px; touch-action:none; }
+ .microscope-range span { gap:4px; white-space:nowrap; }
+ .microscope-range output { font-variant-numeric:tabular-nums; }
+ .microscope-control-block > .microscope-light-controls { display:block; margin-top:0; }
+ .microscope-light-controls > .microscope-mirror-control { display:none; }
+}
+body[data-model-id="optical-microscope"][data-shell-compact="true"] .microscope-layout { grid-template-columns:minmax(0,1fr) clamp(280px,38vw,340px); grid-template-rows:minmax(0,1fr); }
+body[data-model-id="optical-microscope"][data-shell-compact="true"] .microscope-information > .microscope-sidepanel { display:none; }
+body[data-model-id="optical-microscope"][data-shell-compact="true"] .microscope-lab { grid-column:2; grid-row:1; padding:6px; display:grid; grid-template-columns:132px minmax(0,1fr); grid-template-rows:24px minmax(0,1fr); gap:4px 8px; overflow:auto; }
+body[data-model-id="optical-microscope"][data-shell-compact="true"] .microscope-lab-heading { grid-column:1/-1; }
+body[data-model-id="optical-microscope"][data-shell-compact="true"] .microscope-lab-heading h2 { font-size:12px; }
+body[data-model-id="optical-microscope"][data-shell-compact="true"] .microscope-lab-heading button { min-height:24px; padding:2px 7px; }
+body[data-model-id="optical-microscope"][data-shell-compact="true"] .microscope-field-card { grid-column:1; grid-row:2; padding:0; border:0; background:transparent; justify-content:center; gap:5px; }
+body[data-model-id="optical-microscope"][data-shell-compact="true"] .microscope-eyepiece-frame { width:108px; }
+body[data-model-id="optical-microscope"][data-shell-compact="true"] .microscope-field-copy strong { font-size:10px; }
+body[data-model-id="optical-microscope"][data-shell-compact="true"] .microscope-field-copy [data-field-copy] { display:none; }
+body[data-model-id="optical-microscope"][data-shell-compact="true"] .microscope-field-copy [data-focus-summary] { display:block; font-size:10px; }
+body[data-model-id="optical-microscope"][data-shell-compact="true"] .microscope-control-block { grid-column:2; grid-row:2; }
+body[data-model-id="optical-microscope"][data-shell-compact="true"] .microscope-range { margin-top:1px; font-size:11px; line-height:14px; }
+body[data-model-id="optical-microscope"][data-shell-compact="true"] .microscope-range input { height:27px; touch-action:none; }
+body[data-model-id="optical-microscope"][data-shell-compact="true"] .microscope-range span { gap:4px; white-space:nowrap; }
+body[data-model-id="optical-microscope"][data-shell-compact="true"] .microscope-control-block > .microscope-light-controls { display:block; margin-top:0; }
+body[data-model-id="optical-microscope"][data-shell-compact="true"] .microscope-control-block > h3,
+body[data-model-id="optical-microscope"][data-shell-compact="true"] .microscope-light-controls > .microscope-mirror-control { display:none; }
+/* This instrument has no bottom progress row when its controls sit by the eyepiece. */
+body[data-model-id="optical-microscope"] .model-area[data-exposed-adjustments="false"] > .shell-focus-progress { display:none !important; }
+/* In immersion the instrument fills the viewport; the eyepiece remains scientific content. */
+body[data-model-id="optical-microscope"] .model-area[data-immersive="true"] .microscope-layout { grid-template-columns:minmax(0,1fr); grid-template-rows:minmax(0,1fr); }
+body[data-model-id="optical-microscope"] .model-area[data-immersive="true"] > .model-stage .microscope-information > .microscope-sidepanel { display:none; }
+body[data-model-id="optical-microscope"] .model-area[data-immersive="true"] > .model-stage .microscope-information > .microscope-lab { display:block; position:absolute; grid-area:auto; top:54px; right:10px; width:144px; height:auto; overflow:visible; padding:0; border:0; background:transparent; z-index:4; pointer-events:none; }
+body[data-model-id="optical-microscope"] .model-area[data-immersive="true"] > .model-stage .microscope-information > .microscope-lab > :is(.microscope-control-block,.microscope-lab-heading) { display:none; }
+body[data-model-id="optical-microscope"] .model-area[data-immersive="true"] > .model-stage .microscope-information > .microscope-lab .microscope-field-card { display:flex; background:#ffffffed; padding:5px; border:1px solid #dce8e4; }
+body[data-model-id="optical-microscope"] .model-area[data-immersive="true"] > .model-stage .microscope-information > .microscope-lab .microscope-eyepiece-frame { width:104px; }
+body[data-model-id="optical-microscope"] .model-area[data-immersive="true"] .microscope-field-copy strong { font-size:10px; }
+body[data-model-id="optical-microscope"] .model-area[data-immersive="true"] > .model-stage .microscope-information > .microscope-lab [data-field-copy] { display:none; }
+body[data-model-id="optical-microscope"] .model-area[data-immersive="true"] > .model-stage .microscope-information > .microscope-lab [data-focus-summary] { display:block; font-size:10px; }
+body[data-model-id="optical-microscope"] .model-area[data-immersive="true"][data-chrome="hidden"] > .model-stage .microscope-information > .microscope-lab { top:10px; }
+/* The existing nodes move into the shared dialog; no duplicated controller or specimen. */
+body[data-model-id="optical-microscope"] .shell-dialog .microscope-information { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:start; gap:14px; }
+body[data-model-id="optical-microscope"] .shell-dialog .microscope-information > .microscope-lab { display:flex; position:static; width:auto; height:auto; grid-column:1; grid-row:1; grid-template-rows:auto; padding:0; border:0; overflow:visible; pointer-events:auto; }
+body[data-model-id="optical-microscope"] .shell-dialog .microscope-information > .microscope-sidepanel { display:block; grid-column:2; grid-row:1; height:auto; border:0; padding:0; overflow:visible; }
+body[data-model-id="optical-microscope"] .shell-dialog .microscope-lab-heading { display:none; }
+body[data-model-id="optical-microscope"] .shell-dialog .microscope-information .microscope-control-block { display:block; }
+body[data-model-id="optical-microscope"] .shell-dialog .microscope-control-block > .microscope-light-controls { display:block; }
+body[data-model-id="optical-microscope"] .shell-dialog .microscope-light-controls > .microscope-mirror-control { display:block; }
+body[data-model-id="optical-microscope"] .shell-dialog .microscope-field-copy [data-field-copy] { display:block; }
+body[data-model-id="optical-microscope"] .shell-dialog .microscope-information .microscope-field-card { display:flex; background:#fff; padding:6px; }
+@media(max-width:679px){
+ body[data-model-id="optical-microscope"] .shell-dialog .microscope-information { display:block; }
+ body[data-model-id="optical-microscope"] .shell-dialog .microscope-information > .microscope-lab { display:grid; grid-template-columns:144px minmax(0,1fr); gap:8px; }
+ body[data-model-id="optical-microscope"] .shell-dialog .microscope-field-card { grid-column:1; grid-row:1; align-self:start; }
+ body[data-model-id="optical-microscope"] .shell-dialog .microscope-control-block { grid-column:2; grid-row:1; }
+ body[data-model-id="optical-microscope"] .shell-dialog .microscope-information > .microscope-sidepanel { margin-top:14px; border-top:1px solid #dce8e4; padding-top:12px; }
+ body[data-model-id="optical-microscope"] .shell-dialog .microscope-field-copy [data-field-copy] { display:none; }
+}
+
+/* Live scientific adjustment row. Public buttons keep the standard appearance. */
+body[data-model-id="optical-microscope"] .microscope-adjustments[hidden] { display:none !important; }
+body[data-model-id="optical-microscope"] [data-exposed-adjustments="true"] .microscope-adjustments.timeline-wrap { display:grid !important; grid-template-columns:repeat(3,minmax(0,1fr)); grid-column:1/-1; grid-row:3; gap:12px !important; height:auto !important; width:100% !important; }
+body[data-model-id="optical-microscope"][data-shell-compact="true"] [data-exposed-adjustments="true"] .microscope-adjustments.timeline-wrap { grid-row:2; }
+body[data-model-id="optical-microscope"] .microscope-adjustments .microscope-range { display:grid; gap:0; margin:0; min-width:0; font-size:11px; line-height:16px; }
+body[data-model-id="optical-microscope"] .microscope-adjustments .microscope-range > span { display:flex; justify-content:space-between; gap:3px; white-space:nowrap; }
+body[data-model-id="optical-microscope"] .microscope-adjustments .microscope-range input { display:block; width:100% !important; min-width:0 !important; height:28px !important; flex:none !important; margin:0 !important; touch-action:none; }
+body[data-model-id="optical-microscope"] .microscope-adjustments .microscope-range output { flex:0 0 4.2em !important; width:4.2em; text-align:right; font-variant-numeric:tabular-nums; }
+@media(min-width:861px){
+ body[data-model-id="optical-microscope"] .model-area[data-immersive="true"] .microscope-adjustments.timeline-wrap { grid-column:1/-1; grid-row:2; }
+}
+/* Very short screens retain the live eyepiece as an inset, beside the instrument. */
+@media(max-width:679px) and (max-height:580px) and (orientation:portrait){
+ body[data-model-id="optical-microscope"] .model-area[data-exposed-adjustments="true"]:not([data-immersive="true"]) .microscope-layout { grid-template-rows:minmax(0,1fr); }
+ body[data-model-id="optical-microscope"] .model-stage .microscope-lab { position:absolute; grid-area:auto; top:6px; right:6px; width:140px; height:auto; padding:3px; border:0; border-radius:8px; z-index:4; }
+ body[data-model-id="optical-microscope"] .model-stage .microscope-lab > .microscope-lab-heading { justify-content:center; }
+ body[data-model-id="optical-microscope"] .model-stage .microscope-lab-heading h2 { display:none; }
+ body[data-model-id="optical-microscope"] .model-stage .microscope-lab > .microscope-field-card { display:flex; padding:2px; }
+ body[data-model-id="optical-microscope"] .model-stage .microscope-lab .microscope-eyepiece-frame { width:88px; }
+}

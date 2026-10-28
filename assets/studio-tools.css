@@ -1,0 +1,117 @@
+/* A quiet, source-backed product introduction using the existing editorial palette. */
+@media screen {
+  .tool-source-viewport { display: block; position: relative; overflow: hidden; width: 100%; aspect-ratio: var(--tool-art-ratio); background: #fff; border-radius: 5px; }
+  .tool-source-viewport > img { display: block; position: absolute; width: var(--tool-art-width); max-width: none; height: auto; left: var(--tool-art-left); top: var(--tool-art-top); }
+  .tool-cover-art { display: grid; place-items: center; width: 100%; flex: 1; min-height: 0; }
+  .tool-cover-art > .tool-source-viewport { width: auto; height: 210px; box-shadow: 0 10px 22px #00000012; }
+  .shelf-tool.is-expanded .tool-cover-art { place-items: end start; }
+  .shelf-tool.is-expanded .tool-cover-art > .tool-source-viewport { width: 100%; max-width: 252px; height: auto; }
+  .tool-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+  .tool-action { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 9px 20px; border: 1px solid var(--s-green); border-radius: 12px; background: var(--s-paper); color: var(--s-green-dark); font: 600 12px/1.5 var(--s-sans); cursor: pointer; }
+  .tool-action.is-primary { background: var(--s-green-dark); color: var(--s-paper); }
+  .tool-action:disabled { cursor: not-allowed; opacity: .65; }
+  .tool-action:not(:disabled):hover { box-shadow: 0 4px 12px #00000012; }
+  .tool-action:focus-visible, .tool-samples h3:focus-visible { outline: 2px solid var(--s-green); outline-offset: 4px; }
+  .tool-hero-copy .tool-action-note { color: var(--s-muted); font-size: 10px; }
+  .shelf-tool .tool-detail { gap: 32px; }
+  .tool-section > header { margin-bottom: 18px; }
+  .tool-section-label { display: block; margin-bottom: 8px; color: var(--s-green-dark); font-size: 9px; letter-spacing: .15em; line-height: 1.6; }
+  .tool-detail .tool-section h3, .tool-detail .tool-letter h3 { font: 600 20px/1.5 var(--s-serif); }
+  .tool-detail .tool-section > header > p { margin-top: 7px; font-size: 12px; }
+  .tool-workflow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; list-style: none; margin: 0; padding: 0; }
+  .tool-workflow > li { padding: 18px 14px; border: 1px solid var(--s-line); border-radius: 10px; background: var(--t-soft); }
+  .tool-step { display: block; color: var(--s-green); font-size: 11px; letter-spacing: .06em; }
+  .tool-workflow h4 { margin: 12px 0 4px; font-size: 15px; color: var(--s-ink); }
+  .tool-workflow small { color: var(--s-green-dark); font-size: 10px; line-height: 1.7; }
+  .tool-workflow p { margin-top: 9px; font-size: 12px; }
+  .tool-cover-options, .tool-page-samples { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .tool-writing-pages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .tool-detail figure { margin: 0; min-width: 0; }
+  .tool-image-mat { display: grid; place-items: center; padding: 20px; border: 1px solid var(--s-line); border-radius: 10px; background: var(--t-soft); }
+  .tool-cover-options .tool-source-viewport { max-width: 208px; box-shadow: 0 8px 14px #0000000c; }
+  .tool-page-samples .tool-source-viewport { max-width: 220px; box-shadow: 0 0 0 1px #00000006; }
+  .tool-writing-pages .tool-image-mat { padding: 14px; }
+  .tool-writing-pages .tool-source-viewport { max-width: 152px; }
+  .tool-detail figcaption { margin-top: 12px; }
+  .tool-detail figcaption h4 { margin: 0 0 4px; color: var(--s-ink); font-size: 14px; }
+  .tool-detail figcaption p { font-size: 12px; }
+  .tool-cover-options figcaption { text-align: center; }
+  .tool-samples { scroll-margin-top: 28px; }
+  .tool-letter { padding: 20px 22px; border-left: 3px solid var(--s-green); border-radius: 0 10px 10px 0; background: var(--t-soft); }
+  .tool-letter p { font-size: 12px; }
+  .tool-specs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; margin: 0; }
+  .tool-specs > div { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 14px; padding: 13px 0; border-top: 1px solid var(--s-line); font-size: 12px; line-height: 1.7; }
+  .tool-specs dt { color: var(--s-muted); }
+  .tool-specs dd { margin: 0; color: var(--s-ink); }
+  .tool-detail .tool-source-note { margin-top: 18px; color: var(--s-muted); font-size: 10px; }
+  .tool-placeholder { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 22px; background: linear-gradient(135deg, var(--t-tint), var(--t-soft)); }
+  .tool-placeholder .book-number { color: var(--s-muted); font-size: 10px; letter-spacing: .08em; }
+  .tool-empty-art { width: 100%; min-height: 180px; }
+  .tool-placeholder h2 { margin: 0; font: 600 21px/1.5 var(--s-serif); color: var(--s-ink); }
+  .tool-placeholder p { margin: 0; font-size: 12px; line-height: 1.8; color: var(--s-muted); }
+  /* Keep the supplied mini-program code complete, square, and on white in every theme. */
+  .qingniao-cover-art { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; width: 100%; flex: 1; min-width: 0; }
+  .qingniao-code { display: block; box-sizing: border-box; width: min(100%, 218px); padding: 12px; background: #fff; border-radius: 8px; }
+  .qingniao-code img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; filter: none; transform: none; border-radius: 0; }
+  .qingniao-scan-hint { display: none; color: var(--s-green-dark); font-size: 11px; line-height: 1.7; text-align: left; }
+  .shelf-qingniao.is-expanded .qingniao-cover-art { align-items: flex-start; }
+  .shelf-qingniao.is-expanded .qingniao-code { width: min(100%, 282px); }
+  .shelf-qingniao.is-expanded .qingniao-scan-hint { display: block; }
+  .qingniao-subjects { display: flex; flex-wrap: wrap; gap: 6px 12px; color: var(--s-green-dark); font-size: 11px; line-height: 1.7; }
+  .qingniao-subjects > span + span { padding-left: 12px; border-left: 1px solid var(--s-line); }
+  .qingniao-section { padding-top: 26px; border-top: 1px solid var(--s-line); }
+  .qingniao-screens { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .qingniao-screen { display: flex; flex-direction: column; }
+  .qingniao-detail .qingniao-screen figcaption { margin: 0 0 14px; }
+  .qingniao-screen-mat { display: flex; justify-content: center; align-items: flex-start; flex: 1; padding: 20px 16px; border: 1px solid var(--s-line); border-radius: 12px; background: var(--t-soft); }
+  .qingniao-screen-mat img { display: block; width: 100%; max-width: 220px; height: auto; object-fit: contain; box-shadow: 0 3px 14px #0000000a; }
+  .qingniao-detail .qingniao-source-note { margin: 0; }
+  @supports (grid-template-rows: subgrid) {
+    .qingniao-screens { row-gap: 14px; }
+    .qingniao-screen { display: grid; grid-template-rows: subgrid; grid-row: span 2; }
+    .qingniao-detail .qingniao-screen figcaption { margin: 0; }
+  }
+  @media (min-width: 821px) {
+    .tools-shelf:has(.is-expanded) .tool-placeholder { min-height: 365px; padding: 20px 16px; }
+    .tools-shelf:has(.is-expanded) .shelf-tool:not(.is-expanded) .notes-cover-caption { flex: none; min-height: 66px; }
+    .tools-shelf:has(.is-expanded) .shelf-tool:not(.is-expanded) .notes-cover-caption strong { writing-mode: horizontal-tb; white-space: normal; letter-spacing: 0; }
+    .tools-shelf:has(.is-expanded) .shelf-tool:not(.is-expanded) .tool-source-viewport { width: min(100%, 160px); height: auto; }
+  }
+  @media (min-width: 821px) and (max-width: 1199px) {
+    .tools-shelf:has(.is-expanded) .tool-placeholder { padding: 18px 10px; }
+    .tools-shelf:has(.is-expanded) .tool-placeholder h2 { font-size: 18px; }
+  }
+  @media (max-width: 820px) {
+    .tools-shelf .shelf-tool.is-expanded { order: -1; }
+    .tool-placeholder { display: flex; min-height: 295px; padding: 20px 16px; }
+    .tool-empty-art { min-height: 140px; }
+    .shelf-tool:not(.is-expanded) .tool-cover-art > .tool-source-viewport { height: 150px; }
+    .shelf-tool:not(.is-expanded) .qingniao-code { padding: 8px; max-width: 166px; }
+  }
+  @container studio-book (max-width: 600px) {
+    .tool-workflow { grid-template-columns: minmax(0, 1fr); }
+    .tool-workflow > li { display: grid; grid-template-columns: 28px minmax(0, 1fr); column-gap: 10px; padding: 16px; }
+    .tool-workflow .tool-step { grid-row: 1 / 4; padding-top: 3px; }
+    .tool-workflow h4 { margin-top: 0; }
+    .tool-workflow small, .tool-workflow p { grid-column: 2; }
+    .tool-specs { grid-template-columns: minmax(0, 1fr); }
+  }
+  @container studio-book (max-width: 500px) {
+    .shelf-tool.is-expanded .tool-cover-art > .tool-source-viewport { max-width: 232px; }
+    .tool-cover-options, .tool-page-samples { gap: 16px; }
+    .tool-image-mat { padding: 12px; }
+    .tool-writing-pages { gap: 9px; }
+    .tool-writing-pages .tool-image-mat { padding: 6px; }
+    .tool-writing-pages figcaption h4 { font-size: 12px; }
+    .tool-writing-pages figcaption p { font-size: 11px; }
+    .tool-detail .tool-section h3, .tool-detail .tool-letter h3 { font-size: 19px; }
+    .qingniao-screens { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+    .qingniao-screen-mat { padding: 20px; }
+  }
+  @container studio-book (max-width: 360px) {
+    .tool-page-samples { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+    .tool-page-samples .tool-image-mat { padding: 20px; }
+    .tool-cover-options figcaption h4 { font-size: 13px; }
+    .tool-cover-options figcaption p { font-size: 11px; }
+  }
+}

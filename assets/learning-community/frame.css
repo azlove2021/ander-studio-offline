@@ -1,0 +1,8 @@
+/* The sidebar, bilingual page heading and footer use the original portal stylesheets.
+   Only the community content area and learning-centre integration are scoped here. */
+.lc-frame{width:100%;min-width:0;margin:0;box-sizing:border-box}.lc-frame .lc-workspace{min-width:0}.lc-frame .resource-view{min-width:0}.lc-frame .studio-sidebar{font:400 16px/normal var(--s-sans)}.lc-frame .studio-nav-button{text-decoration:none}.lc-frame .studio-brand{text-decoration:none}
+.lc-frame .lc-shell{width:100%;margin:0 0 22px;flex:1;min-height:0}.lc-preview-caption{margin:20px 0 0;font:11px/1.7 var(--s-sans);color:var(--s-muted)}
+.lc-center-tools{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.lc-center-tools>[data-logout]{min-height:36px;padding:7px 12px;font-size:12px}.lc-center-frame .center-profile.profile-layout{width:100%;max-width:none;margin:0 0 28px;padding:0}.lc-center-frame .center-tabs{margin:0 0 20px}.lc-center-frame .studio-sidebar .account-entry a[aria-current]{background:var(--t-solid);border-color:var(--t-solid);color:var(--t-on)}
+.lc-frame .site-footer{flex-shrink:0}.lc-frame .site-footer a{color:inherit}.lc-frame .site-footer a:hover{color:var(--s-green)}
+@media(max-width:820px){.lc-frame .lc-shell{margin-top:0}.lc-center-tools{gap:10px;justify-content:space-between;width:100%}.lc-center-tools .theme-label{display:none}.lc-center-tools .theme-picker{gap:5px}.lc-center-frame .center-profile.profile-layout{padding:0}.lc-preview-caption{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.lc-frame *{scroll-behavior:auto}}

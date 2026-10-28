@@ -1,0 +1,70 @@
+/* Five-entry portal: explicit state colors override historical theme layers. */
+.studio-nav-button { -webkit-tap-highlight-color: transparent; }
+.resource-header[data-section-eyebrow]::before { content: attr(data-section-eyebrow); }
+.learning-map-action { font: inherit; text-align: left; cursor: pointer; }
+.inline-learning-map { margin: 0 0 40px; overflow: hidden; border: 1px solid #c4ded2; border-radius: 26px; background: #f3f8f8; scroll-margin-top: 20px; }
+.inline-learning-map[hidden] { display: none; }
+.inline-learning-map > header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; background: rgba(255,255,255,.8); border-bottom: 1px solid #d5e6de; }
+.inline-learning-map h2 { margin: 5px 0 0; color: #245b51; font-size: 24px; }
+.inline-learning-map small { color: #4d8c77; font-size: 10px; letter-spacing: .08em; }
+.inline-learning-map > header button { min-height: 44px; flex-shrink: 0; padding: 0 16px; border: 1px solid #a9cdbd; border-radius: 12px; background: #f7fcf9; color: #245b51; font: inherit; font-size: 13px; cursor: pointer; }
+.inline-learning-map > header button:focus-visible { outline: 3px solid #459b88; outline-offset: 2px; }
+.inline-learning-map iframe { display: block; width: 100%; height: 1160px; border: 0; }
+@media (max-width: 700px) { .inline-learning-map > header { padding: 16px; } .inline-learning-map h2 { font-size: 20px; } }
+.studio-nav-button:not(.is-active):not(.studio-nav-ark):hover,
+.studio-nav-button:not(.is-active):not(.studio-nav-ark):focus-visible { color: #245b51; background: #f7fdfb; }
+.studio-nav-button.is-active:not(.studio-nav-ark):hover,
+.studio-nav-button.is-active:not(.studio-nav-ark):focus-visible { color: #fff; }
+.studio-nav-button:focus-visible { outline: 3px solid #459b88; outline-offset: 3px; }
+.studio-nav-button[data-portal-section="exams"] > span:last-child::after { content: "Biology Questions"; }
+.studio-nav-button[data-portal-section="exams"] > span:last-child::after { font-size: 8.4px; white-space: nowrap; letter-spacing: 0; }
+.studio-nav-button[data-portal-section="products"] > span:last-child::after { content: "Studio Products"; }
+.studio-nav-button[data-portal-section="about"] > span:last-child::after { content: "About the Studio"; }
+.studio-nav-button.is-active:not(.studio-nav-ark) > span:last-child::after { color: #e3f5ee; }
+/* Title ship and B2 double-cut corners reference Life Ark V2; no game runtime. */
+.studio-nav-button.studio-nav-ark {
+  position: relative; isolation: isolate; min-height: 70px; overflow: hidden;
+  border: 0; border-radius: 0;
+  clip-path: polygon(0 12px, 12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+  color: #f6dfaa; background: #a58e54; box-shadow: none; text-shadow: 0 2px 5px #00121c;
+}
+.studio-nav-button.studio-nav-ark::before {
+  content: ""; position: absolute; z-index: -1; inset: 1px;
+  clip-path: polygon(0 11px, 11px 0, 100% 0, 100% calc(100% - 11px), calc(100% - 11px) 100%, 0 100%);
+  background: linear-gradient(90deg, rgba(2, 20, 28, .96), rgba(3, 27, 35, .78) 58%, rgba(2, 20, 28, .22)), url("performance/life-ark-nav-600-r1.webp") 68% 58% / 300px auto no-repeat, #041923;
+  transition: filter 150ms ease;
+}
+.studio-nav-button.studio-nav-ark::after { content: ""; position: absolute; right: 9px; top: 8px; width: 28px; height: 2px; background: #75d7cc; box-shadow: 0 0 7px #75d7cc; }
+.studio-nav-button.studio-nav-ark .studio-nav-icon { border-color: rgba(117, 215, 204, .5); border-radius: 8px 2px 8px 2px; color: #b0f1e7; background: rgba(8, 45, 54, .7); box-shadow: inset 0 0 10px rgba(117, 215, 204, .07); }
+.studio-nav-button.studio-nav-ark > span:last-child::after { content: "Life Ark"; color: #a2d8cf; letter-spacing: .14em; }
+.studio-nav-button.studio-nav-ark:hover,
+.studio-nav-button.studio-nav-ark:focus-visible,
+.studio-nav-button.studio-nav-ark.is-active { color: #fff0c6; background: #f1d78e; }
+.studio-nav-button.studio-nav-ark:hover::before,
+.studio-nav-button.studio-nav-ark:focus-visible::before,
+.studio-nav-button.studio-nav-ark.is-active::before { filter: brightness(1.3); }
+.studio-nav-button.studio-nav-ark:focus-visible { outline: none; box-shadow: inset 0 0 0 4px #f1d78e; }
+.studio-nav-button.studio-nav-ark.is-active .studio-nav-icon { border-color: #eed392; }
+.studio-about-panel { padding: clamp(24px, 4vw, 48px); border: 1px solid rgba(49, 129, 110, .18); border-radius: 28px; background: rgba(255, 255, 255, .8); box-shadow: 0 16px 40px rgba(24, 65, 76, .08); }
+.studio-about-panel[hidden], .resource-empty[hidden], [data-model-list][hidden] { display: none; }
+.resource-empty { min-height: 320px; padding: 32px 24px; }
+.resource-empty strong { color: #245b51; font-size: 20px; }
+.resource-empty span { max-width: 580px; line-height: 1.8; }
+.studio-about-kicker { color: #31816e; font-size: 11px; font-weight: 800; letter-spacing: .12em; }
+.studio-about-panel h2 { color: #17384a; font-size: clamp(22px, 2vw, 30px); line-height: 1.5; }
+.studio-about-panel p { color: #526e76; font-size: 15px; line-height: 1.9; }
+.studio-about-pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 30px; }
+.studio-about-pillars section { border-top: 2px solid #83c3af; }
+.studio-about-pillars h3 { font-size: 18px; color: #245b51; }
+[data-portal-current="ark"] .resource-empty { border-color: #9ebbb7; }
+@media (max-width: 820px) {
+  .studio-nav { padding: 4px 4px 8px; scroll-snap-type: x proximity; }
+  .studio-nav-button { scroll-snap-align: start; min-height: 58px; }
+  .studio-nav-button.studio-nav-ark { min-height: 58px; }
+  .studio-about-pillars { grid-template-columns: 1fr; gap: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .studio-nav-button, .studio-nav-button::before { transition: none; } }
+
+/* The community entry shares the portal's bilingual navigation treatment. */
+.studio-sidebar a.studio-nav-button, .studio-sidebar a.studio-nav-button:hover, .studio-sidebar a.studio-nav-button:focus-visible { text-decoration: none; }
+.studio-nav-button[data-learning-community-entry] > span:last-child::after { content: 'Learning Community'; font-size: 8px; letter-spacing: 0; white-space: nowrap; }

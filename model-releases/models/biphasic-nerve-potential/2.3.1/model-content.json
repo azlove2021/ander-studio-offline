@@ -1,0 +1,152 @@
+{
+  "id": "biphasic-nerve-potential",
+  "version": "2.2.2",
+  "title": {
+    "zh": "双相神经干电位",
+    "en": "Biphasic Nerve Potential"
+  },
+  "parameters": {
+    "stimulusMs": 0.18,
+    "stimulusDurationMs": 0.09,
+    "templateSigmaMs": 0.105,
+    "endMs": 4.4,
+    "lessonSeconds": 24,
+    "lengthMm": 95,
+    "samples": 1101,
+    "meanSpeed": 30,
+    "speedSpread": 2.3
+  },
+  "conditions": {
+    "near": {
+      "name": "记录电极距离较近",
+      "r1": 28,
+      "r2": 38,
+      "sign": 1,
+      "detail": "R1 固定，R2 较近，两处膜外响应更易重叠，两相间隔较短。"
+    },
+    "wide": {
+      "name": "记录电极距离较远",
+      "r1": 28,
+      "r2": 60,
+      "sign": 1,
+      "detail": "只右移 R2，第二相延后，两相分离更明显。"
+    },
+    "swap": {
+      "name": "记录电极交换位置",
+      "r1": 28,
+      "r2": 38,
+      "sign": -1,
+      "detail": "对调记录输入，两个取样位置保持不变，整条曲线上下翻转。"
+    },
+    "remote": {
+      "name": "距离刺激电极较远",
+      "r1": 58,
+      "r2": 68,
+      "sign": 1,
+      "detail": "R1、R2 整体远移且间距不变：到达延迟增大，纤维间时间分散更明显。"
+    }
+  },
+  "visibleSpeeds": [
+    35,
+    33,
+    31,
+    29,
+    27,
+    25
+  ],
+  "stages": [
+    {
+      "id": "rest",
+      "zh": "静息与接线",
+      "en": "Rest & Electrodes"
+    },
+    {
+      "id": "stimulation",
+      "zh": "刺激与传导",
+      "en": "Stimulation & Conduction"
+    },
+    {
+      "id": "first-phase",
+      "zh": "第一相",
+      "en": "First Phase"
+    },
+    {
+      "id": "second-phase",
+      "zh": "第二相",
+      "en": "Second Phase"
+    },
+    {
+      "id": "recovery",
+      "zh": "回零与比较",
+      "en": "Recovery & Comparison"
+    }
+  ],
+  "recording": {
+    "type": "bipolar extracellular compound action potential",
+    "baseline": 0,
+    "unit": "relative",
+    "defaultEquation": "U = phi(R2) - phi(R1)",
+    "defaultInputs": {
+      "R1": "negative",
+      "R2": "positive"
+    },
+    "stimulus": {
+      "cathodeMm": 0,
+      "anodeMm": -6
+    },
+    "sameGainAcrossConditions": true
+  },
+  "scientificLimitations": [
+    "六条可见纤维代表一个 61 单元加权速度分布；不是实际坐骨神经的纤维数量。",
+    "使用负向单电极模板叠加构造胞外信号，不是 Hodgkin-Huxley 跨膜电位或完整三维引线场求解。纵轴为相对单位，速度和时间为教学参数。",
+    "胞体和末梢位于离体标本范围外，以断开标记表现结构关联；末梢不作为记录段的实际终点。",
+    "外包层为神经外膜的简化剖视，省略束内分组、神经束膜、髓鞘和结缔组织细节。",
+    "短刺激在阴极附近产生兴奋，图示含向左短程传播；主要观察向右的记录路径，不代表单向轴突。",
+    "远移引起到达时间分散和复合波展宽，单纤维动作电位幅度不随距离降低；不强制生成双峰。",
+    "刺激伪迹被省略；刺激动画属于刺激器提示，不是第一相。",
+    "不显示膜蛋白、离子运输和钠钾泵；双相来自记录差值，不将负相当作钾通道开放本身。"
+  ],
+  "references": [
+    {
+      "title": "CSB/SJU Biology 324: Compound Action Potentials, Frog Sciatic Nerve",
+      "url": "https://employees.csbsju.edu/mcampos/Generalphysiology/labmaterials/compound%20ap.htm",
+      "use": "Whole-nerve compound responses, cathode placement, bipolar extracellular recording and input polarity."
+    },
+    {
+      "title": "Eduardo & Burke (1988)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/2841424/",
+      "use": "Recording geometry affects latency, waveform and amplitude; spacing alone does not fix amplitude."
+    },
+    {
+      "title": "Gu et al. (1996)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9216155/",
+      "use": "Single-fiber waveform and distributed arrival delays as a compound-signal approximation."
+    },
+    {
+      "title": "Duke Histology: Nerve Tissue",
+      "url": "https://histology.oit.duke.edu/MoleculesCells/Nerve/Nerve.html",
+      "use": "Epineurium encloses the whole nerve; fascicles have a separate perineurial sheath."
+    },
+    {
+      "title": "CSB/SJU Compound Action Potentials: Frog Sciatic Nerve, Figure 1",
+      "url": "https://employees.csbsju.edu/mcampos/Biol325326/Lab/04/compactpot.F04.pdf",
+      "use": "Sciatic nerve in the thigh and gastrocnemius in the lower leg."
+    }
+  ],
+  "presentation": {
+    "magnifier": "Generated hind-limb anatomical detail; labels identify sciatic nerve and calf gastrocnemius. Not a pixel crop.",
+    "sourceSomata": "Six generated alpha sprites with right-stub anchors connected independently to the six fibers.",
+    "terminals": "Six generated terminal arbors, each attached to its own axon.",
+    "omittedSegments": "Two waved break regions outside the recording specimen.",
+    "electrodes": "Shared chamber stations, selected posts replace inactive ones. Metal bodies and gold surface contacts, labels separated from leads.",
+    "fixedComparison": {
+      "condition": "near",
+      "color": "#df9b37",
+      "sameTimeAxis": true,
+      "sameGain": true,
+      "currentConditionReference": "light dashed",
+      "dynamicTrace": "red",
+      "coincidentReferenceHiddenInNearCondition": true
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "sanger-sequencing",
+  "version": "2.4.2",
+  "title": {
+    "zh": "Sanger测序",
+    "en": "Sanger Sequencing"
+  },
+  "parameters": {
+    "primer": "ATGCCATGACGTTACGGT",
+    "readSequence": "ACAGCTTCAGGA",
+    "template3to5": "TGTCGAAGTCCT",
+    "primerLength": 18,
+    "primerDisplay": "Uniformly compressed; positions 1, 2, 17 and 18 are shown with a break mark. Physical length remains 18 nt.",
+    "representativeFragments": 12,
+    "fragmentLengthsNt": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "electrophoresis": {
+      "well": "bottom",
+      "negativeElectrode": "bottom",
+      "positiveElectrode": "top",
+      "migration": "up",
+      "readingOrder": "top-to-bottom",
+      "rowAligned": true,
+      "medium": "denaturing polyacrylamide gel, teaching representation"
+    }
+  },
+  "scientificConstraints": [
+    "One type of sequencing primer; many identical template copies.",
+    "Dye identity follows terminal ddNTP base; identical terminal bases repeat colors.",
+    "Products are pedagogically displayed in increasing length order; actual terminators incorporate stochastically.",
+    "A terminal dd residue has no 3-prime OH and cannot resume extension.",
+    "Incoming nucleotide triphosphate releases pyrophosphate upon incorporation; the strand retains one phosphate.",
+    "Only single-strand extension products are loaded after cleanup and denaturation.",
+    "Fragments carry negative charge and migrate upward toward the positive electrode; short fragments travel further.",
+    "The aligned fragment panel is a synthesis record after loading, not a second physical aliquot.",
+    "A fluorescent band represents many fragments of the same length; colors are fluorescence detection pseudocolors.",
+    "Contemporary instruments commonly use capillary electrophoresis; this gel is a teaching representation.",
+    "The five-membered sugar ring contains O4-prime and four carbons; C5-prime is outside the ring, linked toward the phosphate. Base attachment is at C1-prime.",
+    "The same primer display compression applies to all products and the template; only the 12-base measured region uses full uniform spacing.",
+    "An external C5-prime label identifies the carbon between the ring C4-prime and the phosphate chain.",
+    "The whole-terminator glow and violet sugar are visual cues; the single fluorescent dye remains linked on the base side.",
+    "A dashed vertical guide marks the common primer 3-prime boundary where measured extension begins."
+  ],
+  "sources": [
+    {
+      "title": "Thermo Fisher: What is Sanger sequencing?",
+      "url": "https://www.thermofisher.com/us/en/home/life-science/sequencing/sequencing-learning-center/capillary-electrophoresis-information/what-is-sanger-sequencing.html"
+    },
+    {
+      "title": "OpenStax Biology 2e, 3.5 Nucleic Acids, Figure 3.31",
+      "url": "https://openstax.org/books/biology-2e/pages/3-5-nucleic-acids"
+    }
+  ]
+}

@@ -1,0 +1,1096 @@
+/* Model-specific rules extracted from the accepted legacy model. */
+.dna-visual-wrap {
+  padding: 0;
+}
+
+.dna-3d-shell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  display: grid;
+  place-items: stretch;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(37, 99, 235, 0.05), transparent 48%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.82));
+}
+
+.dna-3d-shell:active {
+  cursor: grabbing;
+}
+
+.dna-3d-shell.is-panning,
+.dna-3d-shell.is-panning:active {
+  cursor: move;
+}
+
+.dna-viewport {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+}
+
+.dna-webgl-shell {
+  height: clamp(360px, 58vh, 620px);
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.dna-webgl-stack {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+  align-self: stretch;
+  align-content: start;
+}
+
+.dna-webgl-viewport-frame {
+  position: absolute;
+  inset: 0;
+}
+
+.dna-webgl-host {
+  position: absolute;
+  inset: 0;
+}
+
+.dna-webgl-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.dna-webgl-labels {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.dna-webgl-label {
+  position: absolute;
+  max-width: min(220px, 38vw);
+  padding: 5px 8px;
+  border: 1px solid rgba(216, 225, 236, 0.92);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--label-color, #0f172a);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.dna-reference-disclosure {
+  width: min(100%, 920px);
+  justify-self: center;
+  border: 1px solid rgba(216, 225, 236, 0.96);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.dna-reference-toggle {
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.dna-reference-toggle span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dna-reference-toggle strong {
+  flex: 0 0 auto;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: var(--primary-dark);
+  font-size: 12px;
+}
+
+.dna-reference-disclosure.is-open .dna-reference-toggle {
+  border-bottom: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.dna-reference-panel-wrap[hidden] {
+  display: none;
+}
+
+.dna-reference-panel {
+  position: static;
+  width: auto;
+  max-height: 270px;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 10px;
+  border: 0;
+  background: rgba(248, 250, 252, 0.72);
+  box-shadow: none;
+  cursor: default;
+  user-select: text;
+  touch-action: pan-y;
+}
+
+.dna-reference-panel section {
+  display: grid;
+  gap: 7px;
+}
+
+.dna-reference-panel h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.dna-reference-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.dna-reference-card {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 6px;
+  align-items: center;
+  min-height: 46px;
+  padding: 5px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 8px;
+  background: rgba(248, 250, 252, 0.82);
+}
+
+.dna-reference-card--nucleotide {
+  grid-template-columns: 72px minmax(0, 1fr);
+}
+
+.dna-reference-card strong,
+.dna-reference-card span,
+.dna-reference-card p {
+  display: block;
+}
+
+.dna-reference-card strong {
+  color: var(--text);
+  font-size: 10.5px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.dna-reference-card span {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 9.5px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.dna-reference-card p {
+  margin: 3px 0 0;
+  color: #475569;
+  font-size: 9.5px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.dna-reference-structure {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.dna-reference-structure polygon,
+.dna-reference-structure path,
+.dna-reference-structure circle {
+  fill: var(--base-color);
+  stroke: #334155;
+  stroke-width: 1.8;
+  vector-effect: non-scaling-stroke;
+}
+
+.dna-reference-structure line {
+  stroke: #64748b;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.dna-reference-structure .purine-shared-edge {
+  stroke: #334155;
+  stroke-width: 1.8;
+}
+
+.dna-reference-structure text {
+  fill: #0f172a;
+  font-size: 13px;
+  font-weight: 900;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 3px;
+}
+
+.dna-reference-nucleotide .phosphate-node {
+  fill: #06b6d4;
+  stroke: #0891b2;
+}
+
+.dna-reference-nucleotide .sugar-node {
+  fill: #fbbf24;
+  stroke: #d97706;
+}
+
+.dna-reference-nucleotide .base-ring {
+  fill: var(--base-color);
+}
+
+.dna-reference-nucleotide .phosphate-label,
+.dna-reference-nucleotide .sugar-label {
+  font-size: 10px;
+}
+
+.membrane-webgl-stack {
+  width: 100%;
+}
+
+.animal-cell-stack {
+  grid-template-columns: minmax(0, 1fr) minmax(248px, 286px);
+  gap: 12px;
+  align-items: stretch;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.animal-cell-part-switcher {
+  min-width: 0;
+  height: clamp(430px, 62vh, 700px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+  overflow: auto;
+  border: 1px solid rgba(188, 210, 216, 0.86);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 42px rgba(53, 102, 112, 0.13);
+  box-sizing: border-box;
+}
+
+.animal-cell-part-switcher__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.animal-cell-part-switcher__index {
+  flex: 0 0 auto;
+  padding-top: 3px;
+  color: #63a991;
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+}
+
+.animal-cell-part-switcher__head > div {
+  min-width: 0;
+}
+
+.animal-cell-part-switcher__head strong,
+.animal-cell-part-switcher__head small {
+  display: block;
+}
+
+.animal-cell-part-switcher__head strong {
+  color: #153b49;
+  font-size: 20px;
+  line-height: 1.16;
+}
+
+.animal-cell-part-switcher__head small {
+  margin-top: 4px;
+  color: #62808a;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.animal-cell-part-switcher__hint {
+  margin: -3px 0 0;
+  color: #6a828a;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.animal-cell-part-switcher__buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.animal-cell-part-button {
+  position: relative;
+  min-width: 0;
+  min-height: 68px;
+  border: 1px solid color-mix(in srgb, var(--part-color) 48%, #d9e4e1);
+  border-radius: 14px;
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--part-color) 24%, #ffffff),
+    color-mix(in srgb, var(--part-color) 11%, #ffffff)
+  );
+  color: #25424b;
+  cursor: pointer;
+  padding: 10px 8px;
+  text-align: center;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.animal-cell-part-button strong,
+.animal-cell-part-button span {
+  display: block;
+  color: inherit;
+}
+
+.animal-cell-part-button strong {
+  font-size: 16px;
+  line-height: 1.22;
+}
+
+.animal-cell-part-button span {
+  margin-top: 5px;
+  overflow: hidden;
+  font-size: 9px;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  opacity: 0.68;
+}
+
+.animal-cell-part-button:hover,
+.animal-cell-part-button:focus-visible {
+  outline: none;
+  transform: translateY(-2px);
+  box-shadow: 0 9px 18px color-mix(in srgb, var(--part-color) 20%, transparent);
+}
+
+.animal-cell-part-button.is-active {
+  border-color: color-mix(in srgb, var(--part-color) 84%, #24434d);
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--part-color) 88%, #20434a),
+    color-mix(in srgb, var(--part-color) 62%, #173e47)
+  );
+  color: #ffffff;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--part-color) 24%, transparent);
+}
+
+.animal-cell-part-switcher__current {
+  margin-top: auto;
+  padding: 12px 13px;
+  border: 1px solid rgba(188, 210, 216, 0.72);
+  border-radius: 14px;
+  background: rgba(239, 248, 246, 0.78);
+}
+
+.animal-cell-part-switcher__current span,
+.animal-cell-part-switcher__current strong {
+  display: block;
+}
+
+.animal-cell-part-switcher__current span {
+  color: #6d858c;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.animal-cell-part-switcher__current strong {
+  margin-top: 4px;
+  color: #18775f;
+  font-size: 15px;
+}
+
+.membrane-webgl-shell {
+  min-width: 0;
+  height: clamp(430px, 62vh, 700px);
+  min-height: 430px;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(125, 211, 252, 0.2), transparent 38%),
+    linear-gradient(180deg, rgba(240, 249, 255, 0.96) 0%, rgba(224, 242, 254, 0.86) 44%, rgba(255, 241, 202, 0.82) 100%);
+}
+
+@media (max-width: 980px) {
+  .animal-cell-stack {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .animal-cell-part-switcher {
+    height: auto;
+    min-height: 0;
+    padding: 16px;
+  }
+
+  .animal-cell-part-switcher__buttons {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .animal-cell-part-switcher__current {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .animal-cell-stack {
+    padding: 8px;
+  }
+
+  .animal-cell-part-switcher__buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.membrane-state-control {
+  width: min(310px, calc(100% - 24px));
+}
+
+.membrane-state-control label + label {
+  margin-top: 8px;
+}
+
+.active-transport-2d-shell .dna-feedback {
+  z-index: 5;
+}
+
+.transport-2d-membrane-window {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.56);
+  stroke-width: 13px;
+  stroke-linecap: round;
+  opacity: 0.68;
+}
+
+.dna-webgl-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 900;
+  text-align: center;
+  pointer-events: none;
+}
+
+.dna-webgl-loading[hidden] {
+  display: none;
+}
+
+.dna-hit {
+  cursor: pointer;
+}
+
+.dna-floating-label-layer {
+  pointer-events: none;
+}
+
+.dna-base-text {
+  font-family:
+    "Microsoft YaHei",
+    Arial,
+    sans-serif;
+  font-weight: 900;
+  fill: #0f172a;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.92);
+  stroke-width: 4.5px;
+}
+
+.dna-floating-label {
+  font-size: 14px;
+  font-weight: 800;
+  fill: #102033;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.95);
+  stroke-width: 5px;
+}
+
+.dna-label-line {
+  pointer-events: none;
+}
+
+.dna-hud text {
+  fill: #64748b;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.dna-feedback {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 12px;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border: 1px solid rgba(216, 225, 236, 0.9);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+  pointer-events: none;
+}
+
+.dna-state-control {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: min(260px, calc(100% - 24px));
+  padding: 10px 12px;
+  border: 1px solid rgba(216, 225, 236, 0.96);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+  cursor: default;
+}
+
+.dna-state-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.dna-state-header strong {
+  color: var(--primary);
+}
+
+.dna-state-control label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.dna-state-control input[type="range"] {
+  width: 100%;
+  accent-color: var(--primary);
+}
+
+.transport-membrane-gap path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.46);
+  stroke-width: 10px;
+  stroke-linecap: round;
+}
+
+@media (max-width: 640px) {
+
+  .dna-3d-shell {
+    grid-template-rows: auto minmax(240px, 1fr) auto;
+    min-height: 390px;
+  }
+
+  .dna-state-control {
+    position: static;
+    grid-row: 1;
+    justify-self: stretch;
+    width: auto;
+    margin: 10px 12px 0;
+  }
+
+  .dna-reference-card p {
+    display: none;
+  }
+
+  .dna-viewport {
+    grid-row: 2;
+    min-height: 240px;
+  }
+
+  .dna-feedback {
+    position: static;
+    grid-row: 3;
+    min-height: 32px;
+    margin: 0 12px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 900px) {
+  .dna-webgl-shell {
+    grid-template-rows: auto minmax(320px, 54vh) auto auto;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .dna-webgl-viewport-frame {
+    position: relative;
+    inset: auto;
+    grid-row: 2;
+    place-self: stretch;
+    min-height: 320px;
+    height: min(54vh, 500px);
+  }
+
+  .dna-webgl-shell .dna-state-control {
+    position: static;
+    grid-row: 1;
+    justify-self: stretch;
+    width: auto;
+    margin: 10px 12px 0;
+  }
+
+  .dna-webgl-shell .dna-feedback {
+    position: static;
+    grid-row: 3;
+    min-height: 32px;
+    margin: 0 12px 8px;
+    font-size: 12px;
+  }
+
+  .dna-reference-panel {
+    grid-template-columns: 1fr;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .dna-reference-list {
+    grid-template-columns: 1fr;
+  }
+
+  .rna-webgl-shell .dna-webgl-viewport-frame {
+    position: relative;
+    inset: auto;
+    grid-row: 2;
+    place-self: stretch;
+    min-height: 320px;
+    height: min(54vh, 500px);
+  }
+
+  .rna-webgl-shell .dna-feedback {
+    position: static;
+    grid-row: 3;
+    min-height: 32px;
+    margin: 0 12px 8px;
+    font-size: 12px;
+  }
+
+  .protein-webgl-shell .dna-feedback {
+    position: static;
+    grid-row: 3;
+    min-height: 32px;
+    margin: 0 12px 8px;
+    font-size: 12px;
+  }
+
+  .protein-webgl-shell .dna-webgl-viewport-frame {
+    grid-row: 3;
+  }
+
+  .protein-webgl-shell .dna-feedback {
+    grid-row: 4;
+  }
+
+  .membrane-webgl-shell {
+    grid-template-rows: auto minmax(330px, 56vh) auto;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .membrane-webgl-shell .membrane-state-control {
+    position: static;
+    grid-row: 1;
+    justify-self: stretch;
+    width: auto;
+    margin: 10px 12px 0;
+  }
+
+  .membrane-webgl-shell .dna-webgl-viewport-frame {
+    position: relative;
+    inset: auto;
+    grid-row: 2;
+    place-self: stretch;
+    min-height: 330px;
+    height: min(56vh, 520px);
+  }
+
+  .membrane-webgl-shell .dna-feedback {
+    position: static;
+    grid-row: 3;
+    min-height: 32px;
+    margin: 0 12px 8px;
+    font-size: 12px;
+  }
+
+  .active-transport-2d-control .dna-state-header {
+    margin-bottom: 5px;
+  }
+
+  .active-transport-2d-shell .dna-feedback,
+  .transport-2d-shell .dna-feedback {
+    position: static;
+    grid-row: 4;
+    min-height: 32px;
+    margin: 6px 12px 8px;
+    font-size: 12px;
+  }
+}
+
+/* Modern light science homepage, approved sidebar concept */
+
+.organelle-background {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+[data-app-view="player"] .organelle-background,
+[data-app-view="player"] .organelle-gesture-layer {
+  display: none;
+}
+
+.organelle-gesture-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.organelle-gesture-handle {
+  position: absolute;
+  width: var(--handle-width, 132px);
+  height: var(--handle-height, 88px);
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  cursor: grab;
+  touch-action: none;
+}
+
+.organelle-gesture-handle.is-dragging {
+  cursor: grabbing;
+}
+
+.organelle-webgl-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.organelle-webgl-background[hidden] {
+  display: none !important;
+}
+
+.organelle-webgl-background canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+.organelle-webgl-handle {
+  position: absolute;
+  width: var(--hit-width, 150px);
+  height: var(--hit-height, 110px);
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  cursor: grab;
+  touch-action: none;
+}
+
+.organelle-webgl-handle.is-dragging {
+  cursor: grabbing;
+}
+
+.organelle-svg-background[hidden] {
+  display: none !important;
+}
+
+.organelle-svg-background,
+.organelle-svg-background * {
+  pointer-events: none !important;
+}
+
+.organelle-bg-drift {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  aspect-ratio: 2 / 1;
+  animation: organelleBackgroundDrift var(--dur) ease-in-out infinite alternate;
+  animation-delay: var(--delay);
+  transform: translate3d(0, 0, 0);
+}
+
+.organelle-bg-drift.is-nucleus-drift {
+  aspect-ratio: 1 / 1;
+}
+
+.organelle-bg-item {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  cursor: grab;
+  opacity: 0.18;
+  transform: rotate(calc(var(--base-rotate) + var(--drag-rotate))) scale(1);
+  transform-origin: 50% 50%;
+  transition:
+    opacity 220ms ease,
+    filter 220ms ease,
+    transform 160ms ease;
+  filter: saturate(1.18) drop-shadow(0 18px 30px rgba(23, 50, 77, 0.1));
+  mix-blend-mode: multiply;
+}
+
+.organelle-bg-item:hover,
+.organelle-bg-item.is-dragging {
+  opacity: 0.34;
+  filter: saturate(1.24) drop-shadow(0 20px 34px rgba(23, 50, 77, 0.16));
+}
+
+.organelle-bg-item.is-dragging {
+  cursor: grabbing;
+}
+
+.organelle-bg-item svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+  pointer-events: none;
+  transform-origin: 50% 50%;
+  animation: organelleBackgroundFlip var(--flip-dur) ease-in-out infinite alternate;
+}
+
+.organelle-bg-item.is-dragging svg {
+  animation-play-state: paused;
+}
+
+.organelle-bg-item svg * {
+  pointer-events: visiblePainted;
+  cursor: grab;
+  vector-effect: non-scaling-stroke;
+}
+
+.organelle-bg-item.is-dragging svg * {
+  cursor: grabbing;
+}
+
+.organelle-bg-item.is-chloroplast ellipse {
+  fill: rgba(139, 217, 143, 0.48);
+  stroke: rgba(40, 143, 85, 0.66);
+  stroke-width: 5;
+}
+
+.organelle-bg-item.is-chloroplast path {
+  fill: none;
+  stroke: rgba(40, 143, 85, 0.42);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.organelle-bg-item.is-chloroplast .organelle-grana rect {
+  fill: rgba(58, 178, 82, 0.64);
+  stroke: rgba(28, 130, 69, 0.38);
+  stroke-width: 2;
+}
+
+.organelle-bg-item.is-mitochondrion path:first-child {
+  fill: rgba(255, 168, 86, 0.44);
+  stroke: rgba(232, 117, 53, 0.56);
+  stroke-width: 5;
+}
+
+.organelle-bg-item.is-mitochondrion .organelle-cristae {
+  fill: none;
+  stroke: rgba(238, 92, 71, 0.74);
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.organelle-bg-item.is-mitochondrion .organelle-cristae.soft {
+  stroke: rgba(255, 228, 169, 0.62);
+  stroke-width: 4;
+}
+
+.organelle-bg-item.is-golgi path {
+  fill: none;
+  stroke: rgba(34, 165, 195, 0.58);
+  stroke-width: 14;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.organelle-bg-item.is-golgi circle {
+  fill: rgba(37, 157, 191, 0.44);
+  stroke: rgba(19, 128, 160, 0.46);
+  stroke-width: 3;
+}
+
+.organelle-bg-item.is-nucleus circle:first-child {
+  fill: rgba(165, 109, 232, 0.34);
+  stroke: rgba(121, 71, 199, 0.52);
+  stroke-width: 5;
+}
+
+.organelle-bg-item.is-nucleus .organelle-inner {
+  fill: rgba(181, 139, 237, 0.18);
+  stroke: rgba(121, 71, 199, 0.32);
+  stroke-width: 3;
+}
+
+.organelle-bg-item.is-nucleus .organelle-nucleolus {
+  fill: rgba(111, 77, 204, 0.46);
+  stroke: rgba(82, 55, 162, 0.46);
+  stroke-width: 3;
+}
+
+.organelle-bg-item.is-nucleus .organelle-pores circle {
+  fill: rgba(91, 65, 165, 0.34);
+}
+
+.organelle-bg-item.is-nucleus .organelle-chromatin {
+  fill: none;
+  stroke: rgba(101, 74, 185, 0.5);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.preview-dna-strand {
+  position: absolute;
+  top: 14px;
+  width: 12px;
+  height: 188px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #37d7a1, #7d66f1);
+  box-shadow: 0 16px 28px rgba(80, 146, 165, 0.16);
+}
+
+.preview-dna-left {
+  left: 43%;
+  transform: rotate(-25deg);
+}
+
+.preview-dna-right {
+  left: 55%;
+  transform: rotate(25deg);
+}
+
+.preview-dna-rung {
+  position: absolute;
+  left: 42%;
+  width: 98px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(94, 126, 169, 0.38);
+  transform: rotate(0deg);
+}
+
+.preview-dna-rung.rung-1 { top: 48px; }
+.preview-dna-rung.rung-2 { top: 84px; left: 41%; width: 112px; }
+.preview-dna-rung.rung-3 { top: 121px; }
+.preview-dna-rung.rung-4 { top: 158px; left: 41%; width: 112px; }
+
+.model-area:fullscreen .dna-webgl-stack,
+.model-area:fullscreen .rna-webgl-stack,
+.model-area:fullscreen .protein-webgl-stack,
+.model-area:fullscreen .membrane-webgl-stack,
+.model-area.is-css-fullscreen .dna-webgl-stack,
+.model-area.is-css-fullscreen .rna-webgl-stack,
+.model-area.is-css-fullscreen .protein-webgl-stack,
+.model-area.is-css-fullscreen .membrane-webgl-stack {
+  height: 100%;
+  align-content: stretch;
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+
+.model-area:fullscreen .animal-cell-stack,
+.model-area.is-css-fullscreen .animal-cell-stack {
+  grid-template-columns: minmax(0, 1fr) minmax(248px, 286px);
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.model-area:fullscreen .animal-cell-part-switcher,
+.model-area.is-css-fullscreen .animal-cell-part-switcher {
+  height: 100%;
+  min-height: 0;
+}
+
+.model-area:fullscreen .dna-3d-shell,
+.model-area:fullscreen .dna-webgl-shell,
+.model-area:fullscreen .rna-webgl-shell,
+.model-area:fullscreen .protein-webgl-shell,
+.model-area:fullscreen .membrane-webgl-shell,
+.model-area:fullscreen .animal-cell-shell,
+.model-area:fullscreen .active-transport-2d-shell,
+.model-area:fullscreen .transport-2d-shell,
+.model-area:fullscreen .transport-2d-comparison-shell,
+.model-area.is-css-fullscreen .dna-3d-shell,
+.model-area.is-css-fullscreen .dna-webgl-shell,
+.model-area.is-css-fullscreen .rna-webgl-shell,
+.model-area.is-css-fullscreen .protein-webgl-shell,
+.model-area.is-css-fullscreen .membrane-webgl-shell,
+.model-area.is-css-fullscreen .animal-cell-shell,
+.model-area.is-css-fullscreen .active-transport-2d-shell,
+.model-area.is-css-fullscreen .transport-2d-shell,
+.model-area.is-css-fullscreen .transport-2d-comparison-shell {
+  min-height: 0 !important;
+  height: 100% !important;
+  overflow: hidden;
+}
+
+.model-area:fullscreen .dna-webgl-viewport-frame,
+.model-area.is-css-fullscreen .dna-webgl-viewport-frame {
+  position: absolute;
+  inset: 0;
+  min-height: 0 !important;
+  height: auto !important;
+}
